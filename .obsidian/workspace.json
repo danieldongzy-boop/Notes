@@ -4,82 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "ab117c918bb865c1",
-        "type": "split",
+        "id": "0028937de1b2afcf",
+        "type": "tabs",
         "children": [
           {
-            "id": "25093a7a5925eb9c",
-            "type": "tabs",
-            "dimension": 50.86848635235732,
-            "children": [
-              {
-                "id": "8b8516d6ce93edd1",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "Uni Freiburg/CPS/cps_ex13.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "cps_ex13"
-                }
-              }
-            ]
-          },
-          {
-            "id": "c72307ca5d118821",
-            "type": "split",
-            "dimension": 49.13151364764268,
-            "children": [
-              {
-                "id": "ea0a4a0e154783b2",
-                "type": "tabs",
-                "dimension": 51.34892086330935,
-                "children": [
-                  {
-                    "id": "8e29a443bf5d1eea",
-                    "type": "leaf",
-                    "state": {
-                      "type": "markdown",
-                      "state": {
-                        "file": "Uni Freiburg/CPS/Exercise13.md",
-                        "mode": "source",
-                        "source": true
-                      },
-                      "icon": "lucide-file",
-                      "title": "Exercise13"
-                    },
-                    "group": "616d9a7f00dbd43f"
-                  }
-                ]
-              },
-              {
-                "id": "ee92e44c29dfbc39",
-                "type": "tabs",
-                "dimension": 48.65107913669065,
-                "children": [
-                  {
-                    "id": "9c69cdc76b2728c6",
-                    "type": "leaf",
-                    "state": {
-                      "type": "markdown",
-                      "state": {
-                        "file": "Uni Freiburg/CPS/Exercise13.md",
-                        "mode": "preview",
-                        "source": false
-                      },
-                      "icon": "lucide-file",
-                      "title": "Exercise13"
-                    },
-                    "group": "616d9a7f00dbd43f"
-                  }
-                ]
-              }
-            ],
-            "direction": "vertical"
+            "id": "d7b91f1250cccc3a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
           }
-        ],
-        "direction": "horizontal"
+        ]
       }
     ],
     "direction": "vertical"
@@ -136,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -239,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 455.5
+    "width": 409.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -252,21 +189,17 @@
       "bases:新建数据库": false
     }
   },
-  "active": "9c69cdc76b2728c6",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
-    "Uni Freiburg/CPS/Exercise13.pdf",
-    "Uni Freiburg/CPS/cps_ex13.pdf",
-    "Uni Freiburg/CPS/Exercise13.md",
+    "Uni Freiburg/CPS/cps_ex12.pdf",
+    "未命名 2.base",
+    "未命名 1.base",
+    "未命名.base",
     "Uni Freiburg/CPS/Exercise12.md",
     "Uni Freiburg/CPS/Exercise12.pdf",
-    "Uni Freiburg/CPS/未确认 715715.crdownload",
-    "IC/SARADC/Sar ADC学习1.md",
-    "Uni Freiburg/CPS/Exercise11.md",
-    "Uni Freiburg/CPS/cps_ex12.pdf",
-    "未命名.base",
-    "未命名 1.base",
     "Uni Freiburg/CPS/未确认 228540.crdownload",
     "IC/SARADC/A Tale of two ADCs.md",
+    "Uni Freiburg/CPS/Exercise11.md",
     "Uni Freiburg/CPS/Exercise11.pdf",
     "未命名.canvas",
     "IC/模集/模集实验报告董展宇.pdf",
