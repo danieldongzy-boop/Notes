@@ -4,35 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "83bb17aa9d811c13",
+        "id": "0028937de1b2afcf",
         "type": "tabs",
         "children": [
           {
-            "id": "433e24afaf9f9fda",
+            "id": "d7b91f1250cccc3a",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/CA/ca_ws2023_24-exam-solution_explaination.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "ca_ws2023_24-exam-solution_explaination"
-            }
-          },
-          {
-            "id": "db1cbcbd9c571bd3",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/CA/exercise-exam (2).pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "exercise-exam (2)"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.5
+    "width": 409.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,27 +189,20 @@
       "bases:新建数据库": false
     }
   },
-  "active": "db1cbcbd9c571bd3",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
-    "Uni Freiburg/CA/exercise-mockexam (1).pdf",
-    "Uni Freiburg/CA/exercise-dryrun-WS24.pdf",
-    "Uni Freiburg/CA/exercise-exam (2).pdf",
-    "Uni Freiburg/CA/ca_ws2023_24-exam-solution_explaination.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2019.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2024 2025.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2023 2024.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2022 2023.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2025.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2024.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2023.pdf",
-    "Uni Freiburg/CPS/Exercise14.md",
-    "Uni Freiburg/CPS/Exercise4.md",
-    "Uni Freiburg/CPS/Exercise13.md",
+    "Uni Freiburg/CPS/cps_ex12.pdf",
+    "未命名 2.base",
+    "未命名 1.base",
+    "未命名.base",
     "Uni Freiburg/CPS/Exercise12.md",
-    "IC/SARADC/Sar ADC学习1.md",
-    "Uni Freiburg/CPS/Exercise11.md",
+    "Uni Freiburg/CPS/Exercise12.pdf",
+    "Uni Freiburg/CPS/未确认 228540.crdownload",
     "IC/SARADC/A Tale of two ADCs.md",
+    "Uni Freiburg/CPS/Exercise11.md",
+    "Uni Freiburg/CPS/Exercise11.pdf",
     "未命名.canvas",
+    "IC/模集/模集实验报告董展宇.pdf",
     "IC/模集/模集实验报告.md",
     "IC/模集/image.png"
   ]
