@@ -4,167 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "8d5a76e201e7cdb1",
+        "id": "83bb17aa9d811c13",
         "type": "tabs",
         "children": [
           {
-            "id": "da2a1c5ce9691bcb",
+            "id": "433e24afaf9f9fda",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2019.pdf"
+                "file": "Uni Freiburg/CA/ca_ws2023_24-exam-solution_explaination.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Exam SS 2019"
+              "title": "ca_ws2023_24-exam-solution_explaination"
             }
           },
           {
-            "id": "5f76d8adfeff1f24",
+            "id": "db1cbcbd9c571bd3",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2020.pdf"
+                "file": "Uni Freiburg/CA/exercise-exam (2).pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Exam SS 2020"
-            }
-          },
-          {
-            "id": "28b95e85b2e3d6d0",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2021.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam SS 2021"
-            }
-          },
-          {
-            "id": "98e64b3fd883976d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2022.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam SS 2022"
-            }
-          },
-          {
-            "id": "279d5658e12b3c09",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2023.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam SS 2023"
-            }
-          },
-          {
-            "id": "0bac647773fe9423",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2024.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam SS 2024"
-            }
-          },
-          {
-            "id": "3ea58485a6c14a2d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam SS 2025.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam SS 2025"
-            }
-          },
-          {
-            "id": "71981942633df544",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 2018 2019.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 2018 2019"
-            }
-          },
-          {
-            "id": "b447986b7aef355e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 2019 2020.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 2019 2020"
-            }
-          },
-          {
-            "id": "d5353ed538554717",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 2022 2023.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 2022 2023"
-            }
-          },
-          {
-            "id": "28c6e6f3cf38a7ae",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 2023 2024.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 2023 2024"
-            }
-          },
-          {
-            "id": "a5d9da4949909686",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 2024 2025.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 2024 2025"
-            }
-          },
-          {
-            "id": "381436118c0b93a6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Past exams-20260128/Exam WS 20212022.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Exam WS 20212022"
+              "title": "exercise-exam (2)"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -323,7 +191,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 455.5
+    "width": 729.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -336,19 +204,19 @@
       "bases:新建数据库": false
     }
   },
-  "active": "a5d9da4949909686",
+  "active": "db1cbcbd9c571bd3",
   "lastOpenFiles": [
+    "Uni Freiburg/CA/exercise-mockexam (1).pdf",
+    "Uni Freiburg/CA/exercise-dryrun-WS24.pdf",
+    "Uni Freiburg/CA/exercise-exam (2).pdf",
+    "Uni Freiburg/CA/ca_ws2023_24-exam-solution_explaination.pdf",
+    "Uni Freiburg/Past exams-20260128/Exam SS 2019.pdf",
+    "Uni Freiburg/Past exams-20260128/Exam WS 2024 2025.pdf",
     "Uni Freiburg/Past exams-20260128/Exam WS 2023 2024.pdf",
     "Uni Freiburg/Past exams-20260128/Exam WS 2022 2023.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2024 2025.pdf",
     "Uni Freiburg/Past exams-20260128/Exam SS 2025.pdf",
     "Uni Freiburg/Past exams-20260128/Exam SS 2024.pdf",
     "Uni Freiburg/Past exams-20260128/Exam SS 2023.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2018 2019.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2019.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam SS 2020.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 20212022.pdf",
-    "Uni Freiburg/Past exams-20260128/Exam WS 2019 2020.pdf",
     "Uni Freiburg/CPS/Exercise14.md",
     "Uni Freiburg/CPS/Exercise4.md",
     "Uni Freiburg/CPS/Exercise13.md",
