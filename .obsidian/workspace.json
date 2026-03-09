@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "d7c98d428e21e1b6",
+        "id": "83bb17aa9d811c13",
         "type": "tabs",
         "children": [
           {
-            "id": "13330f6830c5ee6b",
+            "id": "d9432ab9e84a0ff4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/算法数据结构/Zusammenfassung.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Zusammenfassung"
             }
           }
         ]
@@ -176,7 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5
+    "width": 529.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,22 +194,26 @@
   "active": "8a879c08bf556700",
   "lastOpenFiles": [
     "Uni Freiburg/算法数据结构/Zusammenfassung.pdf",
-    "Uni Freiburg/cps1/exam1920/exam1920.pdf",
-    "Uni Freiburg/cps1/exam1920/CPS Exam 19_20.docx",
-    "Uni Freiburg/cps1/mockexam.pdf",
-    "Uni Freiburg/cps1/exam1920",
-    "Uni Freiburg/cps1/exam.pdf",
-    "Uni Freiburg/cps1/Exercise1_ZhanyuDong_Xinpu_graded.pdf",
-    "Uni Freiburg/cps1/Exercise2_ZhanyuDong_XinPu_graded.pdf",
-    "Uni Freiburg/cps1/Exercise3_ZhanyuDong_XinPu_graded.pdf",
-    "Uni Freiburg/cps1/Exercise4_graded.pdf",
+    "Uni Freiburg/算法数据结构/Exercise5.pdf",
+    "Uni Freiburg/算法数据结构/Exercise5.md",
+    "Uni Freiburg/算法数据结构/Exercise4.md",
+    "Uni Freiburg/CA/exercise-mockexam (1).pdf",
     "Uni Freiburg/cps1/Exercise5_graded.pdf",
+    "Uni Freiburg/cps1/Exercise4_graded.pdf",
+    "Uni Freiburg/cps1/Exercise3_ZhanyuDong_XinPu_graded.pdf",
+    "Uni Freiburg/cps1/Exercise13_graded.pdf",
+    "Uni Freiburg/cps1/exam.pdf",
+    "Uni Freiburg/cps1/Exercise12_graded.pdf",
+    "Uni Freiburg/cps1/Exercise11_graded.pdf",
+    "Uni Freiburg/cps1/Exercise10_graded.pdf",
     "Uni Freiburg/CPS/Exercise14.md",
+    "Uni Freiburg/CPS/Exercise4.md",
     "Uni Freiburg/CPS/Exercise13.md",
-    "未命名.canvas",
     "Uni Freiburg/CPS/Exercise12.md",
-    "IC/SARADC/A Tale of two ADCs.md",
+    "IC/SARADC/Sar ADC学习1.md",
     "Uni Freiburg/CPS/Exercise11.md",
+    "IC/SARADC/A Tale of two ADCs.md",
+    "未命名.canvas",
     "IC/模集/模集实验报告.md",
     "IC/模集/image.png"
   ]
