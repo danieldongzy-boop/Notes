@@ -86,8 +86,7 @@
               "title": "李福乐--跨导运算放大器设计实例"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -206,7 +205,7 @@
       "bases:新建数据库": false
     }
   },
-  "active": "0ee7434fe5e01981",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
     "IC/AMP/李福乐/李福乐--跨导运算放大器设计实例.pdf",
     "IC/AMP/李福乐/李福乐 放大器.md",
