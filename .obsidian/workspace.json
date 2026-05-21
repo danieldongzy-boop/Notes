@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "9fa20e5381f0527a",
+        "id": "4f4b40ba6e35a3b8",
         "type": "tabs",
         "children": [
           {
-            "id": "0ee7434fe5e01981",
+            "id": "7cc0ad8975113301",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "IC/AMP/李福乐/李福乐 放大器.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
               },
-              "icon": "lucide-file",
-              "title": "李福乐 放大器"
+              "icon": "lucide-file-text",
+              "title": "Practical_Exercise_II_SS26"
             }
           }
         ]
@@ -75,22 +73,22 @@
             }
           },
           {
-            "id": "66329e2c3b6a07e8",
+            "id": "76f9d484fa3a0581",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "IC/AMP/李福乐/李福乐--跨导运算放大器设计实例.pdf"
+                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "李福乐--跨导运算放大器设计实例"
+              "title": "Practical_Exercise_II_SS26"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 438.5
+    "width": 200
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -168,17 +166,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.base",
+                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "Practical_Exercise_II_SS26 的大纲"
             }
           },
           {
-            "id": "7928a8f7cefcfe87",
+            "id": "7935fed659dfc2dc",
             "type": "leaf",
             "state": {
               "type": "custom-frames-豆包",
@@ -192,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 529.5
+    "width": 730.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,33 +203,41 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8a879c08bf556700",
+  "active": "7cc0ad8975113301",
   "lastOpenFiles": [
-    "IC/AMP/李福乐/李福乐--跨导运算放大器设计实例.pdf",
-    "IC/AMP/李福乐/李福乐 放大器.md",
-    "IC/Sunnan_ADC/eetop.cn_ch5.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch7.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch6.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch9.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch8.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch11.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch4.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch3.pdf",
-    "IC/Sunnan_ADC/eetop.cn_ch16.pdf",
-    "IC/SARADC/Sar ADC学习1.md",
+    "attachments/未命名.base",
+    "attachments/未命名 1.base",
+    "attachments/Pasted image 20260511202714.png",
+    "attachments/Pasted image 20260511202304.png",
+    "attachments/Pasted image 20260511202229.png",
+    "attachments/Pasted image 20260511202020.png",
+    "attachments/Pasted image 20260511142606.png",
+    "attachments/Pasted image 20260511134525.png",
+    "attachments/Pasted image 20260511134437.png",
+    "attachments/Pasted image 20260511073745.png",
+    "attachments/Pasted image 20260511073628.png",
+    "attachments/Pasted image 20260511073536.png",
+    "attachments",
+    "Uni Freiburg/RF_Design/PE2/Task8_9_Block3_18052026.pdf",
+    "Uni Freiburg/RF_Design/PE2/Task6_7_Block1_11052026.pdf",
+    "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+    "Uni Freiburg/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/Analog Cmos/PE1/PE1.md",
+    "IC/比较器/未确认 63665.crdownload",
+    "IC/比较器/strongarm.pdf",
+    "IC/比较器",
+    "IC/新建文件夹",
+    "未命名 1.base",
+    "Uni Freiburg/RF_Design/PE1/PE1.md",
+    "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
     "IC/data converter/chapter 1 questions.md",
-    "IC/data converter/image.png",
+    "IC/DAC/JSSC_1998/jssc1998.md",
+    "IC/DAC/未命名.md",
+    "IC/AMP/个人精华总结.md",
+    "IC/AMP/李福乐/李福乐 放大器.md",
+    "IC/SARADC/Sar ADC学习1.md",
     "IC/BGR/U-chi-wa 低功耗bgr/U-chi-wa.md",
     "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "Pasted image 20260324155011.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260323113956.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260328110427.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260328110007.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260328105135.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260328101521.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260328100743.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260327170655.png",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Pasted image 20260324161855.png",
     "IC/11.md",
     "IC/未命名.md",
     "Uni Freiburg/算法数据结构/Exercise5.md",
