@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4f4b40ba6e35a3b8",
+        "id": "d3445dd1a012b578",
         "type": "tabs",
         "children": [
           {
-            "id": "7cc0ad8975113301",
+            "id": "4369feb0b33de5e5",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
+                "file": "Marvis的输出/NS-SAR_ADC入门综述.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Practical_Exercise_II_SS26"
+              "icon": "lucide-file",
+              "title": "NS-SAR_ADC入门综述"
             }
           }
         ]
@@ -70,18 +72,6 @@
               "state": {},
               "icon": "lucide-bookmark",
               "title": "书签"
-            }
-          },
-          {
-            "id": "76f9d484fa3a0581",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practical_Exercise_II_SS26"
             }
           }
         ]
@@ -166,17 +156,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+                "file": "未命名.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Practical_Exercise_II_SS26 的大纲"
+              "title": "未命名 的大纲"
             }
           },
           {
-            "id": "7935fed659dfc2dc",
+            "id": "7928a8f7cefcfe87",
             "type": "leaf",
             "state": {
               "type": "custom-frames-豆包",
@@ -190,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 730.5
+    "width": 449.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,7 +193,7 @@
       "bases:新建数据库": false
     }
   },
-  "active": "7cc0ad8975113301",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
     "attachments/未命名.base",
     "attachments/未命名 1.base",
@@ -218,37 +208,33 @@
     "attachments/Pasted image 20260511073628.png",
     "attachments/Pasted image 20260511073536.png",
     "attachments",
-    "Uni Freiburg/RF_Design/PE2/Task8_9_Block3_18052026.pdf",
-    "Uni Freiburg/RF_Design/PE2/Task6_7_Block1_11052026.pdf",
-    "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分4.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分3.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分2.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分1.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.pdf",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2",
+    "Uni Freiburg/RF_Design/PE1/PE1.md",
     "Uni Freiburg/Analog Cmos/PE2/PE2.md",
     "Uni Freiburg/Analog Cmos/PE1/PE1.md",
-    "IC/比较器/未确认 63665.crdownload",
-    "IC/比较器/strongarm.pdf",
-    "IC/比较器",
-    "IC/新建文件夹",
-    "未命名 1.base",
-    "Uni Freiburg/RF_Design/PE1/PE1.md",
-    "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
-    "IC/data converter/chapter 1 questions.md",
     "IC/DAC/JSSC_1998/jssc1998.md",
-    "IC/DAC/未命名.md",
+    "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
     "IC/AMP/个人精华总结.md",
-    "IC/AMP/李福乐/李福乐 放大器.md",
-    "IC/SARADC/Sar ADC学习1.md",
     "IC/BGR/U-chi-wa 低功耗bgr/U-chi-wa.md",
     "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
+    "IC/AMP/李福乐/李福乐 放大器.md",
+    "Marvis的输出/NS-SAR_ADC入门综述.md",
     "IC/11.md",
-    "IC/未命名.md",
-    "Uni Freiburg/算法数据结构/Exercise5.md",
-    "Uni Freiburg/算法数据结构/Exercise4.md",
     "Uni Freiburg/CPS/Exercise14.md",
-    "Uni Freiburg/CPS/Exercise4.md",
     "Uni Freiburg/CPS/Exercise13.md",
-    "Uni Freiburg/CPS/Exercise12.md",
-    "Uni Freiburg/CPS/Exercise11.md",
-    "IC/SARADC/A Tale of two ADCs.md",
     "未命名.canvas",
+    "Uni Freiburg/CPS/Exercise12.md",
+    "IC/SARADC/A Tale of two ADCs.md",
+    "Uni Freiburg/CPS/Exercise11.md",
     "IC/模集/模集实验报告.md"
   ]
 }
