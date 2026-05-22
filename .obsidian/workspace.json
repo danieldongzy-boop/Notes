@@ -4,21 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "d3445dd1a012b578",
+        "id": "80f2440f3ae5ea0c",
         "type": "tabs",
         "children": [
           {
-            "id": "4369feb0b33de5e5",
+            "id": "b41c07841324daf5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "Marvis的输出/NS-SAR_ADC入门综述.md",
-                "mode": "preview",
-                "source": false
+                "file": "attachments/未命名 1.base",
+                "viewName": "表格"
               },
-              "icon": "lucide-file",
-              "title": "NS-SAR_ADC入门综述"
+              "icon": "lucide-table",
+              "title": "未命名 1"
             }
           }
         ]
@@ -180,7 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 449.5
+    "width": 573.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,46 +194,51 @@
   },
   "active": "8a879c08bf556700",
   "lastOpenFiles": [
-    "attachments/未命名.base",
+    "xdu/fab homework/image-19.png",
     "attachments/未命名 1.base",
-    "attachments/Pasted image 20260511202714.png",
-    "attachments/Pasted image 20260511202304.png",
-    "attachments/Pasted image 20260511202229.png",
-    "attachments/Pasted image 20260511202020.png",
-    "attachments/Pasted image 20260511142606.png",
-    "attachments/Pasted image 20260511134525.png",
-    "attachments/Pasted image 20260511134437.png",
-    "attachments/Pasted image 20260511073745.png",
-    "attachments/Pasted image 20260511073628.png",
-    "attachments/Pasted image 20260511073536.png",
-    "attachments",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分4.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分3.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分2.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26_部分1.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/Practical_Exercise_I_SS26.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.pdf",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2",
-    "Uni Freiburg/RF_Design/PE1/PE1.md",
+    "attachments/未命名.base",
+    "IC/NSsar/An_Overview_of_Noise-Shaping_SAR_ADC_From_Fundamentals_to_the_Frontier.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch9.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch8.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch7.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch6.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch5.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch4.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch3.pdf",
+    "xdu/fab homework/笔记Ch9.md",
+    "xdu/fab homework/笔记Ch8.md",
+    "xdu/fab homework/笔记Ch7.md",
+    "xdu/fab homework/笔记Ch6.md",
+    "xdu/fab homework/笔记Ch5.md",
+    "xdu/fab homework/笔记Ch4.md",
+    "xdu/fab homework/笔记Ch3.md",
+    "xdu/fab homework/笔记Ch2.md",
+    "xdu/fab homework/笔记Ch11.md",
+    "xdu/fab homework/笔记Ch10.md",
+    "xdu/fab homework/笔记Ch1.md",
+    "xdu/fab homework/image.png",
+    "xdu/fab homework/image-9.png",
+    "xdu/fab homework/image-8.png",
+    "xdu/fab homework/image-7.png",
+    "xdu/fab homework/image-6.png",
+    "xdu/fab homework/image-5.png",
+    "xdu/fab homework/image-4.png",
+    "xdu/fab homework/image-3.png",
+    "xdu/fab homework/image-2.png",
+    "xdu/fab homework/chapter9 光刻.md",
+    "xdu/fab homework/chapter6-8 cvd pvd 外延.md",
+    "xdu/fab homework/chapter 10-12 刻蚀 金属化 工艺集成.md",
+    "xdu/物联网大作业/物联网与医疗电子.md",
+    "xdu/模集/模集实验报告.md",
+    "Marvis的输出/NS-SAR_ADC入门综述.md",
     "Uni Freiburg/Analog Cmos/PE2/PE2.md",
     "Uni Freiburg/Analog Cmos/PE1/PE1.md",
     "IC/DAC/JSSC_1998/jssc1998.md",
     "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
     "IC/AMP/个人精华总结.md",
-    "IC/BGR/U-chi-wa 低功耗bgr/U-chi-wa.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "IC/AMP/李福乐/李福乐 放大器.md",
-    "Marvis的输出/NS-SAR_ADC入门综述.md",
-    "IC/11.md",
-    "Uni Freiburg/CPS/Exercise14.md",
-    "Uni Freiburg/CPS/Exercise13.md",
-    "未命名.canvas",
-    "Uni Freiburg/CPS/Exercise12.md",
-    "IC/SARADC/A Tale of two ADCs.md",
-    "Uni Freiburg/CPS/Exercise11.md",
-    "IC/模集/模集实验报告.md"
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
+    "Uni Freiburg/RF_Design/PE1/PE1.md",
+    "未命名.canvas"
   ]
 }
