@@ -1,0 +1,97 @@
+******************************************************************************
+* SMIC Process Design Kit Installation User Guide
+******************************************************************************
+
+Below files/directories are contained in PDK source directory(smic18mse_1833_oa_cds_vx.x_x).
+
+cds.lib                -> Text file defining Cadence libraries.
+  
+smic18mmrf             -> Source of SMIC 0.18um Mixed Signal Enhanced 1.8V/3.3V PDK Cadence library.
+
+display.drf            -> Text version of display resource file.
+ 
+SMIC18MM_skillUtility  -> Utility for batch-setting parameter values
+
+models                 -> include hspice model and spectre model
+
+stream                  -> layer mapping
+
+DRC_ORI                -> Calibre DRC deck 
+
+LVS_ORI                -> Calibre LVS deck
+
+RC_ALL                  -> RC deck 
+
+docs                   -> include the SPICE model/Layout techfile/DRC/LVS/Parasitic Extraction/PCell library manuals
+
+****************************  Installation  ***********************************
+
+SMIC PDK Install Utility
+
+A perl script ("SMIC_PDK_install") is provided to install SMIC PDK with required metal option(input from user)
+to a specified folder under installation path.
+
+Usage: SMIC_PDK_install [options]
+  Options:
+  -b  <virtuoso bin>   Virtuoso tool installation path (Optional)
+  -h                   Output help text
+
+Before using this script, please make sure you can start Icfb in your working directory, otherwise, please setup 
+the Virtuoso installation path using "-b <virtuoso_bin>" option.
+For example:  "./SMIC_PDK_install -b  $EDA_Cadence_Install_dir/IC616.500.3_20131102/tools/dfII/bin/virtuoso"
+
+The Virtuoso version should be IC06.16.030 or above
+
+
+Example of using the script:
+
+To install 1P6M_5Ia_1TMa1_MIM10 PDK, execute "SMIC_PDK_install" and choose the metal option:
+
+./SMIC_PDK_install 
+===================================================================================
+Virtuoso version should be IC6.1.6-64b.500.3 or above
+===================================================================================
+NOTICE: This PDK only contains RC extraction files for below metal options:
+        1P5M, 1P4M for topmetal=9k,
+        For others metal options, user can download RC files from SMICNOW, or raise
+        request if no such supply, SMIC will deliver upon request.
+===================================================================================
+This script will launch <$CDSHOME>/cadence/IC616.500.3_20131102/tools/dfII/bin/virtuoso to set the library.
+Please choose 1.8V/3.3V process or pure 3.3V process for installation:
+1) 1.8V/3.3V
+2) 3.3V
+Enter 1 or 2:1
+
+Please choose the number of top metal for installation:
+1) 1 Top Metal
+Enter 1: 1
+
+Please choose the type of 1 Top metal for installation:
+1) 9K top metal layer, thickness 9kA (TMa1)
+2) 22K top metal layer, thickness 22kA (TMa2)
+3) 34K top metal layer, thickness 34kA (TMa3)
+4) 40K top metal layer, thickness 40kA (TMa4)
+Enter 1, 2, 3 or 4: 1
+
+Please choose the number of inter metal layers:
+1) 2 inter metals
+2) 3 inter metals
+3) 4 inter metals
+4) 5 inter metals
+Enter 1, 2, 3 or 4: 4
+
+Please choose the type of MIM for installation:
+1) MIM1.0fF, Cspec=1fF
+2) MIM2.0fF, Cspec=2fF
+Enter 1 or 2 : 1
+
+The PDK metal option is: 1P6M_5Ia_1TMa1_MIM10
+Do you want to install yes/no?[yes|no]:yes
+PDK installing ......
+install DRC......
+install LVS......
+install RC......
+
+PDK installation complete.
+The PDK is ./smic18mse_1833_1P6M_5Ia_1TMa1_MIM10_oa_cds_yy_mm_dd_vx.x_x/
+

@@ -1,0 +1,3 @@
+TDMCHECKPOINT="1.0"
+smic18mmrf/parasitic_diobpw type="cell"
+smic18mmrf/parasitic_dnwdio type="cell"
