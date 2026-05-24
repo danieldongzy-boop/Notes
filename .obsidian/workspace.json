@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5dd6890e695894a3",
+        "id": "83c17592da9d027f",
         "type": "tabs",
         "children": [
           {
-            "id": "5a0a452608525ada",
+            "id": "46d3c50fad6721b1",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf"
+                "file": "Marvis的输出/每日同步日志.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "eetop.cn_8bit_SAR_ADC设计总结"
+              "icon": "lucide-file",
+              "title": "每日同步日志"
             }
           }
         ]
@@ -71,25 +73,12 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
-          },
-          {
-            "id": "76f9d484fa3a0581",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practical_Exercise_II_SS26"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -167,17 +156,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+                "file": "未命名.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Practical_Exercise_II_SS26 的大纲"
+              "title": "未命名 的大纲"
             }
           },
           {
-            "id": "7935fed659dfc2dc",
+            "id": "7928a8f7cefcfe87",
             "type": "leaf",
             "state": {
               "type": "custom-frames-豆包",
@@ -191,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 472.5
+    "width": 449.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,30 +193,33 @@
       "bases:新建数据库": false
     }
   },
-  "active": "5a0a452608525ada",
+  "active": "46d3c50fad6721b1",
   "lastOpenFiles": [
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/symbol.oa",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/master.tag",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/sch.oa",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/master.tag",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/data.dm",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/data.dm",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/symbol/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/symbol/symbol.oa",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/layout/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/symbol/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/layout/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/symbol/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/layout/thumbnail_128x128.png",
+    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
+    "Marvis的输出/每日同步日志.md",
     "Uni Freiburg/RF_Design/PE2/未命名.md",
+    "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
+    "IC/实例/8bit adc",
+    "IC/实例",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/techfile.tf",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/stream/SMIC_VTMP_018LGMS_1833_V1.19_REV1_0.map",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/stream",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/varactors.Cat%",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/varactors.Cat",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/techfile.tf",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/tech.db",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/symbol/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/schematic/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/layout/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/auLvs/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/ivpcell/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/auCdl/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/ams/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rpposab_ckt/symbol/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rpposab_ckt/spectre/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rpposab_ckt/layout/thumbnail_128x128.png",
+    "Marvis的输出/NS-SAR_ADC入门综述.md",
+    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md",
     "xdu/物联网大作业/物联网与医疗电子.md",
     "xdu/模集/模集实验报告.md",
     "xdu/fab homework/笔记Ch9.md",
@@ -244,14 +236,11 @@
     "xdu/fab homework/chapter9 光刻.md",
     "xdu/fab homework/chapter6-8 cvd pvd 外延.md",
     "xdu/fab homework/chapter 10-12 刻蚀 金属化 工艺集成.md",
-    "IC/模集/模集实验报告.md",
-    "IC/fab homework/笔记Ch9.md",
-    "IC/fab homework/笔记Ch8.md",
-    "IC/fab homework/笔记Ch7.md",
-    "IC/fab homework/笔记Ch6.md",
-    "IC/fab homework/笔记Ch5.md",
-    "IC/fab homework/笔记Ch4.md",
-    "IC/fab homework/笔记Ch3.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
+    "Uni Freiburg/RF_Design/PE1/PE1.md",
+    "Uni Freiburg/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/Analog Cmos/PE1/PE1.md",
     "未命名.canvas"
   ]
 }
