@@ -1,0 +1,859 @@
+#! tvf
+namespace import tvf::*
+
+#=========================================================================================#
+#                              Choice 1: For Metal Option                                 # 
+#-----------------------------------------------------------------------------------------#
+# Note 1: This rule file support 1P6M, 1P5M, 1P4M and 1P3M process Calibre Antenna check. 
+# Note 2: Below switches are for users, please set them based on the chip design.
+# Note 3: Default check 1P6M, M6 as top metal and follow normal top metal rule('MT').
+
+set metal_counts  6         ; #valid value is: {6,5,4,3}
+                            ; #------ Total metal counts ----------------------------------                           
+                            ; #For 1P6M process, "metal_counts = 6".
+                            ; #For 1P5M process, "metal_counts = 5".
+                            ; #For 1P4M process, "metal_counts = 4".
+                            ; #For 1P3M process, "metal_counts = 3".
+
+set top_metal  MT			; #valid value is: {MT,MTT,MTT1,MTT2}
+                            ; #------ Top metal option -----------------------------------
+                            ; #Default check "MT";
+						   	; #For 0.9825 um thick top metal process, please set to "MT".
+                            ; #For 2.200 um thick top metal process, please set to "MTT".
+                            ; #For 3.410 um thick top metal process, please set to "MTT1".
+                            ; #For 4.110 um thick top metal process, please set to "MTT2".
+
+#---------------------------- End of Switch Setting --------------------------------------#
+#=========================================================================================#
+
+VERBATIM {
+// For 1P6M, M6 (top metal) is drawn on GDS (66:0), Top Via is drawn on GDS (74:0)|
+// For 1P5M, M5 (top metal) is drawn on GDS (65:0), top via is drawn on GDS (73:0)|
+// For 1P4M, M4 (top metal) is drawn on GDS (64:0), top via is drawn on GDS (72:0)|
+// For 1P3M, M3 (top metal) is drawn on GDS (63:0), top via is drawn on GDS (71:0)|
+
+//  You need refer to the result reports after running this file.
+//  1) *.rep will provide GATE area information
+//=================================================================================
+//|                                                                               |
+//|  0.18um Calibre Antenna rule file for                                         |
+//|                                                                               |
+//|       SMIC:           0.18um Logic & Mix-signal 1.8V/3.3V Design Rule         |
+//|       Doc. No.:    TD-LO18-DR-2001       Rev.: 12    Tech.Dev Rev: 1.19_REV1  |
+//|                                                                               |
+//|  Validated with Calibre version      2016.3_19.12                             |
+//|                                                                               |
+//|  SMIC Technology R&D                                                          |
+//|                                                                               |
+//|===============================================================================|
+//|                                                                               |
+//|    DISCLAIMER                                                                 |
+//|                                                                               |
+//|   SMIC hereby provides the quality information to you but makes no claims,    |
+//| promises or guarantees about the accuracy, completeness, or adequacy of the   |
+//| information herein. The information contained herein is provided on an "AS IS"|
+//| basis without any warranty, and SMIC assumes no obligation to provide support |
+//| of any kind or otherwise maintain the information.                            |
+//|                                                                               |
+//|   SMIC disclaims any representation that the information does not infringe any|
+//| intellectual property rights or proprietary rights of any third parties.SMIC  |
+//| makes no other warranty, whether express, implied or statutory as to any      |
+//| matter whatsoever, including but not limited to the accuracy or sufficiency of|
+//| any information or the merchantability and fitness for a particular purpose.  |
+//| Neither SMIC nor any of its representatives shall be liable for any cause of  |
+//| action incurred to connect to this service.                                   |
+//|                                                                               |
+//|===============================================================================|
+//|                                                                               |
+//|    STATEMENT OF USE AND CONFIDENTIALITY                                       |
+//|                                                                               |
+//|   The following/attached material contains confidential and proprietary       |
+//| information of SMIC. This material is based upon information which SMIC       |
+//| considers reliable, but SMIC neither represents nor warrants that such        |
+//| information is accurate or complete, and it must not be relied upon as such.  |
+//| This information was prepared for informational purposes and is for the use by|
+//| SMIC's customer only. SMIC reserves the right to make changes in the          |
+//| information at any time without notice.                                       |
+//|   No part of this information may be reproduced, transmitted, transcribed,    |
+//| stored in a retrieval system, or translated into any human or computer        |
+//| language, in any form or by any means, electronic, mechanical, magnetic,      |
+//| optical, chemical, manual, or otherwise, without the prior written consent of |
+//| SMIC. Any unauthorized use or disclosure of this material is strictly         |
+//| prohibited and may be unlawful. By accepting this material, the receiving     |
+//| party shall be deemed to have acknowledged, accepted, and agreed to be bound  |
+//| by the foregoing limitations and restrictions. Thank you.                     |
+//|                                                                               |
+//|===============================================================================|
+//|                                                                               |
+//| Revision History :                                                            |
+//|  Rev        Date           Who                      What                      |
+//| -----    ------------- -------------- ----------------------------------------|
+//| V1.19_REV1_0  16-Aug-2018    Huan_Yang        Only update the version No.     |
+//| -----    ------------- -------------- ----------------------------------------|
+//| V1.19_0	 21-Mar-2018	Angela Yu	   1.Only version up.
+//|	V1.18_1  25-Sep-2015   Dorian_Zheng    Update version No only.		  |
+//| V1.18_0_3  27-Jul-2015   Dorian_Zheng  Update referred Design RUle version No.|
+//| V1.17_2P  10-Oct-2014    Dorian Zheng  1.Modify definition of AA and GT       |
+//|                                        2.Update switches and convert svrf to tvf syntax format | 
+//|                                        3.Modify the title of the referred design rule to match the related effective design rule in ECN  |                 
+//|                                                                               |
+//| -----    ------------- -------------- ----------------------------------------|
+//| V2.1_1P   5-Jun-2014      Leon Tang                initial                    |
+//| ----- ------------- -------------- -------------------------------------------|
+//|===============================================================================|
+
+
+//*************************************
+//     DIRECTIVE SECTION
+//*************************************
+
+LAYOUT PRIMARY "*"
+LAYOUT PATH "*.gds"
+LAYOUT SYSTEM GDSII 
+
+DRC RESULTS DATABASE "ant_CAL.OUT" ASCII 
+DRC SUMMARY REPORT "ant_CAL.SUM" 
+
+DRC MAXIMUM RESULTS 1000
+DRC MAXIMUM VERTEX 199
+
+
+//************************************
+//    INPUT LAYER STATEMENTS
+//************************************
+
+LAYER	MAP	10   DATATYPE 0  510
+LAYER   MAP     12   DATATYPE 0  410
+LAYER   MAP     13   DATATYPE 0  310
+LAYER	AAi 	                 510 410 310 
+
+LAYER	MAP	30   DATATYPE 0  530  
+LAYER 	GTi	                 530 
+
+LAYER	MAP	50   DATATYPE 0  500
+LAYER   CT 	                 500 
+ 	
+LAYER	MAP	61   DATATYPE 0  610
+LAYER   M1i 	                 610 
+ 	
+LAYER	MAP	62   DATATYPE 0  620
+LAYER   M2i 	                 620 
+ 	
+LAYER	MAP	63   DATATYPE 0  630
+LAYER   M3i	                 630 
+ 	
+LAYER	MAP	64   DATATYPE 0  640
+LAYER   M4i	                 640 
+ 
+LAYER	MAP	65   DATATYPE 0  650
+LAYER   M5i                      650 
+     
+LAYER	MAP	66   DATATYPE 0  660
+LAYER	M6i	                 660	
+
+LAYER	MAP	70   DATATYPE 0  700	
+LAYER   V1  	                 700 
+ 	
+LAYER	MAP	71   DATATYPE 0  710
+LAYER   V2 	                 710  
+	
+LAYER	MAP	72   DATATYPE 0  720
+LAYER   V3 	                 720  
+	
+LAYER	MAP	73   DATATYPE 0  730
+LAYER   V4                       730  
+    
+LAYER	MAP	74   DATATYPE 0  740
+LAYER	V5	                 740
+
+LAYER	MAP	58   DATATYPE 0  580
+LAYER   MIM                      580  
+    
+LAYER	MAP	80   DATATYPE 0  800
+LAYER   PA 	                 800 
+ 	
+LAYER   MAP     40   DATATYPE 0  400 
+LAYER   SN                       400 
+
+LAYER   MAP     43   DATATYPE 0  430 
+LAYER   SP                       430
+
+LAYER   MAP     61   DATATYPE 2  5351
+LAYER   M1SLOT                   5351 
+                   
+LAYER   MAP     62   DATATYPE 2  5361
+LAYER   M2SLOT                   5361 
+                 
+LAYER   MAP     63   DATATYPE 2  5371
+LAYER   M3SLOT                   5371  
+         
+LAYER   MAP     64   DATATYPE 2  5381
+LAYER   M4SLOT                   5381   
+                 
+LAYER   MAP     65   DATATYPE 2  5391
+LAYER   M5SLOT                   5391  
+               
+LAYER   MAP     66   DATATYPE 2  5401
+LAYER   M6SLOT                   5401 
+
+AA = COPY AAi
+GT = COPY GTi
+}
+
+
+
+for { set j 1 } { 0 <= [expr $metal_counts -$j] } { incr j } {
+SETLAYER M${j} = M${j}i NOT M${j}SLOT
+}
+
+set metal_list " "
+set via_list " "
+for { set j 1 } { 0 <= [expr $metal_counts -$j] } { incr j } {
+  lappend metal_list M$j
+}
+
+for { set j 1 } { 1 <= [expr $metal_counts -$j] } { incr j } {
+  lappend via_list V$j
+}
+
+SETLAYER MT = COPY [lindex $metal_list end]
+SETLAYER VT_NOT_MIM = [lindex $via_list end] NOT MIM
+SETLAYER VT_AND_MIM = [lindex $via_list end] AND MIM
+
+SETLAYER MIM_AREA = MIM AND [lindex $metal_list end-1]
+SETLAYER MT_MIM = MT INTERACT VT_AND_MIM
+SETLAYER MT_NOT_MIM = MT INTERACT VT_NOT_MIM
+
+
+if { [string equal $top_metal MT] == 1 } {
+set TM_thickness 0.9825
+} elseif { [string equal $top_metal MTT] == 1 } {
+set TM_thickness 2.2
+} elseif { [string equal $top_metal MTT1] == 1 } {
+set TM_thickness 3.41
+} elseif { [string equal $top_metal MTT2] == 1 } {
+set TM_thickness 4.11
+}
+
+VERBATIM {
+GATE = (GT AND AA) INTERACT SD_1 == 2
+SD_1 = AA NOT GT
+SD = ((SN OR SP) AND AA) NOT GT
+
+DRC INCREMENTAL CONNECT YES 
+
+
+//*******************************************
+//    LAYER DERIVATIONS AND OPERATIONS
+//*******************************************
+
+//=================
+//    GT Layer 
+//=================
+
+CONNECT GT GATE
+
+ANT_GT_1 { 
+@ Max. (Poly perim*thickness / gate area) is 200.
+
+  NET AREA RATIO GT GATE > 200
+      [ PERIMETER(GT) * 0.2 / AREA(GATE) ] 
+  RDB ANT_GT1.rep GT GATE
+}                                        
+
+//=================
+//    CT Layer
+//=================
+
+CONNECT CT GT
+
+ANT_CT_1 { 
+@ Max. (contact area / gate area) is 10.
+
+  NET AREA RATIO CT GATE > 10
+      [ AREA(CT) / AREA(GATE) ] 
+  RDB ANT_GT4.rep CT GATE
+}                                 
+
+
+//=================
+//    M1 Layer 
+//=================
+
+CONNECT M1 GT SD BY CT
+CONNECT V1 M1
+M1_DIO = NET AREA SD  >0.203 // minimum effective diode 0.203um2
+
+ANT_M1_1_2 { 
+@ Max. (M1 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M1 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+  
+  NET AREA RATIO GT M1 V1 M1_DIO  GATE > 400 
+      [ PERIMETER(M1) * 0.55/AREA(GATE) -(AREA(M1_DIO)*400 + !!AREA(M1_DIO)*1800) ]   
+  RDB ANT_GT2_3_M1.rep GT M1 M1_DIO GATE
+}  
+
+
+//=================
+//   V1 Layer
+//=================
+
+ANT_V1_1_2 {
+@ (V1 area / gate area) > 20 (without effective diode).
+@ (V1 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+  NET AREA RATIO GT M1 V1 M1_DIO  GATE > 20
+    [ AREA(V1)/AREA(GATE) -(AREA(M1_DIO)*83.33+ !!AREA(M1_DIO)*55)  ] 
+  RDB ANT_GT5_6_V1.rep GT M1 V1 M1_DIO  GATE 
+}
+}
+
+
+
+if { 6 == $metal_counts } {
+
+#//=================
+#//    M2 Layer 
+#//=================
+
+CONNECT M2 M1 BY V1
+CONNECT V2 M2
+SETLAYER M2_DIO = NET AREA SD  >0.203 
+#// minimum effective diode 0.203um2
+
+RULECHECK ANT_M2_1_2 { 
+@ Max. (M2 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M2 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+  
+OUTLAYER NET AREA RATIO GT M1 M2 V2 M2_DIO  GATE > 400\
+      \[ PERIMETER(M2) * 0.55/AREA(GATE) -(AREA(M2_DIO)*400 + !!AREA(M2_DIO)*1800) \] \
+      RDB ANT_GT2_3_M2.rep GT M1 M2 M2_DIO  GATE
+} 
+
+#//=================
+#//   V2 Layer
+#//=================
+
+RULECHECK ANT_V2_1_2 {
+@ (V2 area / gate area) > 20 (without effective diode).
+@ (V2 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 V2 M2_DIO GATE > 20\
+      \[ AREA(V2)/AREA(GATE) - (AREA(M2_DIO)*83.33+ !!AREA(M2_DIO)*55) \] \
+      RDB ANT_GT5_6_V2.rep GT M1 M2 V2 M2_DIO  GATE 
+}
+
+
+
+#//=================
+#//    M3 Layer 
+#//=================
+
+CONNECT M3 M2 BY V2
+CONNECT V3 M3
+
+SETLAYER M3_DIO = NET AREA SD  >0.203 
+#// minimum effective diode 0.203um2
+
+RULECHECK ANT_M3_1_2 { 
+@ Max. (M3 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M3 perimeter area / gate area) is Ratio Equation (with effective diode).  (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 V3 M3_DIO  GATE > 400\
+      \[ PERIMETER(M3) * 0.55/AREA(GATE) -(AREA(M3_DIO)*400 + !!AREA(M3_DIO)*1800) \] \
+      RDB ANT_GT2_3_M3.rep GT M1 M2 M3 M3_DIO  GATE
+}  
+
+
+#//=================
+#//   V3 Layer
+#//=================
+
+RULECHECK ANT_V3_1_2 {
+@ (V3 area / gate area) > 20 (without effective diode).
+@ (V3 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 V3 M3_DIO  GATE > 20\
+      \[ AREA(V3)/AREA(GATE) - (AREA(M3_DIO)*83.33+ !!AREA(M3_DIO)*55) \]\
+  RDB ANT_GT5_6_V3.rep GT M1 M2 M3 V3 M3_DIO  GATE   
+}
+
+
+#//=================
+#//    M4 Layer 
+#//=================
+
+CONNECT M4 M3 BY V3
+CONNECT V4 M4
+
+SETLAYER M4_DIO = NET AREA SD  >0.203 
+#// minimum effective diode 0.203um2
+
+RULECHECK ANT_M4_1_2 { 
+@ Max. (M4 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M4 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 V4 M4_DIO  GATE > 400 \
+      \[ PERIMETER(M4) * 0.55/AREA(GATE) -(AREA(M4_DIO)*400 + !!AREA(M4_DIO)*1800) \] \
+      RDB ANT_GT2_3_M4.rep GT M1 M2 M3 M4 M4_DIO GATE
+}  
+
+
+#//=================
+#//   V4 Layer
+#//=================
+
+RULECHECK ANT_V4_1_2 {
+@ (V4 area / gate area) > 20 (without effective diode).
+@ (V4 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 V4 M4_DIO  GATE > 20\
+      \[ AREA(V4)/AREA(GATE) - (AREA(M4_DIO)*83.33+ !!AREA(M4_DIO)*55) \] \
+      RDB ANT_GT5_6_V4.rep GT M1 M2 M3 M4 V4 M4_DIO  GATE  
+}
+
+
+
+
+#//=================
+#//    M5 Layer 
+#//=================
+
+CONNECT M5 M4 BY V4
+CONNECT VT_NOT_MIM M5
+SETLAYER M5_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M5_1_2 { 
+@ Max. (M5 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M5 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 M5 VT_NOT_MIM M5_DIO GATE > 400\
+      \[ PERIMETER(M5) * 0.55/AREA(GATE) -(AREA(M5_DIO)*400 + !!AREA(M5_DIO)*1800) \] \
+      RDB ANT_GT2_3_M5.rep GT M1 M2 M3 M4 M5 M5_DIO GATE 
+}  
+
+
+
+#//=================
+#//   VT Layer
+#//=================
+
+RULECHECK ANT_VT_1_2 {
+@ (VT area / gate area) > 20 (without effective diode).
+@ (VT area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 M5 VT_NOT_MIM M5_DIO   GATE > 20\
+      \[ AREA(VT_NOT_MIM)/AREA(GATE) -(AREA(M5_DIO)*83.33+ !!AREA(M5_DIO)*55)\] \
+     RDB ANT_GT5_6_VT.rep GT M1 M2 M3 M4 M5 VT_NOT_MIM M5_DIO  GATE 
+}
+
+
+#//=================
+#//    MIM Layer 
+#//=================
+
+CONNECT VT_AND_MIM MIM
+CONNECT MIM MIM_AREA
+CONNECT M5 MIM_AREA
+
+RULECHECK ANT_MIM_2 {
+@ Max. (TV area / MIM area) is 20.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM M5 VT_NOT_MIM M1 V1 M2 V2 M3 V3 M4 V4 > 20 \
+      \[ (AREA(VT_AND_MIM) + AREA(VT_NOT_MIM)) / AREA(MIM_AREA)\] \
+      RDB ANT_MIM2.rep VT_AND_MIM VT_NOT_MIM MIM_AREA
+}
+
+CONNECT MT_MIM MIM BY VT_AND_MIM
+CONNECT MT_NOT_MIM M5 BY VT_NOT_MIM
+
+RULECHECK ANT_MIM_1 { 
+@ Max. (TM perim*thickness / MIM area) is 400.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM MT_MIM MT_NOT_MIM M5 VT_NOT_MIM M1 V1 M2 V2 M3 V3 M4 V4 > 400\
+      \[ (PERIMETER(MT_MIM) + PERIMETER(MT_NOT_MIM))* ${TM_thickness} / AREA(MIM_AREA) \]\
+  RDB ANT_MIM1.rep MT_MIM MT_NOT_MIM MIM_AREA
+}
+
+#//==========================
+#//	NEW CONNECTIVITY
+#//==========================
+DISCONNECT
+CONNECT GT GATE
+CONNECT CT GT
+CONNECT M1 GT SD BY CT
+CONNECT M1 M2 BY V1
+CONNECT M2 M3 BY V2
+CONNECT M3 M4 BY V3
+CONNECT M4 M5 BY V4
+CONNECT M5 MT BY VT_NOT_MIM
+
+#//=================
+#//    MT Layer
+#//=================
+SETLAYER MT_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_MT_3 {
+@ Max. (MT perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (MT perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*8000 + 30000
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 M5 MT MT_DIO  GATE > 400 \
+      \[ PERIMETER(MT) * ${TM_thickness} /AREA(GATE) -(AREA(MT_DIO)*8000 + !!AREA(MT_DIO)*29600) \] \
+     RDB ANT_GT2_3_MT.rep GT M1 M2 M3 M4 M5 MT MT_DIO GATE
+}
+}
+
+
+
+if { 5 == $metal_counts } {
+#//=================
+#//    M2 Layer 
+#//=================
+
+CONNECT M2 M1 BY V1
+CONNECT V2 M2
+SETLAYER M2_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M2_1_2 {
+@ Max. (M2 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M2 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+  
+OUTLAYER NET AREA RATIO GT M1 M2 V2 M2_DIO  GATE > 400 \
+    \[ PERIMETER(M2) * 0.55/AREA(GATE) -(AREA(M2_DIO)*400 + !!AREA(M2_DIO)*1800) \] \
+    RDB ANT_GT2_3_M2.rep GT M1 M2 M2_DIO GATE
+} 
+
+#//=================
+#//   V2 Layer
+#//=================
+
+RULECHECK ANT_V2_1_2 {
+@ (V2 area / gate area) > 20 (without effective diode).
+@ (V2 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 V2 M2_DIO GATE > 20 \
+      \[ AREA(V2)/AREA(GATE) - (AREA(M2_DIO)*83.33+ !!AREA(M2_DIO)*55) \]\
+  RDB ANT_GT5_6_V2.rep GT M1 M2 V2 M2_DIO  GATE  
+}
+
+#//=================
+#//    M3 Layer 
+#//=================
+
+CONNECT M3 M2 BY V2
+CONNECT V3 M3
+SETLAYER M3_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M3_1_2 { 
+@ Max. (M3 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M3 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 V3 M3_DIO  GATE > 400 \
+      \[ PERIMETER(M3) * 0.55/AREA(GATE) -(AREA(M3_DIO)*400 + !!AREA(M3_DIO)*1800) \] \
+     RDB ANT_GT2_3_M3.rep GT M1 M2 M3 M3_DIO  GATE  
+}  
+
+#//=================
+#//   V3 Layer
+#//=================
+
+RULECHECK ANT_V3_1_2 {
+@ (V3 area / gate area) > 20 (without effective diode).
+@ (V3 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 V3 M3_DIO  GATE > 20 \
+      \[ AREA(V3)/AREA(GATE) - (AREA(M3_DIO)*83.33+ !!AREA(M3_DIO)*55)\] \
+  RDB ANT_GT5_6_V3.rep GT M1 M2 M3 V3 M3_DIO  GATE  
+}
+
+#//=================
+#//    M4 Layer 
+#//=================
+
+CONNECT M4 M3 BY V3
+CONNECT VT_NOT_MIM M4
+SETLAYER M4_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M4_1_2 { 
+@ Max. (M4 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M4 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4 VT_NOT_MIM M4_DIO  GATE > 400  \
+      \[ PERIMETER(M4) * 0.55/AREA(GATE) -(AREA(M4_DIO)*400 + !!AREA(M4_DIO)*1800) \] \
+  RDB ANT_GT2_3_M4.rep GT M1 M2 M3 M4 M4_DIO GATE        
+}  
+
+#//=================
+#//   VT Layer
+#//=================
+
+RULECHECK ANT_VT_1_2 {
+@ (VT area / gate area) > 20 (without effective diode).
+@ (VT area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4  VT_NOT_MIM M4_DIO   GATE > 20 \
+      \[ AREA(VT_NOT_MIM)/AREA(GATE) -(AREA(M4_DIO)*83.33+ !!AREA(M4_DIO)*55)\]\
+  RDB ANT_GT5_6_VT.rep GT M1 M2 M3 M4  VT_NOT_MIM M4_DIO  GATE 
+}
+
+#//=================
+#//    MIM Layer 
+#//=================
+
+CONNECT VT_AND_MIM MIM
+CONNECT MIM MIM_AREA
+CONNECT M4 MIM_AREA
+
+RULECHECK ANT_MIM_2 { 
+@ Max. (TV area / MIM area) is 20.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM M4 VT_NOT_MIM M1 V1 M2 V2 M3 V3  > 20 \
+      \[ (AREA(VT_AND_MIM) + AREA(VT_NOT_MIM)) / AREA(MIM_AREA) \]\
+  RDB ANT_MIM2.rep VT_AND_MIM VT_NOT_MIM MIM_AREA
+}
+
+CONNECT MT_MIM MIM BY VT_AND_MIM
+CONNECT MT_NOT_MIM M4 BY VT_NOT_MIM
+
+RULECHECK ANT_MIM_1 { 
+@ Max. (TM perim*thickness / MIM area) is 400.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM MT_MIM MT_NOT_MIM M4 VT_NOT_MIM M1 V1 M2 V2 M3 V3  > 400 \
+      \[ (PERIMETER(MT_MIM) + PERIMETER(MT_NOT_MIM))* ${TM_thickness} / AREA(MIM_AREA) \]\
+  RDB ANT_MIM1.rep MT_MIM MT_NOT_MIM MIM_AREA
+} 
+
+#//==========================
+#//	NEW CONNECTIVITY
+#//==========================
+
+DISCONNECT
+CONNECT GT GATE
+CONNECT CT GT
+CONNECT M1 GT SD BY CT
+CONNECT M1 M2 BY V1
+CONNECT M2 M3 BY V2
+CONNECT M3 M4 BY V3
+CONNECT M4 MT BY VT_NOT_MIM
+
+#//=================
+#//    MT Layer
+#//=================
+
+SETLAYER MT_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_MT_3 {
+@ Max. (MT perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (MT perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*8000 + 30000
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 M4  MT MT_DIO  GATE > 400 \
+      \[ PERIMETER(MT) * ${TM_thickness} /AREA(GATE) -(AREA(MT_DIO)*8000 + !!AREA(MT_DIO)*29600) \]\
+  RDB ANT_GT2_3_MT.rep GT M1 M2 M3 M4  MT MT_DIO GATE
+}
+}
+
+
+
+if { 4 == $metal_counts } {
+#//=================
+#//    M2 Layer 
+#//=================
+
+CONNECT M2 M1 BY V1
+CONNECT V2 M2
+SETLAYER M2_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M2_1_2 {
+@ Max. (M3 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M3 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200 
+  
+OUTLAYER NET AREA RATIO GT M1 M2 V2 M2_DIO  GATE > 400 \
+      \[ PERIMETER(M2) * 0.55/AREA(GATE) -(AREA(M2_DIO)*400 + !!AREA(M2_DIO)*1800) \] \
+     RDB ANT_GT2_3_M2.rep GT M1 M2 M2_DIO GATE
+} 
+
+#//=================
+#//   V2 Layer
+#//=================
+
+RULECHECK ANT_V2_1_2 {
+@ (V2 area / gate area) > 20 (without effective diode).
+@ (V2 area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 V2 M2_DIO GATE > 20 \
+      \[ AREA(V2)/AREA(GATE) - (AREA(M2_DIO)*83.33+ !!AREA(M2_DIO)*55) \]\
+  RDB ANT_GT5_6_V2.rep GT M1 M2 V2 M2_DIO  GATE  
+}
+
+#//=================
+#//    M3 Layer 
+#//=================
+
+CONNECT M3 M2 BY V2
+CONNECT VT_NOT_MIM M3
+SETLAYER M3_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M3_1_2 { 
+@ Max. (M3 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M3 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3 VT_NOT_MIM M3_DIO  GATE > 400 \
+      \[ PERIMETER(M3) * 0.55/AREA(GATE) -(AREA(M3_DIO)*400 + !!AREA(M3_DIO)*1800) \] \
+     RDB ANT_GT2_3_M3.rep GT M1 M2 M3 M3_DIO  GATE  
+}  
+
+#//=================
+#//   VT Layer
+#//=================
+
+RULECHECK ANT_VT_1_2 {
+@ (VT area / gate area) > 20 (without effective diode).
+@ (VT area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2 M3   VT_NOT_MIM M3_DIO   GATE > 20 \
+      \[ AREA(VT_NOT_MIM)/AREA(GATE) -(AREA(M3_DIO)*83.33+ !!AREA(M3_DIO)*55) \]\
+  RDB ANT_GT5_6_VT.rep GT M1 M2 M3  VT_NOT_MIM M3_DIO  GATE 
+}
+
+#//=================
+#//    MIM Layer 
+#//=================
+
+CONNECT VT_AND_MIM MIM
+CONNECT MIM MIM_AREA
+CONNECT M3 MIM_AREA
+
+RULECHECK ANT_MIM_2 { 
+@ Max. (TV area / MIM area) is 20.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM M3 VT_NOT_MIM M1 V1 M2 V2  > 20 \
+      \[ (AREA(VT_AND_MIM) + AREA(VT_NOT_MIM)) / AREA(MIM_AREA) \]\
+  RDB ANT_MIM2.rep VT_AND_MIM VT_NOT_MIM MIM_AREA
+}
+
+CONNECT MT_MIM MIM BY VT_AND_MIM
+CONNECT MT_NOT_MIM M3 BY VT_NOT_MIM
+
+RULECHECK ANT_MIM_1 { 
+@ Max. (TM perim*thickness / MIM area) is 400.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM MT_MIM MT_NOT_MIM M3 VT_NOT_MIM M1 V1 M2 V2  > 400\
+      \[ (PERIMETER(MT_MIM) + PERIMETER(MT_NOT_MIM))* ${TM_thickness} / AREA(MIM_AREA) \]\
+  RDB ANT_MIM1.rep MT_MIM MT_NOT_MIM MIM_AREA
+} 
+
+#//============================
+#//	NEW CONNECTIVITY
+#//============================
+
+DISCONNECT
+CONNECT GT GATE
+CONNECT CT GT
+CONNECT M1 GT SD BY CT
+CONNECT M1 M2 BY V1
+CONNECT M2 M3 BY V2
+CONNECT M3 MT BY VT_NOT_MIM
+
+#//=================
+#//    MT Layer
+#//=================
+
+SETLAYER MT_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_MT_3 {
+@ Max. (MT perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (MT perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*8000 + 30000
+
+OUTLAYER NET AREA RATIO GT M1 M2 M3   MT MT_DIO  GATE > 400 \
+      \[ PERIMETER(MT) * ${TM_thickness} /AREA(GATE) -(AREA(MT_DIO)*8000 + !!AREA(MT_DIO)*29600) \]\
+  RDB ANT_GT2_3_MT.rep GT M1 M2 M3   MT MT_DIO GATE
+}
+}
+
+
+
+
+if { 3 == $metal_counts } {
+#//=================
+#//    M2 Layer 
+#//=================
+
+CONNECT M2 M1 BY V1
+CONNECT VT_NOT_MIM M2
+SETLAYER M2_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_M2_1_2 { 
+@ Max. (M2 perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (M2 perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*400 + 2200
+  
+OUTLAYER NET AREA RATIO GT M1 M2 VT_NOT_MIM M2_DIO  GATE > 400 \
+      \[ PERIMETER(M2) * 0.55/AREA(GATE) -(AREA(M2_DIO)*400 + !!AREA(M2_DIO)*1800) \] \
+     RDB ANT_GT2_3_M2.rep GT M1 M2 M2_DIO GATE
+} 
+
+#//=================
+#//   VT Layer
+#//=================
+
+RULECHECK ANT_VT_1_2 {
+@ (VT area / gate area) > 20 (without effective diode).
+@ (VT area / gate area) > Ratio Equation (with effective diode). (diode area)*83.33 + 75
+
+OUTLAYER  NET AREA RATIO GT M1 M2    VT_NOT_MIM M2_DIO   GATE > 20 \
+      \[ AREA(VT_NOT_MIM)/AREA(GATE) -(AREA(M2_DIO)*83.33+ !!AREA(M2_DIO)*55) \]\
+  RDB ANT_GT5_6_VT.rep GT M1 M2   VT_NOT_MIM M2_DIO  GATE 
+}
+
+#//=================
+#//    MIM Layer 
+#//=================
+
+CONNECT VT_AND_MIM MIM
+CONNECT MIM MIM_AREA
+CONNECT M2 MIM_AREA
+
+RULECHECK ANT_MIM_2 { 
+@ Max. (TV area / MIM area) is 20.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM M2 VT_NOT_MIM M1 V1  > 20\
+      \[ (AREA(VT_AND_MIM) + AREA(VT_NOT_MIM)) / AREA(MIM_AREA) \]\
+  RDB ANT_MIM2.rep VT_AND_MIM VT_NOT_MIM MIM_AREA
+}
+
+CONNECT MT_MIM MIM BY VT_AND_MIM
+CONNECT MT_NOT_MIM M2 BY VT_NOT_MIM
+
+RULECHECK ANT_MIM_1 { 
+@ Max. (TM perim*thickness / MIM area) is 400.
+
+OUTLAYER  NET AREA RATIO MIM_AREA MIM VT_AND_MIM MT_MIM MT_NOT_MIM M2 VT_NOT_MIM M1 V1  > 400 \
+      \[ (PERIMETER(MT_MIM) + PERIMETER(MT_NOT_MIM))* ${TM_thickness} / AREA(MIM_AREA) \] \
+      RDB ANT_MIM1.rep MT_MIM MT_NOT_MIM MIM_AREA
+} 
+
+#//===========================
+#//	NEW CONNECTIVITY
+#//===========================
+
+DISCONNECT
+CONNECT GT GATE
+CONNECT CT GT
+CONNECT M1 GT SD BY CT
+CONNECT M1 M2 BY V1
+CONNECT M2 MT BY VT_NOT_MIM
+
+#//=================
+#//    MT Layer
+#//=================
+
+SETLAYER MT_DIO = NET AREA SD > 0.203
+
+RULECHECK ANT_MT_3 {
+@ Max. (MT perimeter area / gate area) is 400 (without effective diode) for active poly gate.
+@ Max. (MT perimeter area / gate area) is Ratio Equation (with effective diode). (diode area)*8000 + 30000.
+
+OUTLAYER  NET AREA RATIO GT M1 M2    MT MT_DIO  GATE > 400 \
+      \[ PERIMETER(MT) * ${TM_thickness} /AREA(GATE) -(AREA(MT_DIO)*8000 + !!AREA(MT_DIO)*29600) \]\
+  RDB ANT_GT2_3_MT.rep GT M1 M2    MT MT_DIO GATE
+}
+}

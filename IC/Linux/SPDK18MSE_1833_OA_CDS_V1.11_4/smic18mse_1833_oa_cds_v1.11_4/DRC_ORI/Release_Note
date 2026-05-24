@@ -1,0 +1,153 @@
+*  RELEASE NOTE                                 		  
+
+*  Calibre DRC runset
+*  0.18um Logic & Mix-signal 1.8V/3.3V Design Rule check (DRC) runset of Calibre DRC 
+*  Required license: calibredrc, calibrehdrc. 
+*  Please make sure you have installed the required software before running this DRC.
+*  Users must run all of the runset files in this release for your design which includes main rule (*.drc), antenna (*.ant) and ESD (*.esd) DRC checking.
+*  --- SMIC TD DRC Group ---
+
+Release Date 2018-08-30    
+DRC package:SMIC_CalDRC_018LGMS_1833_V1.19_REV1_0.tar.gz
+***********************************************************************************
+[Huan Yang] Following Files are officially released:
+------------------------------------------------------
+1.SMIC_CalDRC_018LGMS_1833_V1.19_REV1_0.drc
+2.SMIC_CalDRC_018LGMS_1833_V1.19_REV1_0.ant
+3.Release_Note
+4.UserGuide
+------------------------------------------------------
+What's updated:
+For DRC:
+1.Update DGR_3,AA_1_2,AA_8,DG_1,GT_1,GT_3,GT_4,GT_5,GT_9,GT_13,SN_1,SN_2,SN_7_17,SP_1,SP_2,SP_7_17,
+   GSRAA,GSRGT,GSRSN,GSRSP,GSRCT,GSRM1 due to DR update        
+2.New add SR33AA_3,SR33AA_5,SR33AA_6,SR33DG_1,SR33GT_6,SR33SN_16,SR33SN_17,SR33SP_16,SR33SP_17,
+  SR33CT_5,SR33CT_6,SR33CT_7,SR33M1_1                                                                   
+3.Update MT_3 due to DR history issue,update Vn_3,Mn_3,TV_3,MTT_3,MTT1_3,MTT2_3 comment
+
+For ANT:
+Only update the version No.
+
+
+Release Date 2018-04-10    
+DRC package:SMIC_CalDRC_018LGMS_1833_V1.19_0.tar.gz
+***********************************************************************************
+[Angela Yu] Following Files are officially released:
+------------------------------------------------------
+1.SMIC_CalDRC_018LGMS_1833_V1.19_0.drc
+2.SMIC_CalDRC_018LGMS_1833_V1.19_0.ant
+3.Release_Note
+4.UserGuide
+------------------------------------------------------
+What's updated:
+For DRC:
+1.Update calibre tool version from 2013.4_15.12 to 2016.3_19.12;
+2.Update resolution from 5 to 1;
+3.New add DNW_12_R/DG_8/NR_10_R/GT_16_R/SAB_2a/SAB_10a/CT_14/M1_4a_R/M1_4b_R/
+  V${j}_6/TV_6/M${j}_4a_R/M${j}_4b_R/V${j}_7_R/ESD_25a_G/DGR_3/LU_7_G/SRCK_4;
+4.New add GSRAA/GSRGT/GSRCT/GSRSN/GSRSP/GSRM1/GESD1_A/GESD1_B/GAADUMCK/
+  GGTDUMCK/GM${j}DUMCK/GMTDUMCK/GMTTDUMCK/GMTT1DUMCK/GMTT2DUMCK;
+5.Update NW_2c/NN_11/AA_1/AA_2/AA_3/AA_4/AA_5/AA_5/AA_6/AA_8/AA_11/GT_1/GT_3/GT_4/
+  GT_5/GT_6/GT_7/GT_11a/GT_11b/GT_13/SN_3/SN_4/SN_5/SN_10_11/SN_15/SN_16/SN_7_17/
+  SP_3/SP_4/SP_5/SP_10_11/SP_15/SP_16/SP_7_17/CT_1/CT_2/CT_4/CT_5/CT_6_7/CT_12/CT_13/
+  M1_1/M1_2/M1_3/M1_4/M1_6/M${j}_6/Mn_10/Mn_11/MT_5/MTT_6/MTT1_3_4/MTT2_3_4/Convention_2/
+  FUSE_11_G/FUSE_12_G/LU_1_G/LU_2_G/LU_3_3a_G/LU_3_3b_G/LU_3_3c_G/LU_4_NTAP_G/LU_4_PTAP_G/NR_7/NR_9_R/V1_1/V${j}_1/TV_1 for DR update;
+6.Delete Mn_10a_R/Mn_11a_R/skew_edge_check/DNW_12;
+7.Update BD_1/CT_3 for DRC optimizing. 
+For ANT:
+1.Only version up.
+
+Release Date 2015-09-25    
+DRC package:SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_1.tar.gz
+***********************************************************************************
+[Dorian Zheng] Following Files are officially released:
+------------------------------------------------------
+1.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_1.drc
+2.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_1.esd
+3.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_1.ant
+------------------------------------------------------
+What's updated:
+1.Update NW_3 to reduce unattached warnings and false alarm based on special note.
+2.Modify DNW_6,MIM_14,BD_1.
+3.Update NN_10,NN_11,NW_3,MTT_8/MTT1_8/MTT2_8 based on special note.
+
+
+Release Date 2015-07-27    
+DRC package:SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_0_3.tar.gz
+***********************************************************************************
+[Dorian Zheng] Following Files are officially released:
+------------------------------------------------------
+1.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_0_3.drc
+2.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_0_3.esd
+3.SmicDR10_cal018_log_sali_p1mtx_1833_V1.18_0_3.ant
+------------------------------------------------------
+What's updated:
+1.Update based on Design Rule revise(10).
+2.Update stack metal rules (Mn_10/11),NN_5a based on DR update.
+3.Add DNW_12,SLOT_8_G (only check drawn metal slots).
+4.Update NR_1,NW_3 and metal density log file name.
+5.Update file name for antenna and ESD DRC decks.
+
+
+Release Date 2014-07-03    
+DRC package:SmicDR9P_cal018_log_sali_p1mtx_1833_V2.1_1P.tar.gz
+***********************************************************************************
+[Dorian Zheng] Following Files are officially released:
+------------------------------------------------------
+1.SmicDR9P_cal018_log_sali_p1mtx_1833_V2.1_1P.drc
+2.SmicDR9P_cal018_log_sali_p1mtx_1833_V2.1_1P.esd
+3.SmicDR9P_cal018_log_sali_p1mt6_1833_V2.1_1P.ant
+4.SmicDR9P_cal018_log_sali_p1mt5_1833_V2.1_1P.ant
+5.SmicDR9P_cal018_log_sali_p1mt4_1833_V2.1_1P.ant
+6.SmicDR9P_cal018_log_sali_p1mt3_1833_V2.1_1P.ant
+------------------------------------------------------
+What's updated:
+1.Update based on Design Rule revise(9P).
+2.Update layer definition of Mn(n=1~6) for main rule check,CAP_MIM.
+3.Modify CT_1,CT_12,GT_8,GT_11b,MTT_2b,Mn_5(n=1~5),Mn_10(n=2~5),Mn_11(n=2~5).
+4.Modify FUSE_1_G,FUSE_3_G.FUSE_4_G,USE_7_G,FUSE_13_G,FUSE_19_G.
+5.Modify V1_1,V2_1,V3_1,V4_1,V5_1,PR_1_R,PR_6_R,PR_7_R.
+6.Modify AA_14,NW_4,NW_5,NN_4,NN_5,NN_11.
+7.Modify DNW_1,DNW_3,DNW_4,DNW_5,DNW_6.
+8.Modify NLL_3,NLL_7,PLL_3,PLL_7,NLH_3,PLL_7,PLH_3,PLH_7. 
+9.Modify SN_3,SN_8,SN_9,SP_3,SN_8,SN_9,SN_16.  
+10.Modify MVN_3,MVP_3,MVN_5,MVN_5a,MVP_5.               
+11.Modify HRP_10,MIM_1,MIM_4,MIM_6,MIM_11,MIM_12,MIM_13,MIM_14,MIM_17,MIM_18.
+12.Add DUP/EFU/LOGO/SRCK/MT/MTT1/MTT2/RESAA group rules. 
+13.Add DG_7_R,BD_2a,BD_2b,BD_4,NR_9,PR_1a_R,CT_13. 
+14.Add NW_2c_R,Mn_5a_R(n=1~5),MT_4a_R for 0.153 shrink,Mn_1a_R(n=1~5),MIM_15a_R.
+15.Remove M1_12,M6_12,MTT_12,MIM_5,MIM_7,MIM_9,MIM_10,DNW_9.
+16.Merge data type 0 and type 1 for AA,GT,Mn(n=1~6) main rule checking.
+17.Update the electrical nodes' connectivity based on 9P Design Rule. 
+18.Merge NW resistor under STI and AA for main rule check. 
+19.Update definition of bottom metal for MIM group rule check. 
+20.Update Mn_10/Mn_11:
+ (1)only check space between stacked region and the other big metal 
+ (2)exclude space checking of attached small metals 
+ (3)exclude NOTCH space check 
+ (4)exclude space check of 'comb shape' 
+21.Exclude the size check of the (bar/ring shape CT_1/Vn_1) in (pickup ring area within EXCLU region). 
+***********************************************************************************
+
+
+Release Date 2014-10-29
+DRC package: SmicDR9P_cal018_log_sali_p1mtx_1833_V1.17_2P.tar.gz
+***********************************************************************************
+[Leon Tang] Following Files are officially released:
+------------------------------------------------------
+1.SmicDR9P_cal018_log_sali_p1mtx_1833_V1.17_2P.drc
+2.SmicDR9P_cal018_log_sali_p1mtx_1833_V1.17_2P.esd
+3.SmicDR9P_cal018_log_sali_p1mtx_1833_V1.17_2P.ant
+4.Release_Note
+5.UserGuide
+
+------------------------------------------------------
+What's updated:
+1.Update switch setting configuration and convert svrf to tvf syntax format. 
+2.Only check the datatype 0 by default for AA, GT, Mn(1~6). 
+3.Delete layer of VARMOSi and VANJUNi. 
+4.Delete DNW_3.Check Metal slot by default. 
+5.Modify the definition of PSD and NSD for DRC check
+6.Update PA_3, AA_1_2, AA_3, GT_1, GT_3, GT_4, Mn_1/Mn_2(n=1~6),MT_1, MT_2, MTT_1, MTT_2a, MTT1_1, MTT1_2a, MTT2_1, MTT2_2a. 
+7.Modify the title of the referred design rule to match the related effective design rule in ECN.  
+***********************************************************************************

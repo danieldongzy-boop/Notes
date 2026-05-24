@@ -1,0 +1,1160 @@
+#!/usr/bin/perl
+
+################################################################################
+##  Copy Rights Reserved                                   #####################
+##  Semiconductor Manufacturing International Corporation  #####################
+##  Technology R&D PDK group                               #####################
+################################################################################
+##  installLib for Perl 5.8.8        ###########################################
+
+use strict;
+use warnings;
+use Getopt::Long;
+use File::Temp qw(tempfile);
+use File::Basename ;
+#use Data::Dumper;
+
+my $metal_option_choose={};
+my @ic_resistor_list=();
+my @remove_resistor_list=();
+my @remove_mim_list=();
+## Added by tony 20181017
+my $pure33_switch=0;
+my @remove_18_dev_list=qw/ndio18 pdio18 nndio18 ndiomvt18 pdiomvt18 n18 p18 nmvt18 pmvt18 nnt18 n18_ckt p18_ckt nmvt18_ckt pmvt18_ckt nnt18_ckt n18_dnw_ckt p18_dnw_ckt n18_dnw_4t_ckt p18_dnw_4t_ckt n18_3t n18_ckt_3t nmvt18_3t nmvt18_ckt_3t nnt18_3t nnt18_ckt_3t npn18 npn18_W10L10 npn18_W2L2 npn18_W5L5 npn18_mis_ckt npn18_mis_ckt_W10L10 npn18_mis_ckt_W2L2 npn18_mis_ckt_W5L5 p18_3t p18_ckt_3t pmvt18_3t pmvt18_ckt_3t pnp18 pnp18_W10L10 pnp18_W2L2 pnp18_W5L5 pnp18_mis_ckt pnp18_mis_ckt_W10L10 pnp18_mis_ckt_W2L2 pnp18_mis_ckt_W5L5 pvar18_ckt/;
+#Aaron 9/18
+my $library_name_surfix=();
+#Added by susan
+my $qrc_metal_option=();
+my $xrc_metal_option=();
+
+my @other_device_folders = (); # Device folders in the same foler as
+                               # capacitors and resistors.
+                               # Please just fill the folder names
+
+# Metal option and tech file map
+my $tech_file_map = {
+#### 1 Top Metal
+    "1P6M_5Ia_1TMa1_MIM10" => "1P6M_5Ia_1TMa1.tf",
+    "1P5M_4Ia_1TMa1_MIM10" => "1P5M_4Ia_1TMa1.tf",
+    "1P4M_3Ia_1TMa1_MIM10" => "1P4M_3Ia_1TMa1.tf",
+    "1P3M_2Ia_1TMa1_MIM10" => "1P3M_2Ia_1TMa1.tf",
+    "1P6M_5Ia_1TMa1_MIM20" => "1P6M_5Ia_1TMa1.tf",
+    "1P5M_4Ia_1TMa1_MIM20" => "1P5M_4Ia_1TMa1.tf",
+    "1P4M_3Ia_1TMa1_MIM20" => "1P4M_3Ia_1TMa1.tf",
+    "1P3M_2Ia_1TMa1_MIM20" => "1P3M_2Ia_1TMa1.tf",
+    "1P6M_5Ia_1TMa2_MIM10" => "1P6M_5Ia_1TMa2.tf",
+    "1P5M_4Ia_1TMa2_MIM10" => "1P5M_4Ia_1TMa2.tf",
+    "1P4M_3Ia_1TMa2_MIM10" => "1P4M_3Ia_1TMa2.tf",
+    "1P3M_2Ia_1TMa2_MIM10" => "1P3M_2Ia_1TMa2.tf",
+    "1P6M_5Ia_1TMa2_MIM20" => "1P6M_5Ia_1TMa2.tf",
+    "1P5M_4Ia_1TMa2_MIM20" => "1P5M_4Ia_1TMa2.tf",
+    "1P4M_3Ia_1TMa2_MIM20" => "1P4M_3Ia_1TMa2.tf",
+    "1P3M_2Ia_1TMa2_MIM20" => "1P3M_2Ia_1TMa2.tf",  
+    "1P6M_5Ia_1TMa3_MIM10" => "1P6M_5Ia_1TMa3.tf",
+    "1P5M_4Ia_1TMa3_MIM10" => "1P5M_4Ia_1TMa3.tf",
+    "1P4M_3Ia_1TMa3_MIM10" => "1P4M_3Ia_1TMa3.tf",
+    "1P3M_2Ia_1TMa3_MIM10" => "1P3M_2Ia_1TMa3.tf",
+    "1P6M_5Ia_1TMa3_MIM20" => "1P6M_5Ia_1TMa3.tf",
+    "1P5M_4Ia_1TMa3_MIM20" => "1P5M_4Ia_1TMa3.tf",
+    "1P4M_3Ia_1TMa3_MIM20" => "1P4M_3Ia_1TMa3.tf",
+    "1P3M_2Ia_1TMa3_MIM20" => "1P3M_2Ia_1TMa3.tf",
+    "1P6M_5Ia_1TMa4_MIM10" => "1P6M_5Ia_1TMa4.tf",
+    "1P5M_4Ia_1TMa4_MIM10" => "1P5M_4Ia_1TMa4.tf",
+    "1P4M_3Ia_1TMa4_MIM10" => "1P4M_3Ia_1TMa4.tf",
+    "1P3M_2Ia_1TMa4_MIM10" => "1P3M_2Ia_1TMa4.tf",      
+    "1P6M_5Ia_1TMa4_MIM20" => "1P6M_5Ia_1TMa4.tf",
+    "1P5M_4Ia_1TMa4_MIM20" => "1P5M_4Ia_1TMa4.tf",
+    "1P4M_3Ia_1TMa4_MIM20" => "1P4M_3Ia_1TMa4.tf",
+    "1P3M_2Ia_1TMa4_MIM20" => "1P3M_2Ia_1TMa4.tf",      
+};
+
+my $iccrule_file_map = {
+#### 1 Top Metal
+    "1P6M_5Ia_1TMa1_MIM10" => "1P6M_5Ia_1TMa1_icc.rules",
+    "1P5M_4Ia_1TMa1_MIM10" => "1P5M_4Ia_1TMa1_icc.rules",
+    "1P4M_3Ia_1TMa1_MIM10" => "1P4M_3Ia_1TMa1_icc.rules",
+    "1P3M_2Ia_1TMa1_MIM10" => "1P3M_2Ia_1TMa1_icc.rules",
+    "1P6M_5Ia_1TMa1_MIM20" => "1P6M_5Ia_1TMa1_icc.rules",
+    "1P5M_4Ia_1TMa1_MIM20" => "1P5M_4Ia_1TMa1_icc.rules",
+    "1P4M_3Ia_1TMa1_MIM20" => "1P4M_3Ia_1TMa1_icc.rules",
+    "1P3M_2Ia_1TMa1_MIM20" => "1P3M_2Ia_1TMa1_icc.rules",
+    "1P6M_5Ia_1TMa2_MIM10" => "1P6M_5Ia_1TMa2_icc.rules",
+    "1P5M_4Ia_1TMa2_MIM10" => "1P5M_4Ia_1TMa2_icc.rules",
+    "1P4M_3Ia_1TMa2_MIM10" => "1P4M_3Ia_1TMa2_icc.rules",
+    "1P3M_2Ia_1TMa2_MIM10" => "1P3M_2Ia_1TMa2_icc.rules",  
+    "1P6M_5Ia_1TMa2_MIM20" => "1P6M_5Ia_1TMa2_icc.rules",
+    "1P5M_4Ia_1TMa2_MIM20" => "1P5M_4Ia_1TMa2_icc.rules",
+    "1P4M_3Ia_1TMa2_MIM20" => "1P4M_3Ia_1TMa2_icc.rules",
+    "1P3M_2Ia_1TMa2_MIM20" => "1P3M_2Ia_1TMa2_icc.rules",  
+    "1P6M_5Ia_1TMa3_MIM10" => "1P6M_5Ia_1TMa3_icc.rules",
+    "1P5M_4Ia_1TMa3_MIM10" => "1P5M_4Ia_1TMa3_icc.rules",
+    "1P4M_3Ia_1TMa3_MIM10" => "1P4M_3Ia_1TMa3_icc.rules",
+    "1P3M_2Ia_1TMa3_MIM10" => "1P3M_2Ia_1TMa3_icc.rules",
+    "1P6M_5Ia_1TMa3_MIM20" => "1P6M_5Ia_1TMa3_icc.rules",
+    "1P5M_4Ia_1TMa3_MIM20" => "1P5M_4Ia_1TMa3_icc.rules",
+    "1P4M_3Ia_1TMa3_MIM20" => "1P4M_3Ia_1TMa3_icc.rules",
+    "1P3M_2Ia_1TMa3_MIM20" => "1P3M_2Ia_1TMa3_icc.rules",
+    "1P6M_5Ia_1TMa4_MIM10" => "1P6M_5Ia_1TMa4_icc.rules",
+    "1P5M_4Ia_1TMa4_MIM10" => "1P5M_4Ia_1TMa4_icc.rules",
+    "1P4M_3Ia_1TMa4_MIM10" => "1P4M_3Ia_1TMa4_icc.rules",
+    "1P3M_2Ia_1TMa4_MIM10" => "1P3M_2Ia_1TMa4_icc.rules",
+    "1P6M_5Ia_1TMa4_MIM20" => "1P6M_5Ia_1TMa4_icc.rules",
+    "1P5M_4Ia_1TMa4_MIM20" => "1P5M_4Ia_1TMa4_icc.rules",
+    "1P4M_3Ia_1TMa4_MIM20" => "1P4M_3Ia_1TMa4_icc.rules",
+    "1P3M_2Ia_1TMa4_MIM20" => "1P3M_2Ia_1TMa4_icc.rules",         
+};
+
+
+# Metal option and MIM directory map
+my $mim_dir_map = {
+####  1 Top Metal 
+    "1P6M_5Ia_1TMa1_MIM10" => "6m1tm1_MIM1",
+    "1P5M_4Ia_1TMa1_MIM10" => "5m1tm1_MIM1",
+    "1P4M_3Ia_1TMa1_MIM10" => "4m1tm1_MIM1",
+    "1P3M_2Ia_1TMa1_MIM10" => "3m1tm1_MIM1",
+    "1P6M_5Ia_1TMa1_MIM20" => "6m1tm1_MIM2",
+    "1P5M_4Ia_1TMa1_MIM20" => "5m1tm1_MIM2",
+    "1P4M_3Ia_1TMa1_MIM20" => "4m1tm1_MIM2",
+    "1P3M_2Ia_1TMa1_MIM20" => "3m1tm1_MIM2",
+    "1P6M_5Ia_1TMa2_MIM10" => "6m1tm2_MIM1",
+    "1P5M_4Ia_1TMa2_MIM10" => "5m1tm2_MIM1",
+    "1P4M_3Ia_1TMa2_MIM10" => "4m1tm2_MIM1",
+    "1P3M_2Ia_1TMa2_MIM10" => "3m1tm2_MIM1",  
+    "1P6M_5Ia_1TMa2_MIM20" => "6m1tm2_MIM2",
+    "1P5M_4Ia_1TMa2_MIM20" => "5m1tm2_MIM2",
+    "1P4M_3Ia_1TMa2_MIM20" => "4m1tm2_MIM2",
+    "1P3M_2Ia_1TMa2_MIM20" => "3m1tm2_MIM2",  
+    "1P6M_5Ia_1TMa3_MIM10" => "6m1tm3_MIM1",
+    "1P5M_4Ia_1TMa3_MIM10" => "5m1tm3_MIM1",
+    "1P4M_3Ia_1TMa3_MIM10" => "4m1tm3_MIM1",
+    "1P3M_2Ia_1TMa3_MIM10" => "3m1tm3_MIM1",
+    "1P6M_5Ia_1TMa3_MIM20" => "6m1tm3_MIM2",
+    "1P5M_4Ia_1TMa3_MIM20" => "5m1tm3_MIM2",
+    "1P4M_3Ia_1TMa3_MIM20" => "4m1tm3_MIM2",
+    "1P3M_2Ia_1TMa3_MIM20" => "3m1tm3_MIM2",
+    "1P6M_5Ia_1TMa4_MIM10" => "6m1tm4_MIM1",
+    "1P5M_4Ia_1TMa4_MIM10" => "5m1tm4_MIM1",
+    "1P4M_3Ia_1TMa4_MIM10" => "4m1tm4_MIM1",
+    "1P3M_2Ia_1TMa4_MIM10" => "3m1tm4_MIM1",
+    "1P6M_5Ia_1TMa4_MIM20" => "6m1tm4_MIM2",
+    "1P5M_4Ia_1TMa4_MIM20" => "5m1tm4_MIM2",
+    "1P4M_3Ia_1TMa4_MIM20" => "4m1tm4_MIM2",
+    "1P3M_2Ia_1TMa4_MIM20" => "3m1tm4_MIM2",
+};
+
+# Metal option and topres directory map
+my $topres_dir_map = {
+####  1 Top Metal 
+    "1P6M_5Ia_1TMa1_MIM10" => "6m1tm1_TOPRES",
+    "1P5M_4Ia_1TMa1_MIM10" => "5m1tm1_TOPRES",
+    "1P4M_3Ia_1TMa1_MIM10" => "4m1tm1_TOPRES",
+    "1P3M_2Ia_1TMa1_MIM10" => "3m1tm1_TOPRES",
+    "1P6M_5Ia_1TMa1_MIM20" => "6m1tm1_TOPRES",
+    "1P5M_4Ia_1TMa1_MIM20" => "5m1tm1_TOPRES",
+    "1P4M_3Ia_1TMa1_MIM20" => "4m1tm1_TOPRES",
+    "1P3M_2Ia_1TMa1_MIM20" => "3m1tm1_TOPRES",
+    "1P6M_5Ia_1TMa2_MIM10" => "6m1tm2_TOPRES",
+    "1P5M_4Ia_1TMa2_MIM10" => "5m1tm2_TOPRES",
+    "1P4M_3Ia_1TMa2_MIM10" => "4m1tm2_TOPRES",
+    "1P3M_2Ia_1TMa2_MIM10" => "3m1tm2_TOPRES",  
+    "1P6M_5Ia_1TMa2_MIM20" => "6m1tm2_TOPRES",
+    "1P5M_4Ia_1TMa2_MIM20" => "5m1tm2_TOPRES",
+    "1P4M_3Ia_1TMa2_MIM20" => "4m1tm2_TOPRES",
+    "1P3M_2Ia_1TMa2_MIM20" => "3m1tm2_TOPRES",  
+    "1P6M_5Ia_1TMa3_MIM10" => "6m1tm3_TOPRES",
+    "1P5M_4Ia_1TMa3_MIM10" => "5m1tm3_TOPRES",
+    "1P4M_3Ia_1TMa3_MIM10" => "4m1tm3_TOPRES",
+    "1P3M_2Ia_1TMa3_MIM10" => "3m1tm3_TOPRES",
+    "1P6M_5Ia_1TMa3_MIM20" => "6m1tm3_TOPRES",
+    "1P5M_4Ia_1TMa3_MIM20" => "5m1tm3_TOPRES",
+    "1P4M_3Ia_1TMa3_MIM20" => "4m1tm3_TOPRES",
+    "1P3M_2Ia_1TMa3_MIM20" => "3m1tm3_TOPRES",
+    "1P6M_5Ia_1TMa4_MIM10" => "6m1tm4_TOPRES",
+    "1P5M_4Ia_1TMa4_MIM10" => "5m1tm4_TOPRES",
+    "1P4M_3Ia_1TMa4_MIM10" => "4m1tm4_TOPRES",
+    "1P3M_2Ia_1TMa4_MIM10" => "3m1tm4_TOPRES",      
+    "1P6M_5Ia_1TMa4_MIM20" => "6m1tm4_TOPRES",
+    "1P5M_4Ia_1TMa4_MIM20" => "5m1tm4_TOPRES",
+    "1P4M_3Ia_1TMa4_MIM20" => "4m1tm4_TOPRES",
+    "1P3M_2Ia_1TMa4_MIM20" => "3m1tm4_TOPRES",      
+};
+
+
+
+# Define cells which will be deleted reflecting to specific metal option
+my $remove_resistor_list_map = {
+   "1TMa1" => [
+                qw/rtm2/,                
+                qw/rmtt1/,
+                qw/rmtt2/,
+              ],
+   "1TMa2" => [
+                qw/rtm2/,
+                qw/rmtt1/,
+                qw/rmtt2/,
+              ],
+   "1TMa3" => [
+                qw/rtm2/,
+                qw/rmtt1/,
+                qw/rmtt2/,                
+              ],
+   "1TMa4" =>  [
+                qw/rtm2/,
+                qw/rmtt1/,
+                qw/rmtt2/,  
+              ],
+  # "MIM1" =>  [
+  #              qw/mim2 mim2_ckt/,   
+  #            ],  
+  # "MIM2" =>  [
+  #              qw/mim mim_ckt/, 
+  #            ],                          
+   
+};
+
+
+
+
+
+my $cfg = {
+    metal_option => "",    # Required option to run this script.
+    library_name => "smic18mmrf",    # Default library name. If this name is
+                                     # not given in command, this Default
+                                     # value will be used.
+    library_path => "./smic18mse_1833_oa_cds_v1.11_4/smic18mmrf",    # Default library path will be set to
+                                     # the folder which has name as the
+                                     # library name under PDK root
+    pdk_root_path => "./smic18mse_1833_oa_cds_v1.11_4",  # PDK root path. Default will be set to working
+                             # directory. All device folders and tech files
+                             # are relate to this path.
+    mim_path => "",
+    topres_path => "",
+    resistor_path => "",
+    dev18_path => "",
+    techfile_path => "",
+    install_pdk_path => ".", 			#Final install PDK path
+
+    final_pdk_name_prefix => "smic18mse_1833_",   #Final PDK name prefix
+    final_pdk_name_suffix => "_oa_cds_2019_01_15_v1.11_4", 		#Final PDK name suffix
+
+    qrc_root_path => "./smic18mse_1833_oa_cds_v1.11_4/CCI_STARRC_ALL", 	        #All RC root path
+    install_qrc_path => "./smic18mse_1833_oa_cds_v1.11_4/CCI_STARRC", 	#Install RC path
+
+    xrc_root_path => "./smic18mse_1833_oa_cds_v1.11_4/XRC_ALL", 	        #All RC root path
+    install_xrc_path => "./smic18mse_1833_oa_cds_v1.11_4/Calibre/XRC", 	#Install RC path
+
+    lvs_root_path => "./smic18mse_1833_oa_cds_v1.11_4/LVS_ORI", 	        #All LVS root path
+    install_lvs_path => "./smic18mse_1833_oa_cds_v1.11_4/Calibre/LVS", 	#Install LVS path
+    drc_root_path => "./smic18mse_1833_oa_cds_v1.11_4/DRC_ORI", 	        #All DRC root path
+    install_drc_path => "./smic18mse_1833_oa_cds_v1.11_4/Calibre/DRC", 	#Install DRC path
+
+    qrc_name_prefix => "SMIC_CCIStarRC_018MSE_1833_",             #RC name prefix
+    qrc_name_suffix => "_V1.11_1.tar.gz", 		#RC name suffix
+
+    xrc_name_prefix => "SMIC_CalxRC_018MSE_1833_",             #RC name prefix
+    xrc_name_suffix => "_V1.11_1.tar.gz", 		#RC name suffix
+};
+
+
+#Aaron 9/18
+##Final PDK Copy directories and files 
+#my $finalpdk = {
+#    "finalCopy" => [
+#                   qw/smic18mmrf/,
+#                   qw/Calibre models SMIC18MM_skillUtility stream doc/,
+#                   qw/cds.lib techfile.tf display.drf/,
+#                   qw/PDK_ReleaseNote_RevisionHistory_18MM_CDB.pdf/,
+##                   qw/ASSURA_QRC/,
+#               ],
+#};
+
+GetOptions(
+        "metal_option|m=s" => \$cfg->{metal_option},
+        "library_name|n=s" => \$cfg->{library_name},
+        "mim_path|c=s" => \$cfg->{mim_path},
+        "topres_path|x=s" => \$cfg->{topres_path},
+        "dev18_path|d=s" => \$cfg->{dev18_path},
+        "resistor_path|r=s" => \$cfg->{resistor_path},
+        "techfile_path|t=s" => \$cfg->{techfile_path},
+        "library_path|l=s" => \$cfg->{library_path},
+        "pdk_root_path|p=s" => \$cfg->{pdk_root_path},
+        "virtuoso_bin|b=s" => \$cfg->{virtuoso_bin},
+        "help|h" => \$cfg->{help},
+        "debug|D" => \$cfg->{debug},
+        ) or &usage();
+&usage() if $cfg->{help};
+
+print "===================================================================================\n" ;
+print "Virtuoso version should be IC6.1.6-64b.500.3 or above\n" ;
+print "===================================================================================\n" ;
+print STDERR qq/NOTICE: This PDK only contains RC extraction files for below metal options:
+        1P5M, 1P4M for topmetal=9k, 
+        For others metal options, user can download RC files from SMICNOW, or raise 
+        request if no such supply, SMIC will deliver upon request.\n/;
+print "===================================================================================\n" ;
+
+#Check permission
+unless(-w  qq/$cfg->{install_pdk_path}/) {
+     print STDERR qq/Error: You have no permission to install PDK in/
+    . qq/ "$cfg->{install_pdk_path}"\n/;
+ exit 1;
+}
+system("touch .cdsinit");
+
+$| = 1;
+(undef, $cfg->{log_file}) = tempfile("virtuosoXXXXXX", SUFFIX => '.log', OPEN => 0);
+
+#Aaron 9/18
+
+
+&ch_args();
+
+$metal_option_choose=&parse_metal_option($cfg->{metal_option});
+$library_name_surfix=lc($metal_option_choose->{TMa});
+#Added by Susan 4/1
+my @qrc_metal_option= split /_/,$cfg->{metal_option};
+pop @qrc_metal_option;
+$qrc_metal_option=join "_",@qrc_metal_option;
+#print "qrc_metal_option $qrc_metal_option\n" ;
+#print "qrc_metal_option $cfg->{metal_option}\n" ;
+
+
+my @xrc_metal_option= split /_/,$cfg->{metal_option};
+pop @xrc_metal_option;
+$xrc_metal_option=join "_",@xrc_metal_option;
+#print "xrc_metal_option $xrc_metal_option\n" ;
+
+#print "\nPDK name is:";
+#print $cfg->{library_name};
+#print "\nPDK path is:";
+#print $cfg->{library_path};
+
+#Final PDK Copy directories and files
+my $finalpdk = {
+    "finalCopy" => [
+                   $cfg->{library_name},
+                   qw/Calibre models SMIC18MM_skillUtility docs stream/,  
+                   qw/Calibre/,
+                   qw/cds.lib techfile.tf display.drf/,
+#                   qw/PDK_ReleaseNote_RevisionHistory_55LLRF_121825.pdf/,
+#                   qw/ASSURA_QRC/,
+               ],
+};
+
+if ($pure33_switch==1){
+ $cfg->{final_pdk_name_prefix}="smic18mse_33_";
+}
+my $pdk_name = $cfg->{final_pdk_name_prefix}.$cfg->{metal_option}.$cfg->{final_pdk_name_suffix};
+if (-d  qq/$cfg->{install_pdk_path}\/$pdk_name/) {
+warn qq/Warning: The pdk already exists. If you want to re-install, please remove the pdk .\/$pdk_name.\n/;
+unlink $cfg->{log_file};
+exit 1;
+}
+
+#Aaron 9/18
+#$metal_option_choose=&parse_metal_option($cfg->{metal_option});
+
+
+
+#print "$cfg->{metal_option}";
+@ic_resistor_list=&gen_ic_resistor($metal_option_choose->{Ia});
+#push @remove_resistor_list,@{$remove_resistor_list_map->{$metal_option_choose->{TMa}}},@ic_resistor_list;
+push @remove_resistor_list,@{$remove_resistor_list_map->{$metal_option_choose->{TMa}}},@ic_resistor_list,@remove_18_dev_list;
+#print "\n@remove_resistor_list\n";
+
+#lynn 9/29
+#Add for delete ind
+my @mim_list = qw/mim mim_ckt mim2 mim2_ckt/;
+#print"@mim_list";
+foreach my $mim (@mim_list) {
+if( -d qq/$cfg->{install_pdk_path}\/$cfg->{library_path}\/$mim/){
+  push @remove_mim_list,$mim;
+  system(qq(rm -rf $cfg->{install_pdk_path}\/$cfg->{library_path}\/$mim)) }}
+#print "@remove_mim_list";
+
+&check_permission();
+
+#Zhiwei 9/24
+# my @symbolicList = qw/M3_M2* M4_M3* M5_M4* M6_M5* *_T/;
+# foreach my $symbolic (@symbolicList) {
+# system(qq(rm -rf $cfg->{install_pdk_path}\/$cfg->{library_path}\/$symbolic > /dev/null));
+ #print "Delete symbolic $symbolic \n";
+#};
+
+&init_cells();
+
+# Get skill commands to the library
+my $skill_in_str = &get_compile_metal_option_cmd();
+$skill_in_str .= &get_cell_deleting_cmd();
+$skill_in_str .= qq/exit(0)\n/;
+
+
+# Run skill commands to the library
+my $virtuoso_out = &run_virtuoso_nograph($skill_in_str, $cfg->{virtuoso_bin});
+
+# Parse the output
+# There is error message in the output, ask pepole to check the log file
+if ($virtuoso_out =~ /^\*Error\*/ism) {
+#    print $virtuoso_out;
+#    print "\n";
+    warn(qq/Please check virtuoso log file $cfg->{log_file} in error message!!!\n/);
+
+#Install continues if "ilGetInt" error exsist during virtuoso processed.
+if ($virtuoso_out =~ /^\*Error\* ilGetInt/ism) {
+    &drc_install();
+    &lvs_install();
+    #&qrc_install();
+    &xrc_install();
+    &final_pdk_install();
+}
+else {
+    exit 0;
+ }
+}
+else {
+    unlink $cfg->{log_file};
+    &drc_install();
+    &lvs_install();
+    #&qrc_install();
+    &xrc_install();
+    &final_pdk_install();
+    exit 0;
+}
+
+sub get_topres_copy_cmd {
+    my @topres_folders;
+    push @topres_folders, $cfg->{topres_path};
+    foreach my $topres (@topres_folders) {
+       system("cp -rf $topres/* $cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}");
+       #print "$cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}";
+       unless ($? ==0) {
+         die qq(Error: cannot run "cp -rf $topres/* $cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}");
+         
+       }
+    }
+}
+sub get_dev18_copy_cmd {
+    #my @dev18_folders;
+    #push @dev18_folders, $cfg->{dev18_path};
+    #foreach my $dev18 (@dev18_folders) {
+       system("cp -rf $cfg->{dev18_path}/* $cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}");
+       #print "$cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}";
+       unless ($? ==0) {
+         die qq(Error: cannot run "cp -rf $cfg->{dev18_path}/* $cfg->{install_pdk_path}\/$pdk_name\/$cfg->{library_name}");
+         
+       }
+    #}
+}
+     
+
+sub get_cell_deleting_cmd {
+    my $out_str;
+    if (@remove_resistor_list) {
+        my $deleting_cell_str = join '" "', @remove_resistor_list;
+        $out_str .= qq/lib_obj = ddGetObj("$cfg->{library_name}")\n/;
+        $out_str .= qq/name_list = list("$deleting_cell_str")\n/;
+        $out_str .= qq/cells = setof(cell lib_obj~>cells and(member(cell~>name name_list)))\n/;
+        $out_str .= qq/when(cells foreach(cell cells ddDeleteLocal(cell)))\n/;
+        $out_str .= qq/ddUpdateLibList()\n/;
+    }
+    return $out_str;
+
+}
+
+
+sub get_compile_metal_option_cmd {
+    my $tech_file = qq($cfg->{techfile_path}/$tech_file_map->{$cfg->{metal_option}});
+    my $iccrule_file = qq($cfg->{techfile_path}/$iccrule_file_map->{$cfg->{metal_option}});
+    system(qq(cp $tech_file $cfg->{library_path}/techfile.tf));
+    unless ($? == 0) {
+         print STDERR qq(Failed to run: "cp $tech_file $cfg->{library_path}/techfile.tf\n");
+        exit 1;
+    }
+    system(qq(cp $tech_file $cfg->{pdk_root_path}/techfile.tf));
+    unless ($? == 0) {
+         print STDERR qq(Failed to run: "cp $tech_file $cfg->{pdk_root_path}/techfile.tf\n");
+        exit 1;
+    }
+#For IC51, open below command to copy icc.rules file.
+#    system(qq(cp $iccrule_file $cfg->{pdk_root_path}/icc.rules));
+#    unless ($? == 0) {
+#         print STDERR qq(Failed to run: "cp $iccrule_file $cfg->{pdk_root_path}/icc.rules\n");
+#        exit 1;
+#    }
+
+    my $out_str;
+    $out_str .= qq/lib_obj = ddGetObj("$cfg->{library_name}")\n/;
+    $out_str .= qq/techOpenTechFile("$cfg->{library_name}" "tech.db" "a")\n/; 		#For IC61, comment below.
+    #$out_str .= qq/techOpenTechFile("$cfg->{library_name}" "techfile.cds" "a")\n/;     #For IC51, comment above.
+    $out_str .= qq/tcLoadTechFile(techGetTechFile(lib_obj) "$tech_file" "w")\n/;
+    $out_str .= qq/techSaveTechFile(techGetTechFile(lib_obj))\n/;
+
+    return $out_str;
+}
+
+# lynn 03/18
+sub check_permission {
+ my @viewlist = qw/ams auCdl auLvs hspiceD ivpcell spectre symbol layout/;
+ my @mimlist = qw/mim mim_ckt mim2 mim2_ckt /;
+ my @checklist = ();
+ push @checklist,@remove_resistor_list,@mimlist,@remove_mim_list;
+  foreach my $viewname (@viewlist) {
+    foreach my $cellname (@checklist) {
+      if(($viewname eq "layout") || ($viewname eq "ivpcell")) {
+        if (-f "$cfg->{library_path}/$cellname/$viewname/layout.oa") {
+            unless (-w "$cfg->{library_path}/$cellname/$viewname/layout.oa") {
+                die qq/Error: You have no permission to process some cells in/
+                . qq/"$cfg->{library_name}"/;
+            }
+            if (-e "$cfg->{library_path}/$cellname/$viewname/layout.oa.cdslck") {
+                print $cellname; 
+                print $viewname;
+                die qq/Error: You have lock the cells.Please close the virtuoso you already open.\n/;
+            }
+        }
+     }else {
+         if (-f "$cfg->{library_path}/$cellname/$viewname/symbol.oa") {
+            unless (-w "$cfg->{library_path}/$cellname/$viewname/symbol.oa") {
+                die qq/Error: You have no permission to process some cells in/
+                . qq/"$cfg->{library_name}"/;
+            }
+            if (-e "$cfg->{library_path}/$cellname/$viewname/symbol.oa.cdslck") {
+                print $cellname;
+                print $viewname;
+                die qq/Error: You have lock the cells.Please close the virtuoso you already open.\n/;
+            }
+        }
+     }
+    }
+  }
+}
+
+
+sub init_cells {
+    my @other_folders;
+    @other_folders = map {join('/', $cfg->{pdk_root_path}), '.PDKALL', $_}
+            @other_device_folders if @other_device_folders;
+    #With mom device request, please use the following code.
+    #push @other_folders, $cfg->{mim_path}, $cfg->{resistor_path};
+    push @other_folders, $cfg->{resistor_path}, $cfg->{mim_path};
+    #Without mom device request, please use the following code.
+    #push @other_folders, $cfg->{resistor_path};
+    # Replace all library cells with original cells
+    foreach my $folder (@other_folders) {
+        system("cp -rf $folder/* $cfg->{library_path}");
+        unless ($? == 0) {
+            die qq(Error: cannot run "cp -rf $folder/* $cfg->{library_path}");
+        }
+    }
+}
+
+
+sub usage {
+    warn <<EOF;
+Usage: $0 [-h] [-b <virtuoso_bin>]
+
+    --help|-h                               output this help
+    --virtuoso_bin|-b    <virtuoso_bin>     virtuoso executable path (Optional)
+
+This script will update or install library cells according to PDK metal option.
+Original PDK Data is required by this tool.
+
+EOF
+
+
+#Orignal usage backup
+#Usage: $0 [-h] -m <metal_option>
+#    [-n <library_name>] [-l <library_path>] [-b <virtuoso_bin>]
+#    [-p <pdk_root_path>|-t <techfile_path> -c <capacitor_path> -r <resistor_path>]
+#    --help|-h                               output this help
+#    --metal_option|-m    <metal_option>     Metal option like "1P10M_8Ic_1TMc_1MTTc_ALPA1"
+#    --library_name|-n    <library_name>     virtuoso library name will be installed
+#    --pdk_root_path|-p   <pdk_root_path>    Root path of virtuoso PDK
+#    --techfile_path|-t   <techfile_path>    virtuoso techfile path. This file
+#                                            normally contains in PDK folder
+#    --library_path|-l    <library_path>     virtuoso library path would like to
+#                                            be updated or installed. It will be overwritten
+#    --mim_path|-c  <mim_path>   Root path for capacitor cells in virtuoso PDK
+#    --resistor_path|-r   <resistor_path>    Root path for resistor cells in virtuoso PDK
+#    --virtuoso_bin|-b    <virtuoso_bin>     virtuoso executable path
+
+#    warn qq/Supported metal option(s):\n/
+#    . join("\n", sort keys %$tech_file_map)
+#    . qq/\n\n/;
+    exit 1;
+}
+
+#parse the detail metal option customer choose
+sub parse_metal_option {
+    my $opt_choice = shift;
+    my $mt_opt = {};
+        if($opt_choice =~ /^1P(\d+)M_(\d+)Ia_(1TMa\d+)_(MIM\d+)$/)  {
+        $mt_opt = {
+        "total_metal" => $1,
+        "Ia" => $2,
+        "TMa" => $3,
+        "MIM" => $4,
+         };
+    }
+
+    return $mt_opt;
+}
+
+
+#Generate the remove metal resistor list according to the Ic metal option
+sub gen_ic_resistor {
+    my @metal_resistor;
+    my $ic_metal_num = shift;
+    my $support_ic_metal_num=6;
+    while (($support_ic_metal_num-$ic_metal_num)>0 ) {
+      my $rm_device="rm".($ic_metal_num+1);
+      $ic_metal_num++;
+      push @metal_resistor,$rm_device;
+    }
+    return @metal_resistor;
+}
+
+
+sub ch_args {
+    unless ($cfg->{virtuoso_bin}) {
+        $cfg->{virtuoso_bin} = &get_virtuoso_bin();
+        unless ($cfg->{virtuoso_bin}) {
+            warn qq(Error: Cannot find virtuoso executable. Please reset PATH or specify it by )
+            . qq(argument "-b <virtuoso_bin>"\n\n);
+            &usage();
+        }
+        warn qq(This script will launch $cfg->{virtuoso_bin} to set the library.\n);
+    }
+
+    #check virtuoso if is executable.
+    &check_vir_exe($cfg->{virtuoso_bin});
+
+    # get interactive metal option
+    unless ($cfg->{metal_option}) {
+        $cfg->{metal_option} = get_interactive_option();
+    }
+
+    #unless ($cfg->{metal_option}) {
+    #    warn qq("-m <metal_option>" is required. Please specify it in command line.\n\n);
+    #    &usage();
+    #}
+
+    unless (grep(/^$cfg->{metal_option}$/, keys(%$tech_file_map))) {
+        warn qq/Metal option "$cfg->{metal_option}" is not supported\n/
+        . qq/Supported option(s):\n/
+        . join("\n", sort keys %$tech_file_map)
+        . qq/\n\n/;
+        exit 1;
+    }
+
+    unless ($cfg->{library_name}) {
+        warn qq("-n <library_name>" is required. Please specify it in command line.\n\n);
+        &usage();
+    }
+
+    unless ($cfg->{pdk_root_path} 
+            or ($cfg->{techfile_path} and $cfg->{mim_path} and $cfg->{resistor_path} and $cfg->{topres_path})) {
+        warn qq("{-p <pdk_root_path>|-t <techfile_path> -c <mim_path> -r <resistor_path> -x <topres_path>}"\n)
+        . qq(PDK root path is required. This script needs to retrived data from PDK.\n\n);
+        &usage();
+    }
+    if ($cfg->{pdk_root_path}) {
+        unless ($cfg->{techfile_path}) {
+            $cfg->{techfile_path} = $cfg->{pdk_root_path} . "/.PDKALL/techfiles";
+        }
+        #With mom device request, please use the following code.
+        unless ($cfg->{mim_path}) {
+            $cfg->{mim_path} = $cfg->{pdk_root_path} . "/.PDKALL/mim/" . $mim_dir_map->{$cfg->{metal_option}};
+        }
+
+        unless ($cfg->{topres_path}) {
+            $cfg->{topres_path} = $cfg->{pdk_root_path} . "/.PDKALL/topres/" . $topres_dir_map->{$cfg->{metal_option}};
+        }
+
+        unless ($cfg->{dev18_path}) {
+            $cfg->{dev18_path} = $cfg->{pdk_root_path} . "/.PDKALL/dev18/"; 
+        }
+
+        #Without mom device request, please use the following code.And make the capacitors directory empty.
+         #unless ($cfg->{inductor_path}) {
+         #   $cfg->{inductor_path} = $cfg->{pdk_root_path} . "/.PDKALL/inductors/" . $inductor_dir_map->{$cfg->{metal_option}};
+       # }
+
+        unless ($cfg->{resistor_path}) {
+        ##Chengcheng 10/13 
+        ##Add for different resistors path
+            if(grep(/Ia_TMa_MIM/,$cfg->{metal_option})){
+              $cfg->{resistor_path} = $cfg->{pdk_root_path} . "/.PDKALL/resistors_2tm"
+              }
+            else{
+            $cfg->{resistor_path} = $cfg->{pdk_root_path} . "/.PDKALL/resistors";
+            }
+        }
+    }
+
+
+
+    # Get library path for library name.
+    # If the library is not defined, then library path will be empty.
+    my $library_path = &get_library_path($cfg->{library_name});
+    # If the library path is empty, define new entry with library name and
+    # library path in the command line
+    unless ($library_path) {
+        #warn qq/Library "$cfg->{library_name}" is not defined\n/;
+        if ($cfg->{library_path}) {
+            #warn qq/Appending "DEFINE $cfg->{library_name} $cfg->{library_path}" into "cds.lib"\n/;
+            open(CDSLIB, ">>", "cds.lib") or die "Cannot open cds.lib: $!\n";
+	    print CDSLIB qq/DEFINE basic \$CDSHOME\/tools\/dfII\/etc\/cdslib\/basic\n/;
+            print CDSLIB qq/DEFINE $cfg->{library_name} $cfg->{library_path}\n/;
+            close CDSLIB;
+        }
+        else {
+            warn qq/Cannot get library path for "$cfg->{library_name}"\n/;
+            &usage();
+        }
+    }
+
+    unless ($cfg->{library_path}) {
+        $cfg->{library_path} = $library_path;
+        warn qq/Library path is set to $library_path\n/;
+    }
+}
+
+
+sub get_virtuoso_bin {
+    my $virtuoso_bin = `which virtuoso 2>/dev/null`;
+    if ($? != 0) {
+        $virtuoso_bin = "";
+    }
+    else {
+        chomp $virtuoso_bin;
+    }
+
+    return $virtuoso_bin;
+}
+
+
+sub get_library_path {
+    my $lib_name = shift;
+    my $library_path;
+    my $skill_in_str;
+
+    $skill_in_str .= qq/printf("\\n|-%s-|-%s-|\\n" "$lib_name" ddGetObjReadPath(ddGetObj("$lib_name")));\n/; 
+    $skill_in_str .= qq/exit(0);\n/;
+
+    my $out = &run_virtuoso_nograph($skill_in_str, $cfg->{virtuoso_bin});
+    if ($out =~ /^\|\-${lib_name}\-\|\-(.+?)\-/sm) {
+        return $1;
+    }
+    else {
+        return undef;
+    }
+}
+
+
+sub run_virtuoso_nograph {
+    my ($input_str, $virtuoso_bin) = @_;
+    my $output_str;
+    unless ($virtuoso_bin) {
+        $virtuoso_bin = "virtuoso";
+    }
+    my ($fh, $fname) = tempfile("virtuosoXXXXXX", SUFFIX => '.cmd');
+    print $fh $input_str;
+    close $fh;
+   # open(VSO, '-|', "$virtuoso_bin -nograph -log $cfg->{log_file} < $fname");
+#Aaron 9/22
+    open(VSO, '-|', "$virtuoso_bin -nograph -log $cfg->{log_file} < $fname") or return undef;		#For IC61, comment below.
+    #open(VSO, '-|', "$virtuoso_bin -nograph  < $fname -log $cfg->{log_file}") or return undef;		#For IC51, comment above.
+    #open(VSO, '-|', "$virtuoso_bin -nograph  < $fname") or return undef;
+
+    while (my $line = <VSO>) {
+        $output_str .= $line;
+    }
+    close VSO;
+    unlink $fname;
+
+    return $output_str;
+}
+
+sub qrc_install {
+    my $qrc_name = $cfg->{qrc_name_prefix}.$cfg->{metal_option}.'*'; 
+    #print "qrcName: $qrc_name \n"; 
+    my @qrc_file = glob "$cfg->{qrc_root_path}\/$qrc_name";
+    my $qrc_file_num = @qrc_file;
+    if (-d qq/$cfg->{install_qrc_path}/) {
+    #print qq/Remove RC......\n/;
+     system("rm -rf $cfg->{install_qrc_path}");
+    }
+### Changed 20150810
+    if( $qrc_file_num == 1 ) {
+    system("mkdir $cfg->{install_qrc_path}");
+#    unless( $qrc_file_num == 1 ) {
+#    print STDERR qq/Error: Cannot find RC file. Install Abort!\n/;
+#     exit 1;
+#    }
+    print qq/install CCI_STARRC......\n/;
+    system("gtar -zvxf  $cfg->{qrc_root_path}\/$qrc_name -C $cfg->{install_qrc_path} > /dev/null");
+}
+   else{ 
+          print qq/NOTICE:No RC file for this option, please download from SMICNOW or raise request.\n/;
+          system("mkdir $cfg->{install_qrc_path}");}
+}
+
+sub xrc_install {
+    my $temp_xrc_name=$cfg->{metal_option};
+     $temp_xrc_name=~s/MIM10/MIM1fF/;
+     $temp_xrc_name=~s/MIM20/MIM2fF/;
+    #my $xrc_name = $cfg->{xrc_name_prefix}.$cfg->{metal_option}.'*'; 
+    my $xrc_name = $cfg->{xrc_name_prefix}.$temp_xrc_name.'*'; 
+    #print "xrcName: $xrc_name \n"; 
+    my @xrc_file = glob "$cfg->{xrc_root_path}\/$xrc_name";
+    my $xrc_file_num = @xrc_file;
+    if (-d qq/$cfg->{install_xrc_path}/) {
+    #print qq/Remove RC......\n/;
+     system("rm -rf $cfg->{install_xrc_path}");
+    }
+### Changed 20150810
+    if( $xrc_file_num == 1 ) {
+    system("mkdir $cfg->{install_xrc_path}");
+#    unless( $xrc_file_num == 1 ) {
+#    print STDERR qq/Error: Cannot find RC file. Install Abort!\n/;
+#     exit 1;
+#    }
+    print qq/install RC......\n/;
+    system("gtar -zvxf  $cfg->{xrc_root_path}\/$xrc_name -C $cfg->{install_xrc_path} > /dev/null");
+}
+   else{ 
+          print qq/NOTICE:No RC file for this option, please download from SMICNOW or raise request.\n/;
+          system("mkdir $cfg->{install_xrc_path}");}
+}
+
+sub lvs_install {
+    my @files_inlvsori=glob "$cfg->{lvs_root_path}/*" ;
+    my @lvsfile_inlvsori=glob "$cfg->{lvs_root_path}/*.lvs" ;
+    my $lvs_file_num=@lvsfile_inlvsori ;
+    if (-d "$cfg->{install_lvs_path}") {
+        system("rm -rf $cfg->{install_lvs_path}");
+    }
+    system("mkdir $cfg->{install_lvs_path}");
+    unless( $lvs_file_num == 1 ) {
+      print STDERR "ERROR: Cannot find LVS file. Install Abort!\n";
+      exit 1;
+    }
+    print qq/install LVS......\n/;
+    my $lvsfile_inlvsori=shift @lvsfile_inlvsori ;
+    my $lvsfile_basename=basename $lvsfile_inlvsori ;
+    foreach (@files_inlvsori) {
+       if ($_ eq $lvsfile_inlvsori) {
+           my @lvs_lines=&readfile($lvsfile_inlvsori) ;
+           open(LVSOUT,">$cfg->{install_lvs_path}/$lvsfile_basename") ;
+           foreach (@lvs_lines) {
+               if (/#DEFINE TOPMETAL/) {
+                   my $topmetal=6 ;
+                   if ($cfg->{metal_option}=~/\d+P(\d+)M/) {
+                       $topmetal=$1 ;
+                   } 
+                   s/#DEFINE TOPMETAL \d+/#DEFINE TOPMETAL $topmetal/ ;
+               }
+               if (/#DEFINE TM_TYPE/) {
+                   my $topmetaltype="9K" ;
+                   if ($cfg->{metal_option}=~/TMa(\d+)/) {
+                       if ($1 eq 1) {
+                          $topmetaltype="9K" ;
+                       }
+                       if ($1 eq 2) {
+                          $topmetaltype="22K" ;
+                       }
+                       if ($1 eq 3) {
+                          $topmetaltype="34K" ;
+                       }
+                       if ($1 eq 4) {
+                          $topmetaltype="40K" ;
+                       }
+                   }
+                   s/#DEFINE TM_TYPE \w+/#DEFINE TM_TYPE $topmetaltype/ ;    
+               }
+               if (/#DEFINE MIM_TYPE/) {
+                   my $mimtype="1" ;
+                   if ($cfg->{metal_option}=~/MIM(\d+)/) {
+                       if ($1 eq 10) {
+                          $mimtype="1" ;
+                       }
+                       if ($1 eq 20) {
+                          $mimtype="2" ;
+                       }
+                   } 
+                   s/#DEFINE MIM_TYPE \w+/#DEFINE MIM_TYPE $mimtype/ ;    
+               }
+               print LVSOUT "$_\n" ;
+           }
+           close  LVSOUT ;
+       } else {
+           system("cp -rf $_  $cfg->{install_lvs_path}"); 
+       }
+    } 
+}
+
+sub drc_install {
+    my @files_indrcori=glob "$cfg->{drc_root_path}/*" ;
+    my @drcfile_indrcori=glob "$cfg->{drc_root_path}/*.drc" ;
+    my @antfile_indrcori=glob "$cfg->{drc_root_path}/*.ant" ;
+    my @esdfile_indrcori=glob "$cfg->{drc_root_path}/*.esd" ;
+    my $drc_file_num=@drcfile_indrcori ;
+    my $ant_file_num=@antfile_indrcori ;
+    my $esd_file_num=@esdfile_indrcori ;
+    if (-d "$cfg->{install_drc_path}") {
+        system("rm -rf $cfg->{install_drc_path}");
+    }
+    system("mkdir $cfg->{install_drc_path}");
+    unless( $drc_file_num == 1 ) {
+      print STDERR "ERROR: Cannot find DRC file. Install Abort!\n";
+      exit 1;
+    }
+    unless( $ant_file_num == 1 ) {
+      print STDERR "ERROR: Cannot find ANT file. Install Abort!\n";
+      exit 1;
+    }
+    #unless( $esd_file_num == 1 ) {
+    #  print STDERR "ERROR: Cannot find ANT file. Install Abort!\n";
+    #  exit 1;
+    #}
+    print qq/install DRC......\n/;
+    my $drcfile_indrcori=shift @drcfile_indrcori ;
+    my $antfile_indrcori=shift @antfile_indrcori ;
+    my $esdfile_indrcori=shift @esdfile_indrcori ;
+    foreach (@files_indrcori) {
+       #if ($_ eq $antfile_indrcori || $_ eq $drcfile_indrcori || $_ eq $esdfile_indrcori ) {
+       if ($_ eq $antfile_indrcori || $_ eq $drcfile_indrcori) {
+           my $drcfile_basename=basename $_ ;
+           my @drc_lines=&readfile($_) ;
+           open(DRCOUT,">$cfg->{install_drc_path}/$drcfile_basename") ;
+           foreach (@drc_lines) {
+               if (/set metal_counts /) {
+                   my $topmetal=6 ;
+                   if ($cfg->{metal_option}=~/\d+P(\d+)M/) {
+                       $topmetal=$1 ;
+                   } 
+                   s/set metal_counts\s+\d+/set metal_counts $topmetal/ ;
+               }
+               if (/#DEFINE Metal_option /) {
+                   my $topm ;
+                   if ($cfg->{metal_option}=~/(\d+P\d+M)/) {
+                       $topm=$1 ;
+                   } 
+                   s/#DEFINE Metal_option\s+\w+/#DEFINE Metal_option $topm/ ;
+               }
+               if (/set top_metal /) {
+                   my $topmetaltype="MT" ;
+                   if ($cfg->{metal_option}=~/TMa(\d+)/) {
+                       if ($1 eq 1) {
+                          $topmetaltype="MT" ;
+                       }
+                       if ($1 eq 2) {
+                          $topmetaltype="MTT" ;
+                       }
+                       if ($1 eq 3) {
+                          $topmetaltype="MTT1" ;
+                       }
+                       if ($1 eq 4) {
+                          $topmetaltype="MTT2" ;
+                       }
+                   }
+                   s/set top_metal\s+\w+/set top_metal $topmetaltype/ ;    
+               }
+               print DRCOUT "$_\n" ;
+           }
+           close  DRCOUT ;
+       } else {
+           unless (/\.drc$/ || /\.tar$/ || /\.gz$/) { 
+              system("cp -rf $_  $cfg->{install_drc_path}"); 
+           }
+       }
+    }
+}
+
+
+sub final_pdk_install {
+    my $pdk_name = $cfg->{final_pdk_name_prefix}.$cfg->{metal_option}.$cfg->{final_pdk_name_suffix}; 
+    if (-d  qq/$cfg->{install_pdk_path}\/$pdk_name/) {
+     die qq/Error: The pdk already exits. No need to install.\n/
+         .qq/Please have a check: .\/$pdk_name/; 
+     exit 1;
+    }
+
+    system("mkdir $cfg->{install_pdk_path}\/$pdk_name");
+    
+    foreach my $copyfile (@{$finalpdk->{finalCopy}}) {
+        system("cp -rf $cfg->{pdk_root_path}/$copyfile $cfg->{install_pdk_path}\/$pdk_name");
+        unless ($? == 0) {
+            die qq(Error: cannot run "cp -rf $cfg->{pdk_root_path}/$copyfile $cfg->{install_pdk_path}\/$pdk_name");
+        }
+    }
+    
+    &get_topres_copy_cmd();
+    &get_dev18_copy_cmd() if $pure33_switch==0;
+    
+
+    ##Chengcheng 10/7
+    ##for define differnet library name in cds.lib 
+    open(CDSLIB_part, ">>", "$cfg->{install_pdk_path}\/$pdk_name\/cds.lib") or die "Cannot open cds.lib: $!\n";
+    print CDSLIB_part qq/DEFINE $cfg->{library_name} .\/$cfg->{library_name}\n/;
+    close CDSLIB_part;
+
+    system("rm cds.lib");
+    system("rm .cdsinit");
+    print "\nPDK installation complete.\n";
+    print "The PDK is .\/$pdk_name/\n";
+}
+
+
+sub get_input_opt {
+    my $opt = shift;
+    my $line;
+    # print prompts
+    if (defined $opt->{prompt} and $opt->{prompt}) {
+        print $opt->{prompt};
+    }
+    #if (defined $opt->{default} and $opt->{default}) {
+    #    print " [$opt->{default}]";
+    #}
+    print ": ";
+
+    # get input
+    $line = <STDIN>;
+    chomp $line;
+    #unless ($line) {
+    #    $line = $opt->{default} if defined $opt->{default} and $opt->{default};
+    #}
+    unless ($line =~ /^\d+$/ and int($line) >0 and int($line) <= @{$opt->{value}}) {
+        print "***Unexpected input value***\n";
+        return &get_input_opt($opt);
+    }
+
+
+    return $opt->{value}->[int($line) - 1];
+}
+
+
+#Change for different option
+sub get_interactive_option {
+        my @option = (
+      {
+            prompt => qq/\nPlease choose 1.8V\/3.3V process or pure 3.3V process for installation:\n/
+                . qq/1) 1.8V\/3.3V\n/
+                . qq/2) 3.3V\n/
+                . qq/Enter 1 or 2/,
+            value => [1,2],
+            default => '1',
+      },
+
+        {
+            prompt => qq/\nPlease choose the number of top metal for installation:\n/
+                . qq/1) 1 Top Metal\n/
+                . qq/Enter 1/, 
+            value => [1],
+            default => '1',
+        },
+          {
+              prompt => qq/\nPlease choose the type of 1 Top metal for installation:\n/
+                  . qq/1) 9K top metal layer, thickness 9kA (TMa1)\n/
+                  . qq/2) 22K top metal layer, thickness 22kA (TMa2)\n/
+                  . qq/3) 34K top metal layer, thickness 34kA (TMa3)\n/
+                  . qq/4) 40K top metal layer, thickness 40kA (TMa4)\n/                  
+                  . qq/Enter 1, 2, 3 or 4/,
+              value => [1, 2, 3, 4],
+              default => '1',
+          },
+          {
+               prompt => qq/\nPlease choose the number of inter metal layers:\n/
+                       . qq/1) 2 inter metals \n/
+                       . qq/2) 3 inter metals \n/
+                       . qq/3) 4 inter metals \n/
+                       . qq/4) 5 inter metals \n/
+                       . qq/Enter 1, 2, 3 or 4/,
+                   value => [2, 3, 4, 5,],
+                   default => '5',
+               },
+
+               {
+                   prompt => qq/\nPlease choose the type of MIM for installation:\n/
+                       . qq/1) MIM1.0fF, Cspec=1fF\n/
+                       . qq/2) MIM2.0fF, Cspec=2fF\n/
+                       . qq/Enter 1 or 2 /,
+                   value => [10, 20],
+                   default => '10',
+               },
+
+               );
+               my @ops;
+               foreach my $opt (@option) {
+               push @ops, &get_input_opt($opt);
+               }
+
+
+           # For example: 1P8M_7Ma_7Ic_1TMc)
+           #my $metal_option = sprintf("1P%dM_%dMa_%dIc_%d%s",
+           my $metal_option = sprintf("1P%dM_%dIa_1TMa%s_MIM%s",
+               $ops[1] + $ops[3], $ops[3], $ops[2], $ops[4]);
+           #The PDK metal option is:  1PxM_mMa_mIa_1TMam_MIMm
+           print "The PDK metal option is: $metal_option\n" if $ops[0] ==1 ;
+           print "The PDK metal option is: $metal_option \(pure 3.3V process\)\n" if $ops[0] ==2 ;
+           $pure33_switch=1 if $ops[0] ==2;
+
+           &get_line;
+           return $metal_option;
+} 
+
+
+
+# get one line from STDIN
+#sub get_line {
+#    my ($desc, $deft) = @_;
+#    my $line;
+#    if ($desc) {
+#        print $desc;
+#        print " [$deft]" if $deft;
+#        print ": ";
+#    }
+#    $line = <STDIN>;
+#    chomp $line;
+#    return $line ? $line : $deft;
+#}
+
+sub get_line {
+    print "Do you want to install yes/no?[yes|no]:";
+    my $line_1 = <STDIN>;
+    chomp $line_1;
+    if ($line_1 =~ /yes/) {
+        print qq/PDK installing ......\n/;
+    }
+    elsif ($line_1 =~ /no/) {
+        print "Cancel install\n";
+        exit 1;
+    }
+    else {
+        print "***Unexpected input value***\n";
+        return &get_line;
+    }
+}
+
+sub check_vir_exe {
+  my $bin = shift;
+  my $test= &run_virtuoso_nograph(qq/println("virtuoso_start_succeed") exit(0);\n/ , $bin );
+  unless ($test =~ /virtuoso_start_succeed/) {
+    print "Cannot start virtuoso. Please have a check.\n";
+    exit 1;
+  }
+}
+
+sub readfile($) {
+   my ($filename) = @_;
+   my @file_arr=();
+   if (! open FILE ,"<$filename") {
+   print "$filename doesn't exist\n";
+   }
+   open FILE , "<$filename" || die "$filename doesn't exist";
+   chomp (@file_arr = <FILE>);
+   close FILE;
+   return @file_arr;
+}
+

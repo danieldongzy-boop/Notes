@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "83c17592da9d027f",
+        "id": "5dd6890e695894a3",
         "type": "tabs",
         "children": [
           {
-            "id": "46d3c50fad6721b1",
+            "id": "5a0a452608525ada",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
-                "mode": "source",
-                "source": false
+                "file": "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Ahuja补偿与Cascode密勒补偿技术总结"
+              "icon": "lucide-file-text",
+              "title": "eetop.cn_8bit_SAR_ADC设计总结"
             }
           }
         ]
@@ -73,12 +71,25 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "76f9d484fa3a0581",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Practical_Exercise_II_SS26"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -156,17 +167,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.base",
+                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "Practical_Exercise_II_SS26 的大纲"
             }
           },
           {
-            "id": "7928a8f7cefcfe87",
+            "id": "7935fed659dfc2dc",
             "type": "leaf",
             "state": {
               "type": "custom-frames-豆包",
@@ -180,7 +191,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 449.5
+    "width": 472.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,28 +204,32 @@
       "bases:新建数据库": false
     }
   },
-  "active": "46d3c50fad6721b1",
+  "active": "5a0a452608525ada",
   "lastOpenFiles": [
-    "Marvis的输出/NS-SAR_ADC入门综述.md",
-    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md",
-    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
-    "xdu/物联网大作业/物联网与医疗电子.pdf",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/symbol.oa",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol/master.tag",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/sch.oa",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/master.tag",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic/data.dm",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/symbol",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/schematic",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG/data.dm",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/TG",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/symbol/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/symbol/symbol.oa",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/schematic/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC_UNIT/layout/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/symbol/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/schematic/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_LOGIC/layout/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/symbol/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/schematic/thumbnail_128x128.png",
+    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/SAR_ADC/layout/thumbnail_128x128.png",
+    "Uni Freiburg/RF_Design/PE2/未命名.md",
     "xdu/物联网大作业/物联网与医疗电子.md",
-    "xdu/物联网大作业/物联网与医疗电子-PaperYY检测报告单-20240605.pdf",
-    "xdu/物联网大作业/d833c895d143ad4bd113b7348d494dafa40f4afba8a6.jpg",
-    "xdu/物联网大作业/d833c895d143ad4bd113b7348d494dafa40f4afba8a6 copy.jpg",
-    "xdu/物联网大作业/bulej3-410300a088-large.gif",
-    "xdu/物联网大作业/9861047-fig-1-source-small.gif",
-    "xdu/物联网大作业",
-    "xdu/模集/模集实验报告董展宇.pdf",
     "xdu/模集/模集实验报告.md",
-    "xdu/模集/image.png",
-    "xdu/模集/image-9.png",
-    "xdu/模集/image-8.png",
-    "xdu/模集/image-7.png",
-    "xdu/模集/image-6.png",
-    "xdu/模集/image-5.png",
-    "xdu/模集",
     "xdu/fab homework/笔记Ch9.md",
     "xdu/fab homework/笔记Ch8.md",
     "xdu/fab homework/笔记Ch7.md",
@@ -226,21 +241,17 @@
     "xdu/fab homework/笔记Ch11.md",
     "xdu/fab homework/笔记Ch10.md",
     "xdu/fab homework/笔记Ch1.md",
-    "xdu/fab homework/个人笔记/笔记Ch9.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch8.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch7.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch6.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch5.pdf",
     "xdu/fab homework/chapter9 光刻.md",
     "xdu/fab homework/chapter6-8 cvd pvd 外延.md",
     "xdu/fab homework/chapter 10-12 刻蚀 金属化 工艺集成.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
-    "Uni Freiburg/RF_Design/PE1/PE1.md",
-    "Uni Freiburg/Analog Cmos/PE2/PE2.md",
-    "Uni Freiburg/Analog Cmos/PE1/PE1.md",
-    "IC/DAC/JSSC_1998/jssc1998.md",
-    "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
+    "IC/模集/模集实验报告.md",
+    "IC/fab homework/笔记Ch9.md",
+    "IC/fab homework/笔记Ch8.md",
+    "IC/fab homework/笔记Ch7.md",
+    "IC/fab homework/笔记Ch6.md",
+    "IC/fab homework/笔记Ch5.md",
+    "IC/fab homework/笔记Ch4.md",
+    "IC/fab homework/笔记Ch3.md",
     "未命名.canvas"
   ]
 }
