@@ -4,20 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "80f2440f3ae5ea0c",
+        "id": "83c17592da9d027f",
         "type": "tabs",
         "children": [
           {
-            "id": "b41c07841324daf5",
+            "id": "46d3c50fad6721b1",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "attachments/未命名 1.base",
-                "viewName": "表格"
+                "file": "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "未命名 1"
+              "icon": "lucide-file",
+              "title": "Ahuja补偿与Cascode密勒补偿技术总结"
             }
           }
         ]
@@ -179,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 573.5
+    "width": 449.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,19 +193,28 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8a879c08bf556700",
+  "active": "46d3c50fad6721b1",
   "lastOpenFiles": [
-    "xdu/fab homework/image-19.png",
-    "attachments/未命名 1.base",
-    "attachments/未命名.base",
-    "IC/NSsar/An_Overview_of_Noise-Shaping_SAR_ADC_From_Fundamentals_to_the_Frontier.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch9.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch8.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch7.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch6.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch5.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch4.pdf",
-    "xdu/fab homework/个人笔记/笔记Ch3.pdf",
+    "Marvis的输出/NS-SAR_ADC入门综述.md",
+    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
+    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md",
+    "xdu/物联网大作业/物联网与医疗电子.pdf",
+    "xdu/物联网大作业/物联网与医疗电子.md",
+    "xdu/物联网大作业/物联网与医疗电子-PaperYY检测报告单-20240605.pdf",
+    "xdu/物联网大作业/d833c895d143ad4bd113b7348d494dafa40f4afba8a6.jpg",
+    "xdu/物联网大作业/d833c895d143ad4bd113b7348d494dafa40f4afba8a6 copy.jpg",
+    "xdu/物联网大作业/bulej3-410300a088-large.gif",
+    "xdu/物联网大作业/9861047-fig-1-source-small.gif",
+    "xdu/物联网大作业",
+    "xdu/模集/模集实验报告董展宇.pdf",
+    "xdu/模集/模集实验报告.md",
+    "xdu/模集/image.png",
+    "xdu/模集/image-9.png",
+    "xdu/模集/image-8.png",
+    "xdu/模集/image-7.png",
+    "xdu/模集/image-6.png",
+    "xdu/模集/image-5.png",
+    "xdu/模集",
     "xdu/fab homework/笔记Ch9.md",
     "xdu/fab homework/笔记Ch8.md",
     "xdu/fab homework/笔记Ch7.md",
@@ -216,29 +226,21 @@
     "xdu/fab homework/笔记Ch11.md",
     "xdu/fab homework/笔记Ch10.md",
     "xdu/fab homework/笔记Ch1.md",
-    "xdu/fab homework/image.png",
-    "xdu/fab homework/image-9.png",
-    "xdu/fab homework/image-8.png",
-    "xdu/fab homework/image-7.png",
-    "xdu/fab homework/image-6.png",
-    "xdu/fab homework/image-5.png",
-    "xdu/fab homework/image-4.png",
-    "xdu/fab homework/image-3.png",
-    "xdu/fab homework/image-2.png",
+    "xdu/fab homework/个人笔记/笔记Ch9.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch8.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch7.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch6.pdf",
+    "xdu/fab homework/个人笔记/笔记Ch5.pdf",
     "xdu/fab homework/chapter9 光刻.md",
     "xdu/fab homework/chapter6-8 cvd pvd 外延.md",
     "xdu/fab homework/chapter 10-12 刻蚀 金属化 工艺集成.md",
-    "xdu/物联网大作业/物联网与医疗电子.md",
-    "xdu/模集/模集实验报告.md",
-    "Marvis的输出/NS-SAR_ADC入门综述.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
+    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
+    "Uni Freiburg/RF_Design/PE1/PE1.md",
     "Uni Freiburg/Analog Cmos/PE2/PE2.md",
     "Uni Freiburg/Analog Cmos/PE1/PE1.md",
     "IC/DAC/JSSC_1998/jssc1998.md",
     "IC/BGR/Tang Zhong/A 2.1-to-3.7ppm°C Bandgap Voltage Reference with a Current-Domain TC Compensation and ±0.06% Inaccuracy from -40°C to 125°C in 130nm CMOS.md",
-    "IC/AMP/个人精华总结.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE2/PE2.md",
-    "Uni Freiburg/RF_Design/PE1/Analog Cmos/PE1/PE1.md",
-    "Uni Freiburg/RF_Design/PE1/PE1.md",
     "未命名.canvas"
   ]
 }
