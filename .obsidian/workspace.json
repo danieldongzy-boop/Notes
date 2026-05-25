@@ -11,14 +11,10 @@
             "id": "2542d270dc02400c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Marvis的输出/Bootstrap Switch在ADC中的应用调研 1.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Bootstrap Switch在ADC中的应用调研 1"
+              "title": "新标签页"
             }
           }
         ]
@@ -205,14 +201,15 @@
       "bases:新建数据库": false
     }
   },
-  "active": "2542d270dc02400c",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
-    "IC/开关/razavi.pdf",
-    "IC/开关/未确认 540834.crdownload",
-    "IC/开关",
-    "IC/新建文件夹",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研 1.md",
+    "IC/开关/razavi.pdf",
+    "IC/开关",
+    "Marvis的输出/每日同步日志.md",
+    "IC/开关/未确认 540834.crdownload",
+    "IC/新建文件夹",
     "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/thumbnail_128x128.png",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/sch.oa-",
@@ -221,7 +218,6 @@
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/data.dm",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_test/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_test/schematic/sch.oa-",
     "Uni Freiburg/能量收集/光伏作业题解答.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Solar_Energy_Harvesting_Notes.md",
     "Uni Freiburg/能量收集/热电转换器作业题解答.md",
@@ -252,7 +248,6 @@
     "xdu/fab homework/笔记Ch1.md",
     "xdu/fab homework/chapter9 光刻.md",
     "xdu/fab homework/chapter6-8 cvd pvd 外延.md",
-    "xdu/fab homework/chapter 10-12 刻蚀 金属化 工艺集成.md",
     "未命名.canvas"
   ]
 }
