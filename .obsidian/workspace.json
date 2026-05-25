@@ -11,14 +11,12 @@
             "id": "46d3c50fad6721b1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/能量收集/光伏作业题解答.md",
-                "mode": "source",
-                "source": false
+                "file": "IC/开关/razavi.pdf"
               },
-              "icon": "lucide-file",
-              "title": "光伏作业题解答"
+              "icon": "lucide-file-text",
+              "title": "razavi"
             }
           }
         ]
@@ -196,6 +194,7 @@
   },
   "active": "46d3c50fad6721b1",
   "lastOpenFiles": [
+    "Uni Freiburg/能量收集/光伏作业题解答.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研 1.md",
     "IC/开关/razavi.pdf",
@@ -204,7 +203,6 @@
     "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
     "Marvis的输出/每日同步日志.md",
     "Uni Freiburg/能量收集/热电转换器作业题解答.md",
-    "Uni Freiburg/能量收集/光伏作业题解答.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
     "Uni Freiburg/能量收集",
     "Uni Freiburg/RF_Design/PE2/未命名.md",
