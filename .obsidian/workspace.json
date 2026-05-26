@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "83281a0cc03e5a43",
+        "id": "83c17592da9d027f",
         "type": "tabs",
         "children": [
           {
-            "id": "85862d311564b92e",
+            "id": "46d3c50fad6721b1",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Practical_Exercise_II_SS26"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -76,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 200
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -154,17 +152,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
+                "file": "未命名.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Practical_Exercise_II_SS26 的大纲"
+              "title": "未命名 的大纲"
             }
           },
           {
-            "id": "7935fed659dfc2dc",
+            "id": "7928a8f7cefcfe87",
             "type": "leaf",
             "state": {
               "type": "custom-frames-豆包",
@@ -178,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5
+    "width": 520.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,14 +189,11 @@
       "bases:新建数据库": false
     }
   },
-  "active": "85862d311564b92e",
+  "active": "8a879c08bf556700",
   "lastOpenFiles": [
     "Uni Freiburg/能量收集/MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "IC/实例/一种带有自校准技术的高精度SARADC的研究与设计.pdf",
     "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf",
-    "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
-    "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
-    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
     "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_004.png",
@@ -207,27 +202,30 @@
     "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_001.png",
     "IC/开关/未命名/razavi_page_images/razavi_page_pages",
     "IC/开关/未命名/razavi_page_images/razavi_page",
-    "IC/开关/未命名/razavi_page_images",
+    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
     "IC/开关/未命名/razavi.pdf",
+    "IC/开关/未命名/razavi_page_images",
     "IC/开关/未命名",
-    "Marvis的输出/NS-SAR_ADC入门综述.md",
-    "Uni Freiburg/Analog Cmos/PE2/Practical_Exercise_II_SS26.pdf",
-    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md",
-    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
+    "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "IC/比较器/razavi/strongarm_notes.md",
     "IC/比较器/razavi/strongarm.pdf",
-    "IC/DAC/JSSC_1998/JSSC_1998.pdf",
-    "Uni Freiburg/能量收集/热电转换器作业题解答.md",
-    "Uni Freiburg/能量收集/光伏作业题解答.md",
+    "IC/比较器/razavi",
+    "IC/开关/razavi.pdf",
+    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
+    "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研 1.md",
-    "Marvis的输出/每日同步日志.md",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/thumbnail_128x128.png",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_test/schematic/thumbnail_128x128.png",
+    "Uni Freiburg/能量收集/光伏作业题解答.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Solar_Energy_Harvesting_Notes.md",
+    "Marvis的输出/每日同步日志.md",
+    "Uni Freiburg/能量收集/热电转换器作业题解答.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
-    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rppo_3t/symbol/thumbnail_128x128.png",
-    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rppo_3t/schematic/thumbnail_128x128.png",
     "Uni Freiburg/RF_Design/PE2/未命名.md",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/symbol/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/schematic/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/layout/thumbnail_128x128.png",
+    "IC/Linux/SPDK18MSE_1833_OA_CDS_V1.11_4/smic18mse_1833_oa_cds_v1.11_4/smic18mmrf/rtm2/auLvs/thumbnail_128x128.png",
+    "Marvis的输出/NS-SAR_ADC入门综述.md",
+    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md",
     "xdu/物联网大作业/物联网与医疗电子.md",
     "xdu/模集/模集实验报告.md",
     "xdu/fab homework/笔记Ch9.md",
@@ -238,6 +236,7 @@
     "xdu/fab homework/笔记Ch4.md",
     "xdu/fab homework/笔记Ch3.md",
     "xdu/fab homework/笔记Ch2.md",
+    "xdu/fab homework/笔记Ch11.md",
     "未命名.canvas"
   ]
 }
