@@ -11,14 +11,10 @@
             "id": "bc707ab95574f6d1",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "IC/比较器/razavi/strongarm_notes.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "strongarm_notes"
+              "title": "新标签页"
             }
           }
         ]
@@ -85,21 +81,9 @@
               "icon": "lucide-file-text",
               "title": "Practical_Exercise_II_SS26"
             }
-          },
-          {
-            "id": "203368290ee1a00a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "IC/比较器/razavi/strongarm.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "strongarm"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -218,14 +202,15 @@
       "bases:新建数据库": false
     }
   },
-  "active": "203368290ee1a00a",
+  "active": "76f9d484fa3a0581",
   "lastOpenFiles": [
+    "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "IC/比较器/razavi/strongarm_notes.md",
-    "IC/比较器/razavi",
     "IC/比较器/razavi/strongarm.pdf",
+    "IC/比较器/razavi",
+    "IC/比较器/strongarm.pdf",
     "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
     "IC/开关/razavi.pdf",
-    "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "Uni Freiburg/能量收集/热电转换器作业题解答.md",
     "Uni Freiburg/能量收集/光伏作业题解答.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
@@ -237,7 +222,6 @@
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/thumbnail_128x128.png",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/sch.oa-",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/sch.oa",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/master.tag",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_test/schematic/thumbnail_128x128.png",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Solar_Energy_Harvesting_Notes.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
