@@ -20,18 +20,6 @@
               "icon": "lucide-file",
               "title": "strongarm_notes"
             }
-          },
-          {
-            "id": "6e2126bd684a95ac",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "eetop.cn_8bit_SAR_ADC设计总结"
-            }
           }
         ]
       }
@@ -97,12 +85,25 @@
               "icon": "lucide-file-text",
               "title": "Practical_Exercise_II_SS26"
             }
+          },
+          {
+            "id": "203368290ee1a00a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "IC/比较器/razavi/strongarm.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "strongarm"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 215.5
+    "width": 601.5
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -204,7 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 633.5
+    "width": 343.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,11 +218,11 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8a879c08bf556700",
+  "active": "203368290ee1a00a",
   "lastOpenFiles": [
+    "IC/比较器/razavi/strongarm_notes.md",
     "IC/比较器/razavi",
     "IC/比较器/razavi/strongarm.pdf",
-    "IC/比较器/razavi/strongarm_notes.md",
     "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
     "IC/开关/razavi.pdf",
     "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
@@ -237,7 +238,6 @@
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/sch.oa-",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/sch.oa",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/master.tag",
-    "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_os/schematic/data.dm",
     "IC/Linux/8_BIT_SAR_ADC_ckt_9_23/compare_test/schematic/thumbnail_128x128.png",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Solar_Energy_Harvesting_Notes.md",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
