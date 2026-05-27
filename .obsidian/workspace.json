@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "83c17592da9d027f",
+        "id": "32062c4d135b52a6",
         "type": "tabs",
         "children": [
           {
-            "id": "46d3c50fad6721b1",
+            "id": "9d0939ed9423b380",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Marvis的输出/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "RF_Microwave_Detailed_Bilingual_Study_Notes"
             }
           }
         ]
@@ -69,12 +73,25 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "46d3c50fad6721b1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/RF_Design/Script-Lectures-1-to-6.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Script-Lectures-1-to-6"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 521.5
   },
   "right": {
     "id": "8661c27a5b1979c1",
@@ -176,7 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 520.5
+    "width": 378.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,8 +206,14 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8a879c08bf556700",
+  "active": "9d0939ed9423b380",
   "lastOpenFiles": [
+    "Uni Freiburg/RF_Design/Script-Lectures-1-to-6.pdf",
+    "Marvis的输出/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+    "Uni Freiburg/Script-Lectures-1-to-6.pdf",
+    "Script-Lectures-1-to-6.pdf",
+    "Marvis的输出/RF_and_Microwave_Formulas.md",
+    "RF_Microwave_Detailed_Bilingual_Study_Notes.md",
     "Uni Freiburg/能量收集/MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "IC/实例/一种带有自校准技术的高精度SARADC的研究与设计.pdf",
     "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf",
@@ -208,9 +231,6 @@
     "IC/开关/未命名",
     "MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "IC/比较器/razavi/strongarm_notes.md",
-    "IC/比较器/razavi/strongarm.pdf",
-    "IC/比较器/razavi",
-    "IC/开关/razavi.pdf",
     "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研.md",
     "Marvis的输出/Bootstrap Switch在ADC中的应用调研 1.md",
@@ -233,10 +253,6 @@
     "xdu/fab homework/笔记Ch7.md",
     "xdu/fab homework/笔记Ch6.md",
     "xdu/fab homework/笔记Ch5.md",
-    "xdu/fab homework/笔记Ch4.md",
-    "xdu/fab homework/笔记Ch3.md",
-    "xdu/fab homework/笔记Ch2.md",
-    "xdu/fab homework/笔记Ch11.md",
     "未命名.canvas"
   ]
 }
