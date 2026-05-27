@@ -170,11 +170,11 @@ $$
 \boxed{\nabla^2 \vec{H} - \mu_0 \varepsilon_0 \frac{\partial^2 \vec{H}}{\partial t^2} = 0}
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                                                |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **物理含义** Physical Meaning | 电场 $\vec{E}$ 和磁场 $\vec{H}$ 各自满足标准的波动方程，形式为 $\nabla^2\psi - \frac{1}{v^2}\frac{\partial^2\psi}{\partial t^2}=0$。这表明电磁扰动以波的形式在空间中传播。*Both E and H satisfy standard wave equation; EM disturbances propagate as waves in space.* |
-| **推导链** Derivation Chain | Maxwell 方程组 → 取旋度 → 代入交叉耦合 → 消元 → 独立波动方程。*Maxwell → curl → substitute cross-coupling → eliminate → independent wave equations.* |
-| **关键洞察** Key Insight | 麦克斯韦在引入位移电流时就预言了电磁波——电场和磁场互相"生"对方，形成一个自持的传播过程。*Maxwell predicted EM waves upon adding displacement current: E and H mutually generate each other in a self-sustaining propagation.* |
+| **推导链** Derivation Chain  | Maxwell 方程组 → 取旋度 → 代入交叉耦合 → 消元 → 独立波动方程。*Maxwell → curl → substitute cross-coupling → eliminate → independent wave equations.*                                                                                               |
+| **关键洞察** Key Insight      | 麦克斯韦在引入位移电流时就预言了电磁波——电场和磁场互相"生"对方，形成一个自持的传播过程。*Maxwell predicted EM waves upon adding displacement current: E and H mutually generate each other in a self-sustaining propagation.*                                           |
 
 ---
 
@@ -295,10 +295,10 @@ $$
 \boxed{n = \sqrt{\varepsilon_r \mu_r} \approx \sqrt{\varepsilon_r}} \quad (\text{对非磁性介质 for non-magnetic media, } \mu_r=1)
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | 折射率描述光/电磁波在介质中的速度减慢程度：$v_p = c/n$。$n$ 越大，波走得越慢。*Refractive index describes how much slower light/EM waves travel in a medium: $v_p = c/n$. Higher n → slower wave.* |
-| **来源** Origin | $\eta = \sqrt{\mu/\varepsilon} = \sqrt{\mu_0\mu_r/\varepsilon_0\varepsilon_r} = \eta_0 \sqrt{\mu_r/\varepsilon_r}$。非磁性材料中 $\eta=\eta_0/n$。*From intrinsic impedance; for non-magnetic: $\eta=\eta_0/n$.* |
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                           |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **物理含义** Physical Meaning | 折射率描述光/电磁波在介质中的速度减慢程度：$v_p = c/n$。$n$ 越大，波走得越慢。*Refractive index describes how much slower light/EM waves travel in a medium: $v_p = c/n$. Higher n → slower wave.*                                      |
+| **来源** Origin             | $\eta = \sqrt{\mu/\varepsilon} = \sqrt{\mu_0\mu_r/\varepsilon_0\varepsilon_r} = \eta_0 \sqrt{\mu_r/\varepsilon_r}$。非磁性材料中 $\eta=\eta_0/n$。*From intrinsic impedance; for non-magnetic: $\eta=\eta_0/n$.* |
 
 ### 4.2 介质中的波长 (Wavelength in a Medium)
 
@@ -306,8 +306,8 @@ $$
 \boxed{\lambda = \frac{\lambda_0}{\sqrt{\varepsilon_{eff}}} = \frac{c}{f\sqrt{\varepsilon_{eff}}}}
 $$
 
-| 说明 Explanation |
-|---|
+| 说明 Explanation                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 介质中的波长比真空中更短。例如 GaAs ($\varepsilon_r=12.9$) 中 10 GHz 的波长从 3 cm 缩短至 $3/\sqrt{12.9} \approx 0.83$ cm。这对 MMIC 设计至关重要——片上结构的物理尺寸直接由介质波长决定。*Wavelength is shorter in media. E.g. 10 GHz in GaAs: 3 cm → $3/\sqrt{12.9} \approx 0.83$ cm. Critical for MMIC design — on-chip structures are sized by medium wavelength.* |
 
 ### 4.3 有效介电常数 (Effective Permittivity) — 微带线
@@ -427,11 +427,11 @@ $$
 \boxed{\gamma = \alpha + j\beta = \sqrt{(R' + j\omega L')(G' + j\omega C')}} \quad [\text{1/m}]
 $$
 
-| 参数 Parameter | 含义 Meaning | 单位 Unit |
-|---|---|---|
-| $\gamma$ | 传播常数 Propagation constant | 1/m |
-| $\alpha$ | 衰减常数 Attenuation constant | Np/m |
-| $\beta$ | 相位常数 Phase constant | rad/m |
+| 参数 Parameter | 含义 Meaning                | 单位 Unit |
+| ------------ | ------------------------- | ------- |
+| $\gamma$     | 传播常数 Propagation constant | 1/m     |
+| $\alpha$     | 衰减常数 Attenuation constant | Np/m    |
+| $\beta$      | 相位常数 Phase constant       | rad/m   |
 
 **无损耗线特例 (Lossless Line Special Case) $R'=G'=0$:**
 $$
@@ -471,9 +471,9 @@ $$
 \boxed{\lambda_g = \frac{2\pi}{\beta} = \frac{v_p}{f} = \frac{\lambda_0}{\sqrt{\varepsilon_{eff}}}} \quad [\text{m}]
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | $v_p$ 是恒定相位点的移动速度。$\lambda_g$ 是波在传输线中的实际空间周期。两者都由 $\varepsilon_{eff}$ 和 $f$ 决定。*$v_p$ is speed of constant-phase point. $\lambda_g$ is actual spatial period on the line. Both determined by $\varepsilon_{eff}$ and $f$.* |
+| 项目 Item                      | 说明 Explanation                                                                                                                                                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **物理含义** Physical Meaning    | $v_p$ 是恒定相位点的移动速度。$\lambda_g$ 是波在传输线中的实际空间周期。两者都由 $\varepsilon_{eff}$ 和 $f$ 决定。*$v_p$ is speed of constant-phase point. $\lambda_g$ is actual spatial period on the line. Both determined by $\varepsilon_{eff}$ and $f$.*           |
 | **设计意义** Design Significance | 微带线设计中使用 $\lambda_g$ 而非 $\lambda_0$！例如一个 $\lambda_g/4$ 变换器在 GaAs 基板上远短于真空中的 $\lambda_0/4$。*Use $\lambda_g$ not $\lambda_0$ for microstrip design! A $\lambda_g/4$ transformer on GaAs is much shorter than $\lambda_0/4$ in vacuum.* |
 
 ### 5.7 通解 (General Voltage/Current Solution)
@@ -607,20 +607,20 @@ $$
 | $a_i = \frac{V_i + Z_0 I_i}{2\sqrt{Z_0}}$ | 第 $i$ 端口的入射功率波 Incident power wave at port $i$ |
 | $b_i = \frac{V_i - Z_0 I_i}{2\sqrt{Z_0}}$ | 第 $i$ 端口的反射功率波 Reflected power wave at port $i$ |
 
-| S 参数 S-Parameter | 含义 Meaning | 测量条件 Measurement Condition |
-|---|---|---|
-| $S_{11}$ | 输入反射系数 Input reflection coefficient | 输出端口接匹配负载 $Z_0$ Output terminated with $Z_0$ |
-| $S_{21}$ | 正向传输系数（增益）Forward transmission (gain) | 输出端口接匹配负载 Output terminated with $Z_0$ |
-| $S_{12}$ | 反向传输系数（隔离度）Reverse transmission (isolation) | 输入端口接匹配负载 Input terminated with $Z_0$ |
-| $S_{22}$ | 输出反射系数 Output reflection coefficient | 输入端口接匹配负载 Input terminated with $Z_0$ |
+| S 参数 S-Parameter | 含义 Meaning                                  | 测量条件 Measurement Condition                   |
+| ---------------- | ------------------------------------------- | -------------------------------------------- |
+| $S_{11}$         | 输入反射系数 Input reflection coefficient         | 输出端口接匹配负载 $Z_0$ Output terminated with $Z_0$ |
+| $S_{21}$         | 正向传输系数（增益）Forward transmission (gain)       | 输出端口接匹配负载 Output terminated with $Z_0$       |
+| $S_{12}$         | 反向传输系数（隔离度）Reverse transmission (isolation) | 输入端口接匹配负载 Input terminated with $Z_0$        |
+| $S_{22}$         | 输出反射系数 Output reflection coefficient        | 输入端口接匹配负载 Input terminated with $Z_0$        |
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | S 参数完全描述了一个线性时不变网络在所有频率上的行为。它们对 50 Ω 参考阻抗定义。*S-parameters completely describe a linear time-invariant network at all frequencies, referenced to 50 Ω.* |
-| **为什么用 S 参数？** Why S-Parameters? | 在高频下，开路和短路条件难以实现（寄生效应），但 50 Ω 匹配负载容易做到。S 参数就是在 50 Ω 匹配条件下测量的，因此是微波频段的"自然"参数。*At high frequencies, open/short conditions are hard to realize (parasitics), but 50 Ω matched loads are easy. S-parameters are thus the "natural" microwave parameters.* |
-| **与低频参数对比** vs. Low-Frequency | Z 参数（开路）、Y 参数（短路）、h 参数（混合）在低频易于测量，但在微波频段 S 参数为首选。*Z (open), Y (short), h (hybrid) are easy at low freq; S-parameters are preferred at microwave.* |
-| **dB 转换** dB Conversion | $|S_{ij}|_{dB} = 20\log_{10}|S_{ij}|$。注意功率增益 $|S_{21}|^2$ 在 dB 中为 $10\log_{10}|S_{21}|^2 = 20\log_{10}|S_{21}|$。*Power gain $|S_{21}|^2$ in dB: $10\log_{10}|S_{21}|^2 = 20\log_{10}|S_{21}|$.* |
-| **典型值** Typical | 良好放大器: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB。*Good amplifier: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB.* |
+| 项目 Item                          | 说明 Explanation                                                                                                                                                                                                                                        |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------- | ------ | ---------- | ------ | ------------------------ | ------ | ---------------- | ------ | --------------- | ------ | ----------------------- | ------ | ---------------- | ------ | --- |
+| **物理含义** Physical Meaning        | S 参数完全描述了一个线性时不变网络在所有频率上的行为。它们对 50 Ω 参考阻抗定义。*S-parameters completely describe a linear time-invariant network at all frequencies, referenced to 50 Ω.*                                                                                                |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
+| **为什么用 S 参数？** Why S-Parameters? | 在高频下，开路和短路条件难以实现（寄生效应），但 50 Ω 匹配负载容易做到。S 参数就是在 50 Ω 匹配条件下测量的，因此是微波频段的"自然"参数。*At high frequencies, open/short conditions are hard to realize (parasitics), but 50 Ω matched loads are easy. S-parameters are thus the "natural" microwave parameters.* |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
+| **与低频参数对比** vs. Low-Frequency    | Z 参数（开路）、Y 参数（短路）、h 参数（混合）在低频易于测量，但在微波频段 S 参数为首选。*Z (open), Y (short), h (hybrid) are easy at low freq; S-parameters are preferred at microwave.*                                                                                                     |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
+| **dB 转换** dB Conversion          | $                                                                                                                                                                                                                                                     | S_{ij} | _{dB} = 20\log_{10} | S_{ij} | $。注意功率增益 $ | S_{21} | ^2$ 在 dB 中为 $10\log_{10} | S_{21} | ^2 = 20\log_{10} | S_{21} | $。*Power gain $ | S_{21} | ^2$ in dB: $10\log_{10} | S_{21} | ^2 = 20\log_{10} | S_{21} | $.* |
+| **典型值** Typical                  | 良好放大器: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB。*Good amplifier: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB.*                                                                                         |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
 
 ### 7.2 级联网络的链矩阵 (Chain / ABCD Matrix for Cascading)
 
@@ -643,21 +643,21 @@ $$
 P_{total}[\text{dB}] = P_1[\text{dB}] + P_2[\text{dB}]
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | 链矩阵让你可以把每个子模块（滤波器、放大器、衰减器）的行为编码为一个 2×2 矩阵，通过矩阵连乘得到整体系统的二端口特性。*Each sub-block (filter, amplifier, attenuator) is encoded as a 2×2 matrix; overall system = product of all matrices.* |
-| **应用** Application | MMIC 设计中，各无源结构（微带线、MIM 电容、电感）的 S 矩阵通过链矩阵级联，预测整体匹配网络的频率响应。*In MMIC design, S-matrices of passive structures (microstrip, MIM caps, inductors) are cascaded via ABCD to predict frequency response.* |
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **物理含义** Physical Meaning | 链矩阵让你可以把每个子模块（滤波器、放大器、衰减器）的行为编码为一个 2×2 矩阵，通过矩阵连乘得到整体系统的二端口特性。*Each sub-block (filter, amplifier, attenuator) is encoded as a 2×2 matrix; overall system = product of all matrices.*                |
+| **应用** Application        | MMIC 设计中，各无源结构（微带线、MIM 电容、电感）的 S 矩阵通过链矩阵级联，预测整体匹配网络的频率响应。*In MMIC design, S-matrices of passive structures (microstrip, MIM caps, inductors) are cascaded via ABCD to predict frequency response.* |
 
 ### 7.3 S 参数测量 (S-Parameter Measurement Setup)
 
 测量 S 参数需要**矢量网络分析仪（VNA / NWA — Vector Network Analyzer）**：
 *S-parameters are measured with a Vector Network Analyzer (VNA):*
 
-| 设备 Device | 用途 Purpose |
-|---|---|
-| Network Analyzer (NWA) | 测量 S 参数的幅值和相位 Measures magnitude and phase of S-parameters |
-| Parameter Analyzer (DC) | 提供 DC 偏置并提供 IV 特性 Provides DC bias and IV characteristics |
-| Test-Set | 包含混频器将 RF 下变频到中频 Mixer for RF frequency down-conversion |
+| 设备 Device                  | 用途 Purpose                                                            |
+| -------------------------- | --------------------------------------------------------------------- |
+| Network Analyzer (NWA)     | 测量 S 参数的幅值和相位 Measures magnitude and phase of S-parameters            |
+| Parameter Analyzer (DC)    | 提供 DC 偏置并提供 IV 特性 Provides DC bias and IV characteristics             |
+| Test-Set                   | 包含混频器将 RF 下变频到中频 Mixer for RF frequency down-conversion               |
 | Wafer Prober with Bias Tee | 在晶圆级别接触 MMIC，同时注入 DC 偏置 RF 信号 On-wafer probing with DC bias injection |
 
 ---
