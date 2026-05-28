@@ -11,14 +11,12 @@
             "id": "6cace97274751b74",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
-                "mode": "source",
-                "source": false
+                "file": "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf"
               },
-              "icon": "lucide-file",
-              "title": "自举采样电路设计-Razavi详细总结"
+              "icon": "lucide-file-text",
+              "title": "0.35μm CMOS工艺下12位30MS_s SAR ADC的设计"
             }
           },
           {
@@ -98,8 +96,7 @@
               "title": "razavi"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -217,11 +214,11 @@
   },
   "active": "6cace97274751b74",
   "lastOpenFiles": [
-    "IC/开关/未命名/razavi.pdf",
-    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
-    "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
-    "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf",
     "IC/实例/一种带有自校准技术的高精度SARADC的研究与设计.pdf",
+    "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf",
+    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
+    "IC/开关/未命名/razavi.pdf",
+    "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
     "未命名.base"
   ]
 }
