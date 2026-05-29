@@ -100,8 +100,12 @@
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
     "width": 528.5,
     "collapsed": true
+=======
+    "width": 370.5
+>>>>>>> e1b4ac0 (auto sync: workspace state update)
   },
   "right": {
     "id": "bd999d6bb133d2ad",
