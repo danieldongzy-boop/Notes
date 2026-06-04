@@ -100,8 +100,7 @@
               "title": "MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -217,7 +216,7 @@
       "bases:新建数据库": false
     }
   },
-  "active": "4f6157c006b42b86",
+  "active": "61452fc3811fb5a8",
   "lastOpenFiles": [
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
     "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
