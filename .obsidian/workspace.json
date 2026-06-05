@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "8ba2847e525252cd",
+        "id": "de648ec05f33c57a",
         "type": "tabs",
         "children": [
           {
-            "id": "265468f8c8bc6814",
+            "id": "4f6157c006b42b86",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/Analog Cmos/PE4/Practical_Exercise_IV_SS26.pdf"
+                "file": "IC/实例/0.35μm CMOS工艺下12位30MS_s SAR ADC的设计.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Practical_Exercise_IV_SS26"
+              "title": "0.35μm CMOS工艺下12位30MS_s SAR ADC的设计"
             }
           }
         ]
@@ -78,34 +78,31 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "IC/开关/razavi/razavi.pdf"
+                "file": "IC/开关/未命名/razavi.pdf"
               },
               "icon": "lucide-file-text",
               "title": "razavi"
             }
           },
           {
-            "id": "d2c1ec1a65776404",
+            "id": "eba8a0e4e2379633",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/Test and reliability/01b-intro_annot.pdf"
+                "file": "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "01b-intro_annot"
+              "icon": "lucide-file",
+              "title": "MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-<<<<<<< HEAD
-    "width": 528.5,
-    "collapsed": true
-=======
-    "width": 370.5
->>>>>>> e1b4ac0 (auto sync: workspace state update)
+    "width": 445.5
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -204,7 +201,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 671.5
+    "width": 383.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,9 +214,9 @@
       "bases:新建数据库": false
     }
   },
-  "active": "265468f8c8bc6814",
+  "active": "4f6157c006b42b86",
   "lastOpenFiles": [
-    "IC/开关/razavi/自举采样电路设计-Razavi详细总结.md",
+    "Uni Freiburg/能量收集/热电转换器作业题解答.md",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",
@@ -228,29 +225,16 @@
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_001.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages",
     "IC/开关/razavi/razavi_page_images/razavi_page",
+    "IC/开关/razavi/自举采样电路设计-Razavi详细总结.md",
     "IC/开关/razavi/razavi_page_images",
     "IC/开关/razavi/razavi.pdf",
     "IC/开关/razavi",
-    "IC/开关",
     "IC/实例/eetop.cn_模拟大规模集成电路课程设计报告.pdf",
     "IC/实例/eetop.cn_Design of Energy Efficient SAR ADC/Design of Energy Efficient SAR ADC.pdf",
     "IC/实例/eetop.cn_Design of Energy Efficient SAR ADC",
     "IC/实例/10b250Minterleaving/eetop.cn_adc10b250m.tar.gz",
-    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_006.png",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_003.png",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_005.png",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_004.png",
-    "IC/实例/2stageamp/2stageamp.md",
-    "Uni Freiburg/Test and reliability/01b-intro_学习笔记.md",
-    "Marvis的输出/Ahuja补偿与Cascode密勒补偿技术总结.md",
-    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
-    "Uni Freiburg/能量收集/热电转换器作业题解答.md",
+    "IC/实例/10b250Minterleaving/eetop.cn__PHD_CCLiu_Design of High-Speed Energy-Efficient SAR ADC.pdf",
     "Uni Freiburg/能量收集/MicroEnergyHarvesting_Thermoelectric_Energy_Harvesting_Notes.md",
-    "Uni Freiburg/能量收集/光伏作业题解答.md",
-    "Uni Freiburg/能量收集/MicroEnergyHarvesting_Solar_Energy_Harvesting_Notes.md",
-    "Marvis的输出/SAR_ADC_Submodule_Analysis.md",
-    "IC/比较器/razavi/strongarm_notes.md",
-    "Marvis的输出/SAR_ADC与Noise-Shaping_SAR_ADC完整设计指南.md"
+    "IC/开关/未命名/自举采样电路设计-Razavi详细总结.md"
   ]
 }
