@@ -2,3 +2,9 @@
 .obsidian/cache/
 .DS_Store
 IC/书/Sansen_模拟集成电路设计精粹.pdf
+.git-credentials
+
+# Ignore imported/generated Cadence/Linux project trees that are not part of note sync.
+IC/Linux/adi/
+IC/Linux/eetop.cn_Pipe_SAR/
+IC/Linux/eetop.cn_adc10b250m/
