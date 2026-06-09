@@ -21,25 +21,24 @@
 
 因此一个测试向量写成：
 
-\[
+$$
 pi_1pi_2\mid si_1si_2si_3si_4
 \rightarrow
 po_1\mid so_1so_2so_3so_4
-\]
+$$
 
 **English**
 
 The sequential circuit is viewed as a combinational core surrounded by four flip-flops. The current flip-flop contents are the secondary inputs, and the next-state values produced by the core are the secondary outputs.
 
 The two supplied combinational tests are:
-$$
-\[
-11\mid0011\rightarrow0\mid0111
-\]
 
-$$$$\[
+$$
+11\mid0011\rightarrow0\mid0111
+$$
+$$
 01\mid0101\rightarrow1\mid1100
-\]$$
+$$
 
 ### 1.2 Scan mode 与 capture mode / Scan and capture modes
 
@@ -56,15 +55,15 @@ $$$$\[
 
 扫描链顺序是：
 
-\[
+$$
 scan\_in\rightarrow FF1\rightarrow FF2\rightarrow FF3\rightarrow FF4\rightarrow scan\_out
-\]
+$$
 
 连续移入 4 位 \(u_1,u_2,u_3,u_4\) 后，状态为：
 
-\[
+$$
 FF1FF2FF3FF4=u_4u_3u_2u_1
-\]
+$$
 
 所以要得到 `0011`，输入顺序应为 `1,1,0,0`。
 
@@ -95,9 +94,9 @@ The initial state is `0000`.
 
 因此完整 `scan_out` 列为：
 
-\[
+$$
 0,0,0,1,\ 1,\ 1,1,1,0,\ 0,\ 0,0,1,1
-\]
+$$
 
 The final four scan-out bits after the second capture are `0011` in temporal order, corresponding to the stored state `1100` because `FF4` exits first.
 
@@ -116,17 +115,17 @@ The key idea is that scan shifting provides controllability and observability fo
 
 电路为：
 
-\[
+$$
 e=ab,\qquad f=cd,\qquad g=e+f=ab+cd
-\]
+$$
 
 The circuit implements \(g=ab+cd\) using two AND gates followed by an OR gate.
 
 给定测试向量 / Given patterns:
 
-\[
+$$
 0101,\quad0111,\quad1010,\quad1110
-\]
+$$
 
 位序均为 `abcd`。
 
@@ -134,18 +133,18 @@ The circuit implements \(g=ab+cd\) using two AND gates followed by an OR gate.
 
 信号线为 `a,b,c,d,e,f,g`。每条线有 s-a-0 和 s-a-1：
 
-\[
+$$
 \begin{aligned}
 &a/0,a/1,b/0,b/1,c/0,c/1,d/0,d/1,\\
 &e/0,e/1,f/0,f/1,g/0,g/1
 \end{aligned}
-\]
+$$
 
 总计：
 
-\[
+$$
 7\times2=14\text{ faults}
-\]
+$$
 
 There are seven signal lines and therefore fourteen raw single stuck-at faults.
 
@@ -153,43 +152,43 @@ There are seven signal lines and therefore fourteen raw single stuck-at faults.
 
 对上方 AND 门：
 
-\[
+$$
 a/0\equiv b/0\equiv e/0
-\]
+$$
 
 For the upper AND gate, either input stuck at 0 has the same output behavior as `e/0`.
 
 对下方 AND 门：
 
-\[
+$$
 c/0\equiv d/0\equiv f/0
-\]
+$$
 
 For the lower AND gate:
 
-\[
+$$
 c/0\equiv d/0\equiv f/0
-\]
+$$
 
 对 OR 门：
 
-\[
+$$
 e/1\equiv f/1\equiv g/1
-\]
+$$
 
 For the OR gate, either input stuck at 1 is equivalent to the output stuck at 1.
 
 其余故障没有被这些局部等价关系合并：
 
-\[
+$$
 a/1,b/1,c/1,d/1,g/0
-\]
+$$
 
 可选择以下 8 个代表：
 
-\[
+$$
 \boxed{\{e/0,\ f/0,\ g/1,\ a/1,\ b/1,\ c/1,\ d/1,\ g/0\}}
-\]
+$$
 
 Any member of each class may be chosen, so the EFC representative list is not unique.
 
@@ -233,13 +232,13 @@ The maximum particle size is 12 nm, and only one particle can occur. A possible 
 
 借助图中的 20 nm 标尺比较间距，可识别出：
 
-\[
+$$
 \boxed{b\leftrightarrow c}
-\]
+$$
 
-\[
+$$
 \boxed{e\leftrightarrow g}
-\]
+$$
 
 其他线对的最近距离大于 12 nm，单颗粒无法形成短路。
 
@@ -252,9 +251,9 @@ The only geometrically possible bridges are `b-c` and `e-g`.
 1. 若一个 polygon 面积超过另一个的两倍，大 polygon 对应线为 aggressor，小 polygon 对应线为 victim；victim 被强制为 aggressor 的逻辑值。
 2. 若面积大致相近，则按 wired-AND：
 
-\[
+$$
 x'=y'=x\land y
-\]
+$$
 
 According to the statement, a much larger polygon dominates the smaller one; otherwise the short behaves as a wired AND.
 
@@ -269,15 +268,15 @@ From the relative polygon areas, the intended lecture solution treats `b` as the
 
 故障电路中：
 
-\[
+$$
 c_f=b
-\]
+$$
 
 所以：
 
-\[
+$$
 g_f=ab+(b)d
-\]
+$$
 
 | Pattern | Good `g` | Faulty `c_f` | Faulty `g_f` | Detected? |
 |---|---:|---:|---:|---|
@@ -288,9 +287,9 @@ g_f=ab+(b)d
 
 检测向量为：
 
-\[
+$$
 \boxed{0101}
-\]
+$$
 
 The pattern `0101` makes good `c=0` but forces faulty `c_f=b=1`; since `d=1` and the upper product is 0, the output changes from 0 to 1.
 
@@ -298,15 +297,15 @@ The pattern `0101` makes good `c=0` but forces faulty `c_f=b=1`; since `d=1` and
 
 正常情况下：
 
-\[
+$$
 g=e+f
-\]
+$$
 
 短路后 victim `g` 跟随 aggressor `e`：
 
-\[
+$$
 g_f=e
-\]
+$$
 
 | Pattern | `e` | `f` | Good `g` | Faulty `g_f=e` | Detected? |
 |---|---:|---:|---:|---:|---|
@@ -317,9 +316,9 @@ g_f=e
 
 检测向量为：
 
-\[
+$$
 \boxed{0111}
-\]
+$$
 
 `0111` is ideal because the correct output is produced only by the lower product `f=1`, while the aggressor `e=0` incorrectly forces `g` to 0.
 
@@ -337,7 +336,7 @@ No additional pattern is required because both possible bridges are already cove
 
 根据图 5，可写成：
 
-\[
+$$
 \begin{aligned}
 n_7&=\overline a\\
 n_8&=\overline d\\
@@ -348,7 +347,7 @@ n_4&=\overline{a\,l} &&\text{(G4)}\\
 n_5&=\overline{l\,d} &&\text{(G5)}\\
 y&=\overline{n_2n_4n_5n_3} &&\text{(G6)}
 \end{aligned}
-\]
+$$
 
 `l` 是 G1 输出，也是题图中标注 `sa1` 的位置。
 
@@ -366,15 +365,15 @@ The marked fault site `l` is the output of NAND gate G1 and fans out to G4 and G
 
 总位置数：
 
-\[
+$$
 12+3+7=22
-\]
+$$
 
 每个位置有两种 stuck-at 值，因此：
 
-\[
+$$
 \boxed{22\times2=44\text{ single stuck-at faults}}
-\]
+$$
 
 Under the standard convention that distinguishes fanout stems and branches, the circuit has 22 fault sites and 44 single stuck-at faults.
 
@@ -390,21 +389,21 @@ ATPG proceeds through sensitization, propagation, and observation.
 
 目标故障为 `l/1`。要激活它，无故障电路中必须有：
 
-\[
+$$
 l=0
-\]
+$$
 
 而：
 
-\[
+$$
 l=\overline{bc}
-\]
+$$
 
 NAND 输出为 0 仅当两个输入均为 1：
 
-\[
+$$
 \boxed{b=1,\ c=1}
-\]
+$$
 
 To activate a stuck-at-1 fault, the good value must be 0, so both inputs of G1 must be 1.
 
@@ -414,15 +413,15 @@ To activate a stuck-at-1 fault, the good value must be 0, so both inputs of G1 m
 
 要通过 G4 传播，另一个输入必须是 NAND 的非控制值 1：
 
-\[
+$$
 \boxed{a=1}
-\]
+$$
 
 要通过 G5 传播，另一个输入也必须为 1：
 
-\[
+$$
 \boxed{d=1}
-\]
+$$
 
 To propagate through each NAND, its side input must be 1. Therefore set `a=d=1`.
 
@@ -430,17 +429,17 @@ To propagate through each NAND, its side input must be 1. Therefore set `a=d=1`.
 
 当 `a=b=c=d=1` 时：
 
-\[
+$$
 n_7=\overline a=0,\qquad n_8=\overline d=0
-\]
+$$
 
-\[
+$$
 n_2=\overline{b n_7}=\overline{1\cdot0}=1
-\]
+$$
 
-\[
+$$
 n_3=\overline{c n_8}=\overline{1\cdot0}=1
-\]
+$$
 
 所以 G6 的旁路输入 `n2`、`n3` 都是非控制值 1，不会遮蔽来自 G4/G5 的故障效应。
 
@@ -450,35 +449,35 @@ The outer paths automatically produce 1 at G2 and G3, allowing G6 to observe the
 
 测试向量：
 
-\[
+$$
 \boxed{abcd=1111}
-\]
+$$
 
 无故障：
 
-\[
+$$
 l=0,\quad n_4=n_5=1,\quad n_2=n_3=1
-\]
+$$
 
-\[
+$$
 y_{good}=\overline{1\cdot1\cdot1\cdot1}=0
-\]
+$$
 
 故障 `l/1`：
 
-\[
+$$
 l_f=1,\quad n_{4f}=n_{5f}=0
-\]
+$$
 
-\[
+$$
 y_{faulty}=\overline{1\cdot0\cdot0\cdot1}=1
-\]
+$$
 
 因此：
 
-\[
+$$
 \boxed{1111:\ y_{good}=0,\ y_{faulty}=1}
-\]
+$$
 
 The stuck-at-1 fault is detected by `1111`.
 
@@ -514,9 +513,9 @@ The capture vector can reuse the propagation conditions of the corresponding stu
 
 需要在 `l` 上制造：
 
-\[
+$$
 1\rightarrow0
-\]
+$$
 
 并在第二拍传播这个迟到的 1。
 
@@ -526,9 +525,9 @@ We need a launch-capture pair that creates a `1 -> 0` transition at `l`.
 
 由 3(b)，传播 `l` 在捕获时刻表现出的 `s-a-1` 效应需要：
 
-\[
+$$
 V_2=1111
-\]
+$$
 
 此时 good `l` 应为 0；若 slow-to-fall，则捕获瞬间 faulty `l` 仍为 1。
 
@@ -538,37 +537,37 @@ The second vector is the stuck-at-1 test `1111`.
 
 第一拍要令：
 
-\[
+$$
 l=1=\overline{bc}
-\]
+$$
 
 因此 `b,c` 至少一个为 0。为减少不必要输入变化，可保持 `a=c=d=1`，仅把 `b` 从 0 切到 1：
 
-\[
+$$
 V_1=1011
-\]
+$$
 
 检查：
 
-\[
+$$
 V_1=1011:\quad l=\overline{0\cdot1}=1
-\]
+$$
 
-\[
+$$
 V_2=1111:\quad l=\overline{1\cdot1}=0
-\]
+$$
 
 所以有效测试对为：
 
-\[
+$$
 \boxed{1011\rightarrow1111}
-\]
+$$
 
 An equally valid alternative is:
 
-\[
+$$
 \boxed{1101\rightarrow1111}
-\]
+$$
 
 because changing `c:0->1` also causes `l:1->0`.
 

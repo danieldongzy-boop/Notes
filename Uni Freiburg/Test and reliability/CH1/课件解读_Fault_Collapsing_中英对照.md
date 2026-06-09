@@ -44,9 +44,9 @@ To propagate a fault effect from one gate input to the output, the other inputs 
 
 ### 2.2 检测集合 / Detecting set
 
-令 \(T_f\) 表示能够检测故障 \(f\) 的所有输入向量组成的集合。
+令 $$T_f$$ 表示能够检测故障 $$f$$ 的所有输入向量组成的集合。
 
-Let \(T_f\) be the set of all input patterns that detect fault \(f\).
+Let $$T_f$$ be the set of all input patterns that detect fault $$f$$.
 
 一个向量检测故障需要同时满足：
 
@@ -62,29 +62,29 @@ A test detects a fault only if it activates the fault, propagates the resulting 
 
 **中文**
 
-若任意测试向量都无法区分故障 \(f\) 与 \(g\)，则二者功能等价：
+若任意测试向量都无法区分故障 $$f$$ 与 $$g$$，则二者功能等价：
 
-\[
+$$
 f \equiv g \iff \forall t,\ C_f(t)=C_g(t)
-\]
+$$
 
-等价故障具有完全相同的检测集合：\(T_f=T_g\)。因此，一个等价类只需保留一个代表故障。
+等价故障具有完全相同的检测集合：$$T_f=T_g$$。因此，一个等价类只需保留一个代表故障。
 
 **English**
 
-Faults \(f\) and \(g\) are functionally equivalent if no input pattern can distinguish their faulty circuits:
+Faults $$f$$ and $$g$$ are functionally equivalent if no input pattern can distinguish their faulty circuits:
 
-\[
+$$
 f \equiv g \iff \forall t,\ C_f(t)=C_g(t)
-\]
+$$
 
-They have identical detecting sets, \(T_f=T_g\), so only one representative from each equivalence class is required.
+They have identical detecting sets, $$T_f=T_g$$, so only one representative from each equivalence class is required.
 
 ### 3.2 为什么它是等价关系？ / Why is it an equivalence relation?
 
-- Reflexive / 自反：\(f\equiv f\)。
-- Symmetric / 对称：若 \(f\equiv g\)，则 \(g\equiv f\)。
-- Transitive / 传递：若 \(f\equiv g\) 且 \(g\equiv h\)，则 \(f\equiv h\)。
+- Reflexive / 自反：$$f\equiv f$$。
+- Symmetric / 对称：若 $$f\equiv g$$，则 $$g\equiv f$$。
+- Transitive / 传递：若 $$f\equiv g$$ 且 $$g\equiv h$$，则 $$f\equiv h$$。
 
 这些性质允许把故障划分成互不重叠的 equivalence classes（等价类）。
 
@@ -94,29 +94,29 @@ These properties partition the original fault list into disjoint equivalence cla
 
 ### 4.1 基本门的等价关系 / Equivalence relations for elementary gates
 
-设两输入 AND 门输出为 \(z=xy\)：
+设两输入 AND 门输出为 $$z=xy$$：
 
-\[
+$$
 x/0 \equiv y/0 \equiv z/0
-\]
+$$
 
 因为这三个故障都会使输出在相关情况下表现为 0。`x/1`、`y/1` 和 `z/1` 通常不彼此等价。
 
-For a two-input AND gate \(z=xy\), the two input stuck-at-0 faults and the output stuck-at-0 fault are equivalent.
+For a two-input AND gate $$z=xy$$, the two input stuck-at-0 faults and the output stuck-at-0 fault are equivalent.
 
-设两输入 OR 门输出为 \(z=x+y\)：
+设两输入 OR 门输出为 $$z=x+y$$：
 
-\[
+$$
 x/1 \equiv y/1 \equiv z/1
-\]
+$$
 
 For a two-input OR gate, the two input stuck-at-1 faults and the output stuck-at-1 fault are equivalent.
 
 反相门满足：
 
-\[
+$$
 x/0 \equiv z/1,\qquad x/1 \equiv z/0
-\]
+$$
 
 For an inverter, an input stuck-at-0 is equivalent to an output stuck-at-1, and vice versa.
 
@@ -126,7 +126,7 @@ NAND and NOR follow the same core-gate logic, with the output stuck-at polarity 
 
 ### 4.2 两输入门为什么从 6 个故障降到 4 个？ / Why does EFC reduce six faults to four?
 
-一个两输入门有两个输入和一个输出，因此原始共有 \(3\times2=6\) 个 stuck-at faults。对 AND/OR 族基本门，三个控制值相关故障可合并成一个等价类，另外三个故障各自保留，所以剩 4 个代表。
+一个两输入门有两个输入和一个输出，因此原始共有 $$3\times2=6$$ 个 stuck-at faults。对 AND/OR 族基本门，三个控制值相关故障可合并成一个等价类，另外三个故障各自保留，所以剩 4 个代表。
 
 A two-input gate has six raw stuck-at faults. The three equivalent controlling-value-related faults collapse into one class; the other three remain separate, leaving four representatives.
 
@@ -252,9 +252,9 @@ return fault_list
 
 每个门、PI 和 PO 只访问常数次，因此时间复杂度为：
 
-\[
+$$
 O(|V|+|E|)
-\]
+$$
 
 Each gate and connection is processed a constant number of times, so the algorithm is linear in netlist size.
 
@@ -290,9 +290,9 @@ representative -> {all equivalent original faults}
 
 XOR 没有像 AND/OR 那样的单一控制值：
 
-\[
+$$
 x\oplus 0=x,\qquad x\oplus1=\overline{x}
-\]
+$$
 
 任一输入的 0 或 1 都不会恒定地控制输出。因此，AND/OR 的“控制值输入故障与输出故障等价”规则不能直接套用。
 
@@ -308,29 +308,29 @@ XOR equivalences require structure-specific reasoning or stronger functional ana
 
 课件定义：若
 
-\[
+$$
 T_f \supseteq T_g
-\]
+$$
 
-则故障 \(f\) dominates（支配）故障 \(g\)。
+则故障 $$f$$ dominates（支配）故障 $$g$$。
 
-Fault \(f\) dominates \(g\) when every test that detects \(g\) also detects \(f\).
+Fault $$f$$ dominates $$g$$ when every test that detects $$g$$ also detects $$f$$.
 
 注意方向：
 
-- \(f\) 的检测集合更大，\(f\) 是 dominating fault。
-- \(g\) 更难检测，\(g\) 是 dominated fault。
-- 为了 ATPG，只需针对更难检测的 \(g\) 生成测试；检测 \(g\) 时自然也检测 \(f\)。
+- $$f$$ 的检测集合更大，$$f$$ 是 dominating fault。
+- $$g$$ 更难检测，$$g$$ 是 dominated fault。
+- 为了 ATPG，只需针对更难检测的 $$g$$ 生成测试；检测 $$g$$ 时自然也检测 $$f$$。
 
 The dominated fault has the smaller detecting set and is harder to detect. Generating a test for it automatically covers the dominating fault, so the dominating fault may be removed from the ATPG target list.
 
 ### 11.2 支配关系是不是等价关系？ / Is dominance an equivalence relation?
 
-- Reflexive / 自反：是，\(T_f\supseteq T_f\)。
+- Reflexive / 自反：是，$$T_f\supseteq T_f$$。
 - Transitive / 传递：是，集合包含具有传递性。
-- Symmetric / 对称：一般不是。\(T_f\supseteq T_g\) 不代表 \(T_g\supseteq T_f\)。
+- Symmetric / 对称：一般不是。$$T_f\supseteq T_g$$ 不代表 $$T_g\supseteq T_f$$。
 
-因此 dominance 不是 equivalence relation，而是偏序式关系。只有当两个方向都成立时，才有 \(T_f=T_g\)，即故障等价。
+因此 dominance 不是 equivalence relation，而是偏序式关系。只有当两个方向都成立时，才有 $$T_f=T_g$$，即故障等价。
 
 Dominance is not an equivalence relation because it is generally not symmetric. Mutual dominance implies equivalence.
 
@@ -340,13 +340,13 @@ DFC 同时利用等价和支配关系，比 EFC 更激进。
 
 DFC uses dominance in addition to equivalence and is therefore more aggressive than EFC.
 
-对于一个 \(n\) 输入 AND/OR 族基本门：
+对于一个 $$n$$ 输入 AND/OR 族基本门：
 
-- 原始故障：\(2(n+1)\)。
-- EFC 后：\(n+2\)。
-- EFC + DFC 后：\(n+1\)。
+- 原始故障：$$2(n+1)$$。
+- EFC 后：$$n+2$$。
+- EFC + DFC 后：$$n+1$$。
 
-For an \(n\)-input elementary AND/OR-family gate, EFC and DFC together leave \(n+1\) target faults.
+For an $$n$$-input elementary AND/OR-family gate, EFC and DFC together leave $$n+1$$ target faults.
 
 ### Fanout-free DFC rules / 无扇出 DFC 规则
 
@@ -399,9 +399,9 @@ The theorem gives a complete target set without explicitly deriving all equivale
 
 课件给出的数量关系为：
 
-\[
+$$
 |CHKPT| \ge |EFC| \ge |DFC|
-\]
+$$
 
 这里数量按保留的 fault targets 计算。Checkpoint 集通常比折叠后的 EFC/DFC 集大，但仍明显小于原始故障表。
 
@@ -463,7 +463,7 @@ First perform EFC, then use detecting-set containment. Remove the dominating fau
 ## 18. 高频易错点 / Common mistakes
 
 1. **把 dominance 方向写反。**  
-   If \(T_f\supseteq T_g\), remove \(f\), not \(g\), from the ATPG target list.
+   If $$T_f\supseteq T_g$$, remove $$f$$, not $$g$$, from the ATPG target list.
 
 2. **认为 stem fault 与每个 branch fault 自动等价。**  
    A stem affects all branches; a branch affects only one.
@@ -485,7 +485,7 @@ First perform EFC, then use detecting-set containment. Remove the dominating fau
 **中文速记**
 
 - EFC：检测集合相同，留一个代表。
-- DFC：若 \(T_f\supseteq T_g\)，测试 \(g\) 一定顺带检测 \(f\)，所以 ATPG 可删 \(f\)。
+- DFC：若 $$T_f\supseteq T_g$$，测试 $$g$$ 一定顺带检测 $$f$$，所以 ATPG 可删 $$f$$。
 - AND 控制值 0、非控制值 1；OR 控制值 1、非控制值 0。
 - 扇出 stem 与 branch 不能随意合并。
 - SIMPLE_EFC 快、线性、保守，但不保证最小。
@@ -495,7 +495,7 @@ First perform EFC, then use detecting-set containment. Remove the dominating fau
 **English recap**
 
 - EFC keeps one representative for faults with identical detecting sets.
-- If \(T_f\supseteq T_g\), \(f\) dominates \(g\); ATPG may remove \(f\).
+- If $$T_f\supseteq T_g$$, $$f$$ dominates $$g$$; ATPG may remove $$f$$.
 - AND controlling/non-controlling values are 0/1; OR values are 1/0.
 - Never collapse a fanout stem with branches without proof.
 - SIMPLE_EFC is fast and conservative, but not optimal.
