@@ -42,3 +42,7 @@ IC/Linux/
 .obsidian/graph.json
 .obsidian/community-plugins.json
 claude-memory/sync-log.txt
+
+# Claudian 插件及其数据(不再使用,不同步)
+.claudian/
+.obsidian/plugins/realclaudian/
