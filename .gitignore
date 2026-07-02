@@ -1,10 +1,24 @@
+# --- Obsidian 易变配置 ---
 .obsidian/workspace.json
+.obsidian/workspace-mobile.json
 .obsidian/cache/
 .DS_Store
-IC/��/Sansen_ģ�⼯�ɵ�·��ƾ���.pdf
-.git-credentials
+.trash/
 
-# Ignore imported/generated Cadence/Linux project trees that are not part of note sync.
-IC/Linux/adi/
-IC/Linux/eetop.cn_Pipe_SAR/
-IC/Linux/eetop.cn_adc10b250m/
+# --- 敏感信息(切勿提交) ---
+.git-credentials
+.env
+*.key
+*.pem
+
+# --- 已弃用的 AI 工具产物 ---
+copilot/
+codex/
+..push_result.txt
+push_result.txt
+
+# --- 乱码文件名的旧文件 ---
+IC/**/Sansen_*.pdf
+
+# --- VMware 共享文件夹 / Cadence 工程(仅在 Win 虚拟机使用,不进 git) ---
+IC/Linux/
