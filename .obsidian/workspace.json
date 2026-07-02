@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "20ac3ca2ab84cf81",
+        "id": "bf4c63ed59205d00",
         "type": "tabs",
         "children": [
           {
-            "id": "5e6d569a8b0a42de",
+            "id": "1d50620590378356",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf"
+              },
+              "pinned": true,
+              "icon": "lucide-file-text",
+              "title": "04-sat_annot"
             }
           }
         ]
@@ -69,25 +73,13 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
-          },
-          {
-            "id": "1a67a95431508ed5",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "04-sat_annot"
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 803.2
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -103,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "04-sat_annot 的反向链接列表"
             }
           },
           {
@@ -121,11 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "04-sat_annot 的出链列表"
             }
           },
           {
@@ -158,7 +152,7 @@
             }
           },
           {
-            "id": "087664fb93a3686d",
+            "id": "65b9900e65c5ea15",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -177,7 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 434.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -189,55 +183,53 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "copilot:Open Copilot Chat": false
+      "realclaudian:Open Claudian": false
     }
   },
-  "active": "1a67a95431508ed5",
+  "active": "1d50620590378356",
   "lastOpenFiles": [
-    "Uni Freiburg/Test and reliability/CH3/ex03_slides_annot.pdf",
-    "Uni Freiburg/Test and reliability/CH2/CH2_课件解读_Fault_Simulation_中英对照.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf",
-    "Uni Freiburg/Analog Cmos/PE5/Practical_Exercise_V_SS26.pdf",
-    "IC/noise/noise_analysis_murmann.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E05/Data_Converters_E05.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E05/Data_Converters_E5_results.pdf",
-    "Uni Freiburg/Test and reliability/CH3/ex03.pdf",
-    "Uni Freiburg/Test and reliability/CH4/ex04.pdf",
-    "Uni Freiburg/Test and reliability/CH4/ex04_annot.pdf",
-    "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
-    "Untitled.md",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.jpeg",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
-    "IC/noise/noise_analysis_murmann_解读.md",
+    "sync-obsidian.bat",
+    "claude-memory/user_profile.md",
+    "claude-memory/user_learning_style.md",
+    "claude-memory/reference_sync.md",
+    "claude-memory/project_vault_overview.md",
+    "claude-memory/git-sync-说明.md",
+    "claude-memory/feedback_vault_workflow.md",
+    "claude-memory/MEMORY.md",
+    "claude-memory",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.xdv",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.toc",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.synctex.gz",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.snm",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.out",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.nav",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.log",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.fls",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.fdb_latexmk",
+    "Uni Freiburg/Test and reliability/CLAUDE.md",
+    "未命名.canvas",
+    "未命名.md",
     "Uni Freiburg/能量收集/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
-    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+    "Uni Freiburg/能量收集/MEH_Lecture_6_振动能量采集II课件解读_中英对照.md",
+    "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
     "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
     "IC/BGR/商用芯片_BGR_价格与指标对标_2026-06-13.md",
     "IC/BGR/IEEE_核心论文_待手动下载.md",
     "IC/BGR/BGR_65nm_130nm_180nm_近15年论文综述.md",
-    "copilot/copilot-conversations/文档可见性确认@20260609_153320.md",
-    "Uni Freiburg/Test and reliability/CH2/CH2_作业解析_Exercise_2_中英对照.md",
-    "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
-    "Uni Freiburg/能量收集/MEH_Lecture_3_热电能量采集课件解读_中英对照.md",
-    "Uni Freiburg/能量收集/MEH_Exercise_2_光伏作业解析_中英对照.md",
-    "Uni Freiburg/能量收集/MEH_Lecture_2_太阳能采集课件解读_中英对照.md",
-    "Uni Freiburg/能量收集/MEH_Exercise_3_热电转换器作业解析_中英对照.md",
-    "Uni Freiburg/能量收集/MEH_Lecture_6_振动能量采集II课件解读_中英对照.md",
+    "IC/实例/全差分两级cascode/全差分两级cascode.md",
+    "Uni Freiburg/能量收集/MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
     "Uni Freiburg/能量收集/MEH_Lecture_5_振动能量采集基础课件解读_中英对照.md",
-    "Uni Freiburg/Test and reliability/CH1/作业解析_Exercise_1_中英对照.md",
-    "Uni Freiburg/Test and reliability/CH1/课件解读_Fault_Collapsing_中英对照.md",
+    "copilot/copilot-conversations/文档可见性确认@20260609_153320.md",
+    "copilot/memory/Recent Conversations.md",
     "copilot/copilot-conversations/Obsidian_撤回操作@20260609_150618.md",
-    "copilot/copilot-log.md",
-    "Uni Freiburg/Test and reliability/CH1/01b-intro_学习笔记.md",
+    "copilot/copilot-conversations/Connection_Error_Greetings@20260609_144812.md",
+    "Uni Freiburg/能量收集/MEH_Lecture_3_热电能量采集课件解读_中英对照.md",
+    "Uni Freiburg/能量收集/MEH_Lecture_2_太阳能采集课件解读_中英对照.md",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_003.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_002.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_001.png",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_006.png",
-    "IC/开关/未命名/razavi_page_images/razavi_page_pages/page_005.png"
+    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_001.png"
   ]
 }
