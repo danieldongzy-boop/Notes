@@ -22,3 +22,22 @@ IC/**/Sansen_*.pdf
 
 # --- VMware 共享文件夹 / Cadence 工程(仅在 Win 虚拟机使用,不进 git) ---
 IC/Linux/
+
+# --- LaTeX/Beamer 编译临时产物 ---
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.synctex.gz
+*.vrb
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+
+# --- Obsidian 易变的界面配置(不必同步) ---
+.obsidian/appearance.json
+.obsidian/graph.json
+.obsidian/community-plugins.json
