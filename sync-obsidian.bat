@@ -22,5 +22,8 @@ git push origin main || (echo   !! PUSH FAILED !! & pause & exit /b 1)
 echo.
 echo ============================================
 echo   DONE OK
+echo   commit:
+git log -1 --pretty=format:"   %%h  %%s  (%%ci)"
+echo.
 echo ============================================
 pause
