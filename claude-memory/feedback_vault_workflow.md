@@ -13,4 +13,4 @@ type: feedback
 - 模拟 IC 这种大领域:不要建一个笼统的大 Project,按 vault 已有模块分:SAR ADC(SARADC+NSsar)、Amplifier(AMP)、Data Converter、Noise 各一个 Project;每个具体子主题(如"CDAC 失配分析""kT/C 噪声预算")一个 Task。
 - Task 粒度 ≈ 一次能连续学完的一块内容(一章或一个推导专题)。
 
-**精读节奏(用户偏好):** PDF 当主屏,Claude 当旁边的讲师;让 Claude 直接读 vault 里的 `*_annot.pdf`,用户说"讲第 X 页"即可对齐。循环:用户读几页 → 提问 → Claude 推导讲解 → 把关键结论/推导写回对应章节文件夹的笔记。
+**精读节奏(用户偏好):** PDF 当主屏,Claude 当旁边的讲师;让 Claude 直接读 vault 里的 `*_annot.pdf`,用户说"讲第 X 页"即可对齐。循环:用户读几页 → 提问 → Claude 推导讲解 → 把关键结论/推导写回对应章节文件�

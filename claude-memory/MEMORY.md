@@ -12,4 +12,4 @@
 - [跨设备同步](reference_sync.md) — vault 是 git 仓库,Win/Mac 靠 push/pull 同步,勿写死本地路径
 
 ## 项目 / 环境
-- [Vault 概况](project_vault_overview.md) — 目录结构、git 远端、已清理项、需注意的坑
+- [Vault 概况](project_vault_overview.md) — 目录结构、git 远端、已清理项、�

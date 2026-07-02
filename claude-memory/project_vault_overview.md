@@ -19,4 +19,4 @@ type: project
 - `IC/Linux/**` 下大量 `.state` / `ADE_state.info` / `.oalib` 是 Cadence 仿真状态文件,**不是 AI 垃圾,绝不能删**。
 - 曾出现 `.git/index.lock` 残留导致 git index 被清空、所有文件误显示为 deleted;用 `git reset HEAD`(不加 --hard)从 HEAD 重建 index 即可修复,物理文件不受影响。以后遇到全量"D"先怀疑 index 损坏,不要直接提交。
 
-**How to apply:** 新笔记写进对应 `IC/<主题>/` 或课程章节文件夹;涉及 git 时保护敏感文件、先检查 index 完整性。
+**How to apply:** 新笔记写进对应 `IC/<主题>/` 或课程章节文件夹;涉及 git 时保护敏感文件、先检�
