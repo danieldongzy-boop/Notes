@@ -10,4 +10,4 @@ type: user
 
 职业关注:国内模拟 IC 公司(慷智、仁芯致远、艾为、豪威等),车载 SerDes、ADC、模拟芯片方向;关注实习/校招、公司研发实力与量产情况。
 
-工具兴趣:深度整合 AI 到学习/开发流程,用 ChatGPT、Claude、Claude Code、Codex、Obsidian;倾向用 API 登录而非账号登录,尝试用 AI 中转站接自�
+工具兴趣:深度整合 AI 到学习/开发流程,用 ChatGPT、Claude、Claude Code、Codex、Obsidian;倾向用 API 登录而非账号登录,尝试用 AI 中转站接自己的 API。
