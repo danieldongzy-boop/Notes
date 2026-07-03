@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CH1-CH4_完整学习笔记"
+              "title": "Chapter_09_Power_Management"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -187,18 +186,29 @@
   },
   "active": "506c240fd2c664aa",
   "lastOpenFiles": [
-    "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_9_Power Management_SS_2026.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_8_Storage Concepts II - Rechargeable Batteries_SS_2026.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_7_Storage Concepts I - Capacitive_SS_2026.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_6_Vibrational Energy Harvesting II _SS_2025.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_5_Vibrational Energy Harvesting_SS_2025.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_3_Thermoelectric Energy Harvesting_SS_2026.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_2_Solar Energy Harvesting_SS_2026.pdf",
+    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_1_Introduction_SS_2026.pdf",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
+    "Uni Freiburg/能量收集/chapter_markdown",
+    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/extraction_summary.json",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
-    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.pdf",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf",
-    "Uni Freiburg/能量收集/PROJECT/journal.pone.0285930.pdf",
-    "Uni Freiburg/能量收集/PROJECT/energies-14-06363-v2.pdf",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.pdf",
     "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "sync-obsidian.bat",
     "claude-memory/user_profile.md",
     "claude-memory/user_learning_style.md",
     "claude-memory/reference_sync.md",
@@ -206,23 +216,12 @@
     "claude-memory/git-sync-说明.md",
     "claude-memory/feedback_vault_workflow.md",
     "claude-memory/MEMORY.md",
-    "claude-memory",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.xdv",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_hybrid_harvesting_beamer.toc",
     "Uni Freiburg/Test and reliability/CLAUDE.md",
     "未命名.canvas",
     "未命名.md",
     "Uni Freiburg/能量收集/MEH_Lecture_6_振动能量采集II课件解读_中英对照.md",
     "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
     "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
-    "IC/BGR/商用芯片_BGR_价格与指标对标_2026-06-13.md",
-    "IC/BGR/IEEE_核心论文_待手动下载.md",
-    "IC/BGR/BGR_65nm_130nm_180nm_近15年论文综述.md",
-    "IC/实例/全差分两级cascode/全差分两级cascode.md",
-    "Uni Freiburg/能量收集/MEH_Probeklausur_mit_Musterlösung_能量采集模拟考试与参考答案.md",
-    "Uni Freiburg/能量收集/MEH_Lecture_5_振动能量采集基础课件解读_中英对照.md",
-    "copilot/copilot-conversations/文档可见性确认@20260609_153320.md",
-    "copilot/memory/Recent Conversations.md",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",

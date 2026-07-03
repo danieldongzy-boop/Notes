@@ -4,6 +4,84 @@
 > 不包含：`ex*.pdf`、作业解析、exercise 解答。  
 > 目标：用比较人话的方式，把概念、公式、算法和容易混淆的点串起来。
 
+## 目录
+
+- [[#0. 四章在讲什么|0. 四章在讲什么]]
+- [[#CH1. Circuit Testing 基础与 Fault Collapsing|CH1. Circuit Testing 基础与 Fault Collapsing]]
+  - [[#1.1 关键词中英文对照|1.1 关键词中英文对照]]
+  - [[#1.2 Testing 到底在测什么|1.2 Testing 到底在测什么]]
+  - [[#1.3 Yield、Defect Level 和 Fault Coverage|1.3 Yield、Defect Level 和 Fault Coverage]]
+  - [[#1.4 测试方式：ATE、BIST、压缩和 DFT|1.4 测试方式：ATE、BIST、压缩和 DFT]]
+  - [[#1.5 Fault Model：为什么需要故障模型|1.5 Fault Model：为什么需要故障模型]]
+  - [[#1.6 Stuck-at Fault 固定型故障|1.6 Stuck-at Fault 固定型故障]]
+  - [[#1.7 其他常见故障模型|1.7 其他常见故障模型]]
+  - [[#1.8 什么叫检测到一个故障|1.8 什么叫检测到一个故障]]
+  - [[#1.9 Sensitization 敏化|1.9 Sensitization 敏化]]
+  - [[#1.10 Redundancy 冗余|1.10 Redundancy 冗余]]
+  - [[#1.11 Fault Collapsing：为什么要压缩故障|1.11 Fault Collapsing：为什么要压缩故障]]
+  - [[#1.12 Equivalent Fault Collapsing, EFC|1.12 Equivalent Fault Collapsing, EFC]]
+  - [[#1.13 SIMPLE_EFC 的规则|1.13 SIMPLE_EFC 的规则]]
+  - [[#1.14 Dominance Fault Collapsing, DFC|1.14 Dominance Fault Collapsing, DFC]]
+  - [[#1.15 Checkpoint Theorem|1.15 Checkpoint Theorem]]
+- [[#CH2. Fault Simulation 故障仿真|CH2. Fault Simulation 故障仿真]]
+  - [[#2.1 关键词中英文对照|2.1 关键词中英文对照]]
+  - [[#2.2 Fault Simulation 的输入和输出|2.2 Fault Simulation 的输入和输出]]
+  - [[#2.3 最直接的方法为什么太慢|2.3 最直接的方法为什么太慢]]
+  - [[#2.4 Event-Driven Simulation|2.4 Event-Driven Simulation]]
+  - [[#2.5 Fault Dropping|2.5 Fault Dropping]]
+  - [[#2.6 Parallel Fault Simulation|2.6 Parallel Fault Simulation]]
+  - [[#2.7 Fault Insertion Mask|2.7 Fault Insertion Mask]]
+  - [[#2.8 Parallel Fault Simulation 的优缺点|2.8 Parallel Fault Simulation 的优缺点]]
+  - [[#2.9 Deductive Fault Simulation|2.9 Deductive Fault Simulation]]
+  - [[#2.10 AND 门的 fault list 传播规则|2.10 AND 门的 fault list 传播规则]]
+  - [[#2.11 Parallel 和 Deductive 的关系|2.11 Parallel 和 Deductive 的关系]]
+  - [[#2.12 Sequential Circuits|2.12 Sequential Circuits]]
+- [[#CH3. Combinational ATPG 组合电路测试生成|CH3. Combinational ATPG 组合电路测试生成]]
+  - [[#3.1 关键词中英文对照|3.1 关键词中英文对照]]
+  - [[#3.2 Test Generation Problem|3.2 Test Generation Problem]]
+  - [[#3.3 Random Patterns 和 Fault Coverage Curve|3.3 Random Patterns 和 Fault Coverage Curve]]
+  - [[#3.4 Deterministic ATPG 为什么难|3.4 Deterministic ATPG 为什么难]]
+  - [[#3.5 3 值、5 值和 9 值逻辑|3.5 3 值、5 值和 9 值逻辑]]
+  - [[#3.6 D-Algorithm 的核心思想|3.6 D-Algorithm 的核心思想]]
+  - [[#3.7 D-Frontier 和 J-Frontier|3.7 D-Frontier 和 J-Frontier]]
+  - [[#3.8 Implication|3.8 Implication]]
+  - [[#3.9 Backtracking|3.9 Backtracking]]
+  - [[#3.10 D-Algorithm 速记|3.10 D-Algorithm 速记]]
+  - [[#3.11 加速技术|3.11 加速技术]]
+  - [[#3.12 PODEM|3.12 PODEM]]
+  - [[#3.13 Objective 和 Backtrace|3.13 Objective 和 Backtrace]]
+  - [[#3.14 Controllability 和 Observability|3.14 Controllability 和 Observability]]
+  - [[#3.15 ATPG 的整体流程|3.15 ATPG 的整体流程]]
+  - [[#3.16 Unspecified Values 和 Test Compaction|3.16 Unspecified Values 和 Test Compaction]]
+  - [[#3.17 Test Pattern Relaxation|3.17 Test Pattern Relaxation]]
+  - [[#3.18 Test Power Consumption|3.18 Test Power Consumption]]
+- [[#CH4. Boolean Satisfiability 与 SAT-based ATPG|CH4. Boolean Satisfiability 与 SAT-based ATPG]]
+  - [[#4.1 关键词中英文对照|4.1 关键词中英文对照]]
+  - [[#4.2 SAT 问题|4.2 SAT 问题]]
+  - [[#4.3 Miter Circuit|4.3 Miter Circuit]]
+  - [[#4.4 Tseitin Transformation|4.4 Tseitin Transformation]]
+  - [[#4.5 Resolution 归结|4.5 Resolution 归结]]
+  - [[#4.6 现代 SAT Solver 的主循环|4.6 现代 SAT Solver 的主循环]]
+  - [[#4.7 Preprocessing|4.7 Preprocessing]]
+  - [[#4.8 Decision Stack 和 Decision Level|4.8 Decision Stack 和 Decision Level]]
+  - [[#4.9 VSIDS 决策启发式|4.9 VSIDS 决策启发式]]
+  - [[#4.10 BCP 和 Watched Literals|4.10 BCP 和 Watched Literals]]
+  - [[#4.11 Conflict Analysis、1UIP 和 Learned Clause|4.11 Conflict Analysis、1UIP 和 Learned Clause]]
+  - [[#4.12 SAT for ATPG：怎么编码|4.12 SAT for ATPG：怎么编码]]
+  - [[#4.13 Incremental Solving|4.13 Incremental Solving]]
+  - [[#4.14 为什么需要 D-Chain|4.14 为什么需要 D-Chain]]
+  - [[#4.15 Forward D-Chain|4.15 Forward D-Chain]]
+  - [[#4.16 Backward D-Chain|4.16 Backward D-Chain]]
+  - [[#4.17 Combined Backward/Forward D-Chains|4.17 Combined Backward/Forward D-Chains]]
+  - [[#4.18 Good-Diff D-Chain|4.18 Good-Diff D-Chain]]
+  - [[#4.19 Hybrid D-Chains|4.19 Hybrid D-Chains]]
+- [[#5. 四章之间的核心关系|5. 四章之间的核心关系]]
+  - [[#5.1 从“测得出”到“怎么找”|5.1 从“测得出”到“怎么找”]]
+  - [[#5.2 三个永远绕不开的动作|5.2 三个永远绕不开的动作]]
+  - [[#5.3 公式和算法速记|5.3 公式和算法速记]]
+  - [[#5.4 高频易错点|5.4 高频易错点]]
+  - [[#5.5 考前压缩版|5.5 考前压缩版]]
+
 ## 0. 四章在讲什么
 
 这门课前四章其实是一条线：
@@ -34,6 +112,8 @@ CH4: 用 SAT 生成测试
 ---
 
 ## CH1. Circuit Testing 基础与 Fault Collapsing
+
+[[#目录|返回目录]]
 
 ### 1.1 关键词中英文对照
 
@@ -369,20 +449,22 @@ Checkpoint set 通常不是最小的，但有完整性保证，规则也简单�
 
 ## CH2. Fault Simulation 故障仿真
 
+[[#目录|返回目录]]
+
 ### 2.1 关键词中英文对照
 
-| English | 中文 | 人话解释 |
-|---|---|---|
-| Fault Simulation | 故障仿真 | 算测试集能检测哪些故障 |
-| Serial Fault Simulation | 串行故障仿真 | 一个故障一个故障地模拟，最直观也最慢 |
-| Event-Driven Simulation | 事件驱动仿真 | 只重新计算值发生变化影响到的门 |
-| Fault Dropping | 故障丢弃 | 故障一旦被测到，就从后续仿真中删掉 |
-| Parallel Fault Simulation | 并行故障仿真 | 一个机器字里同时装 good circuit 和多个 faulty circuits |
-| Parallel Pattern Simulation | 并行向量仿真 | 一个机器字里同时装多个测试向量 |
-| Fault Insertion Mask | 故障注入掩码 | 指定哪些 bit 位置要被强制成 stuck-at 值 |
-| Deductive Fault Simulation | 演绎故障仿真 | 每条线维护一个“哪些故障会让它不同”的集合 |
-| Fault List | 故障列表 | 某条线或某个测试下相关的 fault 集合 |
-| Active Faults | 活跃故障 | 当前测试下已经造成内部差异的故障 |
+| English                     | 中文     | 人话解释                                       |
+| --------------------------- | ------ | ------------------------------------------ |
+| Fault Simulation            | 故障仿真   | 算测试集能检测哪些故障                                |
+| Serial Fault Simulation     | 串行故障仿真 | 一个故障一个故障地模拟，最直观也最慢                         |
+| Event-Driven Simulation     | 事件驱动仿真 | 只重新计算值发生变化影响到的门                            |
+| Fault Dropping              | 故障丢弃   | 故障一旦被测到，就从后续仿真中删掉                          |
+| Parallel Fault Simulation   | 并行故障仿真 | 一个机器字里同时装 good circuit 和多个 faulty circuits |
+| Parallel Pattern Simulation | 并行向量仿真 | 一个机器字里同时装多个测试向量                            |
+| Fault Insertion Mask        | 故障注入掩码 | 指定哪些 bit 位置要被强制成 stuck-at 值                |
+| Deductive Fault Simulation  | 演绎故障仿真 | 每条线维护一个“哪些故障会让它不同”的集合                      |
+| Fault List                  | 故障列表   | 某条线或某个测试下相关的 fault 集合                      |
+| Active Faults               | 活跃故障   | 当前测试下已经造成内部差异的故障                           |
 
 ### 2.2 Fault Simulation 的输入和输出
 
@@ -635,6 +717,8 @@ $$
 ---
 
 ## CH3. Combinational ATPG 组合电路测试生成
+
+[[#目录|返回目录]]
 
 ### 3.1 关键词中英文对照
 
@@ -1033,6 +1117,8 @@ Power-aware test pattern refilling：
 ---
 
 ## CH4. Boolean Satisfiability 与 SAT-based ATPG
+
+[[#目录|返回目录]]
 
 ### 4.1 关键词中英文对照
 
@@ -1493,6 +1579,8 @@ Good-Diff 划算的地方用 Good-Diff；
 
 ## 5. 四章之间的核心关系
 
+[[#目录|返回目录]]
+
 ### 5.1 从“测得出”到“怎么找”
 
 CH1 定义：
@@ -1523,11 +1611,11 @@ CH4 问：
 
 不管 D-Algorithm、PODEM 还是 SAT-based ATPG，都在做同一件事：
 
-| 动作 | English | 说明 |
-|---|---|---|
-| 激活 | Activation | fault site 的 good value 要和 stuck-at value 相反 |
-| 传播 | Propagation | 差异要穿过门，不能被 controlling value 遮住 |
-| 观察 | Observation | 差异最终要到 primary output |
+| 动作  | English     | 说明                                           |
+| --- | ----------- | -------------------------------------------- |
+| 激活  | Activation  | fault site 的 good value 要和 stuck-at value 相反 |
+| 传播  | Propagation | 差异要穿过门，不能被 controlling value 遮住              |
+| 观察  | Observation | 差异最终要到 primary output                        |
 
 ### 5.3 公式和算法速记
 
@@ -1590,4 +1678,3 @@ SAT-based ATPG = miter + Tseitin CNF + M=1。
 现代 SAT solver = preprocessing + VSIDS + BCP + watched literals + conflict learning + non-chronological backtracking。
 D-chain 给 solver 加故障传播结构信息，通常增大公式但减少求解时间。
 ```
-
