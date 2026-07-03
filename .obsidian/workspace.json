@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1d50620590378356",
+            "id": "506c240fd2c664aa",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf"
+                "file": "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+                "mode": "source",
+                "source": false
               },
-              "pinned": true,
-              "icon": "lucide-file-text",
-              "title": "04-sat_annot"
+              "icon": "lucide-file",
+              "title": "CH1-CH4_完整学习笔记"
             }
           }
         ]
@@ -185,10 +185,11 @@
       "bases:新建数据库": false
     }
   },
-  "active": "1d50620590378356",
+  "active": "506c240fd2c664aa",
   "lastOpenFiles": [
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
     "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
+    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.pdf",
     "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf",
     "Uni Freiburg/能量收集/PROJECT/journal.pone.0285930.pdf",
@@ -222,7 +223,6 @@
     "Uni Freiburg/能量收集/MEH_Lecture_5_振动能量采集基础课件解读_中英对照.md",
     "copilot/copilot-conversations/文档可见性确认@20260609_153320.md",
     "copilot/memory/Recent Conversations.md",
-    "copilot/copilot-conversations/Obsidian_撤回操作@20260609_150618.md",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",
