@@ -269,6 +269,559 @@ $$
 | 电磁 | 原理成熟，放大尺寸后好用，磁铁可当质量块 | 微型化困难，电压偏低 |
 | 静电 | 适合 MEMS，容易微型化 | 需要偏置或驻极体，源阻抗高 |
 
+## Exercise 3 逐题详解
+
+这一章对应振动 Exercise 的 Task 4 和 Task 5：
+
+- Task 4：压电 harvester，调质量和负载电阻。
+- Task 5：电磁 harvester，算线圈、负载和输出功率。
+
+## Task 4: Piezoelectric Harvester Design
+
+### 题目
+
+目标谐振频率：
+
+$$
+f_0=100\ \mathrm{Hz}
+$$
+
+环境振动位移振幅：
+
+$$
+x_\mathrm{vib}=10\ \mathrm{\mu m}
+$$
+
+弹簧刚度：
+
+$$
+K=1000\ \mathrm{N/m}
+$$
+
+机械阻尼：
+
+$$
+c_\mathrm{mech}=0.02\ \mathrm{kg/s}
+$$
+
+压电电容：
+
+$$
+C=100\ \mathrm{nF}
+$$
+
+耦合系数：
+
+$$
+\theta=0.0008\ \mathrm{A\,s/m}
+$$
+
+要求：通过调整质量 $m$ 和负载电阻 $R$，让谐振输出功率最大，并求最大功率和功率带宽。
+
+### Step 1: 调质量到 100 Hz
+
+谐振频率近似等于机械固有频率：
+
+$$
+\omega_0=2\pi f_0
+$$
+
+$$
+\omega_0=2\pi\cdot100\approx628.3\ \mathrm{rad/s}
+$$
+
+由：
+
+$$
+\omega_0=\sqrt{\frac{K}{m}}
+$$
+
+得到：
+
+$$
+m=\frac{K}{\omega_0^2}
+$$
+
+代入：
+
+$$
+m=\frac{1000}{(2\pi\cdot100)^2}
+$$
+
+$$
+m\approx0.00253\ \mathrm{kg}
+$$
+
+也就是：
+
+$$
+\boxed{m\approx2.53\ \mathrm{g}}
+$$
+
+### Step 2: 算压电耦合因子
+
+题目给：
+
+$$
+k=\sqrt{\frac{\theta^2}{CK}}
+$$
+
+代入：
+
+$$
+k
+=
+\sqrt{
+\frac{(0.0008)^2}{100\cdot10^{-9}\cdot1000}
+}
+$$
+
+$$
+k=\sqrt{0.0064}=0.08
+$$
+
+结果：
+
+$$
+\boxed{k=0.08}
+$$
+
+理解：这个耦合不算强，所以负载对谐振频率的影响很小。
+
+### Step 3: 判断能不能做到阻尼匹配
+
+理想最大功率通常希望：
+
+$$
+c_\mathrm{el}=c_\mathrm{mech}
+$$
+
+但这题的压电耦合较弱，答案里用判据得到：
+
+$$
+\frac{c_\mathrm{mech}(1-k^2)}
+{k^2m\omega_0}
+\approx1.96>\frac12
+$$
+
+意思是：靠这个压电耦合，电阻尼 $c_\mathrm{el}$ 做不到和机械阻尼一样大。
+
+所以策略不是强行匹配，而是：
+
+$$
+\text{让 }c_\mathrm{el}\text{ 尽可能大}
+$$
+
+### Step 4: 最优负载电阻
+
+电阻尼最大时：
+
+$$
+R_\mathrm{opt}
+=
+\frac{1-k^2}{C\omega_0}
+$$
+
+代入：
+
+$$
+R_\mathrm{opt}
+=
+\frac{1-0.08^2}
+{100\cdot10^{-9}\cdot628.3}
+$$
+
+$$
+R_\mathrm{opt}\approx15.9\ \mathrm{k\Omega}
+$$
+
+结果：
+
+$$
+\boxed{R_\mathrm{opt}\approx15.9\ \mathrm{k\Omega}}
+$$
+
+### Step 5: 负载引起的谐振频率变化
+
+题目给了一个修正公式。把最优电阻代进去后，答案得到：
+
+$$
+\omega_R\approx1.00002\omega_0
+$$
+
+也就是说谐振频率几乎没变。
+
+所以前面算出的质量不需要再重新调整：
+
+$$
+m\approx2.53\ \mathrm{g}
+$$
+
+### Step 6: 品质因数和带宽
+
+在最优负载附近，答案得到电阻尼：
+
+$$
+c_\mathrm{el}\approx0.01\ \mathrm{kg/s}
+$$
+
+总阻尼：
+
+$$
+c_\mathrm{tot}=c_\mathrm{mech}+c_\mathrm{el}
+$$
+
+$$
+c_\mathrm{tot}=0.02+0.01=0.03\ \mathrm{kg/s}
+$$
+
+品质因数：
+
+$$
+Q=\frac{m\omega_0}{c_\mathrm{tot}}
+$$
+
+代入：
+
+$$
+Q=\frac{0.00253\cdot628.3}{0.03}
+$$
+
+$$
+Q\approx52.7
+$$
+
+功率带宽近似：
+
+$$
+\Delta f\approx\frac{f_0}{Q}
+$$
+
+所以：
+
+$$
+\Delta f\approx\frac{100}{52.7}
+$$
+
+$$
+\Delta f\approx1.9\ \mathrm{Hz}
+$$
+
+结果：
+
+$$
+\boxed{Q\approx52.7,\quad \Delta f\approx1.9\ \mathrm{Hz}}
+$$
+
+### Step 7: 最大输出功率
+
+沿用振动收集器功率公式：
+
+$$
+P_\mathrm{el}
+=
+\frac12
+\frac{c_\mathrm{el}}
+{(c_\mathrm{el}+c_\mathrm{mech})^2}
+m^2\omega_0^4x_\mathrm{vib}^2
+$$
+
+答案代入后得到：
+
+$$
+P_\mathrm{el}\approx557\ \mathrm{\mu W}
+$$
+
+结果：
+
+$$
+\boxed{P_\mathrm{max}\approx557\ \mathrm{\mu W}}
+$$
+
+说人话：这题的关键不是死算公式，而是看懂“压电负载电阻会产生电阻尼”。调 $R$ 的本质是在调机械系统里被电路抽走的能量。
+
+## Task 5: Electrodynamic Harvester
+
+### 题目
+
+磁铁是 NdFeB，密度：
+
+$$
+\rho_m=7.819\ \mathrm{g/cm^3}
+$$
+
+磁铁是边长 $10\ \mathrm{mm}$ 的立方体，所以体积：
+
+$$
+V=1\ \mathrm{cm^3}
+$$
+
+整体高度：
+
+$$
+h=15\ \mathrm{mm}
+$$
+
+磁铁高度：
+
+$$
+h_\mathrm{mag}=10\ \mathrm{mm}
+$$
+
+线径：
+
+$$
+d_D=40\ \mathrm{\mu m}
+$$
+
+线圈每圈近似为边长 $l=a=10\ \mathrm{mm}$ 的矩形，导线电阻：
+
+$$
+r'=13.6\ \Omega/\mathrm{m}
+$$
+
+机械阻尼比：
+
+$$
+\zeta_m=0.015
+$$
+
+谐振频率：
+
+$$
+f=33\ \mathrm{Hz}
+$$
+
+振动加速度：
+
+$$
+A_g=1\ \mathrm{m/s^2}
+$$
+
+### Step 1: 线圈匝数
+
+可绕线高度是：
+
+$$
+h-h_\mathrm{mag}=15\ \mathrm{mm}-10\ \mathrm{mm}=5\ \mathrm{mm}
+$$
+
+每层导线直径：
+
+$$
+d_D=40\ \mathrm{\mu m}=0.04\ \mathrm{mm}
+$$
+
+所以匝数：
+
+$$
+N=\frac{5\ \mathrm{mm}}{0.04\ \mathrm{mm}}
+$$
+
+$$
+N=125
+$$
+
+结果：
+
+$$
+\boxed{N=125}
+$$
+
+### Step 2: 线圈电阻
+
+每圈线长约：
+
+$$
+l_\mathrm{turn}=4l=4\cdot10\ \mathrm{mm}=40\ \mathrm{mm}
+$$
+
+总线长：
+
+$$
+l_\mathrm{wire}=Nl_\mathrm{turn}
+$$
+
+$$
+l_\mathrm{wire}=125\cdot40\ \mathrm{mm}=5000\ \mathrm{mm}
+$$
+
+也就是：
+
+$$
+l_\mathrm{wire}=5\ \mathrm{m}
+$$
+
+线圈电阻：
+
+$$
+R_0=l_\mathrm{wire}r'
+$$
+
+$$
+R_0=5\cdot13.6=68\ \Omega
+$$
+
+结果：
+
+$$
+\boxed{R_0=68\ \Omega}
+$$
+
+### Step 3: 磁铁质量
+
+磁铁体积：
+
+$$
+V=1\ \mathrm{cm^3}
+$$
+
+所以质量：
+
+$$
+m=\rho_m V
+$$
+
+$$
+m=7.819\ \mathrm{g}
+$$
+
+也就是：
+
+$$
+\boxed{m=0.007819\ \mathrm{kg}}
+$$
+
+角频率：
+
+$$
+\omega=2\pi f
+$$
+
+$$
+\omega=2\pi\cdot33\approx207.3\ \mathrm{rad/s}
+$$
+
+### Step 4: 最优负载电阻
+
+题目先给一个耦合因子估计值：
+
+$$
+k=0.25
+$$
+
+答案使用：
+
+$$
+R_{L,\mathrm{opt}}
+=
+R_0+
+\frac{k^2}{m\omega\zeta_m}
+$$
+
+代入后：
+
+$$
+R_{L,\mathrm{opt}}\approx70.57\ \Omega
+$$
+
+结果：
+
+$$
+\boxed{R_{L,\mathrm{opt}}\approx70.6\ \Omega}
+$$
+
+理解：最优负载和线圈内阻是同一个量级，不是无限大，也不是短路。
+
+### Step 5: 真实电磁转换因子
+
+题目给：
+
+$$
+\int_0^{h_\mathrm{coil}}B_x(x)\,dx
+=0.00132\ \mathrm{T\,m}
+$$
+
+转换因子：
+
+$$
+k_t
+=
+N\cdot
+\frac{a}{h_\mathrm{coil}}
+\int_0^{h_\mathrm{coil}}B_x(x)\,dx
+$$
+
+其中：
+
+$$
+N=125,\quad a=10\ \mathrm{mm},\quad h_\mathrm{coil}=5\ \mathrm{mm}
+$$
+
+所以：
+
+$$
+k_t
+=125\cdot\frac{10}{5}\cdot0.00132
+$$
+
+$$
+k_t\approx0.33
+$$
+
+结果：
+
+$$
+\boxed{k_t\approx0.33}
+$$
+
+说人话：$k_t$ 越大，同样速度产生的电压越大，同时电流产生的反向阻尼也越强。
+
+### Step 6: 输出功率
+
+机械阻尼：
+
+$$
+c_\mathrm{mech}
+=
+2m\omega\zeta_m
+$$
+
+电磁电阻尼：
+
+$$
+c_\mathrm{el}
+=
+\frac{k_t^2}{R_0+R_L}
+$$
+
+负载功率还要乘线圈内阻分压因子：
+
+$$
+\frac{R_L}{R_0+R_L}
+$$
+
+谐振时答案给出的负载输出功率为：
+
+$$
+P_L\approx13.35\ \mathrm{mW}
+$$
+
+结果：
+
+$$
+\boxed{P_L\approx13.35\ \mathrm{mW}}
+$$
+
+这题要特别小心：线圈内阻 $R_0$ 会吃掉一部分电功率，所以不能只看电磁转换产生了多少功率，还要看负载真正分到多少。
+
+### Task 4/5 小结
+
+| 题目 | 关键调参 | 最终结果 |
+|---|---|---|
+| Task 4 压电 | 调 $m$ 到 100 Hz，调 $R$ 到电阻尼最大 | $m=2.53\ \mathrm{g}$，$R_\mathrm{opt}=15.9\ \mathrm{k\Omega}$，$P\approx557\ \mathrm{\mu W}$ |
+| Task 5 电磁 | 算线圈匝数、内阻、最优负载 | $N=125$，$R_0=68\ \Omega$，$R_L\approx70.6\ \Omega$，$P\approx13.35\ \mathrm{mW}$ |
+
 ## 易错点
 
 - 压电不是普通电压源，它本身有电容，负载会改变机械响应。

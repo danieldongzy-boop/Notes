@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
+                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter_03_Thermoelectric_Energy_Harvesting"
+              "title": "Chapter_05_Vibrational_Energy_Harvesting_I"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
+                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Chapter_03_Thermoelectric_Energy_Harvesting 的大纲"
+              "title": "Chapter_05_Vibrational_Energy_Harvesting_I 的大纲"
             }
           }
         ],
@@ -185,18 +185,18 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "6bae04a1ee5408b9",
+  "active": "61452fc3811fb5a8",
   "lastOpenFiles": [
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
     "Uni Freiburg/能量收集/Exercise/Exercise 1_Energy, power, energy forms and conversion/Exercise 1_Energy, power, energy forms and conversion_SOLVED_SS_2026.pdf",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
     "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
     "Uni Freiburg/能量收集/chapter_markdown",
     "Uni Freiburg/能量收集/PROJECT/journal.pone.0285930.pdf",
     "Uni Freiburg/能量收集/PROJECT/energies-14-06363-v2.pdf",
