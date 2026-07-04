@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f4bb13ce84becc1b",
+        "id": "d84772223534ffca",
         "type": "tabs",
         "children": [
           {
-            "id": "6bae04a1ee5408b9",
+            "id": "02abb397cdca5d63",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L05_Sample_Hold.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Chapter_05_Vibrational_Energy_Harvesting_I"
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_SS26_L05_Sample_Hold"
             }
           }
         ]
@@ -40,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -78,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -156,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Chapter_05_Vibrational_Energy_Harvesting_I 的大纲"
+              "title": "04-sat_annot 的大纲"
             }
           }
         ],
@@ -181,33 +180,37 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "realclaudian:Open Claudian": false
+      "bases:新建数据库": false
     }
   },
-  "active": "61452fc3811fb5a8",
+  "active": "02abb397cdca5d63",
   "lastOpenFiles": [
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+    "找工/old/董展宇简历.pdf",
+    "找工/old/董展宇简历 (4).pdf",
+    "找工/old/董展宇简历 (3).pdf",
+    "找工/old/董展宇简历 (2).pdf",
+    "找工/old/董展宇CV.pdf",
+    "找工/董展宇简历.pdf",
+    "找工/TOEFL_Score_Report_1205159.pdf",
+    "找工/QQ图片20240822231443.jpg",
+    "找工/QQ图片20240822231443 (1).jpg",
+    "找工/old",
+    "找工",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/Exercise/Exercise 1_Energy, power, energy forms and conversion/Exercise 1_Energy, power, energy forms and conversion_SOLVED_SS_2026.pdf",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
-    "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
-    "Uni Freiburg/能量收集/chapter_markdown",
-    "Uni Freiburg/能量收集/PROJECT/journal.pone.0285930.pdf",
-    "Uni Freiburg/能量收集/PROJECT/energies-14-06363-v2.pdf",
-    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.pdf",
-    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
     "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_9_Power Management_SS_2026.pdf",
     "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_8_Storage Concepts II - Rechargeable Batteries_SS_2026.pdf",
-    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_7_Storage Concepts I - Capacitive_SS_2026.pdf",
-    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_6_Vibrational Energy Harvesting II _SS_2025.pdf",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
+    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
+    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
     "claude-memory/user_profile.md",
     "claude-memory/user_learning_style.md",
     "claude-memory/reference_sync.md",
@@ -218,11 +221,9 @@
     "Uni Freiburg/Test and reliability/CLAUDE.md",
     "未命名.canvas",
     "未命名.md",
-    "Uni Freiburg/能量收集/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/MEH_Lecture_6_振动能量采集II课件解读_中英对照.md",
     "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
     "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
-    "IC/BGR/商用芯片_BGR_价格与指标对标_2026-06-13.md",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
     "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",
