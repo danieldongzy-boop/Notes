@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "d84772223534ffca",
+        "id": "314c8ade3ac00f6c",
         "type": "tabs",
         "children": [
           {
-            "id": "02abb397cdca5d63",
+            "id": "f61a4c7b4bb66383",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IC/SARADC/settling time 2/CDAC settling time comparison.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CDAC settling time comparison"
+            }
+          },
+          {
+            "id": "6d2af3095b189fb0",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -18,8 +32,37 @@
               "icon": "lucide-file-text",
               "title": "Data_Converters_SS26_L05_Sample_Hold"
             }
+          },
+          {
+            "id": "ec728a1c52f9356a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "bootstrap_switch"
+            }
+          },
+          {
+            "id": "cc3fa4f3f6345bfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IC/SARADC/sar-adc-skills/sar-adc-skill/references/cdac.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "cdac"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -76,7 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 378.5,
     "collapsed": true
   },
   "right": {
@@ -183,52 +226,53 @@
       "bases:新建数据库": false
     }
   },
-  "active": "02abb397cdca5d63",
+  "active": "ec728a1c52f9356a",
   "lastOpenFiles": [
-    "找工/old/董展宇简历.pdf",
-    "找工/old/董展宇简历 (4).pdf",
-    "找工/old/董展宇简历 (3).pdf",
-    "找工/old/董展宇简历 (2).pdf",
-    "找工/old/董展宇CV.pdf",
-    "找工/董展宇简历.pdf",
-    "找工/TOEFL_Score_Report_1205159.pdf",
-    "找工/QQ图片20240822231443.jpg",
-    "找工/QQ图片20240822231443 (1).jpg",
-    "找工/old",
-    "找工",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_9_Power Management_SS_2026.pdf",
-    "Uni Freiburg/能量收集/Lectures/MicroEnergyHarvesting_Lecture_8_Storage Concepts II - Rechargeable Batteries_SS_2026.pdf",
-    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
-    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "claude-memory/user_profile.md",
-    "claude-memory/user_learning_style.md",
-    "claude-memory/reference_sync.md",
-    "claude-memory/project_vault_overview.md",
-    "claude-memory/git-sync-说明.md",
-    "claude-memory/feedback_vault_workflow.md",
-    "claude-memory/MEMORY.md",
-    "Uni Freiburg/Test and reliability/CLAUDE.md",
-    "未命名.canvas",
-    "未命名.md",
-    "Uni Freiburg/能量收集/MEH_Lecture_6_振动能量采集II课件解读_中英对照.md",
-    "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
-    "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_006.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_005.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_004.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_003.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_002.png",
-    "IC/开关/razavi/razavi_page_images/razavi_page_pages/page_001.png"
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/cdac.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/core-architecture.md",
+    "IC/SARADC/settling time 2/CDAC settling time comparison.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/SKILL.md",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L05_Sample_Hold.pdf",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/comparator.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/ldo.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/integration.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/design-and-tradeoffs.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/sar-logic.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/robustness-and-system.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/simulation-and-verification.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/sar-adc-11b-zzs.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/_va_dac_4b_se.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/_va_dac_4b.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/sar_4b_se_ideal.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/L3_logic_4b_async.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/L2_logic_4b_sync.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/L2_comparator_ideal.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va/L2_cdac_4b_ideal.va",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/evals/evals.json",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/assets/va",
+    "IC/SARADC/sar-adc-skills/README.md",
+    "IC/SARADC/settling time 2/preview/page-06.png",
+    "IC/SARADC/settling time 2/preview/page-05.png",
+    "IC/SARADC/settling time 2/preview/page-04.png",
+    "IC/SARADC/settling time 2/preview/page-03.png",
+    "IC/SARADC/settling time 2/preview/page-02.png",
+    "IC/SARADC/settling time 2/preview/page-01.png",
+    "IC/SARADC/cdac settling time 2/preview/page-3.png",
+    "IC/SARADC/cdac settling time 2/preview/page-2.png",
+    "IC/SARADC/cdac settling time 2/preview/page-1.png",
+    "IC/SARADC/settling time 2/images/source-stanford-time-domain.png",
+    "IC/SARADC/Settling Time/Settling Time.md",
+    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
+    "IC/SARADC/A Tale of two ADCs/A Tale of two ADCs.md",
+    "IC/SARADC/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs.md",
+    "IC/SARADC/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques.md",
+    "IC/SARADC/Sar ADC学习1/Sar ADC学习1.md",
+    "IC/SARADC/Sar ADC学习2/Sar ADC学习2.md",
+    "IC/Sunnan_ADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
+    "IC/SARADC/Sar ADC学习1.md",
+    "IC/SARADC/Settling Time.md",
+    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed .md",
+    "未命名.canvas"
   ]
 }

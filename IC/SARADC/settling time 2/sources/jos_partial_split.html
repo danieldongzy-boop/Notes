@@ -1,0 +1,2578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 &lt;i&gt;μ&lt;/i&gt;m CMOS</title>
+
+	<meta name="keywords" content="SAR ADC, switching scheme, SAR control logic, DAC, comparator" />
+	<meta name="hw.ad-path" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004" />
+	<meta name="hw.identifier" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004" />
+	<meta name="dc.format" content="text/html" />
+	<meta name="dc.title" content="A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 &lt;i&gt;μ&lt;/i&gt;m CMOS" />
+	<meta name="dc.identifier" content="10.1088/1674-4926/37/1/015004" />
+	<meta name="dc.contributor" content="Dong Li" />
+	<meta name="dc.contributor" content="Qiao Meng" />
+	<meta name="dc.contributor" content="Fei Li" />
+	<meta name="dc.creator" content="Dong Li" />
+	<meta name="dc.creator" content="Qiao Meng" />
+	<meta name="dc.creator" content="Fei Li" />
+	<meta name="dc.date" content="2016-01-25" />
+	<meta name="dc.keywords"  content="SAR ADC, switching scheme, SAR control logic, DAC, comparator"/>
+	
+	<meta name="citation_journal_title" content="Journal of Semiconductors" />
+	<meta name="citation_publisher" content="Journal of Semiconductors" />
+	<meta name="citation_journal_abbrev" content="J. Semicond." />
+	<meta name="citation_issn" content="1674-4926" />
+	<meta name="citation_date" content="2016-01-25" />
+	<meta name="citation_authors" content="Dong Li, Qiao Meng, Fei Li" />
+	
+	<meta name="citation_online_date" content="2015-11-02"/>
+    <meta name="citation_publication_date" content="2015-11-02"/>
+  <meta name="citation_abstract_html_url" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004?viewType=HTML" />
+	<meta name="citation_pdf_url" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004" />
+	<meta name="citation_public_url" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004" />
+	<meta name="dc.type" content="SEMICONDUCTOR INTEGRATED CIRCUITS"/>
+	<meta name="dc.source" content="Journal of Semiconductors, 2016, Vol. 37, Issue 1, Pages: 015004-015004-7"/>
+	<meta name="dc.publisher" content="Journal of Semiconductors"/>
+	<meta name="dc.rights" content="http://creativecommons.org/licenses/by/3.0/"/>
+	<meta name="dc.format" content="application/pdf" />
+	<meta name="dc.language" content="en" />
+	<meta name="dc.description" content="This paper presents a 10 bit successive approximation register (SAR) analog-to-digital converter (ADC) in 0.18 &lt;i&gt;μ&lt;/i&gt; m 1P6M CMOS technology with a 1.8 V supply voltage. To improve the conversion speed, a partial split capacitor switching scheme is proposed. By reducing the time constant of the bit cycles, the proposed technique shortens the settling time of a capacitive digital-to-analog converter (DAC). In addition, a new SAR control logic is proposed to reduce loop delay to further enhance the conversion speed. At 1.8 V supply voltage and 50 MS/s the SAR ADC achieves a signal-to-noise and distortion ratio (SNDR) of 57.5 dB and spurious-free dynamic range (SFDR) of 69.3 dB. The power consumption is 2.26 mW and the core die area is 0.096 mm&lt;sup&gt;2&lt;/sup&gt;." />
+	<meta name="dc.subject" content="SAR ADC" />
+	<meta name="dc.subject" content="switching scheme" />
+	<meta name="dc.subject" content="SAR control logic" />
+	<meta name="dc.subject" content="DAC" />
+	<meta name="dc.subject" content="comparator" />
+	<!-- SoWise SEO 2019-9-6 -->
+	<meta name="citation_title" content="A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 &lt;i&gt;μ&lt;/i&gt;m CMOS" />
+	<meta name="citation_author" content="Dong Li"/>
+	<meta name="citation_author" content="Qiao Meng"/>
+	<meta name="citation_author" content="Fei Li"/>
+	<meta name="citation_keywords" content="SAR ADC, switching scheme, SAR control logic, DAC, comparator" />
+	<meta name="citation_year" content="2016"/>
+	<meta name="citation_volume" content="37"/> 
+	<meta name="citation_issue" content="1"/>
+	<meta name="citation_firstpage" content="015004"/>
+	<meta name="citation_lastpage" content="015004-7"/>
+	<meta name="citation_doi" content="10.1088/1674-4926/37/1/015004"/>
+	<meta name="citation_id" content="3e8485e3-07de-4d73-9685-485d99e0f11c"/>
+	<meta name="citation_state" content="" />
+	
+	<meta property="og:type" content="Article" />
+	<meta property="og:url" content="https://www.jos.ac.cn/en/article/doi/10.1088/1674-4926/37/1/015004?viewType=HTML" />
+	<meta property="og:title" content="A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 &lt;i&gt;μ&lt;/i&gt;m CMOS" />
+	<meta property="og:image" content="https://www.jos.ac.cn//fileBDTXB/journal/article/bdtxb/2016/1/20160123-1_mini.jpg" />
+	<meta property="og:description" content="This paper presents a 10 bit successive approximation register (SAR) analog-to-digital converter (ADC) in 0.18 &lt;i&gt;μ&lt;/i&gt; m 1P6M CMOS technology with a 1.8 V supply voltage. To improve the conversion speed, a partial split capacitor switching scheme is proposed. By reducing the time constant of the bit cycles, the proposed technique shortens the settling time of a capacitive digital-to-analog converter (DAC). In addition, a new SAR control logic is proposed to reduce loop delay to further enhance the conversion speed. At 1.8 V supply voltage and 50 MS/s the SAR ADC achieves a signal-to-noise and distortion ratio (SNDR) of 57.5 dB and spurious-free dynamic range (SFDR) of 69.3 dB. The power consumption is 2.26 mW and the core die area is 0.096 mm&lt;sup&gt;2&lt;/sup&gt;." />
+	
+	<meta name="twitter:title" content="A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 &lt;i&gt;μ&lt;/i&gt;m CMOS" />
+	<meta name="twitter:description" content="This paper presents a 10 bit successive approximation register (SAR) analog-to-digital converter (ADC) in 0.18 &lt;i&gt;μ&lt;/i&gt; m 1P6M CMOS technology with a 1.8 V supply voltage. To improve the conversion speed, a partial split capacitor switching scheme is proposed. By reducing the time constant of the bit cycles, the proposed technique shortens the settling time of a capacitive digital-to-analog converter (DAC). In addition, a new SAR control logic is proposed to reduce loop delay to further enhance the conversion speed. At 1.8 V supply voltage and 50 MS/s the SAR ADC achieves a signal-to-noise and distortion ratio (SNDR) of 57.5 dB and spurious-free dynamic range (SFDR) of 69.3 dB. The power consumption is 2.26 mW and the core die area is 0.096 mm&lt;sup&gt;2&lt;/sup&gt;." />
+	<meta name="twitter:image" content="https://www.jos.ac.cn//fileBDTXB/journal/article/bdtxb/2016/1/20160123-1_mini.jpg" /><meta name=renderer  content=webkit>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- RhhzPro Link_css -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link type="text/css" href="/style/web/images/custom/favicon.ico" rel="shortcut icon" />
+<link type="text/css" href="/style/web/css/custom/style/font.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/bootstrap/bootstrap.min.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/font-awesome/font-awesome.min.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/swiper/swiper.min.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/owl-carousel/owl.carousel.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/iconfont/iconfont.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/public/base/base.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/custom/media/media.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="/style/web/css/custom/style/style.css?t=1783055544676" rel="stylesheet" />
+<link type="text/css" href="https://www.jos.ac.cn/style/web/css/public/article/articles/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link type="text/css" href="https://www.jos.ac.cn/style/web/css/public/article/articles/articleFont.css" rel="stylesheet" />
+<link type="text/css" href="https://www.jos.ac.cn/style/web/css/public/article/articles/article_en.css" rel="stylesheet" />
+<link type="text/css" href="https://www.jos.ac.cn/style/web/css/public/article/articles/imgShow.css" rel="stylesheet" />
+<!-- RhhzPro Link_js -->
+<script type="text/javascript" src="/style/web/js/public/jquery-public.min.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/bootstrap.min.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/jquery.validate.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/swiperd.min.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/jquery.nicescroll.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/owl.carousel.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/jquery.colorbox.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/user_validate.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/custom/library-3.28.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/rhhz.js?t=1783055544677"></script>
+<script type="text/javascript" src="/style/web/js/public/base.js?t=1783055544677"></script> 
+<script type="text/javascript" src="/style/web/js/public/index.js?t=1783055544677"></script> 
+<script type="text/javascript" src="/style/web/js/public/respond.js?t=1783055544677"></script>
+<!--<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.2-beta.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+<script type="text/javascript" src="https://mathjax.xml-journal.net/platformTools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<script type="text/javascript" src="/style/web/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="/style/web/js/public/impactFactor.js"></script>
+<script type="text/javascript" src="/style/web/js/public/floatwindow.js?t=1783055544677"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/style/web/js/public/html5.js"></script>
+<![endif]--><script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/public/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/highcharts/modules/exporting.js"></script>
+<!-- <script type="text/javascript" src="http://120.27.31.57/platformTools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<!-- CND -->
+<script type='text/x-mathjax-config'>
+			MathJax.Hub.Config({
+				TeX:{extensions:["AMSmath.js","AMSsymbols.js"],Macros:{Bigggl:['\\Biggl{#1}',2],Bigggr:['\\Biggr{#1}',2]}},
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+				"HTML-CSS": {
+					scale: 100,
+					minScaleAdjust: 100,
+					mtextFontInherit: true,
+				 }
+			});
+</script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/public/search_en.js"></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/public/article_en.js"></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/public/articleDetails_en.js"></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/public/imgShow_en.js"></script>
+<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+<script type="text/javascript" src="https://www.jos.ac.cn/style/web/js/custom/main.js"></script> 
+<script type="text/javascript">
+/**
+ * 网站访问统计jsonp回调
+ * @param data
+ * @return
+ */
+//全局变量存储访问总数
+var totalPv = 1;
+function visitCountjsonpCallback(data){
+	if(!isNull(data)){
+		totalPv = data.history.pv;
+	}
+}
+</script>
+<style type="text/css">
+	    	.com-user{
+			    width:12px;
+			    height:13px;
+			    display:inline-block;
+			    background:url(//www.jos.ac.cn/style/web/images/article_icons.png) no-repeat left -90px;
+			}
+			.com-mail{
+			    width:14px;
+			    height:11px;
+			    display:inline-block;
+			    background:url(//www.jos.ac.cn/style/web/images/article_icons.png) no-repeat left -110px;
+			}
+			.com-drop{
+			    background:url(//www.jos.ac.cn/style/web/images/article_icons.png) no-repeat -42px 0;
+			    cursor: pointer;
+			    height: 10px;
+			    margin-left: 10px;
+			    width: 10px;
+			    display:inline-block;
+			}
+			.authorTag tag{
+				color: #337ab7;
+			}
+			.formula tbody tr td p{text-align: center;}
+			.off_on_MathJax{float: right;margin-right: 5px;display: none;}
+			.citation-one, .citation-three{display:none;}
+	    </style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" class="articleBody articleBodyEn">
+<input type="hidden" value="Journal of Semiconductors" id="journalName"/>
+<input type="hidden" value="browseJournal" id="pageViewId" />
+<input type="hidden" value="3e8485e3-07de-4d73-9685-485d99e0f11c" id="articleId" />
+<input type="hidden" value="en" id="articlelanguage"/>
+<input type="hidden" value="/fileBDTXB/journal/article/bdtxb/2016/1/" id="allSrc" />
+		<input hidden type="checkbox" checked id="reference" />
+<div class="wcimgwrap" >
+		<div class="wcimgcon">
+			<i class="closecode2 articleFont icon-cuo"></i>
+		</div>
+		
+	</div>
+<!--头部 开始-->
+<div id="common-top">
+    
+<!--英文头部-->
+<div class="top">
+	<div class="header">
+        <div class="container clear">
+            <div class="row">
+                <a href="/indexen.htm" class="logo col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <img class="img-responsive" src="/style/web/images/custom/logo.png" alt="">
+                </a>
+                <div class="logo-mid col-lg-4 col-md-4 col-sm-4 hidden-xs">
+                    <div class="honor">
+						<span></span>
+						2019年JOS入选“中国科技期刊卓越行动计划”
+					</div>
+					<div class="honor">
+						<span></span>
+						2020年11月JOS被EI数据库收录
+					</div>
+                </div>
+                <div class="logor share col-lg-3 col-md-3 col-sm-3 hidden-xs fr">
+                    <p>
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=79843141&site=qq&menu=yes" title="QQ Online" target="_blank"><img src="/style/web/images/custom/ico2.png" alt=""></a>
+						<a href="mailto:jos@semi.ac.cn" title="Email Us"><img src="/style/web/images/custom/ico3.png" alt=""></a>
+						<a href="/email_alert_en.htm" title="Sign Up For Alert" target="_blank"><img src="/style/web/images/custom/ico4.png" alt=""></a>
+					</p>
+					<ul class="p1 clearfix">
+						<li class="dropdown">
+							<a href="/news/authors.htm" data-toggle="dropdown">Authors</a>
+							 <ul class="dropdown-menu" role="menu">
+						      							 	   									  									   															 	   									  											  							                    <li>
+						                    							                        <a href="/news/PreparingYourManuscript.htm" target="_top">Preparing Your Manuscript</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="https://mc03.manuscriptcentral.com/jos-iop" target="_blank">Submit Your Manuscript</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/CopyrightandPermissions.htm" target="_top">Copyright and Permissions</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/WordTemplate.htm" target="_top">Word Template</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/EndNoteforReferences.htm" target="_top">EndNote for References</a>
+						                        						                    </li>
+						                    									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   														    </ul>
+						</li>
+						
+						<li class="dropdown">
+							<a href="/news/introduction.htm" data-toggle="dropdown">About the Journal</a>
+							 <ul class="dropdown-menu" role="menu">
+						       							 	   									  											  							                    <li>
+						                    							                        <a href="/news/AbouttheJournal.htm" target="_top">About the Journal</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/Scope.htm" target="_top">Scope</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/Peer-Review-Process.htm" target="_top">Peer Review Process</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/Publication-Ethics.htm" target="_top">Publication Ethics</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/AdvisoryBoard.htm" target="_top">Advisory Board</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/EditorialBoard.htm" target="_top">Editorial Board</a>
+						                        						                    </li>
+						                    						                    <li>
+						                    							                        <a href="/news/ContactInformation.htm" target="_top">Contact Information</a>
+						                        						                    </li>
+						                    									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   															 	   									  									   														    </ul>
+						</li>
+						<li><a href="/news/EditorialBoard.htm">Editorial Board</a></li>
+				
+					</ul>
+                </div>
+
+                <!--
+                    <form action="/search" method="POST" onsubmit="return checkSearchNew(this);" id="topSearchForm">
+                        <p class="gjss"><a href="/cn/to_advance_search">高级检索</a></p>
+                        <div class="search qikan clearfix ">
+                           <input name="q" placeholder="请输入检索词" class="searchtext" /><input type="submit" class="subBtn" value="搜索">
+                            <input type="hidden" name="pageType" value="en" />
+                            <br/>
+                            <p class="gjss" style="float:left;">
+                                <input type="radio" name="searchType1" checked="checked"  value="0" />论文&nbsp;
+                                <input type="radio" name="searchType1"  value="1" />全文&nbsp;
+                                <input type="radio" name="searchType1"  value="2" />图&nbsp;
+                                <input type="radio" name="searchType1"  value="3" />表&nbsp;
+                                <input type="radio" name="searchType1"  value="4" />新闻&nbsp;
+                            </p>
+                        </div>
+                    </form>
+                -->
+
+            </div>
+        </div>
+    </div>
+<!--英文菜单-->
+	<div class="top-nav nav header-nav header-nav-en">
+        <ul class="nav-inner clearfix container">
+                                                                                    <li type="Home">
+            	                <a href="/" target="_top">Home</a>
+                                            </li>
+                                                <li type="JustAccepted">
+            	                <a href="/en/article/latest_accepted" target="_top">Just Accepted</a>
+                                            </li>
+                                                <li type="InPress">
+            	                <a href="/en/article/latest" target="_top">In Press</a>
+                                            </li>
+                                                <li type="CurrentIssue">
+            	                <a href="/en/article/current" target="_top">Current Issue</a>
+                                            </li>
+                                                <li type="AllIssues">
+            	                <a href="/all_issue_list_en.htm" target="_top">All Issues</a>
+                                            </li>
+                                                <li type="ReviewArticles">
+            	                <a href="/custom/getArticleByReview" target="_top">Review Articles</a>
+                                            </li>
+                                                <li type="SpecialIssues">
+            	                <a href="/en/topics?maxCount=99" target="_top">Special Issues</a>
+                                            </li>
+                                                <li type="JOSarXiv">
+            	                <a href="http://arxiv.jos.ac.cn/" target="_blank">JOSarXiv</a>
+                                            </li>
+                                </ul>
+    </div>
+
+	<!--手机菜单1-->
+	<div class="phone-nav">
+	    <div class="container clearfix">
+	        <div class="navList fl">
+	            <span class="span1"></span>
+	            <span class="span2"></span>
+	            <span class="span3"></span>
+	        </div>
+	        <a href="/" class="logo fl">
+	            <img src="/style/web/images/custom/logo.png" alt="">
+	        </a>
+	        <div class="search-app fr"></div>
+	    </div>
+	    <div class="search-app-wrap">
+	        <form action="/search" method="POST" id="appTopSearchForm" onsubmit="return checkSearchNew(this);" class="clear ">
+	            <div class="container clear">
+	            	<!--手机搜索可能用到的id：appSearchType-->
+	                <select name="searchField" class="fl">
+	                    	                		<option value="" selected >All</option><option value="titleEn">Title</option><option value="authorNameEn">Author</option><option value="keywordEn">Keyword</option><option value="abstractinfoEn">Abstract</option><option value="doi">DOI</option><option value="categoryNameEn">Category</option><option value="addressEn">Address</option><option value="fundsInfoEn">Fund</option>
+	                		                </select>
+	                <input type="hidden" name="pageType" value="en">
+	                <input type="text" name="q" placeholder="Search" class="fl text">
+	                <input type="submit" class="sub fl" value="">
+	            </div>
+	        </form>
+	    </div>
+	    <ul class="smallUl">
+	        	        	        	        	        	        	        <li type="Home">
+	        		            <a href="/" target="_top">Home</a>
+	            	            	        </li>
+	        	        	        	        <li type="JustAccepted">
+	        		            <a href="/en/article/latest_accepted" target="_top">Just Accepted</a>
+	            	            	        </li>
+	        	        	        	        <li type="InPress">
+	        		            <a href="/en/article/latest" target="_top">In Press</a>
+	            	            	        </li>
+	        	        	        	        <li type="CurrentIssue">
+	        		            <a href="/en/article/current" target="_top">Current Issue</a>
+	            	            	        </li>
+	        	        	        	        <li type="AllIssues">
+	        		            <a href="/all_issue_list_en.htm" target="_top">All Issues</a>
+	            	            	        </li>
+	        	        	        	        <li type="ReviewArticles">
+	        		            <a href="/custom/getArticleByReview" target="_top">Review Articles</a>
+	            	            	        </li>
+	        	        	        	        <li type="SpecialIssues">
+	        		            <a href="/en/topics?maxCount=99" target="_top">Special Issues</a>
+	            	            	        </li>
+	        	        	        	        <li type="JOSarXiv">
+	        		            <a href="http://arxiv.jos.ac.cn/" target="_blank">JOSarXiv</a>
+	            	            	        </li>
+	        	        	    </ul>
+	</div>
+</div>
+
+</div>
+<!--头部 结束-->
+<!--电脑端 开始-->
+<div class="article-pc">
+	<input type="hidden" name="relatedTitle" value="A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 <i>μ</i>m CMOS"/>
+	<input type="hidden" name="relatedYear" value="2016"/>
+	<input type="hidden" name="relatedKeywords" value="SAR ADC;switching scheme;SAR control logic;DAC;comparator" />
+	
+<div class="article-header-new">
+	<div class="inner clear">
+		<ul class="fl">
+			<li>
+				<a href="javascript:void(0);" onclick="downloadpdf('3e8485e3-07de-4d73-9685-485d99e0f11c');">
+					<i class="fa fa-file-pdf-o"></i><span>PDF</span>
+				</a>
+			</li>
+			<li><a href="javascript:void(0);"
+				data-target="#exportCitationModal" data-toggle="modal"><i
+					class="fa fa-quote-left"></i><span>Cite</span>
+			</a></li>
+			<li><a><i class="fa fa-share-alt"></i><span>Share</span>
+			</a>
+				<dl> 
+					<dd>
+						<a href="javascript:void(0);" onclick="shareTools('facebook');"
+							title="share to facebook">facebook</a>
+					</dd>
+					<dd>
+						<a href="javascript:void(0);" onclick="shareTools('twitter');"
+							title="share to twitter">twitter</a>
+					</dd>
+					<!--<dd>
+						<a href="javascript:void(0);" onclick="shareTools('google+');"
+							title="share to google">google</a>
+					</dd>-->
+					<dd>
+						<a href="javascript:void(0);" onclick="shareTools('mendeley');"
+							title="share to mendeley">mendeley</a>
+					</dd>
+					
+					<dd>
+						<a href="javascript:void(0);" onclick="shareTools('linkedin');"
+							title="share to linkedin">linkedin</a>
+					</dd>
+				</dl></li>
+		</ul>
+		<div class="article-search fr clearfix">
+			<form class="topSearchForm" id="searchFormTop"
+				action="//www.jos.ac.cn/search" method="POST"
+				onsubmit="return checkSearchNew(this);" role="form">
+				<select class="fl" name="searchField">
+					<option value="" selected >All</option><option value="titleEn">Title</option><option value="authorNameEn">Author</option><option value="keywordEn">Keyword</option><option value="abstractinfoEn">Abstract</option><option value="doi">DOI</option><option value="categoryNameEn">Category</option><option value="addressEn">Address</option><option value="fundsInfoEn">Fund</option></select> <input type="text" name="q" placeholder="Search"
+					class="fl text input"> <input name="pageType" type="hidden"
+					value="en"> <input type="submit" class="sub fl" value="">
+			</form>
+		</div>
+	</div>
+</div>
+<div class="article-main">
+	<div class="inner clear content" style="position:relative;">
+	<div class="posi wid">
+		<div>
+			J. Semicond. >&nbsp;<a href="//www.jos.ac.cn/all_issue_list_en.htm?Issues=37" style="color:#8f000b;">2016, Volume 37</a> > <a href="//www.jos.ac.cn/article/2016/1" style="color:#8f000b;">Issue 1</a> > 015004<input type="hidden" value="/fileBDTXB/journal/article/bdtxb/2016/1/" id="basePath"/>
+				<div class="prevAndNext">
+				<div class="pull-left biger centerss">
+				<a id="prev-article-btn" href="//www.jos.ac.cn/article/doi/10.1088/1674-4926/37/1/015003"><span class="glyphicon glyphicon-menu-left"></span>Previous Article</a>
+					</div>
+				<span id="article_seperator">|</span>
+				<div class="pull-right biger">
+				<a id="next-article-btn" href="//www.jos.ac.cn/article/doi/10.1088/1674-4926/37/1/015005">Next Article<span class="glyphicon glyphicon-menu-right"></span></a>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="user-name wid">
+	    <p class="category-name-en">SEMICONDUCTOR INTEGRATED CIRCUITS</p><h1>
+       		A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 <i>μ</i>m CMOS</h1><p>
+			<a href="javascript:void(0);" onclick='searchLike("authorNameEn","Dong Li","");'>Dong Li</a><sup class="authorTag"></sup>, <a href="javascript:void(0);" onclick='searchLike("authorNameEn","Qiao Meng","");'>Qiao Meng</a><sup class="authorTag"><a href="javascript:void(0);" class="com-mail" title="Corresponding author: Qiao Meng Email: mengqiao@seu.edu.cn"></a></sup> and <a href="javascript:void(0);" onclick='searchLike("authorNameEn","Fei Li","");'>Fei Li</a><sup class="authorTag"></sup></p>
+		<div class="clearfix">
+				<span>
+					<a class="toggleAdd" href="javascript:;">+ Author Affiliations</a>
+					<a class="toggleOther" href="javascript:;" style="display:none;">+ Find other works by these authors</a>
+				</span>
+				<ul id="add-ul" style="display:none;">
+					<li>Institute of RF- &amp; OE-ICs, Southeast University, Nanjing 210096, China<span id="affili_label_" style="display: none;">Institute of RF- &amp; OE-ICs, Southeast University, Nanjing 210096, China</span></li>
+					</ul>
+				<ul id="other-ul" style="display:none;">
+					<li><a href='javascript:void(0);' onclick="searchLike('authorNameEn','Dong Li')">Dong Li</a></li><li><a href='javascript:void(0);' onclick="searchLike('authorNameEn','Qiao Meng')">Qiao Meng</a></li><li><a href='javascript:void(0);' onclick="searchLike('authorNameEn','Fei Li')">Fei Li</a></li></ul>
+				<p><a href="javascript:void(0);" class="com-mail" title="Corresponding author:  Email: "></a>&nbsp;<b>Corresponding author:</b> 
+							Meng Qiao,Email:<a href="mailto:mengqiao@seu.edu.cn">mengqiao@seu.edu.cn</a></p>
+					<div class="article-detail-doiorcstr">
+						<span>DOI: <a href="http://dx.doi.org/10.1088/1674-4926/37/1/015004" target="_blank">10.1088/1674-4926/37/1/015004</a></span></div>
+					</div>
+		</div>
+	<div class="abstract wid article-nav">
+		<ul>
+              <li  class="current" id="abstr" rel="abs"><a href="javascript:void(0)">Abstract</a></li>
+              <li  articleId='3e8485e3-07de-4d73-9685-485d99e0f11c' rel="html" onclick="ajaxCountHtmlView('3e8485e3-07de-4d73-9685-485d99e0f11c');">
+	      				<a href="javascript:void(0)">Full Text(HTML)</a>
+	                </li>
+                <!--图表-->
+			<li val="图表" rel="fig">
+					<a data-navId="figTab" href="javascript:void(0);">
+						<span></span> 
+						
+						Figures<num>(16)</num>/Tables<num>(2)</num>
+						</a>
+				</li>
+				<li rel="ref"><a href="javascript:void(0);">References(14)</a></li>
+			<li rel="rel"><a href="javascript:void(0);" class="relatedPapersCount">Related Papers</a></li>
+			<li rel="cited" style="display:none;"><a href="javascript:void(0);" class="">Cited by</a></li>
+		</ul>
+		<p>
+			<a href="javascript:;" onclick="downloadpdf('3e8485e3-07de-4d73-9685-485d99e0f11c');">PDF</a>
+				</p>
+		<!-- 2017年还有3期，从2018年开始 -->
+		</div>
+	
+	 <div class="content wid">
+		<div class="left-layout">
+			<div class="article-box-content">
+				<!-- 摘要 -->
+				<div class="abstractInfo article-box article-box0 current">
+					<p><b>Abstract: </b>This paper presents a 10 bit successive approximation register (SAR) analog-to-digital converter (ADC) in 0.18 <i>μ</i> m 1P6M CMOS technology with a 1.8 V supply voltage. To improve the conversion speed, a partial split capacitor switching scheme is proposed. By reducing the time constant of the bit cycles, the proposed technique shortens the settling time of a capacitive digital-to-analog converter (DAC). In addition, a new SAR control logic is proposed to reduce loop delay to further enhance the conversion speed. At 1.8 V supply voltage and 50 MS/s the SAR ADC achieves a signal-to-noise and distortion ratio (SNDR) of 57.5 dB and spurious-free dynamic range (SFDR) of 69.3 dB. The power consumption is 2.26 mW and the core die area is 0.096 mm<sup>2</sup>.</p><p class="article-keyword" style="text-align: left;">
+						<b>Keywords:</b>
+							<span style="display: inline-block;"><a href='javascript:void(0);' onclick="searchLike('keywordEn','SAR ADC')" target="_blank" class="mainColor">SAR ADC</a>,&nbsp;</span><span style="display: inline-block;"><a href='javascript:void(0);' onclick="searchLike('keywordEn','switching scheme')" target="_blank" class="mainColor">switching scheme</a>,&nbsp;</span><span style="display: inline-block;"><a href='javascript:void(0);' onclick="searchLike('keywordEn','SAR control logic')" target="_blank" class="mainColor">SAR control logic</a>,&nbsp;</span><span style="display: inline-block;"><a href='javascript:void(0);' onclick="searchLike('keywordEn','DAC')" target="_blank" class="mainColor">DAC</a>,&nbsp;</span><span style="display: inline-block;"><a href='javascript:void(0);' onclick="searchLike('keywordEn','comparator')" target="_blank" class="mainColor">comparator</a></span></p>
+				
+				</div>
+				<!-- 全文 -->
+				<div class="article-box article-box1 abstractInfosrc ">
+				
+					<div id="FullText" class="FullText-all html-text"></div>
+					
+					<br/><br/>
+				 
+					<div id="References" class="articleListBox">
+		                    <h3 class="navTitle" id="References-list">References</h3>
+		                    <div class="References-wrap">
+	<table class="reference-tab">
+		<tr class="document-box" id="b1">
+				<td valign="top" class="td1"> [1]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b2">
+				<td valign="top" class="td1"> [2]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b3">
+				<td valign="top" class="td1"> [3]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b4">
+				<td valign="top" class="td1"> [4]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b5">
+				<td valign="top" class="td1"> [5]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b6">
+				<td valign="top" class="td1"> [6]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b7">
+				<td valign="top" class="td1"> [7]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b8">
+				<td valign="top" class="td1"> [8]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b9">
+				<td valign="top" class="td1"> [9]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b10">
+				<td valign="top" class="td1"> [10]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b11">
+				<td valign="top" class="td1"> [11]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b12">
+				<td valign="top" class="td1"> [12]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b13">
+				<td valign="top" class="td1"> [13]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b14">
+				<td valign="top" class="td1"> [14]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		</table>
+</div></div>
+	                </div>
+					
+	                <!--图表-->
+				<!--Figure/Table-->
+				  <div class="article-box article-chart" id="figTab">
+					<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="renderer" content="webkit" />
+</head>
+<body>
+<div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 1.&nbsp;Block diagram of the proposed fully differential SAR ADC." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure1" ref="#Fig-Figure1"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure1">
+								<b>
+								Fig. 1.</b>&nbsp;
+							</span>
+							Block diagram of the proposed fully differential SAR ADC.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 2.&nbsp;Flow chart of the proposed switching scheme." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure2" ref="#Fig-Figure2"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure2">
+								<b>
+								Fig. 2.</b>&nbsp;
+							</span>
+							Flow chart of the proposed switching scheme.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('6b31b662-198e-4f90-8337-f64599a61f2e','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('6b31b662-198e-4f90-8337-f64599a61f2e','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('6b31b662-198e-4f90-8337-f64599a61f2e','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('6b31b662-198e-4f90-8337-f64599a61f2e','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 3.&nbsp;Output waveform of the proposed switching method." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure3" ref="#Fig-Figure3"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure3">
+								<b>
+								Fig. 3.</b>&nbsp;
+							</span>
+							Output waveform of the proposed switching method.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 4.&nbsp;Equivalent circuit of the longest settling procedure of the proposed switching scheme." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure4" ref="#Fig-Figure4"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure4">
+								<b>
+								Fig. 4.</b>&nbsp;
+							</span>
+							Equivalent circuit of the longest settling procedure of the proposed switching scheme.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('90124338-430a-4b75-8d3c-463720b4e9ac','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('90124338-430a-4b75-8d3c-463720b4e9ac','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('90124338-430a-4b75-8d3c-463720b4e9ac','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('90124338-430a-4b75-8d3c-463720b4e9ac','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 5.&nbsp;The settling time against total capacitance of DAC." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure5" ref="#Fig-Figure5"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure5">
+								<b>
+								Fig. 5.</b>&nbsp;
+							</span>
+							The settling time against total capacitance of DAC.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 6.&nbsp;Schematic of the bootstrapped switch." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure6" ref="#Fig-Figure6"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure6">
+								<b>
+								Fig. 6.</b>&nbsp;
+							</span>
+							Schematic of the bootstrapped switch.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('2555f518-60ef-48ed-951a-627cf5627cc2','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('2555f518-60ef-48ed-951a-627cf5627cc2','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('2555f518-60ef-48ed-951a-627cf5627cc2','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('2555f518-60ef-48ed-951a-627cf5627cc2','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 7.&nbsp;Schematic of the dynamic comparator with pre-amplifier." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure7" ref="#Fig-Figure7"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure7">
+								<b>
+								Fig. 7.</b>&nbsp;
+							</span>
+							Schematic of the dynamic comparator with pre-amplifier.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 8.&nbsp;Schematic and timing diagram of the synchronous clock generator." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure8" ref="#Fig-Figure8"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure8">
+								<b>
+								Fig. 8.</b>&nbsp;
+							</span>
+							Schematic and timing diagram of the synchronous clock generator.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 9.&nbsp;Diagram of the conventional SAR logic." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure9" ref="#Fig-Figure9"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure9">
+								<b>
+								Fig. 9.</b>&nbsp;
+							</span>
+							Diagram of the conventional SAR logic.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 10.&nbsp;Diagram of the proposed SAR logic." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure10" ref="#Fig-Figure10"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure10">
+								<b>
+								Fig. 10.</b>&nbsp;
+							</span>
+							Diagram of the proposed SAR logic.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 11.&nbsp;Timing diagram of the principle of the proposed SAR control logic." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure11" ref="#Fig-Figure11"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure11">
+								<b>
+								Fig. 11.</b>&nbsp;
+							</span>
+							Timing diagram of the principle of the proposed SAR control logic.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 12.&nbsp;Schematics of (a) the pulse generator and (b) the latch." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure12" ref="#Fig-Figure12"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure12">
+								<b>
+								Fig. 12.</b>&nbsp;
+							</span>
+							Schematics of (a) the pulse generator and (b) the latch.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 13.&nbsp;Chip microphotograph." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure13" ref="#Fig-Figure13"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure13">
+								<b>
+								Fig. 13.</b>&nbsp;
+							</span>
+							Chip microphotograph.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 14.&nbsp;Measured FFT spectrum at 50 MS/s and 2.02 MHz input." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure14" ref="#Fig-Figure14"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure14">
+								<b>
+								Fig. 14.</b>&nbsp;
+							</span>
+							Measured FFT spectrum at 50 MS/s and 2.02 MHz input.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 15.&nbsp;Dynamic performance versus input frequency." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure15" ref="#Fig-Figure15"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure15">
+								<b>
+								Fig. 15.</b>&nbsp;
+							</span>
+							Dynamic performance versus input frequency.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="_figclass figure">
+            <div class="figure_title figure_fulltext clearfix">
+                <div class="figure-img-box" style="padding-bottom:12px;">
+                    <a class="group cboxElement" title="Figure&nbsp;Fig. 16.&nbsp;Measured DNL and INL." href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg" >
+								<img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg" 
+									onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg'" 
+									class="figure_img  figure_type2 " 
+									id="Fig-Figure16" ref="#Fig-Figure16"/>
+							</a>
+							 </div>
+                
+                
+                    <div class="figure_caption">
+                    
+                    <!-- 英文图题 -->
+                    <div class="figure_caption">
+							<span class="FigText" id="Figure16">
+								<b>
+								Fig. 16.</b>&nbsp;
+							</span>
+							Measured DNL and INL.</div>
+						  <!-- 注解 -->
+	                    </div>
+                <br/>
+                <!-- 下拉显示 -->
+				<div class="figure_button figure-button-box">
+					<div class="figure_btn div_btn">
+						<!--  <a href="javascript:void(0);">Figure options</a>	-->													
+					</div>
+					<!--  
+					<div class="menu_button drop_btn">
+						<p>
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-img.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadImg('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')">Larger image</a>
+							&nbsp;
+							<img src="//www.jos.ac.cn/style/web/images/custom/down-ppt.png" class="down-label">
+							<a href="javascript:void(0);" onclick="downloadPPT('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')">PowerPoint slide</a>
+						</p>
+																
+					</div>
+						-->	
+						<div class="figure_button">
+							<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>DownLoad: 
+							<a href="javascript:void(0);" onclick="downloadImg('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')">Full-Size Img</a>
+							<a href="javascript:void(0);" onclick="downloadPPT('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')" style="border-left: 1px solid #ccc;
+	    padding-left: 5px;">PowerPoint</a>
+						</div>
+									
+				</div>
+				<!-- 下拉显示 -->
+                
+            </div>
+        
+            	
+        </div>
+    <div class="figure">
+        	<div class="article_table_fullText clearfix tableTextBox" id="Fig-Table1" ref="#Fig-Table1">
+        		<!-- 英文表题 -->
+				<p class="figTabSpan text-center">
+						<span class="TableText " id="Table1">
+							<b>
+							Table 1.
+							</b>&nbsp;
+						</span>
+						Performance summary.</p>
+					
+				<input id="basePath" type="hidden" value="/fileBDTXB/journal/article/bdtxb/2016/1/" />	
+					<div class="table-body table_content table_type2 ">
+					<table><img class="graphic" src="20160123-T1.jpg"></img></table></div>
+				<!-- 注解 -->
+                    <!-- 注解 -->
+                    </div>
+        	<div class="figureTitle" style="margin-top:0;">
+        		</div>
+			
+			
+			<!-- 下拉显示 -->
+				<div class="figure_button new_table_bottom">
+					<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>
+					DownLoad: <a onclick="downloadCsv('bbbfd645-3119-49c4-af3d-6d9d8fd25e44','table')">CSV</a>
+				</div>
+			</div>
+    <div class="figure">
+        	<div class="article_table_fullText clearfix tableTextBox" id="Fig-Table2" ref="#Fig-Table2">
+        		<!-- 英文表题 -->
+				<p class="figTabSpan text-center">
+						<span class="TableText " id="Table2">
+							<b>
+							Table 2.
+							</b>&nbsp;
+						</span>
+						Comparison with state-of-the-other-art works.</p>
+					
+				<input id="basePath" type="hidden" value="/fileBDTXB/journal/article/bdtxb/2016/1/" />	
+					<div class="table-body table_content table_type2 ">
+					<table><img class="graphic" src="20160123-T2.jpg"></img></table></div>
+				<!-- 注解 -->
+                    <!-- 注解 -->
+                    </div>
+        	<div class="figureTitle" style="margin-top:0;">
+        		</div>
+			
+			
+			<!-- 下拉显示 -->
+				<div class="figure_button new_table_bottom">
+					<img src="//www.jos.ac.cn/style/web/images/public/download.png"/>
+					DownLoad: <a onclick="downloadCsv('c1e932ce-b7a8-484a-b39e-562418c5fe1b','table')">CSV</a>
+				</div>
+			</div>
+    </body>
+</html>
+</div>
+				<!-- 参考文献 -->
+				 <div id="References" class="article-box article-box3">
+		                    <!-- <h3 class="navTitle" id="References-list">References</h3> -->
+		                    <div class="References-wrap">
+	<table class="reference-tab">
+		<tr class="document-box" id="b1">
+				<td valign="top" class="td1"> [1]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b2">
+				<td valign="top" class="td1"> [2]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b3">
+				<td valign="top" class="td1"> [3]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b4">
+				<td valign="top" class="td1"> [4]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b5">
+				<td valign="top" class="td1"> [5]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b6">
+				<td valign="top" class="td1"> [6]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b7">
+				<td valign="top" class="td1"> [7]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b8">
+				<td valign="top" class="td1"> [8]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b9">
+				<td valign="top" class="td1"> [9]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b10">
+				<td valign="top" class="td1"> [10]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b11">
+				<td valign="top" class="td1"> [11]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b12">
+				<td valign="top" class="td1"> [12]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b13">
+				<td valign="top" class="td1"> [13]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b14">
+				<td valign="top" class="td1"> [14]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		</table>
+</div></div>
+	                <!-- 相关文章 -->
+                <div id="RelatedPages" class="article-box article-box4 relateArticleStatus">
+                    </div>
+                	<div id="citedby-info" class="article-box"></div>
+			</div>
+			<!-- trendmd -->
+		<li>
+			<div id="trendmd-suggestions"></div>
+			<script>
+				$(document).ready(function(){
+					var oScript = document.createElement("script");
+						oScript.type = "text/javascript";
+						oScript.src="//js.trendmd.com/trendmd.min.js"; 
+						oScript.defer="";
+						oScript.setAttribute("data-trendmdconfig","{'journal_id':'69787','element':'#trendmd-suggestions'}");
+						document.body.appendChild(oScript);
+				})
+			</script>
+		</li>
+	</div>
+		<div class="fr-layout" style="width:306px;">
+			<div class="searche">
+				<h2>Search</h2>
+				<form action="//www.jos.ac.cn/search" accept-charset="utf-8" method="POST" onsubmit="return checkSearch(this,'Home');">
+					<input id="search_keyword" type="text" name="q" placeholder="Author/Title/Keywords" autocomplete="off">
+					<input type="hidden" name="pageType" value="en"/>
+					<p>
+						<button type="submit">Search</button>
+						<a href="//www.jos.ac.cn/en/to_advance_search" onclick="gotoAdvanceSearch();">Advanced Search >></a>
+					</p>
+				</form>
+			</div>
+			<div class="citation" >
+					<h2>GET CITATION</h2>
+					<div class="text">
+						<p>
+							<span class="copy-citation" onclick="copyArticle4(this)" title="复制到剪贴板" id ="copy-citation">
+								<img class="shu" src="//www.jos.ac.cn//style/web/images/public/shu.png" alt="shu">
+							</span>
+						</p>
+					</div>
+					<b>Export: <i><span onclick="window.location.href='//www.jos.ac.cn/article/exportCitation?ids=3e8485e3-07de-4d73-9685-485d99e0f11c&fileType=bib&isAbs=1'">BibTex</span> <span onclick="window.location.href='//www.jos.ac.cn/article/exportCitation?ids=3e8485e3-07de-4d73-9685-485d99e0f11c&fileType=ris&isAbs=1&pageType=en'">EndNote</span></i></b>
+				</div>
+			<div class="email">
+				<h2>Share:</h2>
+				<div class="shareBox shareMargin clearfix">
+	                <ul class="shareTool text-center">
+	                 	<li onclick="shareTools('twitter');" title="share this content in twitter"><img src="//www.jos.ac.cn/style/web/images/custom/share_twitter.png"/></li>
+		                <li onclick="shareTools('facebook');" title="share this content in facebook"><img src="//www.jos.ac.cn/style/web/images/custom/share_facebook.png"/></li>
+		                <li onclick="shareTools('linkedin');" title="share this content in linkedin"><img src="//www.jos.ac.cn/style/web/images/custom/share_linkedin.png"/></li>
+		                <!--<li onclick="shareTools('google+');" title="Research Gate"><img src="//www.jos.ac.cn/style/web/images/custom/share_google+.png"/></li>-->
+		                <li onclick="shareTools('mendeley');" title="mendeley"><img src="//www.jos.ac.cn/style/web/images/custom/mendeley.png"/></li>	                
+		                
+		                <li onclick="shareTools('weixin',this);" title="share this content in WeChat"><img src="//www.jos.ac.cn/style/web/images/custom/share_weixin.png"/></li>
+		                <li onclick="shareTools('sina');" title="share this content in sina"><img src="//www.jos.ac.cn/style/web/images/custom/share_sina.png"/></li>
+		                <li onclick="shareTools('qzone');" title="share this content in qzone"><img src="//www.jos.ac.cn/style/web/images/custom/share_qq.png"/></li>
+			            <li title="share this content in Email"><a class="emailpic" ><img src="//www.jos.ac.cn//style/web/images/custom/share_email.png"/></a>
+	                </ul>
+	                
+	  			</div> 
+			</div>
+			<div class="metrics">
+				<h2>Article Metrics</h2>
+				<div style="padding-top:10px;" data-badge-type="donut" data-doi="10.1088/1674-4926/37/1/015004" data-hide-no-mentions="false" class="altmetric-embed"></div>
+				<div style="padding-top:5px;" class='altmetric-embed' data-badge-popover='left' data-doi='10.1088/1674-4926/37/1/015004'></div>
+				
+				<p style="margin-left: 2em;text-indent: -2em;">
+					<span style="display: block;" href="javascript:void(0);">Article views: <i>5465</i> Times</span>
+					<span style="display: block;" href="javascript:void(0);">PDF downloads: <i>232</i> Times</span>
+					<span class="" style="display: block;" >Cited by: <i id="citedByCount">0</i> Times</span>
+					
+					<!-- 
+					<a href="#">Received: 09 October 2015</a>
+					<a href="#">Revised manuscript received: </a>
+					<a href="#">Published in print: 25 January 2016</a>
+					 -->
+				</p>
+			</div>
+			<div class="metrics">
+				<h2>History</h2>
+				<p style="">
+					<span href="javascript:void(0);">Received: 09 October 2015</span>
+					<span href="javascript:void(0);">Revised: </span>
+					<span style="padding-top:10px;display:block;">Online:</span>
+					<span style="display:block;padding-left:1em;">
+					    <span href="javascript:void(0);" style="font-size:12px;">Published: 01 January 2016</span>
+							</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+<!-- 		<div class="article-main-mid fl"> -->
+			
+			
+        
+        <div class=" contentArea-left-bg">
+        <div class="article-footer"></div>
+        <!-- 移动端导航 -->
+        <div class="article-btn">
+			<div class="_table">
+				<div class="_cell">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<div class="article-menu">
+			<h3>Catalog</h3>
+			<div class="article-menu-bot">
+				<ul class="iphone-wrapper"></ul>
+			</div>
+		</div>
+        <!--鼠标点击悬浮框-->
+        <div class="box box-top box-tan">
+            <div class="box-tan-con">
+				<table class="box-content reference-tab"></table>
+			</div>
+            <div class="triangle">
+                <div class="triangle-bg"></div>
+                <div class="triangle-content"></div>
+            </div>
+            <i class="close-box articleFont icon-cuo"></i>
+        </div>
+  
+        
+        
+        
+    </div>
+   
+    
+    
+    
+</div>
+</div>
+<div class="monitor"></div>
+<div id="email">
+	<form>
+		<h2>Email This Article</h2>
+		<textarea id="mailContent"></textarea>
+		<div class="eminfo"><span>User name:</span><input type="text"  id="mailUser" /></div>
+		<div class="eminfo form-group"><span>Email:</span><input type="text" id="mailAddress" /><b id="mailAddressError">*请输入正确邮箱</b></div>
+		<div class="eminfo"><span>Code:</span><input type="text"  id="mailCode" class="mailCode" /><img width="75" height="23" onclick="javascript:refresh(this);" title="点击更换" id="authCheckImg" src="//www.jos.ac.cn/util/AuthExpImageServlet"><b id="mailCodeError" class="mailCodeError">*验证码错误</b>
+		<div class="emsend"><a href="javascript:void(0);" onclick="sendMail();">Send</a></div>
+	</form>
+	<div class="emclose"><a><img src="//www.jos.ac.cn/style/web/images/custom/emclose.png"/></a></div>
+	
+</div>
+
+
+
+</div>
+</div>
+<!--电脑端 结束-->
+<!--手机端 开始-->
+<div class="article-app">
+	<div id="panel" class="main">
+    <!--英文摘要-->
+    <div class="article-main-mid">
+        <div class="articleNav">
+				<strong>Article Navigation</strong>&nbsp;&gt;&nbsp;
+				<span class="jounralName"><a class="mainColor"
+							href="//www.jos.ac.cn/">Journal of Semiconductors</a>
+						</span>
+					
+					&nbsp;&gt;
+					<span class="aYear"><a class="mainColor"
+							href="//www.jos.ac.cn/archive_list_en.htm?#2016">2016</a>
+						</span>&nbsp;&gt;&nbsp;
+					<span class="aIssue"><a class="mainColor"
+							href="//www.jos.ac.cn/article/2016/1">37(1):&nbsp;015004</a>
+						</span>
+					</div>
+			<div class="article-header">
+					<div class="quot visible-lg">
+	<div class="copyCitationInfo" 
+		style="width: 0px;height: 0px;opacity:0;overflow: hidden;">
+		Dong Li, Qiao Meng, Fei Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. Journal of Semiconductors, 2016, 37(1): 015004. doi: 10.1088/1674-4926/37/1/015004 ****D Li, Q Meng, F Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. J. Semicond., 2016, 37(1): 015004. doi:  10.1088/1674-4926/37/1/015004.</div>
+	<table class="article-tab">
+		<tr>
+			<td valign="top" width="70"><span class=""><b>Citation:</b>
+			</span>
+			</td>
+			<td><span class="info" id="infoEn">	 		<div class="citation-one">
+										Dong Li, Qiao Meng, Fei Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 <i>μ</i>m CMOS[J]. <i>Journal of Semiconductors</i>, 2016, 37(1): 015004. <span style="display:inline-block;">doi: <a class="mainColor  ref-doi" href="http://dx.doi.org/10.1088/1674-4926/37/1/015004" target="_blank" class="mainColor">10.1088/1674-4926/37/1/015004</a></span>					 
+							****
+				</div>
+	
+
+			<div class="citation-two">
+											D Li, Q Meng, F Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. <i>J. Semicond.</i>, 2016, 37(1): 015004. doi:  <a class="mainColor ref-doi" href="http://dx.doi.org/10.1088/1674-4926/37/1/015004" target="_blank">10.1088/1674-4926/37/1/015004</a>.
+								</div>
+			
+
+						
+</span>
+				<div class="modal-footer">
+					<span class="copy-citation" onclick="copyArticle2(this)"
+						title="copy to clipboard"> <img class="shu"
+						src="https://www.jos.ac.cn/style/web/images/public/shu.png" alt="shu" />
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="quot quot-app hidden-lg">
+	<div class="copyCitationInfo"
+		style="width: 0px;height: 0px;opacity:0;overflow: hidden;">
+		Dong Li, Qiao Meng, Fei Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. Journal of Semiconductors, 2016, 37(1): 015004. doi: 10.1088/1674-4926/37/1/015004 ****D Li, Q Meng, F Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. J. Semicond., 2016, 37(1): 015004. doi:  10.1088/1674-4926/37/1/015004.</div>
+	<table class="article-tab">
+		<tr>
+			<td valign="top" width="70"><span class=""><b>Citation:</b>
+			</span>
+			</td>
+			<td><span class="info" id="infoEn">	 		<div class="citation-one">
+										Dong Li, Qiao Meng, Fei Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 <i>μ</i>m CMOS[J]. <i>Journal of Semiconductors</i>, 2016, 37(1): 015004. <span style="display:inline-block;">doi: <a class="mainColor  ref-doi" href="http://dx.doi.org/10.1088/1674-4926/37/1/015004" target="_blank" class="mainColor">10.1088/1674-4926/37/1/015004</a></span>					 
+							****
+				</div>
+	
+
+			<div class="citation-two">
+											D Li, Q Meng, F Li. A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 μm CMOS[J]. <i>J. Semicond.</i>, 2016, 37(1): 015004. doi:  <a class="mainColor ref-doi" href="http://dx.doi.org/10.1088/1674-4926/37/1/015004" target="_blank">10.1088/1674-4926/37/1/015004</a>.
+								</div>
+			
+
+						
+</span>
+				<div class="modal-footer">
+					<span class="copy-citation" onclick="copyArticle2(this)"
+						title="copy to clipboard"> <img class="shu"
+						src="https://www.jos.ac.cn/style/web/images/public/shu.png" alt="shu" />
+					</span>
+				</div></td>
+		</tr>
+	</table>
+</div></div>
+			<div class="download-pdf hidden-lg pdfphone">
+	        	
+				<a href="javascript:void(0);" onclick="downloadpdf('3e8485e3-07de-4d73-9685-485d99e0f11c');">
+					<span class="articleFont icon-pdf"></span>
+                PDF<b id="pdfSize" style="font-size:12px;">( 329 KB)</b>
+				</a>
+			</div>
+			</div>
+        
+        <div class="article-left">
+				<div class="articleEn">
+					<div class="article-title">
+						<h1>A 10 bit 50 MS/s SAR ADC with partial split capacitor switching scheme in 0.18 <i>μ</i>m CMOS</h1>
+					</div>
+					<h5 class="articleDoi">
+						<b>DOI:&nbsp;</b><a href="https://doi.org/10.1088/1674-4926/37/1/015004" target="_blank" class="mainColor" >10.1088/1674-4926/37/1/015004</a>
+						</h5>
+					<h5 class="articleDoi">
+						</h5>
+					<ul class="article-author clear">
+						<li>
+								<a href="javascript:void(0);" class="mainColor"
+								data-relate="" onclick="">Dong Li</a><sup
+								class="authorTag"></sup>,&nbsp;</li>
+							<li>
+								<a href="javascript:void(0);" class="mainColor"
+								data-relate="mengqiao@seu.edu.cn" onclick="">Qiao Meng</a><sup
+								class="authorTag"><a href="mailto:mengqiao@seu.edu.cn" class="com-mail"
+											title="mailto:&nbsp;mengqiao@seu.edu.cn"></a>
+									</sup>,&nbsp;</li>
+							<li>
+								<a href="javascript:void(0);" class="mainColor"
+								data-relate="" onclick="">Fei Li</a><sup
+								class="authorTag"></sup></li>
+							</ul>
+					<ul class="about-author addresswrap">
+						<!-- 英文作者地址 -->
+						<li class="article-author-address"><span class=""> </span>
+									<p >
+										Institute of RF- &amp; OE-ICs, Southeast University, Nanjing 210096, China</p></li>
+							</ul>
+					<div class="com-author-info article-fundPrjs">
+                        <div class="com-author-info"><b>Funds:</b>
+		    						<p style="margin-left: 20px;">Project supported by the National Natural Science Foundation of China (No. 61401097).</p>
+		    								</div>
+							</div>
+		    		<a class="togglebtn mainColor" >
+							<i class="articleFont icon-jia" ></i>More Information
+						</a>
+					<div class="toggle-author-wrap" >
+						<ul class="about-article">
+							<!-- 作者简介和通讯作者 -->
+							<li><b>Corresponding author:</b> 
+										Meng Qiao,Email:<a href="mailto:mengqiao@seu.edu.cn">mengqiao@seu.edu.cn</a></li>
+								<!-- 稿件日期和基金项目 -->
+							<li class="com-author-info"><span><b>Received Date:</b> 2015-10-09</span>
+									<br />
+								<li><b>Accepted Date:</b><span id="" >
+										2015-11-02</span>
+									</li>
+								<li><b>Published Date:</b>
+											2016-01-25</li>
+									</li>
+	                    </ul>
+	                 </div>
+                </div>
+            </div>
+            <ul class="article-tab-box tab-content article-box-content" id="myTabContent">
+        
+        
+        <!--摘要-->
+        <div class="phone-title phone-mark" val="Abstract">
+				<a class="mainColor"  href="javascript:void(0);">Abstract<num></num></a>
+			</div>
+		<li id="Abstract" class="articleListBox">
+             <h3 class="navTitle visible-lg" id="Abstract-list">Abstract</h3>
+                 <div class="article-abstract">
+                     This paper presents a 10 bit successive approximation register (SAR) analog-to-digital converter (ADC) in 0.18 <i>μ</i> m 1P6M CMOS technology with a 1.8 V supply voltage. To improve the conversion speed, a partial split capacitor switching scheme is proposed. By reducing the time constant of the bit cycles, the proposed technique shortens the settling time of a capacitive digital-to-analog converter (DAC). In addition, a new SAR control logic is proposed to reduce loop delay to further enhance the conversion speed. At 1.8 V supply voltage and 50 MS/s the SAR ADC achieves a signal-to-noise and distortion ratio (SNDR) of 57.5 dB and spurious-free dynamic range (SFDR) of 69.3 dB. The power consumption is 2.26 mW and the core die area is 0.096 mm<sup>2</sup>.<p style="line-height: 12px;">&nbsp;</p>
+					</div>
+             <ul class="article-keyword article-info-en">
+                     <b>Keywords:</b>
+                     <li><a class="underHigh mainColor" href="javascript:void(0);" onclick="searchLike('keywordEn','SAR ADC')">SAR ADC</a>,&nbsp;</li>
+                         <li><a class="underHigh mainColor" href="javascript:void(0);" onclick="searchLike('keywordEn','switching scheme')">switching scheme</a>,&nbsp;</li>
+                         <li><a class="underHigh mainColor" href="javascript:void(0);" onclick="searchLike('keywordEn','SAR control logic')">SAR control logic</a>,&nbsp;</li>
+                         <li><a class="underHigh mainColor" href="javascript:void(0);" onclick="searchLike('keywordEn','DAC')">DAC</a>,&nbsp;</li>
+                         <li><a class="underHigh mainColor" href="javascript:void(0);" onclick="searchLike('keywordEn','comparator')">comparator</a></li>
+                         </ul>
+             </li>
+        <!-- 脚注 -->
+		<div class="footnotes" >
+			</div>
+		<!-- 全文 -->
+		<div val="FullText" class="html-text phone-title phone-mark">
+				<a class="mainColor" articleId='3e8485e3-07de-4d73-9685-485d99e0f11c' href="javascript:void(0);" >FullText(HTML)</a>
+			</div>
+		    <li id="htmlContent" class="articleListBox FullText-all html-text htmlContent2">
+		         
+			</li>
+		<!-- 参考文献 -->
+                <div class="phone-title" rel="ref" val="References">
+						<a class="mainColor" data-navId="References" href="javascript:void(0);">
+							References<num>(14)</num>
+						</a>
+					</div>
+				<li id="References" class="articleListBox">
+	                    <h3 class="navTitle" id="References-list">References</h3>
+	                    <div class="References-wrap">
+	<table class="reference-tab">
+		<tr class="document-box" id="b1">
+				<td valign="top" class="td1"> [1]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b2">
+				<td valign="top" class="td1"> [2]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b3">
+				<td valign="top" class="td1"> [3]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b4">
+				<td valign="top" class="td1"> [4]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b5">
+				<td valign="top" class="td1"> [5]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b6">
+				<td valign="top" class="td1"> [6]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b7">
+				<td valign="top" class="td1"> [7]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b8">
+				<td valign="top" class="td1"> [8]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b9">
+				<td valign="top" class="td1"> [9]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b10">
+				<td valign="top" class="td1"> [10]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b11">
+				<td valign="top" class="td1"> [11]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b12">
+				<td valign="top" class="td1"> [12]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b13">
+				<td valign="top" class="td1"> [13]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		<tr class="document-box" id="b14">
+				<td valign="top" class="td1"> [14]</td>
+				 
+				<td class="td2">
+					<!-- 如果中文、英文都没有的情况就输出默认语种的数据 -->
+					</td>
+			</tr>
+		</table>
+</div></li>
+                <!-- 相关文章 -->
+                <input type="hidden" value="1" id="journalreferenceCodeType">
+				<div class="phone-title" val="相关文章">
+						<a class="mainColor" data-navId="relative-article" href="javascript:void(0);">
+							Related Papers
+						</a>
+					</div>
+				<li id="RelatedPages" class="articleListBox">
+                    </li>
+                
+				<!--附件-->
+				<li id="Supplements" class="articleListBox article-supplements">
+						</li>
+				<div class="phone-title" val="citedby" class="html-beiyin">
+					<a class="mainColor" data-navId="citedby-info" id="citedby-li" rel="citedby" href="javascript:void(0);">Cited by<num id="citedby-num"></num></a>
+				</div>
+                <li id="citedby-info" class="article-box article-knowledge-map"></li>
+		<!-- 访问统计 -->
+		<div class="phone-title" val="Proportional views" rel="metric" onclick="loadArticleMetricCount('3e8485e3-07de-4d73-9685-485d99e0f11c');" style="display:none;">
+				<a class="mainColor" data-navId="metric_count" href="javascript:void(0);">
+					Proportional views<num></num>
+				</a>
+			</div>
+		<li id="metric_count" class="articleListBox">
+            <h3 class="navTitle" id="Access-list">Proportional views</h3>
+            <!-- loading -->
+            <img id="downLoading"
+					style="display:block;margin:10px auto;"
+					src="//www.jos.ac.cn/style/web/images/public/1.gif" alt="加载中" />
+           	<div class="hichart_box" id="article_visit_count_column"></div>
+			<div class="hichart_box" id="article_visit_type_pie"></div>
+			<div class="hichart_box" id="article_visit_area_pie"></div>
+        </li>
+
+        <li id="citedby-info" class="articleListBox"></li>
+        <!-- trendmd -->
+		<li>
+			<div id="trendmd-suggestions"></div>
+			<script>
+				$(document).ready(function(){
+					var oScript = document.createElement("script");
+						oScript.type = "text/javascript";
+						oScript.src="//js.trendmd.com/trendmd.min.js"; 
+						oScript.defer="";
+						oScript.setAttribute("data-trendmdconfig","{'journal_id':'69787','element':'#trendmd-suggestions'}");
+						document.body.appendChild(oScript);
+				})
+			</script>
+		</li>
+	</ul>
+	
+    
+
+    
+</div>
+<div class="article-btn">
+    <div class="_table">
+        <div class="_cell">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<div class="article-menu">
+    <h3>Catalog</h3>
+    <div class="article-menu-bot">
+    	<ul class="iphone-wrapper"></ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--手机端 结束-->
+<!--底部  开始-->
+<div id="common-bottom">
+    	
+<input type="hidden" id="language" value="en">
+<input type="hidden" id="fileurls" value="/fileBDTXB/">
+<input type="hidden" id="isShowImg" value="0">
+<input type="hidden" value="半导体学报(英文版)" id="journalTitleCn" />
+<input type="hidden" value="Journal of Semiconductors" id="journalTitleEn" />
+<input type="hidden" value="J. Semicond." id="journalAbbr" />
+<div class="bottom-fixed"></div>
+
+<div class="footer dt">
+    <div class="bottom container">
+    	<ul>
+			<li>
+				<b>Authors</b>
+							 	   					  					   							 	   					  							  			                    			                        <a href="/news/PreparingYourManuscript.htm" target="_top">Preparing Your Manuscript</a>
+		                        		                    		                    			                        <a href="https://mc03.manuscriptcentral.com/jos-iop" target="_blank">Submit Your Manuscript</a>
+		                        		                    		                    			                        <a href="/news/CopyrightandPermissions.htm" target="_top">Copyright and Permissions</a>
+		                        		                    		                    			                        <a href="/news/WordTemplate.htm" target="_top">Word Template</a>
+		                        		                    		                    			                        <a href="/news/EndNoteforReferences.htm" target="_top">EndNote for References</a>
+		                        		                    					  					   							 	   					  					   							 	   					  					   							 	   					  					   							 	   					  					   							 	   					  					   							 	   					  					   							 	   					  					   							 	   					  					   							</li>
+			<li>
+				<b>About the Journal</b>
+			        				 	   						  								  				                    				                        <a href="/news/AbouttheJournal.htm" target="_top">About the Journal</a>
+			                        			                    			                    				                        <a href="/news/Scope.htm" target="_top">Scope</a>
+			                        			                    			                    				                        <a href="/news/Peer-Review-Process.htm" target="_top">Peer Review Process</a>
+			                        			                    			                    				                        <a href="/news/Publication-Ethics.htm" target="_top">Publication Ethics</a>
+			                        			                    			                    				                        <a href="/news/AdvisoryBoard.htm" target="_top">Advisory Board</a>
+			                        			                    			                    				                        <a href="/news/EditorialBoard.htm" target="_top">Editorial Board</a>
+			                        			                    			                    				                        <a href="/news/ContactInformation.htm" target="_top">Contact Information</a>
+			                        			                    						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   									 	   						  						   								</li>
+			<li>
+				<b>Link</b>
+			   <!-- <a href="http://iopscience.iop.org/1674-4926/" target="_blank">JoS in IOP</a>
+					<a href="https://www.koushare.com" target="_blank">KouShare</a> -->
+																		<a href="http://iopscience.iop.org/1674-4926/" target="_top"> 
+												JoS in IOPScience</a>
+																		<a href="https://www.koushare.com/topicIndex/byyy/68" target="_top"> 
+												Live Report in KouShare (“半语-益言”直播讲座)</a>
+																		<a href="https://www.scidb.cn/en" target="_top"> 
+												ScienceDB</a>
+																		<a href="http://www.physike.com/" target="_top"> 
+												PHYSIKE</a>
+																		<a href="https://www.dyna-sense.com/" target="_top"> 
+												Dyna Sense(鼎信优威)</a>
+								</li>
+			<li class="code">
+				<!--<img width="164" src="http://www.jos.ac.cn/style/web/images/qrcode.jpg" alt="">-->
+				<img width="164" src="/style/web/images/qrcode.jpg" alt="">
+				<span class="codetxt">WeChat ID</span>
+			</li>
+			<li style="display:none;">
+				<img width="164" src="http://www.jos.ac.cn/style/web/images/wxcode.png" alt="">
+				<img width="164" src="/style/web/images/wxcode.png" alt="">
+				<span class="codetxt">Mobile Terminal</span>
+			</li>
+<!-- 		</ul> -->
+    
+    
+    
+    
+    
+    
+    
+<!-- 		<p>Copyright &copy; 2009《 石油钻探技术 》 All Rights Reserved.</p> -->
+<!-- 		<p>Address：  China Pos：</p> -->
+<!-- 		<p>Tel：020-37627489  Fax：021-64253812  Email：<a href="mailto:"></a></p> -->
+<!-- 		<p><img src="/style/web/images/custom/ba.png" /> Beijing public network security equipment 11010502036328　Beijing ICP backup 17033152</p> -->
+	</div>
+    
+</div>
+<div class="copyright">
+	<div class="container">
+		<p>Journal of Semiconductors &copy; 2017 All Rights Reserved           &emsp; <a style="color:#90A9D2;" href="http://www.beian.miit.gov.cn" target="_blank">京ICP备05085259号-2</a></p>
+	</div>
+</div>
+
+<script src="//plugin.sowise.cn/sowise-plugin.js" custom-options="{'citedby':false,'suggest':false,'ipRecord':true,'journalId':83}"></script>
+
+
+</div>
+<!--导出引用  开始-->
+<div class="modal fade" id="exportCitationModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h2 class="modal-title mainColor" id="myModalLabel"><b>Export File</b></h2>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Citation</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="quot">
+                            <!--<span class="mainColor">Citation:</span>-->
+                            <div class="copyCitationInfo" style="width: 0px;height: 0px;opacity:0;overflow: hidden;"></div>
+                            <span class="info citationEn" id=""></span>
+                            <div class="modal-footer modal-footer-copy">
+								<span class="copy-citation" onclick="copyArticle(this)" title="copy to clipboard">
+									<img class="shu" src="//www.jos.ac.cn/style/web/images/public/shu.png" alt="shu" />
+								</span>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Format</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="ris" name="format" checked="">
+                                RIS(for EndNote,Reference Manager,ProCite)
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="bib" name="format">
+                                BibTex
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="txt" name="format">
+                                Txt
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Content</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="0" name="content" checked="">
+                                Citation Only
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="1" name="content">
+                                Citation and Abstract
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="toExportCitation(this,'en')" article_id="3e8485e3-07de-4d73-9685-485d99e0f11c" id="exportArticleId">Export</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导出引用  结束-->
+
+<!--图示功能-->
+<div id="imgShow">
+    <!--大图-->
+    <div id="originalImgs-wrapper">
+        <div class="originalImgs-wrapper">
+            <img id="originalImgs" src="" alt="" />
+        </div>
+        <!--图题-->
+        <div id="imgTitle" title="鼠标滚动">
+            <div>
+                <p class="titleEn"></p>
+            </div>
+        </div>
+        <!--页码-->
+        <p id="imgsPageNum">
+            <span id="nowImgIndex" class="underHigh"></span>/<span
+                id="allImgNum"></span>
+        </p>
+        <!--下载-->
+        <div id="downloadImgs">
+            <img src="//www.jos.ac.cn/style/web/images/public/download.png" />DownLoad:&nbsp;
+            <a id="originalImgDownload" class="underHigh" href="javascript:void(0);">Full-Size Img</a>&nbsp;
+            <a id="originalPPTDownload" class="underHigh" href="javascript:void(0);" style="border-left: 1px solid #ccc;padding-left: 5px;">PowerPoint</a>
+        </div>
+    </div>
+    <!--小图-->
+    <div id="miniImgs-wrapper">
+        <div id="imgPrev">
+            <a href="javascript:void(0);"><span
+                    class="imgShowIcon imgShowIcon-prev"></span> </a>
+        </div>
+        <div id="miniImgs">
+            <ul>
+                <li class="" data-img="downloadImg('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')" data-ppt="downloadPPT('42290e1a-2f56-467a-acb9-7568ffab09ea','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-1.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('6b31b662-198e-4f90-8337-f64599a61f2e','figure')" data-ppt="downloadPPT('6b31b662-198e-4f90-8337-f64599a61f2e','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-2.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')" data-ppt="downloadPPT('824e7893-0078-4bfc-97dc-b69f84500f4e','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-3.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('90124338-430a-4b75-8d3c-463720b4e9ac','figure')" data-ppt="downloadPPT('90124338-430a-4b75-8d3c-463720b4e9ac','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-4.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')" data-ppt="downloadPPT('6e00549a-cc41-4ceb-a178-db46c6bdd71b','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-5.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('2555f518-60ef-48ed-951a-627cf5627cc2','figure')" data-ppt="downloadPPT('2555f518-60ef-48ed-951a-627cf5627cc2','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-6.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')" data-ppt="downloadPPT('6436b76f-4353-4091-a2ee-87fb20fbbea8','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-7.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')" data-ppt="downloadPPT('35cd854a-899f-44a0-b465-79ec7a34d7b4','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-8.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')" data-ppt="downloadPPT('b6cbd34c-7c4b-4795-8f4e-126d642925f8','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-9.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')" data-ppt="downloadPPT('f3669f2d-ea34-4c4b-bd5d-2673db418a49','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-10.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')" data-ppt="downloadPPT('705ff086-0f40-46db-845a-c4da7eb5b5d6','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-11.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')" data-ppt="downloadPPT('9396ecbf-5895-4a5b-be18-7db3aa5965bc','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-12.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')" data-ppt="downloadPPT('76f6b26d-73e0-4b3f-ac6e-c203176592b1','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-13.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')" data-ppt="downloadPPT('8361e30b-d510-4ca7-8cd6-dbf13c835705','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-14.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')" data-ppt="downloadPPT('03cf9081-9523-4e1c-8fc6-9a448b016134','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-15.jpg'"/>
+                                </a>
+                            </li>
+                <li class="" data-img="downloadImg('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')" data-ppt="downloadPPT('5f88cc37-fa44-4e30-b4de-6a366ff8cef6','figure')">
+                        <a href="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg">
+                                    <img src="/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg"
+                                         onerror="this.onerror=null;this.src='/fileBDTXB/journal/article/bdtxb/2016/1/20160123-16.jpg'"/>
+                                </a>
+                            </li>
+                </ul>
+        </div>
+        <div id="imgNext">
+            <a href="javascript:void(0);"><span
+                    class="imgShowIcon imgShowIcon-next"></span> </a>
+        </div>
+    </div>
+    <!--返回-->
+    <div id="imgBack">
+        <a href="javascript:void(0);"> Return<span class="triangle"></span>
+        </a>
+    </div>
+</div>
+<!-- 右侧缩略图表 -->
+<div class="show-table">
+	<div class="new-back">
+		<a href="javascript:;"> Return<span class="triangle"></span></a>
+	</div>
+    <div class="picbox">
+        <ul class="piclist">
+            
+        </ul>
+        <div id="big_play_prev" class="home-picprev thePrev"></div>
+        <div id="big_play_next" class="home-picnext theNext"></div>
+		
+    </div>
+    <div class="picsmallbox">
+		<a href="javascript:;" id="play_prev" class="play_prev">
+			<span class="imgShowIcon imgShowIcon-prev"></span>
+		</a>
+        <div class="picboxpic">
+            <ul id="picsmall" class="picsmall clear">
+                
+            </ul>
+        </div>
+        <a href="javascript:;" id="play_next" class="play_next">
+			<span class="imgShowIcon imgShowIcon-next"></span>
+		</a>
+    </div>
+</div>
+<ul id="miniImgs_title" hidden>
+    <li>
+            Fig. 1.&nbsp;Block diagram of the proposed fully differential SAR ADC.</li>
+    <li>
+            Fig. 2.&nbsp;Flow chart of the proposed switching scheme.</li>
+    <li>
+            Fig. 3.&nbsp;Output waveform of the proposed switching method.</li>
+    <li>
+            Fig. 4.&nbsp;Equivalent circuit of the longest settling procedure of the proposed switching scheme.</li>
+    <li>
+            Fig. 5.&nbsp;The settling time against total capacitance of DAC.</li>
+    <li>
+            Fig. 6.&nbsp;Schematic of the bootstrapped switch.</li>
+    <li>
+            Fig. 7.&nbsp;Schematic of the dynamic comparator with pre-amplifier.</li>
+    <li>
+            Fig. 8.&nbsp;Schematic and timing diagram of the synchronous clock generator.</li>
+    <li>
+            Fig. 9.&nbsp;Diagram of the conventional SAR logic.</li>
+    <li>
+            Fig. 10.&nbsp;Diagram of the proposed SAR logic.</li>
+    <li>
+            Fig. 11.&nbsp;Timing diagram of the principle of the proposed SAR control logic.</li>
+    <li>
+            Fig. 12.&nbsp;Schematics of (a) the pulse generator and (b) the latch.</li>
+    <li>
+            Fig. 13.&nbsp;Chip microphotograph.</li>
+    <li>
+            Fig. 14.&nbsp;Measured FFT spectrum at 50 MS/s and 2.02 MHz input.</li>
+    <li>
+            Fig. 15.&nbsp;Dynamic performance versus input frequency.</li>
+    <li>
+            Fig. 16.&nbsp;Measured DNL and INL.</li>
+    </ul>
+<script type="text/javascript">
+	$(document).ready(function () {
+		 //访问文章记录
+	    var articleId =  $("#articleId").val();
+	    if(!isNull(articleId)){
+		    var nowUrl = window.location.href;
+			var number = nowUrl.indexOf("viewType=HTML");
+			getVisitInfo(articleId,3);
+	    }
+	});
+	</script>
+</body>
+</html>
