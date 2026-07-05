@@ -12,12 +12,12 @@
 
 ## 公式总览
 
-| 类型 | 常见公式 | 适用场景 | 和你的区别 |
-|---|---|---|---|
-| 普通采样电容 settling | $t=-\tau\ln(E)$，或按 $1/2$ LSB 推出约 $t\approx (N+1)\tau\ln2$ | 输入采样电容、外部源阻抗、ADC tracking phase | 关注输入采样，不一定是 SAR 内部 CDAC bit cycling |
-| SAR/CDAC 黑盒误差 | $V_{err}(t)=V_0e^{-t/\tau}$ | 只关心某次 DAC step 是否 settle 到精度内 | 没展开 $\tau$ 来自哪些寄生/开关 |
-| redundancy 放宽 settling | 前几位只需较低 bit 精度，例如 3-bit/4-bit accurate settling | 非二进制/冗余 SAR | 通过数字冗余容忍 settling error，而不是严格每步 $1/2$ LSB |
-| 你的 KCL 推导 | $\tau=RC_u(\alpha_P+\frac{\alpha_T}{1+\alpha_T})$，$t\ge\tau\ln x$ | split CDAC，考虑 top/bottom parasitic | 更像 transistor-level/CDAC-internal model |
+| 类型                     | 常见公式                                                              | 适用场景                               | 和你的区别                                     |
+| ---------------------- | ----------------------------------------------------------------- | ---------------------------------- | ----------------------------------------- |
+| 普通采样电容 settling        | $t=-\tau\ln(E)$，或按 $1/2$ LSB 推出约 $t\approx (N+1)\tau\ln2$         | 输入采样电容、外部源阻抗、ADC tracking phase    | 关注输入采样，不一定是 SAR 内部 CDAC bit cycling       |
+| SAR/CDAC 黑盒误差          | $V_{err}(t)=V_0e^{-t/\tau}$                                       | 只关心某次 DAC step 是否 settle 到精度内      | 没展开 $\tau$ 来自哪些寄生/开关                      |
+| redundancy 放宽 settling | 前几位只需较低 bit 精度，例如 3-bit/4-bit accurate settling                   | 非二进制/冗余 SAR                        | 通过数字冗余容忍 settling error，而不是严格每步 $1/2$ LSB |
+| 你的 KCL 推导              | $\tau=RC_u(\alpha_P+\frac{\alpha_T}{1+\alpha_T})$，$t\ge\tau\ln x$ | split CDAC，考虑 top/bottom parasitic | 更像 transistor-level/CDAC-internal model   |
 
 ## 截图资料
 
