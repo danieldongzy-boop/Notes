@@ -39,14 +39,12 @@
             "id": "ed873d41a1b6dd93",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
-                "mode": "source",
-                "source": false
+                "file": "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors.pdf"
               },
-              "icon": "lucide-file",
-              "title": "CH1-CH4_完整学习笔记"
+              "icon": "lucide-file-text",
+              "title": "A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors"
             }
           }
         ],
@@ -103,8 +101,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -214,14 +211,18 @@
       "bases:新建数据库": false
     }
   },
-  "active": "ea87f8ff905ca56e",
+  "active": "ed873d41a1b6dd93",
   "lastOpenFiles": [
+    "找工/CV.pdf",
+    "Uni Freiburg/data converter/作业45_放大器反馈结论整理.md",
+    "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors.pdf",
+    "IC/AMP/_tmp_page7",
+    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
     "Uni Freiburg/RF_Design/PE5/Task17_Block_29062026.pdf",
     "Uni Freiburg/RF_Design/PE5",
     "Uni Freiburg/Test and reliability/CH4/ex04_annot.pdf",
     "Uni Freiburg/RF_Design/新建文件夹",
     "Uni Freiburg/Test and reliability/CH4/ex04.pdf",
-    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.svg",
@@ -232,15 +233,12 @@
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_netlist.md",
     "IC/SARADC/Low-Power_SAR_ADC_Design_Overview_and_Survey_of_State-of-the-Art_Techniques-1.pdf",
     "IC/SARADC/未确认 393698.crdownload",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw",
     "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
     "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
     "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/sar-adc-skills/bootstrap_schemdraw",
     "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
     "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
     "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
@@ -261,7 +259,6 @@
     "IC/SARADC/Settling Time/Settling Time.md",
     "IC/SARADC/A Tale of two ADCs/A Tale of two ADCs.md",
     "IC/SARADC/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques.md",
-    "IC/SARADC/Sar ADC学习1/Sar ADC学习1.md",
     "未命名.canvas"
   ]
 }
