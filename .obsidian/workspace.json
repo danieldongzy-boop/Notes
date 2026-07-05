@@ -48,21 +48,9 @@
               "icon": "lucide-file",
               "title": "CH1-CH4_完整学习笔记"
             }
-          },
-          {
-            "id": "87c3effc19b5f959",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Test and reliability/CH4/ex04.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "ex04"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -114,25 +102,13 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
-          },
-          {
-            "id": "c2d2b9e52feba97e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Uni Freiburg/Test and reliability/CH4/ex04_annot.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "ex04_annot"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 465.5
+    "width": 341.5
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -238,10 +214,13 @@
       "bases:新建数据库": false
     }
   },
-  "active": "c2d2b9e52feba97e",
+  "active": "ea87f8ff905ca56e",
   "lastOpenFiles": [
-    "Uni Freiburg/Test and reliability/CH4/ex04.pdf",
+    "Uni Freiburg/RF_Design/PE5/Task17_Block_29062026.pdf",
+    "Uni Freiburg/RF_Design/PE5",
     "Uni Freiburg/Test and reliability/CH4/ex04_annot.pdf",
+    "Uni Freiburg/RF_Design/新建文件夹",
+    "Uni Freiburg/Test and reliability/CH4/ex04.pdf",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
@@ -266,10 +245,8 @@
     "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
     "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
     "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/bootstrap_schemdraw",
     "IC/SARADC/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/cdac.md",
-    "IC/SARADC/bootstrap switch sketch",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/core-architecture.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/SKILL.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/comparator.md",
