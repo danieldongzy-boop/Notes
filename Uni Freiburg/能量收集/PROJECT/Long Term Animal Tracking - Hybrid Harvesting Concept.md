@@ -114,19 +114,19 @@ Add a 30 F LIC or supercapacitor to handle GNSS and LoRa current peaks.
 
 ## Component Candidates
 
-| Function | Candidate |
-|---|---|
-| Solar harvester | Voltaic Systems 2 W / 6 V flexible panel |
-| Kinetic harvester | Kinetron MSG32 / mechanical generator system |
+| Function          | Candidate                                                  |
+| ----------------- | ---------------------------------------------------------- |
+| Solar harvester   | Voltaic Systems 2 W / 6 V flexible panel                   |
+| Kinetic harvester | Kinetron MSG32 / mechanical generator system               |
 | Thermal harvester | TEC Microsystems 1MC06-048-15_TEG or Matrix thermal module |
-| Solar PMIC | e-peas AEM10941 |
-| Thermal PMIC | Matrix MCRY12, LTC3108, or AEM20940 |
-| GNSS | u-blox MAX-M10S |
-| Activity sensor | Analog Devices ADXL362 |
-| MCU | TI MSP430FR5969 or STM32L4 |
-| Wireless | Semtech SX1262 LoRa |
-| Memory | SPI NOR flash, e.g. Winbond W25Q |
-| Load switch | Vishay SIP32431 |
+| Solar PMIC        | e-peas AEM10941                                            |
+| Thermal PMIC      | Matrix MCRY12, LTC3108, or AEM20940                        |
+| GNSS              | u-blox MAX-M10S                                            |
+| Activity sensor   | Analog Devices ADXL362                                     |
+| MCU               | TI MSP430FR5969 or STM32L4                                 |
+| Wireless          | Semtech SX1262 LoRa                                        |
+| Memory            | SPI NOR flash, e.g. Winbond W25Q                           |
+| Load switch       | Vishay SIP32431                                            |
 
 ## Weight Estimate
 
