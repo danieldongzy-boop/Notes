@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "314c8ade3ac00f6c",
+        "id": "f4bb13ce84becc1b",
         "type": "tabs",
         "children": [
           {
-            "id": "05d06a4c6a3519bd",
+            "id": "6bae04a1ee5408b9",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/RF_Design/PE5/Task18_Block_06072026.pdf"
+                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Task18_Block_06072026"
+              "icon": "lucide-file",
+              "title": "Chapter_05_Vibrational_Energy_Harvesting_I"
             }
           }
         ]
@@ -38,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -76,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -155,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
+                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "04-sat_annot 的大纲"
+              "title": "Chapter_05_Vibrational_Energy_Harvesting_I 的大纲"
             }
           }
         ],
@@ -180,57 +181,58 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "realclaudian:Open Claudian": false
     }
   },
-  "active": "05d06a4c6a3519bd",
+  "active": "6bae04a1ee5408b9",
   "lastOpenFiles": [
-    "Uni Freiburg/RF_Design/tmp/pdfs/task18/task18.txt",
-    "Uni Freiburg/RF_Design/tmp/pdfs/task18",
-    "Uni Freiburg/RF_Design/tmp/pdfs",
-    "Uni Freiburg/RF_Design/tmp",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Converters_E02_results.pdf",
-    "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors.pdf",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Sheet_LTC2241_12.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Converters_E02.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/JSSC_1998.pdf",
-    "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/Data_Converters_E06_results.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/Data_Converters_E06.pdf",
+    "找工/CV.pdf",
+    "Uni Freiburg/data converter/作业45_放大器反馈结论整理.md",
+    "Uni Freiburg/RF_Design/PE5/Task17_Block_29062026.pdf",
+    "Uni Freiburg/RF_Design/PE5",
+    "IC/SARADC/Low-Power_SAR_ADC_Design_Overview_and_Survey_of_State-of-the-Art_Techniques-1.pdf",
+    "找工/old/董展宇简历 (3).pdf",
+    "找工/old/董展宇简历.pdf",
+    "找工/old/董展宇简历 (4).pdf",
+    "找工/old/董展宇简历 (2).pdf",
+    "找工/old/董展宇CV.pdf",
+    "找工/董展宇简历.pdf",
+    "找工/TOEFL_Score_Report_1205159.pdf",
+    "找工/QQ图片20240822231443.jpg",
+    "找工/QQ图片20240822231443 (1).jpg",
+    "IC/SARADC/settling time 2/preview/page-06.png",
+    "IC/SARADC/settling time 2/preview/page-05.png",
+    "IC/SARADC/settling time 2/preview/page-04.png",
+    "IC/SARADC/settling time 2/preview/page-03.png",
+    "IC/SARADC/settling time 2/preview/page-02.png",
+    "IC/SARADC/settling time 2/preview/page-01.png",
+    "IC/SARADC/settling time 2/images/source-um-settling-error.png",
+    "IC/SARADC/settling time 2/images/source-um-redundancy-time.png",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
+    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
+    "IC/SARADC/Settling Time/Settling Time.md",
+    "IC/SARADC/Sar ADC学习2/Sar ADC学习2.md",
+    "IC/SARADC/Sar ADC学习1/Sar ADC学习1.md",
+    "IC/SARADC/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques.md",
+    "IC/SARADC/A Tale of two ADCs/A Tale of two ADCs.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar_CN.md",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
-    "Uni Freiburg/data converter/作业45_放大器反馈结论整理.md",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.svg",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.png",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
-    "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
-    "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
-    "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
-    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
-    "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_netlist.md",
-    "IC/SARADC/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/cdac.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/core-architecture.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/SKILL.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/comparator.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/ldo.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/integration.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/design-and-tradeoffs.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/sar-logic.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/robustness-and-system.md",
+    "claude-memory/user_profile.md",
+    "claude-memory/user_learning_style.md",
+    "claude-memory/reference_sync.md",
+    "claude-memory/project_vault_overview.md",
+    "claude-memory/git-sync-说明.md",
+    "claude-memory/feedback_vault_workflow.md",
     "未命名.canvas"
   ]
 }
