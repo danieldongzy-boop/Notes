@@ -39,30 +39,28 @@
             "id": "05fdf28e65032937",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L06_Comparators.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Long Term Animal Tracking - Hybrid Harvesting Concept"
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_SS26_L06_Comparators"
             }
           },
           {
-            "id": "e27032fa6d7b5f00",
+            "id": "32159d3c2e15784c",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/RF_Design/PE5/Task18_Block_06072026.pdf"
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L04_DACs.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Task18_Block_06072026"
+              "title": "Data_Converters_SS26_L04_DACs"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -119,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5,
-    "collapsed": true
+    "width": 341.5
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -226,12 +223,16 @@
       "bases:新建数据库": false
     }
   },
-  "active": "94124bbe1d2ee0d7",
+  "active": "05fdf28e65032937",
   "lastOpenFiles": [
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.pdf",
-    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L04_DACs.pdf",
     "Uni Freiburg/RF_Design/PE5/Task18_Block_06072026.pdf",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L06_Comparators.pdf",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L07_ADCs.pdf",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L03_Spectral_Metrics.pdf",
+    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
+    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.pdf",
     "Uni Freiburg/RF_Design/PE5/Task17_Block_29062026.pdf",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar_CN.md",
     "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
@@ -242,13 +243,9 @@
     "IC/AMP/_tmp_page7",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
     "Uni Freiburg/RF_Design/PE5",
-    "Uni Freiburg/Test and reliability/CH4/ex04_annot.pdf",
-    "Uni Freiburg/RF_Design/新建文件夹",
-    "Uni Freiburg/Test and reliability/CH4/ex04.pdf",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.svg",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.png",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L05_Sample_Hold.pdf",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.svg",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_schemdraw_manhattan.png",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_netlist.md",
