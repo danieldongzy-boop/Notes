@@ -1,0 +1,390 @@
+Script of the Design Course
+
+Design Course: RF- and Microwave Circuits and
+Systems
+
+
+Prof. Dr. Rüdiger Quay,
+
+
+
+ruediger.quay@inatech.uni-freiburg.de
+19.04.2026
+Version 12.0
+
+
+
+
+EEH, Fritz-Hüttinger chair energy-efficient
+high-frequency electronics
+Freiburg University
+
+
+                          1
+                       1.1
+
+
+
+Contents
+1   Abstract       6   1.2
+
+
+Introduction
+
+
+
+
+                       1.3
+
+
+
+
+               2
+Introduction
+
+
+
+
+                               1.4
+
+
+Introduction: Complexity
+
+
+
+
+                               1.5
+
+
+
+
+                           3
+Introduction: Systems
+
+
+
+
+                                                               1.6
+
+
+Introduction
+
+
+
+
+!!!! Frequency domain !!!! vs. Cadence Virtuoso: Time domain
+                                                               1.7
+
+
+
+
+                                          4
+Introduction
+
+
+
+
+                   1.8
+
+
+
+
+               5
+Dates with exercise
+    • Mo 1.) 20.04.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 2.) 27.04.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 3.) 4.05.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 4.) 11.05.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 5. 18.05.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 6. 25.05.2026 no lecture, pentacost break SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 7. 1.06.2026 live SR 00 014 (G.-Köhler-Allee 078)
+                                                                                                    1.9
+
+
+Dates with exercise II
+    • Mo 8. 8.6.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 9. 15.06.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 10. 22.06.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 11. 29.06.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 12. 6.07.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 12. 13.07.2026 16:00 - 17:00 SR 00 014 (G.-Köhler-Allee 078)
+    • Mo 13. 20.07.2026 Presentation of final results from competition 16:00 - 17:00 SR 00 014
+      (G.-Köhler-Allee 078)
+                                                                                                   1.10
+
+
+
+Date and Location
+Dates with exercise
+  1. Mo, 20.4.2026: 16-17.00 h Introduction and group formation
+  2. Block 1: Mo., 27.4.2026: (issue block 1a on ILIAS)
+  3. Block 1: Mo.,4.5.2026: (issue block 1b on ILIAS)
+  4. Block 2: Mo., 11.5.2026 (issue block 2a on ILIAS), (Deadl. Block 1)
+  5. Block 2: Mo., 18.5.2026 (issue block 2b on ILIAS)
+  6. Block 3: Mo., 1.6.2026 (deadline block 2 on ILIAS), (issue block 3a on ILIAS)
+  7. Block 3: Mo., 08.6.2026 (issue block 3b on ILIAS)
+  8. Block 4: Mo., 15.6.2026 (Deadline block 3), (issue block 4a on ILIAS)
+  9. Block 4: Mo., 22.6.2026, (Issue Block 4b, COMPETITION !!!)
+ 10. Block 5: Mo. 29.6.2026 (deadline block 4), (issue block 5a on ILIAS)
+ 11. Block 5: Mo., 06.7.2026 :(issue block 5b ON ILIAS)
+ 12. Mo., 13.7.2026, Final presentations based on 4b (deadline block 5 on ILIAS)
+                                                                                                   1.11
+
+
+Rules of the Exercises
+    • 5 blocks Exercises (every one/two weeks) with overall max. 10 tasks in a given format...
+    • First: starting 27.4.2026... (two weeks to do, sometimes more)
+    • 4 blocks to be completed sucessfully (with 50% correct) (three people per group)
+    • Voluntary Competition: Final presentation (5 mins) of the group to the plenary based on a
+      task
+    • Exercises are given out on ILIAS and also submitted there.
+    • Timing is day of the deadline, 16 h
+                                                                                                   1.12
+
+
+
+1    Abstract
+The students will be enabled to understand, design and layout modern RF- and microwave com-
+ponents and systems by means of the electronic design environment Advanced Design System
+including the two- and three dimensional electromagnetic simulators Momentum and EMPro 3D.
+The detailed use of a complex RF-software environment is a dedicated target of this course. This
+includes the numerical analysis of complex passive and active devices, the design and layout of
+hybrid and integrated circuits, and their packaging and signal flow. The students will be compe-
+tent to design and layout passive and active RF-structures including packages and interconnects
+and circuits of relevance to everydays communication and sensing. The competence includes in-
+depth understanding and treatment of complex microwave systems and of general system design
+including the treatment of complex modulated signal flows.
+
+
+                                               6
+Introduction
+Materials and Script
+The material is provided at the beginning and during the lecture.
+
+Email: ruediger.quay@inatech.uni-freiburg.de
+    • Foils: Intro materials from Keysight
+    • ADS Video Library on www.youtube.com
+    • Script (supporting materials)
+    • Exercises
+                                                                                         1.13
+
+
+Videos
+   1. Watch ADS videos on youtube using ADS : www.youtube.com , Keyword: ADS Video
+      Library
+   2. Basics and setup:
+   3. https://www.youtube.com/watch?v=04BfajzXnmM&list=PLtq84kH8xZ9HNMCB7xKGXrciiEqqHNQGz
+   4. Understanding Workspaces:
+   5. https://www.youtube.com/watch?v=7jNm4OOBaiE&list=PLtq84kH8xZ9HNMCB7xKGXrciiEqqHNQGz&
+      index=2
+   6. The basics of schematics:
+   7. https://www.youtube.com/watch?v=wqyyOCzxGS0&list=PLtq84kH8xZ9HNMCB7xKGXrciiEqqHNQGz&
+      index=4
+   8. Data displays:
+   9. https://www.youtube.com/watch?v=jIg10RihLQk&list=PLtq84kH8xZ9HNMCB7xKGXrciiEqqHNQGz&
+      index=6
+                                                                                         1.14
+
+
+WWW Support 1
+ILIAS Support
+https://ilias.uni-freiburg.de
+
+search for: Design Course: RF- and Microwave Systems
+
+password: design2026
+                                                                                         1.15
+
+
+WWW Support 2
+This exercise is recorded, attendance is, however, required
+
+
+
+
+                                                                                         1.16
+
+
+
+                                             7
+Windows Access to the Uni Network
+    • Get login at university, get additional TF login
+    • Install VPN from University server
+    • use ssh from linux
+    • If you start from Windows:
+    • Use, e.g., xming as windows X-server (for export of the display)
+    • Install Putty ssh client on windows
+                                                                                           1.17
+
+
+Form groups of Three
+    • The exercises are submitted from a group of three people
+    • Find two partners !!!
+    • Send your group to ruediger.quay@inatech.uni-freiburg.de, including TF login name.
+    • Exercises start april 27th 2026 !
+                                                                                           1.18
+
+
+Install an ADS Version on a local computer
+
+
+
+
+You can work on the aragorn but local has proven to be easier...
+
+Organize your data in a good structure
+                                                                                           1.19
+
+
+Login to Application Server for the license
+From Remote: Create RAS Access in Mylogin
+
+Go into University net with VPN: check VPN Uni Freiburg
+
+In case you use Windows to do that: use putty and install xming as windows X-server
+
+Application Server: aragorn.imtek.uni-freiburg.de,ssh-X-l(yourlogin)aragorn.
+imtek.uni-freiburg.de
+
+Shells usable: bash and tcsh
+
+Start: ads after using ssh to the server
+
+Licence Server will be asked: 27010(at)frodo.imtek.uni-freiburg.de
+                                                                                           1.20
+
+
+Backup Server !
+Application Server: samweis.imtek.uni-freiburg.de (only via VPN)
+                                                                                           1.21
+
+
+
+
+                                              8
+Recommendation
+Use Licence server only, install ADS on your local device ! Use ADS 2023 Update 1.0
+                                                                                       1.22
+   The following references may be useful to provide more detailed information.
+
+References
+   • List of useful ADS Videos
+   • Kesight Software Support: http://www.keysight.com/
+   • Introduction to ADS, ADS_Basics.pdf (ILIAS)
+   • Momentum Momentum_Basics.pdf (ILIAS)
+                                                                                       1.23
+   6. july 2026                                                                       12.24
+
+
+
+
+                                             9
+Design Procedures
+  Learning to design based on multiple parameters
+
+
+
+
+                                                    12.25
+
+
+Spread
+   Parameter scatter: mapping of the wafer
+
+
+
+
+                                                    12.26
+
+
+Spread
+   Parameter scatter: mapping of the wafer
+
+
+
+
+                                             10
+                                        12.27
+
+
+Example Spread: transconductance
+
+
+
+
+Four-inch wafer spread
+                                        12.28
+
+
+Example Spread: ICs
+
+
+
+
+                                   11
+Three-inch wafer spread
+                                                12.29
+
+
+Origins Spread: regular fluctuations
+   • Non-uniform tooling over large diameters
+   • Epitaxial layer thickness variations
+   • Temperature variations in reactors
+   • Different etching depths
+                                                12.30
+
+
+Spread Result Oscillator
+
+
+
+
+                                                12.31
+
+
+
+
+                                           12
+Tasks: Task 18: Statistics: block 5 part 2
+  1. Explanation: Open the project StatisticalDesignwrk in Tutorial
+  2. Explanation: Go to the schematic osc_freq !
+  3. Task: Which detailed variations do exist in a 12-inch CMOS wafer (name at least three)
+     and require consideration ? (3 sentences max.)
+  4. Task: What does yield have to do with sustainability ? (Three sentences max., three argu-
+     ments)
+  5. Task: Think of the individual factors: a.) find one example where yield limits are indepen-
+     dent ? b.) on example where yield limits are dependent on each other...
+  6. Task: Run the simulation. Explain why the targeted center frequency of 2 GHz is not met.
+     Put some parasitic elements to 0, and verify that it gets closer to the target !
+  7. Task: What does an oscillator with too high phase noise e.g. do in a communication system
+     (three sentences max.)?
+  8. Explanation: Go to the schematic Oscforyield_oscdesigncntr
+                                                                                                   12.32
+
+
+Tasks: Task 18: Statistics: block 5 part 2
+  9. Task: Change the variation of the most critical parameters to 2.5% and 3.5%. Compare the
+     RF-yield of the default setting to the yield of the setting +-2.5 % and to +- 3.5%.
+ 10. Explanation: Go to the schematic yieldafteropt_FinalOscDesign
+ 11. Task: Change the variation of the most critical parameters to 2.5% and 3.5%. Compare the
+     RF-yield of the default setting to the yield of the setting +- 2.5% and to +- 3.5%. Compare
+     the the previous result ! What do you learn about yield as a design target FOR A SYSTEM
+     ?
+                                                                                                   12.33
+
+
+Tasks: Task 18: Statistics: Format block 5 part 2
+  1. 18.3 3 sentences max.
+  2. 18.4 3 sentences max.
+  3. 18.5 Two examples in two sentencens
+  4. 18.6 1 simulation results and 3 sentences max. + 1 simulation result with red. parasitics
+  5. 18.7 3 sentences max.
+  6. 18.9 Two results and 3 sentences max.
+  7. 18.11 Two results and max. 5 sentences
+                                                                                                   12.34
+
+
+
+
+                                              13
+

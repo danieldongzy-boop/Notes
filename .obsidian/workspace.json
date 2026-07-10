@@ -8,17 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0ebf16d009bfaf7d",
+            "id": "05d06a4c6a3519bd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/RF_Design/PE5/Task18_Block_06072026.pdf"
               },
-              "icon": "lucide-file",
-              "title": "CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM"
+              "icon": "lucide-file-text",
+              "title": "Task18_Block_06072026"
             }
           }
         ]
@@ -74,8 +72,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -186,20 +183,22 @@
       "bases:新建数据库": false
     }
   },
-  "active": "0ebf16d009bfaf7d",
+  "active": "05d06a4c6a3519bd",
   "lastOpenFiles": [
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/Data_Converters_E06_results.pdf",
+    "Uni Freiburg/RF_Design/tmp/pdfs/task18/task18.txt",
+    "Uni Freiburg/RF_Design/tmp/pdfs/task18",
+    "Uni Freiburg/RF_Design/tmp/pdfs",
+    "Uni Freiburg/RF_Design/tmp",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Converters_E02_results.pdf",
+    "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors.pdf",
+    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Sheet_LTC2241_12.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Converters_E02.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/JSSC_1998.pdf",
     "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/Data_Converters_E06_results.pdf",
     "Uni Freiburg/data converter/Exercises/Data_Converters_E06/Data_Converters_E06.pdf",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/未确认 425835.crdownload",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E06/未确认 246213.crdownload",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L04_DACs.pdf",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L06_Comparators.pdf",
-    "CIM",
-    "新建文件夹",
-    "Uni Freiburg/RF_Design/PE5/Task18_Block_06072026.pdf",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L07_ADCs.pdf",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar_CN.md",
@@ -232,7 +231,6 @@
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/design-and-tradeoffs.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/sar-logic.md",
     "IC/SARADC/sar-adc-skills/sar-adc-skill/references/robustness-and-system.md",
-    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/simulation-and-verification.md",
     "未命名.canvas"
   ]
 }
