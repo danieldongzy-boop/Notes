@@ -1,257 +1,365 @@
-# Chapter 8 - Storage Concepts II: 充电电池看效率、自放电和寿命
+# Chapter 8 - Storage Concepts II：可充电电池
 
-来源：
+> [!info] 来源
+> - Lecture 8: `MicroEnergyHarvesting_Lecture_8_Storage Concepts II - Rechargeable Batteries_SS_2026.pdf`
+> - Exercise 5: `Exercise 5_Capacitors, batteries, efficiencies and leakage currents_SOLVED.pdf`，本章对应 Task 2-4
 
-- Lecture: `MicroEnergyHarvesting_Lecture_8_Storage Concepts II - Rechargeable Batteries_SS_2026.pdf`
-- Exercise: `Exercise 5_Capacitors , batteries , efficiencies and leakage currents_SOLVED.pdf` 中 Task 2-4
+## 1. 电池与电容的区别
 
-## 这一章在讲什么
+电容直接储存电荷，电压与电荷量近似满足 $Q=CU$，通常可以放电到接近 $0\,\mathrm V$。可充电电池通过化学反应储能，电压与剩余电荷量之间一般是非线性关系，而且不能随意过充或深度放电。
 
-电池适合长期储能，能量密度比电容高得多，但有几个麻烦点：
+电池的能量密度高于普通电容，适合长期供电；但它会自放电和老化，容量受充放电电流、温度及循环深度影响，还需要专用的充放电管理。
 
-- 充放电效率不是 100%
-- 会自放电
-- 不能随便过充、过放
-- 寿命和充放电深度、温度、电流有关
+在微能量采集系统中，选择电池时必须同时考虑：
 
-微能量收集系统里，电池常常不是“越大越好”，而是要看收集功率能不能补上自放电和负载。
+- 可用容量和平均工作电压；
+- 库仑效率与能量效率；
+- 自放电能否被采集器补偿；
+- 电池能否接受采集器提供的小电流或间歇电流；
+- 充放电保护、温度范围与循环寿命。
 
-## 作业重点公式
+## 2. 容量、能量与效率
 
-### 负载电流和运行时间
+### 2.1 Ah 不是能量
 
-$$
-I=\frac{P}{U}
-$$
-
-$$
-t=\frac{C_0}{I}
-$$
-
-作业 NiMH 例子：
-
-- $P=150 \ \mathrm{\mu W}$
-- $U=1.0 \ \mathrm{V}$
-- $C_0=15 \ \mathrm{mAh}$
+电池容量常用 Ah 或 mAh 表示，本质上是电荷量：
 
 $$
-I=150 \ \mathrm{\mu A}=0.150 \ \mathrm{mA}
+Q=I t
 $$
 
-$$
-t=\frac{15 \ \mathrm{mAh}}{0.150 \ \mathrm{mA}}=100 \ \mathrm{h}
-$$
-
-### 自放电电流
-
-如果自放电率是 SDR：
+其中
 
 $$
-\Delta C=SDR\cdot C_0
+1\,\mathrm{Ah}=3600\,\mathrm C
 $$
+
+电池能量还与电压有关。电压近似恒定时：
+
+$$
+E\approx UQ
+$$
+
+因此
+
+$$
+1\,\mathrm{V\cdot Ah}=1\,\mathrm{Wh}=3600\,\mathrm J
+$$
+
+若电压随充放电变化，应使用平均电压或对 $U(t)I(t)$ 积分。
+
+### 2.2 库仑效率与能量效率
+
+库仑效率比较输出和输入的电荷量：
+
+$$
+\eta_C=\frac{Q_\mathrm{out}}{Q_\mathrm{in}}
+$$
+
+因此，为使电池实际增加电荷 $Q_\mathrm{stored}$，充电器需要提供
+
+$$
+Q_\mathrm{in}=\frac{Q_\mathrm{stored}}{\eta_C}
+$$
+
+能量效率比较输出和输入的能量：
+
+$$
+\eta_E=\frac{E_\mathrm{out}}{E_\mathrm{in}}
+$$
+
+所以需要输入的能量为
+
+$$
+E_\mathrm{in}=\frac{E_\mathrm{stored}}{\eta_E}
+$$
+
+计算电荷或电流补偿时使用 $\eta_C$；计算能量或功率时使用 $\eta_E$。二者不能混用。
+
+## 3. NiMH 电池
+
+### 3.1 工作原理和典型参数
+
+NiMH 的正极使用镍氧化物化合物，负极使用能够吸收氢的金属合金，电解液通常为 KOH 碱性溶液。充电时氢被储存在负极合金中，放电时反应逆向进行并向外部电路释放电子。
+
+典型参数为：
+
+- 标称电压约 $1.25\,\mathrm V$；
+- 充满电压约 $1.45$-$1.55\,\mathrm V$；
+- 放电截止电压约 $1.0\,\mathrm V$；
+- 标准充电电流约为 $0.1C$，充电约 14-16 小时；
+- 自放电通常为每月 5%-30%，低自放电型号可显著降低该数值。
+
+这里的 $0.1C$ 是倍率，不是电容量单位。例如 $2150\,\mathrm{mAh}$ 电池的 $0.1C$ 电流为
+
+$$
+I=0.1\cdot2150\,\mathrm{mA}=215\,\mathrm{mA}
+$$
+
+### 3.2 充电过程与终止判断
+
+NiMH 通常采用恒流充电。接近充满时，正极开始产生氧气，电池内部温度和压力上升；过充时输入能量不再转化为有效储能，而主要变成热量并加速损伤。
+
+常见的充电终止方法包括定时、检测温升以及检测 $-\Delta V$。其中 $-\Delta V$ 在充电电流较大时才比较明显。微弱且不稳定的采集电流会使传统终止检测更困难，因此仍需要合适的电源管理。
+
+### 3.3 自放电等效电流
+
+若电池容量为 $C_0$，在时间 $\Delta t$ 内的自放电率为 SDR，则损失的容量为
+
+$$
+\Delta C=\mathrm{SDR}\cdot C_0
+$$
+
+对应的平均自放电电流为
 
 $$
 I_\mathrm{SD}=\frac{\Delta C}{\Delta t}
 $$
 
-说人话：自放电可以理解成电池内部一直有一个小负载在偷电。
-
-### 考虑库仑效率的补偿电流
-
-如果充进去的电荷只有 $\eta_C$ 能真正留下：
+采集器补偿自放电时还要考虑库仑效率：
 
 $$
-I_\mathrm{charge}=\frac{I_\mathrm{SD}}{\eta_C}
+I_\mathrm{harvest,min}=\frac{I_\mathrm{SD}}{\eta_C}
 $$
 
-作业 NiMH 中：
+### 3.4 Exercise 5 - Task 2：NiMH 电池
+
+已知：$\eta_C=68\%$，$\eta_E=59\%$，容量 $C_0=15\,\mathrm{mAh}$，自放电率为 $0.2\%/\mathrm{day}$。负载工作在 $1.0\,\mathrm V$，恒定功率为 $150\,\mu\mathrm W$。
+
+#### a) 不考虑自放电时的运行时间
+
+负载电流为
 
 $$
-I_\mathrm{SD}=1.25 \ \mathrm{\mu A}
+I_\mathrm{load}=\frac{P}{U}
+=\frac{150\,\mu\mathrm W}{1.0\,\mathrm V}
+=150\,\mu\mathrm A=0.150\,\mathrm{mA}
 $$
 
-$$
-I_\mathrm{charge}=\frac{1.25}{0.68}\approx1.83 \ \mathrm{\mu A}
-$$
-
-### 完全充满需要的电荷量
+题目给出的 $15\,\mathrm{mAh}$ 是放电时可用容量，因此不需要再乘效率：
 
 $$
-Q_\mathrm{in}=\frac{C_0}{\eta_C}
+t=\frac{C_0}{I_\mathrm{load}}
+=\frac{15\,\mathrm{mAh}}{0.150\,\mathrm{mA}}
+=\boxed{100\,\mathrm h}
 $$
 
-作业中：
+#### b) 补偿自放电所需的采集电流
+
+每天损失的容量为
 
 $$
-Q_\mathrm{in}=\frac{15 \ \mathrm{mAh}}{0.68}\approx22.5 \ \mathrm{mAh}
+\Delta C=0.002\cdot15\,\mathrm{mAh}=0.030\,\mathrm{mAh}=30\,\mu\mathrm{Ah}
 $$
 
-### 同时供负载和补自放电
-
-如果负载直接由发电器供电，电池只需要补自放电：
+对应平均自放电电流：
 
 $$
-I_\mathrm{gen}=I_\mathrm{load}+I_\mathrm{SD}/\eta_C
+I_\mathrm{SD}=\frac{30\,\mu\mathrm{Ah}}{24\,\mathrm h}
+=1.25\,\mu\mathrm A
 $$
 
-作业：
+考虑库仑效率后：
 
 $$
-I_\mathrm{gen}=150+1.83=151.83 \ \mathrm{\mu A}
+I_\mathrm{harvest,min}=\frac{1.25}{0.68}
+=\boxed{1.84\,\mu\mathrm A}
 $$
 
-如果负载也通过电池供电，负载电荷也要除以库仑效率：
+#### c) 完整充电一次所需的输入电荷
 
 $$
-I_\mathrm{gen}=\frac{I_\mathrm{load}}{\eta_C}+\frac{I_\mathrm{SD}}{\eta_C}
+Q_\mathrm{in}=\frac{15\,\mathrm{mAh}}{0.68}
+=\boxed{22.1\,\mathrm{mAh}}
 $$
 
-作业：
+> [!warning] 解答中的数值
+> 练习解答写成 $22.5\,\mathrm{mAh}$，但按题目给出的 $68\%$ 计算，准确结果约为 $22.1\,\mathrm{mAh}$。
+
+#### d) 同时补偿自放电并供给负载
+
+若负载由发电机直接供电，只有进入电池的补偿电流受库仑效率影响：
 
 $$
-I_\mathrm{gen}=\frac{150}{0.68}+1.83\approx222.43 \ \mathrm{\mu A}
+I_\mathrm{gen}=I_\mathrm{load}+\frac{I_\mathrm{SD}}{\eta_C}
+=150+1.84
+=\boxed{151.84\,\mu\mathrm A}
 $$
 
-## Li-Ion 作业公式
-
-### 线性 C-V 近似
-
-题目说 Li-Ion 在 $3.3$ 到 $4.1 \ \mathrm{V}$ 范围内近似线性：
+若负载也通过电池供电，所有送入电池的电荷都要考虑库仑效率：
 
 $$
-\frac{dC}{dU}=\frac{C_0}{U_\mathrm{full}-U_\mathrm{empty}}
+I_\mathrm{gen}=\frac{I_\mathrm{load}+I_\mathrm{SD}}{\eta_C}
+=\frac{150+1.25}{0.68}
+=\boxed{222.43\,\mu\mathrm A}
 $$
 
-作业中：
+这说明直接由发电机供给负载更高效，因为负载能量不必经历一次电池充放电过程。
+
+### 3.5 NiMH 的寿命
+
+深度放电、过充和高温都会缩短寿命并提高自放电。讲义建议尽可能在约 40%-60% SOC 的中间区域浅循环，此时电压稳定、充电效率较高、化学应力较小。
+
+## 4. Li-ion 与 LiPo 电池
+
+### 4.1 工作原理和典型参数
+
+Li-ion 通过锂离子在正极材料和石墨负极之间往返迁移来储能，因此也称为“摇椅电池”。LiPo 使用聚合物形态的电解质和封装，但基本储能原理与 Li-ion 相近。
+
+典型 Li-ion 单体具有：
+
+- 标称电压约 $3.3$-$3.7\,\mathrm V$；
+- 充满电压约 $4.0$-$4.2\,\mathrm V$；
+- 放电截止电压约 $2.0$-$3.0\,\mathrm V$，取决于具体化学体系；
+- 自放电约每月 $0.5\%$-$3\%$；
+- 较高的能量密度和数百次循环寿命。
+
+Li-ion 不能通过长期涓流充电维持满电，必须严格限制电压、电流和温度。
+
+### 4.2 CCCV 充电
+
+Li-ion 通常采用恒流-恒压（CCCV）充电：
+
+1. 恒流阶段：以数据表允许的电流充电，电池电压逐渐上升；
+2. 恒压阶段：达到上限电压后保持电压不变，充电电流逐渐下降；
+3. 当电流下降到终止阈值时停止充电。
+
+保护电路还应覆盖反接、过流、短路、过充、过放和异常温度。超过电压上限可能导致严重损坏，因此能量采集系统不能把整流后的电压直接接到 Li-ion 电池上。
+
+### 4.3 Exercise 5 - Task 3：Li-ion 电池
+
+已知：$\eta_C=98\%$，$\eta_E=90\%$，电压范围为 $3.3$-$4.1\,\mathrm V$，容量 $C_0=1.5\,\mathrm{Ah}$，自放电率为 $1.9\%$ 每 30 天。在该电压范围内假设电荷-电压关系为线性。
+
+#### a) 自放电的等效并联电阻 EPR
+
+电荷对电压的斜率为
 
 $$
-\frac{dC}{dU}=\frac{1.5 \ \mathrm{Ah}}{0.8 \ \mathrm{V}}
-=1.875 \ \mathrm{Ah/V}
+\frac{\mathrm dC}{\mathrm dU}
+=\frac{1.5\,\mathrm{Ah}}{4.1-3.3\,\mathrm V}
+=1.875\,\mathrm{Ah/V}
 $$
 
-### 等效并联漏电阻 EPR
-
-这不是电池内阻，而是把自放电等效成一个并联电阻。
-
-先算每月损失的电荷对应的平均电流：
+30 天损失的容量为
 
 $$
-I=\frac{SDR\cdot C_0}{\Delta t}
+\Delta C=0.019\cdot1.5\,\mathrm{Ah}=0.0285\,\mathrm{Ah}
 $$
 
-再估算这段时间的电压下降：
+等效自放电电流为
 
 $$
-\Delta U=\frac{\Delta C}{dC/dU}
+I_\mathrm{SD}=\frac{0.0285\,\mathrm{Ah}}{30\cdot24\,\mathrm h}
+=39.6\,\mu\mathrm A
 $$
 
-取平均漏电电压：
+相应的电压下降为
 
 $$
-U_\mathrm{avg}\approx U_\mathrm{full}-\frac{\Delta U}{2}
+\Delta U=\frac{0.0285\,\mathrm{Ah}}{1.875\,\mathrm{Ah/V}}
+=0.0152\,\mathrm V
 $$
 
-最后：
+以这段时间的平均电压计算：
 
 $$
-R_\mathrm{EPR}=\frac{U_\mathrm{avg}}{I}
+U_\mathrm{avg}=4.1-\frac{0.0152}{2}=4.0924\,\mathrm V
 $$
 
-作业结果约：
+因此
 
 $$
-R_\mathrm{EPR}\approx103 \ \mathrm{k\Omega}
+R_\mathrm{EPR}=\frac{U_\mathrm{avg}}{I_\mathrm{SD}}
+=\frac{4.0924\,\mathrm V}{39.6\,\mu\mathrm A}
+\approx\boxed{103\,\mathrm{k\Omega}}
 $$
 
-### 补偿 Li-Ion 自放电的功率
+EPR 只是把自放电等效成一个并联电阻，不是电池用于描述瞬时压降的内部串联电阻。
+
+#### b) 补偿自放电所需的电流和功率
 
 考虑库仑效率：
 
 $$
-I_\mathrm{charge}=\frac{I_\mathrm{SD}}{\eta_C}
+I_\mathrm{charge}=\frac{39.6\,\mu\mathrm A}{0.98}
+=40.4\,\mu\mathrm A
 $$
 
-$$
-P=UI_\mathrm{charge}
-$$
-
-作业中：
+按满电电压 $4.1\,\mathrm V$ 计算发电机功率：
 
 $$
-P\approx4.1 \ \mathrm{V}\cdot40.4 \ \mathrm{\mu A}
-=165.7 \ \mathrm{\mu W}
+P=UI=4.1\,\mathrm V\cdot40.4\,\mu\mathrm A
+=\boxed{165.7\,\mu\mathrm W}
 $$
 
-### 完全充满需要的能量
+#### c) 完整充电一次所需的输入能量
 
-如果电压近似线性：
-
-$$
-U_\mathrm{avg}=\frac{U_\mathrm{start}+U_\mathrm{end}}{2}
-$$
+线性电压特性下，平均充电电压为
 
 $$
-E_\mathrm{in}=\frac{U_\mathrm{avg}C_0}{\eta_E}
+U_\mathrm{avg}=\frac{3.3+4.1}{2}=3.7\,\mathrm V
 $$
 
-注意：
+电池内部增加的能量约为
 
 $$
-1 \ \mathrm{V\cdot Ah}=1 \ \mathrm{Wh}
+E_\mathrm{stored}=3.7\,\mathrm V\cdot1.5\,\mathrm{Ah}=5.55\,\mathrm{Wh}
 $$
 
-作业中：
+考虑能量效率后，发电机需要提供
 
 $$
-E=\frac{3.7 \ \mathrm{V}\cdot1.5 \ \mathrm{Ah}}{0.9}
-\approx6.16 \ \mathrm{Wh}
+E_\mathrm{in}=\frac{5.55\,\mathrm{Wh}}{0.90}
+=\boxed{6.17\,\mathrm{Wh}}
 $$
 
-## NiMH 和 Li-Ion 对比
+这里求的是能量，所以必须使用 $\eta_E$，不能使用 $\eta_C$。
 
-### NiMH
+## 5. SOC、放电曲线与 Exercise Task 4
 
-优点：
+SOC（State of Charge）表示剩余电量相对于满电容量的比例。常见估算方法包括：
 
-- 比较耐用
-- 对过充相对宽容
-- 充电管理比 Li-Ion 简单一些
+- 根据端电压查询已标定的放电曲线；
+- 库仑计数，即积分流入和流出的电流；
+- 同时修正温度、老化、负载电流和静置恢复效应。
 
-缺点：
+### Exercise 5 - Task 4：三节 LiPo 电池
 
-- 自放电较大
-- 电压低，单节约 $1.2 \ \mathrm{V}$
-- 库仑效率和能量效率较低
+题目给出三节 LiPo 电池的放电曲线，询问如何确定 SOC。较可靠的方法是把放电曲线存入微控制器，根据精确测得的电池电压查表估算 SOC；也可以累计取出的电荷量，即进行库仑计数。
 
-### Li-Ion / LiPo
+只看端电压的局限在于：电池存在较平坦的电压平台，相近电压可能对应较大的 SOC 范围，而且负载电流和温度都会改变端电压。因此实际电池管理系统通常结合电压、库仑计数和温度进行估算。
 
-优点：
+Li-ion/LiPo 相比 NiMH 的主要优点是单体电压高、能量密度高、自放电低、无明显记忆效应。缺点是充放电管理更严格，不能过充、深放或在不合适的温度下充电。与不可充电电池相比，可充电电池能够循环使用，但通常具有更高自放电，并需要额外的充电管理。
 
-- 能量密度高
-- 自放电较低
-- 单节电压较高，常见 $3.3$ 到 $4.2 \ \mathrm{V}$
-- 没有明显记忆效应
+## 6. 循环深度与寿命
 
-缺点：
+电池从第一次循环开始就会逐渐老化。高温、高倍率、满电长期存放、过充和深度放电都会加速容量损失。
 
-- 充电管理严格，不能过充过放
-- 高温和满电存储会加速老化
-- 不适合简单涓流充电
+浅循环通常能显著增加循环次数。讲义中的 Li-ion 微型电池示例：完全放电时约能循环 100 次，而每次只使用约 20% 容量时可达到约 1000 次。虽然单次运行时间缩短，总使用寿命反而可能更长。
 
-## State of Charge 怎么估
+所以设计能量采集系统时，不应只追求每次用尽全部容量，而应综合比较
 
-作业问三节 LiPo 如何判断剩余电量。常见方法：
+$$
+\text{总寿命}\approx\text{单次运行时间}\times\text{可用循环次数}
+$$
 
-- 用电压查放电曲线
-- 做 coulomb counting，也就是记录进出电荷
-- 同时考虑温度、老化和负载电流
+## 7. 解题与选型方法
 
-说人话：只看电压不总是可靠，因为很多电池有很平的电压平台；但如果已知放电曲线，电压仍然是最简单的估计方法。
+1. 由负载功率和工作电压求电流：$I=P/U$；
+2. 由容量和负载电流求运行时间：$t=C_0/I$；
+3. 将 SDR 转成单位时间损失的容量，再求等效自放电电流；
+4. 补偿电荷损失时除以 $\eta_C$，补偿能量损失时除以 $\eta_E$；
+5. 用平均电压把 Ah 转换为 Wh；
+6. 检查采集器输出是否足以同时覆盖负载、充电损耗和自放电；
+7. 最后检查充电电压、电流、温度、循环深度和保护要求。
 
-## 易错点
+## 8. 易错点与结论
 
-- 自放电率必须先换成每小时或每秒的电流，再和负载电流比较。
-- 库仑效率 $\eta_C$ 用在电荷/电流上，能量效率 $\eta_E$ 用在能量上。
-- 电池容量 `Ah` 不是能量，乘平均电压才是 `Wh`。
-- EPR 不是电池的真实内阻，只是用来描述自放电的等效并联电阻。
-
+- Ah 是电荷容量，Wh 才是能量；二者之间还差一个电压因子。
+- 额定容量通常是规定放电条件下的可用输出容量，计算运行时间时不要无故再次乘效率。
+- 库仑效率用于电荷和电流，能量效率用于能量和功率。
+- SDR 必须先除以对应的时间，才能变成可与采集电流比较的等效自放电电流。
+- EPR 描述自放电，不等于电池的内部串联电阻。
+- NiMH 可以较简单地恒流充电，但接近满电时效率下降并产生温升；Li-ion 必须使用 CCCV 和保护电路。
+- 高能量密度不等于适合所有采集器，采集电流还必须超过自放电和管理电路自身功耗。
+- 浅充浅放通常比完全充放具有更长的总使用寿命。
