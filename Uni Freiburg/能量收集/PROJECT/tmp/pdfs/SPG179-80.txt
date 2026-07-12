@@ -1,0 +1,171 @@
+                                                               CUI Devices is now Same Sky!          Learn More
+
+                                                                        Additional Resources: Product Page                           date   05/20/2026
+                                                                                                                                     page 1 of 4
+
+
+
+MODEL: SPG179-80 | DESCRIPTION: THERMOELECTRIC GENERATOR
+
+FEATURES
+• TEG module
+• 27.3 W output
+• up to 300°C continuous maximum hot side temp
+• silicone sealed
+• graphite pad option available
+
+
+
+
+SPECIFICATIONS
+parameter                                        conditions/description                                         min         typ     max         units
+open circuit voltage                             at Th = 300°C, Tc = 30°C                                                   9.6                    V
+matched load resistance                          at Th = 300°C, Tc = 30°C                                                  0.83                    Ω
+matched load output voltage                      at Th = 300°C, Tc = 30°C                                                  4.80                    V
+matched load output current                      at Th = 300°C, Tc = 30°C                                                   5.70                   A
+matched load output power                        at Th = 300°C, Tc = 30°C                                                   27.3                   W
+heat flow across module                                                                                                     525                    W
+heat flow density                                                                                                           8.2                W/cm²
+ac resistance                                    at 27 °C, 1000 Hz                                             0.25                 0.45           Ω
+                                                 cold side: SnAgSn solder                                       217                                °C
+solder melting temperature
+                                                 hot side: no solder, aluminum bonding
+hot side plate                                                                                                  -60                 300            °C
+cold side plate                                                                                                 -60                  30            °C
+assembly compression                                                                                                                1.32        MPa
+                                                 screw diameter / # of screws: 5 mm / 2                                     0.6                 kg-m
+mounting torque per screw
+                                                 screw diameter / # of screws: 5 mm / 4                                     0.3                 kg-m
+RoHS                                             yes
+
+GRAPHITE THERMAL INTERFACE MATERIAL
+parameter                                        conditions/description                                         min         typ     max         units
+                                                 at 200 kPa                                                                0.59               K-cm2/W
+thermal impedance
+                                                 at 700 kPa                                                                0.30               K-cm2/W
+thermal conductivity                             at 700 kPa (through-plane/in-plane)                                       10/150              W/m-K
+thickness                                                                                                      0.114       0.127    0.140          mm
+flammability rating                              UL94V-0
+Note:       1. Remove paper over adhesive before installing.
+
+
+PART NUMBER KEY
+
+                                                                            SPG179 - 80 X
+                                                                            Base Number           Graphite Sheet:
+                                                                                                  “blank” = not included
+                                                                                                  G = included
+
+                                                                              sameskydevices.com
+                                                                           Additional Resources: Product Page
+
+SAME SKY | MODEL: SPG179-80 | DESCRIPTION: THERMOELECTRIC GENERATOR                                                               date 05/20/2026 | page 2 of 4
+
+
+
+
+MECHANICAL DRAWING
+units: mm
+                                                                                                                         MATERIAL             PLATING
+                                                                                                       ceramic plate     96% AL2O3
+                                                                                                       wire leads        UL1726 teflon coated 22 AWG
+                                                                                                                         BG SIDUN 3.0 (between cold and hot side
+                                                                                                       sealer
+                                                                                                                         plates)
+                                                                                                                         P/N & “HOT SIDE” printed on hot side
+                                                                                                       marking
+                                                                                                                         surface
+                                                                                                       graphite pad2
+                                                                                                                         HITHERM™ HT-1205
+                                                                                                       (optional)
+
+
+
+
+                                                                                                                                                    Black (-)
+        80±1.0
+
+
+
+
+                                               HOT SIDE
+
+
+
+
+                                                                                                                                                     Red (+)
+                                                  77±1.0
+                                                   80±1.0                                                        150.0±3.0
+
+
+
+
+                                                                        HOT SIDE
+
+
+ 5.0±0.1
+
+
+                                                                         COLD SIDE
+
+
+
+
+Notes: 2. Graphite pad option overall thickness is 5.254 ± 0.1254 mm.
+
+
+                                                                                 sameskydevices.com
+                                           Additional Resources: Product Page
+
+SAME SKY | MODEL: SPG179-80 | DESCRIPTION: THERMOELECTRIC GENERATOR                        date 05/20/2026 | page 3 of 4
+
+
+
+
+PERFORMANCE CURVES
+           Open Circuit Voltage Vs. Th                                  Matched Load Resistance Vs. Th
+
+
+
+
+          Matched Load Voltage Vs. Th                                     Matched Load Current Vs. Th
+
+
+
+
+       Matched Load Output Power Vs. Th                                   Output Voltage/Power Vs.
+                                                                     Output Current (Th=300⁰C, Tc= 30⁰C)
+
+
+
+
+                                                 sameskydevices.com
+                                                        Additional Resources: Product Page
+
+SAME SKY | MODEL: SPG179-80 | DESCRIPTION: THERMOELECTRIC GENERATOR                                                                           date 05/20/2026 | page 4 of 4
+
+
+
+
+REVISION HISTORY
+
+            rev.                                                description                                                                           date
+
+            1.0                                                initial release                                                                 05/20/2026
+                           The revision history provided is for informational purposes only and is believed to be accurate.
+
+
+
+
+                             Same Sky offers a one (1) year limited warranty. Complete warranty information is listed on our website.
+
+                             Same Sky reserves the right to make changes to the product at any time without notice. Information provided by Same Sky is believed to be accurate and
+                             reliable. However, no responsibility is assumed by Same Sky for its use, nor for any infringements of patents or other rights of third parties which may result
+                             from its use.
+
+                             Same Sky products are not authorized or warranted for use as critical components in equipment that requires an extremely high level of reliability. A critical
+                             component is any component of a life support device or system whose failure to perform can be reasonably expected to cause the failure of the life support
+                             device or system, or to affect its safety or effectiveness.
+
+                             sameskydevices.com
+
