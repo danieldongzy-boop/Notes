@@ -35,8 +35,7 @@
               "title": "Chapter_08_Storage_Concepts_II_Rechargeable_Batteries"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -200,8 +199,10 @@
       "bases:新建数据库": false
     }
   },
-  "active": "bb1302fff32d4821",
+  "active": "be4428919ab051f4",
   "lastOpenFiles": [
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "找工/CET6_202206_610031221224724_1-1.pdf",
     "Uni Freiburg/Analog Cmos/PE5/Practical_Exercise_V_SS26.pdf",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
@@ -215,7 +216,6 @@
     "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Converters_E02_results.pdf",
     "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors.pdf",
     "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
-    "Uni Freiburg/data converter/Exercises/Data_Converters_E02/Data_Sheet_LTC2241_12.pdf",
     "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
