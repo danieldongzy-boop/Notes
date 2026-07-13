@@ -10,13 +10,11 @@
           {
             "id": "be4428919ab051f4",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "pdf",
               "state": {
                 "file": "Uni Freiburg/Analog Cmos/PE5/Practical_Exercise_V_SS26.pdf"
               },
-              "pinned": true,
               "icon": "lucide-file-text",
               "title": "Practical_Exercise_V_SS26"
             }
@@ -48,9 +46,21 @@
               "icon": "lucide-file",
               "title": "Razavi- The Design of a Low-Voltage Bandgap Reference"
             }
+          },
+          {
+            "id": "e3d74ecfa63412ba",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/Analog Cmos/PE4/Analog_Cmos.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Analog_Cmos"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,9 +223,15 @@
       "bases:新建数据库": false
     }
   },
-  "active": "13717c8aa40e8fbd",
+  "active": "e3d74ecfa63412ba",
   "lastOpenFiles": [
+    "Uni Freiburg/RF_Design/PE5/RF-Block6 (1).pdf",
+    "Uni Freiburg/RF_Design/PE5/RF-Block6.pdf",
+    "Uni Freiburg/Analog Cmos/PE5/~~$Analog_Cmos (2).pdf",
     "Uni Freiburg/Analog Cmos/PE5/Practical_Exercise_V_SS26.pdf",
+    "Uni Freiburg/Analog Cmos/PE5/导出页面自 Practical_Exercise_V_SS26.pdf",
+    "Uni Freiburg/Analog Cmos/PE5/Analog_Cmos (2).pdf",
+    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
     "找工/CV (1).pdf",
     "找工/old/CV.pdf",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-18.png",
@@ -225,18 +241,12 @@
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG178-56.txt",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80.txt",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG178-56.pdf",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80.pdf",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/yang2023_fig4.png",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/animal2020.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.pdf",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/animal2020.pdf",
     "Uni Freiburg/能量收集/PROJECT/Energy_Harvesting_no_solar_CN.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
     "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
     "IC/SARADC/settling time 2/CDAC settling time comparison.md",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
