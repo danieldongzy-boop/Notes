@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f4bb13ce84becc1b",
+        "id": "7355a06e4f8cde4d",
         "type": "tabs",
         "children": [
           {
-            "id": "6bae04a1ee5408b9",
+            "id": "946785113ca65054",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/data converter/Exercises/Data_Converters_E07/Data_Converters_E07.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Chapter_05_Vibrational_Energy_Harvesting_I"
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_E07"
             }
           }
         ]
@@ -40,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -156,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+                "file": "Uni Freiburg/Test and reliability/CH4/04-sat_annot.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Chapter_05_Vibrational_Energy_Harvesting_I 的大纲"
+              "title": "04-sat_annot 的大纲"
             }
           }
         ],
@@ -181,58 +179,57 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "realclaudian:Open Claudian": false
+      "bases:新建数据库": false
     }
   },
-  "active": "6bae04a1ee5408b9",
+  "active": "946785113ca65054",
   "lastOpenFiles": [
-    "找工/old/CV.pdf",
-    "找工/CV (1).pdf",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/yang2023_fig4.png",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E08/Data_Converters_E08.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E07/Data_Converters_E07.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E07",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E08",
+    "Uni Freiburg/data converter/tmp/pdfs/e07/page-3.png",
+    "Uni Freiburg/data converter/tmp/pdfs/e07/page-2.png",
+    "Uni Freiburg/data converter/tmp/pdfs/e07/page-1.png",
+    "Uni Freiburg/data converter/tmp/pdfs/e07",
+    "Uni Freiburg/data converter/tmp/pdfs",
+    "Uni Freiburg/data converter/tmp",
+    "Uni Freiburg/能量收集/PROJECT/TEG.md",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E08/未确认 111394.crdownload",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E07/未确认 653059.crdownload",
+    "Uni Freiburg/Test and reliability/CH5/ex05.pdf",
+    "Uni Freiburg/Test and reliability/CH5/ex05_slides.pdf",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/Razavi- The Design of a Low-Voltage Bandgap Reference.md",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-18.png",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-17.png",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-16.png",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/animal2020.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/animal2020.pdf",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80.pdf",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80-page1.png",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG178-56.txt",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG178-56.pdf",
-    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs",
-    "Uni Freiburg/能量收集/PROJECT/TEG.md",
+    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/yang2023_fig4.png",
     "Uni Freiburg/能量收集/PROJECT/Energy_Harvesting_no_solar_CN.md",
-    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar_CN.md",
-    "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
-    "Uni Freiburg/data converter/作业45_放大器反馈结论整理.md",
-    "找工/QQ图片20240822231443.jpg",
-    "找工/QQ图片20240822231443 (1).jpg",
-    "IC/SARADC/settling time 2/preview/page-06.png",
-    "IC/SARADC/settling time 2/preview/page-05.png",
-    "IC/SARADC/settling time 2/preview/page-04.png",
-    "IC/SARADC/settling time 2/CDAC settling time comparison.md",
-    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
-    "IC/SARADC/Settling Time/Settling Time.md",
-    "IC/SARADC/Sar ADC学习2/Sar ADC学习2.md",
-    "IC/SARADC/Sar ADC学习1/Sar ADC学习1.md",
-    "IC/SARADC/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques/AII-MOS Charge Redistribution Analog-to-Digital Conversion Techniques.md",
-    "IC/SARADC/A Tale of two ADCs/A Tale of two ADCs.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
+    "CIM/CIM 入门综述：从模拟信号链 IC 到 SRAM-CIM.md",
+    "IC/SARADC/settling time 2/CDAC settling time comparison.md",
     "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
     "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
+    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar_CN.md",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_switch.md",
+    "Uni Freiburg/data converter/作业45_放大器反馈结论整理.md",
     "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
-    "claude-memory/user_profile.md",
-    "claude-memory/user_learning_style.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.svg",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_corrected.png",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/bootstrap_schemdraw/bootstrap_switch_netlist.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/bootstrap_schemdraw/bootstrap_switch_netlist.md",
+    "IC/SARADC/sar-adc-skills/bootstrap_schemdraw/bootstrap_switch_netlist.md",
+    "IC/SARADC/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed/Successive Approximation Analog-to-Digital Converters Improving power efficiency and conversion speed.md",
+    "IC/SARADC/bootstrap_schemdraw/bootstrap_switch_netlist.md",
+    "IC/SARADC/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs/A Modeling Environment for the Simulation and Design of Charge Redistribution DACs Used in SAR ADCs.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/cdac.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/references/core-architecture.md",
+    "IC/SARADC/sar-adc-skills/sar-adc-skill/SKILL.md",
     "未命名.canvas"
   ]
 }
