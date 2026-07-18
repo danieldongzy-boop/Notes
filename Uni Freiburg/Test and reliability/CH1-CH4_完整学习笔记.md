@@ -1,12 +1,12 @@
-# Test and Reliability CH1-CH4 完整学习笔记
+# Test and Reliability CH1-CH5 完整学习笔记
 
-> 范围：只整理文件夹中的 CH1、CH2、CH3、CH4 课件内容。  
+> 范围：整理文件夹中的 CH1、CH2、CH3、CH4、CH5 课件内容。  
 > 不包含：`ex*.pdf`、作业解析、exercise 解答。  
 > 目标：用比较人话的方式，把概念、公式、算法和容易混淆的点串起来。
 
 ## 目录
 
-- [[#0. 四章在讲什么|0. 四章在讲什么]]
+- [[#0. 五章在讲什么|0. 五章在讲什么]]
 - [[#CH1. Circuit Testing 基础与 Fault Collapsing|CH1. Circuit Testing 基础与 Fault Collapsing]]
   - [[#1.1 关键词中英文对照|1.1 关键词中英文对照]]
   - [[#1.2 Testing 到底在测什么|1.2 Testing 到底在测什么]]
@@ -75,16 +75,37 @@
   - [[#4.17 Combined Backward/Forward D-Chains|4.17 Combined Backward/Forward D-Chains]]
   - [[#4.18 Good-Diff D-Chain|4.18 Good-Diff D-Chain]]
   - [[#4.19 Hybrid D-Chains|4.19 Hybrid D-Chains]]
-- [[#5. 四章之间的核心关系|5. 四章之间的核心关系]]
-  - [[#5.1 从“测得出”到“怎么找”|5.1 从“测得出”到“怎么找”]]
-  - [[#5.2 三个永远绕不开的动作|5.2 三个永远绕不开的动作]]
-  - [[#5.3 公式和算法速记|5.3 公式和算法速记]]
-  - [[#5.4 高频易错点|5.4 高频易错点]]
-  - [[#5.5 考前压缩版|5.5 考前压缩版]]
+- [[#CH5. Design-for-Testability 可测试性设计|CH5. Design-for-Testability 可测试性设计]]
+  - [[#5.1 DFT 为什么存在|5.1 DFT 为什么存在]]
+  - [[#5.2 DFT 与 SFT|5.2 DFT 与 SFT]]
+  - [[#5.3 怎样衡量 Testability|5.3 怎样衡量 Testability]]
+  - [[#5.4 Control Point 与 Observation Point|5.4 Control Point 与 Observation Point]]
+  - [[#5.5 根据 Fault Simulation 选择测试点|5.5 根据 Fault Simulation 选择测试点]]
+  - [[#5.6 多个故障与 Set Covering|5.6 多个故障与 Set Covering]]
+  - [[#5.7 额外测试输入怎么接出去|5.7 额外测试输入怎么接出去]]
+  - [[#5.8 额外测试输出怎么接出去|5.8 额外测试输出怎么接出去]]
+  - [[#5.9 XOR Tree 与 Aliasing|5.9 XOR Tree 与 Aliasing]]
+  - [[#5.10 Test Points 与 BIST|5.10 Test Points 与 BIST]]
+  - [[#5.11 时序电路为什么更难测|5.11 时序电路为什么更难测]]
+  - [[#5.12 Circuit Initialization|5.12 Circuit Initialization]]
+  - [[#5.13 ILA 与同步序列生成|5.13 ILA 与同步序列生成]]
+  - [[#5.14 Counter 的测试问题|5.14 Counter 的测试问题]]
+  - [[#5.15 Sequential ATPG|5.15 Sequential ATPG]]
+  - [[#5.16 Scan 的核心思想|5.16 Scan 的核心思想]]
+  - [[#5.17 Scan Cell|5.17 Scan Cell]]
+  - [[#5.18 Integrated Scan 与 Boundary Scan|5.18 Integrated Scan 与 Boundary Scan]]
+  - [[#5.19 Full Scan 与 Partial Scan|5.19 Full Scan 与 Partial Scan]]
+  - [[#5.20 CH5 考前压缩版|5.20 CH5 考前压缩版]]
+- [[#6. 五章之间的核心关系|6. 五章之间的核心关系]]
+  - [[#6.1 从“测得出”到“怎么找”再到“让它好测”|6.1 从“测得出”到“怎么找”再到“让它好测”]]
+  - [[#6.2 三个永远绕不开的动作|6.2 三个永远绕不开的动作]]
+  - [[#6.3 公式和算法速记|6.3 公式和算法速记]]
+  - [[#6.4 高频易错点|6.4 高频易错点]]
+  - [[#6.5 考前压缩版|6.5 考前压缩版]]
 
-## 0. 四章在讲什么
+## 0. 五章在讲什么
 
-这门课前四章其实是一条线：
+这五章其实是一条线：前四章研究如何测试一个已经给定的电路，第五章开始修改电路，让它更容易测试。
 
 | Chapter | 英文主题 | 中文主题 | 一句话 |
 |---|---|---|---|
@@ -92,6 +113,7 @@
 | CH2 | Fault Simulation | 故障仿真 | 给一组测试向量，算它们能测出哪些故障 |
 | CH3 | Test Generation for Single Stuck-At Faults | 单固定故障的测试生成 | 自动找测试向量，让故障被激活、传播、观察 |
 | CH4 | Boolean Satisfiability | 布尔可满足性与 SAT-based ATPG | 把测试生成翻译成 SAT，让 SAT solver 搜索测试 |
+| CH5 | Design-for-Testability | 可测试性设计 | 如果原电路太难测，就加入测试点或 scan 结构改善可控制性和可观察性 |
 
 整体关系可以这样记：
 
@@ -107,6 +129,9 @@ CH3: 生成测试
 
 CH4: 用 SAT 生成测试
   把“好电路和坏电路输出不同”编码成 CNF，交给 SAT solver。
+
+CH5: 改造电路使它好测
+  加入 control point、observation point 或 scan，降低 ATPG 难度并提高覆盖率。
 ```
 
 ---
@@ -1577,11 +1602,412 @@ Good-Diff 划算的地方用 Good-Diff；
 
 ---
 
-## 5. 四章之间的核心关系
+## CH5. Design-for-Testability 可测试性设计
 
 [[#目录|返回目录]]
 
-### 5.1 从“测得出”到“怎么找”
+### 5.1 DFT 为什么存在
+
+测试成本不只是 ATE 跑了多久，还包括：
+
+- 测试开发时间；
+- 测试向量占用的 tester memory；
+- 每颗芯片的 test application time；
+- 覆盖率不够造成的坏芯片流出、退换货和信誉损失。
+
+前四章默认电路已经设计好，然后想办法仿真或生成测试。CH5 换了一个角度：
+
+> 如果原电路实在难测，就修改设计，让内部节点更容易控制、更容易观察。
+
+DFT 的全称是 **Design-for-Testability**。它通常加入额外硬件；正常工作时，这些硬件必须关闭、旁路或保持透明，不能改变芯片原功能。
+
+### 5.2 DFT 与 SFT
+
+| 方法 | 全称 | 做法 | 结果 |
+|---|---|---|---|
+| DFT | Design-for-Testability | 增加 test point、scan 等测试硬件 | 原来的难测故障变得可测 |
+| SFT | Synthesis-for-Testability | 重新综合、改变逻辑结构 | 删除或重构造成难测问题的逻辑 |
+
+课件例子中：
+
+$$
+f=AB+(A+C)=A+C
+$$
+
+所以输出实际与 $B$ 无关，$B$ stuck-at-0 无法检测。
+
+- DFT：加入测试控制输入，在测试模式下让 $B$ 能影响输出；
+- SFT：直接把冗余的 $AB$ 支路删除，只留下 $A+C$。
+
+SFT 不一定总能用，因为冗余逻辑可能是为了抗瞬态故障、可靠性、速度或功耗而故意加入的，重新综合可能破坏这些优化。
+
+### 5.3 怎样衡量 Testability
+
+可测试性主要看两个指标：
+
+- **Controllability**：能不能从 primary inputs 容易地把内部节点设成需要的 0 或 1；
+- **Observability**：内部节点的故障效应能不能容易地传到 primary outputs。
+
+对应 ATPG 的两个关键动作：
+
+```text
+Controllability 不足 → 故障难激活
+Observability 不足  → 故障激活了，但差异传不到输出
+```
+
+已知难测的结构包括：
+
+- 带反馈的时序电路；
+- 输入数量很多的门；
+- ATPG 后覆盖率仍低或经常 timeout 的区域；
+- 为可靠性故意加入的冗余逻辑。
+
+例如，随机向量让一个 $n$ 输入 AND 门输出 1 的概率是：
+
+$$
+P=\left(\frac12\right)^n
+$$
+
+输入越多，随机测试越难遇到全 1。
+
+寻找难测结构的信息来源包括：
+
+1. controllability/observability 等结构性指标，但它们只是估算，可能不准确；
+2. 随机向量仿真；
+3. ATPG 后的 fault coverage 和 timeout 信息。
+
+### 5.4 Control Point 与 Observation Point
+
+测试点有两类：
+
+| 测试点 | 作用 | 解决的问题 |
+|---|---|---|
+| Control Point, CP | 测试模式下给内部节点指定 0 或 1 | 故障无法激活 |
+| Observation Point, OP | 把内部节点接到可观察位置 | 故障效应传不到主输出 |
+
+可以把 CP 理解成内部节点的“遥控器”，把 OP 理解成内部节点的“观察窗口”。
+
+正常模式下，CP 必须透明。例如：
+
+- OR 型控制结构的透明值是 0，因为 $g+0=g$；
+- AND 型控制结构的透明值是 1，因为 $g\cdot1=g$。
+
+### 5.5 根据 Fault Simulation 选择测试点
+
+若故障 $f_i$ 已经激活，并能传播到一组内部线路：
+
+$$
+G_i=\{g_{i1},g_{i2},\ldots\}
+$$
+
+但无法到达主输出，那么在 $G_i$ 中任选一个节点加入 OP，就可以观察该故障。
+
+图中的 `1/0` 表示：
+
+```text
+good circuit = 1
+faulty circuit = 0
+```
+
+它就是 D-Algorithm 中的 $D$。若某内部节点已有 `1/0`，但后面的 OR 门另一个输入是 1，则：
+
+$$
+(1/0)+1=1/1
+$$
+
+故障效应被控制值遮住。这时可以在被遮住之前的节点加 OP。
+
+如果故障 $f_i=l_i/v_i$ 无法激活，就需要让正常线路满足：
+
+$$
+l_i=v_i'=\neg v_i
+$$
+
+然后在能帮助实现这个值的线路上加入 CP。
+
+### 5.6 多个故障与 Set Covering
+
+实际中一个观察点可能同时观察多个故障。目标不是每个故障各加一个点，而是找最少的点覆盖所有故障。
+
+假设每个故障 $f_i$ 的可观察节点集合是 $G_i$，要选择集合 $G$，满足：
+
+$$
+G\cap G_i\neq\varnothing,\qquad \forall i
+$$
+
+并且让 $|G|$ 尽量小。这就是 **Set Covering / Hitting Set** 问题，是 NP-complete。
+
+可用二进制变量表示是否选择节点：
+
+$$
+x_j=1 \Longleftrightarrow \text{选择 }g_j
+$$
+
+优化目标：
+
+$$
+\min\sum_jx_j
+$$
+
+对每个故障都要求至少选中一个能观察它的节点。实际工具常用 greedy、ILP、SAT/MaxSAT 或其他启发式方法。
+
+### 5.7 额外测试输入怎么接出去
+
+CP 会产生额外输入，必须让测试机能写入它们。
+
+**方案 1：并行加载触发器**
+
+- 每个测试输入由一个 FF 保存；
+- 从多个 primary inputs 同时加载；
+- 速度快，几乎不增加测试时间；
+- 缺点是需要很多 I/O pins 和布线。
+
+**方案 2：Shift Register / Scan Register**
+
+- 把 FF 串起来；
+- 通过一个额外输入逐位 shift in；
+- 引脚少；
+- 加载 $k$ 位大约需要 $k$ 个 shift clocks。
+
+核心权衡：
+
+| 方法 | 引脚 | 加载时间 |
+|---|---:|---:|
+| 并行加载 | 多 | 短 |
+| 串行移位 | 少 | 长 |
+
+### 5.8 额外测试输出怎么接出去
+
+OP 会产生额外输出，也不能每个点都占一个芯片引脚。课件给出三种方案：
+
+1. **输出扫描寄存器**：先把 observation values 存入 FF，再从一个 scan-out 串行移出；
+2. **与 primary outputs 复用**：用 MUX 在正常输出和测试输出之间切换；
+3. **XOR tree**：把多个观察点压缩成一个或少量奇偶校验输出。
+
+前两种保留的信息较完整；XOR tree 硬件简单，但可能发生信息抵消。
+
+### 5.9 XOR Tree 与 Aliasing
+
+若多个观察点接到 XOR tree：
+
+$$
+O_{extra}=O_1\oplus O_2\oplus\cdots\oplus O_k
+$$
+
+故障使奇数个 $O_i$ 翻转时，$O_{extra}$ 一定改变，可以检测；故障使偶数个 $O_i$ 翻转时，变化可能互相抵消。
+
+例如 $O_1$ 和 $O_3$ 同时改变：
+
+$$
+1\oplus1=0
+$$
+
+压缩输出不变，故障漏检。这种不同内部响应压缩成相同结果的现象叫 **aliasing**。
+
+解决方法是使用多棵 XOR tree，把容易同时翻转的观察点分到不同树上。代价是额外输出和硬件增加。
+
+### 5.10 Test Points 与 BIST
+
+BIST 是 **Built-In Self-Test**，TPG 是 **Test Pattern Generator**。
+
+硬件 TPG 往往生成伪随机向量，结构简单，但可能测不到 random-pattern-resistant faults。可以先仿真 TPG 序列，找出未检测故障，再在这些故障能传播到的内部节点加入 OP。
+
+因此 test point 能让较简单的硬件 TPG 也达到可接受的覆盖率。
+
+### 5.11 时序电路为什么更难测
+
+组合电路的输出只由当前输入决定；时序电路还取决于当前状态：
+
+$$
+S(t+1)=F(S(t),X(t)),\qquad Y(t)=G(S(t),X(t))
+$$
+
+主要有三类问题：
+
+1. **Initialization**：测试开始时 FF 状态通常未知；
+2. **Counters**：某些状态要运行极多周期才能到达；
+3. **Sequential ATPG**：要找的不是一个向量，而是多周期序列。
+
+所以时序测试通常需要：
+
+```text
+先进入目标状态 → 激活故障 → 再把故障效应传播到输出
+```
+
+### 5.12 Circuit Initialization
+
+Initialization 就是把未知状态带到已知状态。
+
+常见方法：
+
+| 方法 | 含义 | 主要问题 |
+|---|---|---|
+| Synchronizing sequence | 输入一段序列，使所有可能初态汇合到同一状态 | 不一定存在，可能很难找或指数级长 |
+| Reset input | 同步或异步清零/置位 FF | reset 线要布到大量 FF |
+| Power-up reset | 上电时自动产生 reset | 需要额外检测和复位硬件 |
+| Partial reset | 只复位关键 FF | 必须保证剩余未知状态不影响测试 |
+| Scan | 直接串行写入目标状态 | 有硬件和移位时间开销 |
+
+初始化很重要，因为测试执行和 debug trace 都需要确定、可重复的起点。
+
+### 5.13 ILA 与同步序列生成
+
+ILA 是 **Iterative Logic Array**。它把时序电路沿时间展开：
+
+```text
+S0 → [CL, X0] → S1 → [CL, X1] → S2 → ... → Sk
+```
+
+每个时间帧复制一份组合逻辑，前一帧的 next state 接到后一帧的 present state。这样，多周期时序问题就转成一个更大的组合问题。
+
+寻找同步序列可写成 BMC：
+
+- 初始状态：All-X，表示任意状态；
+- 转移关系：原电路逻辑；
+- 目标：经过限定周期后，状态不含 X，成为确定状态。
+
+从较短长度开始搜索，找不到再增加展开深度。缺点是展开越深，模型越大。
+
+### 5.14 Counter 的测试问题
+
+一个 16-bit counter 从某些初态走到 all-1，可能需要：
+
+$$
+2^{16}=65536
+$$
+
+个时钟周期。这样的测试序列太长，实际 ATPG 很难处理。
+
+解决办法：
+
+- 把计数器 partition 成较小部分，分别控制；
+- 在中间加入测试控制点，打断很长的进位链；
+- 使用 scan，直接把目标状态移入 FF。
+
+比如通过 scan 写入 16 位目标状态，只需数量级为 16 的移位周期，而不是数万个正常计数周期。
+
+### 5.15 Sequential ATPG
+
+Sequential ATPG 要寻找一段输入序列，使 fault-free circuit 和 faulty circuit 最终可区分。即使序列存在，也可能需要探索大量状态转换。
+
+一条完整测试通常分成三段：
+
+```text
+Initialization Sequence
+        ↓
+Test Pattern / Fault Activation
+        ↓
+Fault Propagation Sequence
+```
+
+1. 把电路带到需要的初始状态；
+2. 让 fault site 的正常值与 stuck-at value 相反；
+3. 继续运行若干周期，把故障效应送到可观察输出。
+
+实用方法常借助 ILA，把有限时间范围内的 sequential ATPG 转成 combinational ATPG。Scan 则进一步把内部状态变成可直接写入和读出的量。
+
+### 5.16 Scan 的核心思想
+
+Scan 是时序电路最常用的 DFT 技术。它把功能 FF 串成移位寄存器：
+
+```text
+Scan-in → FF1 → FF2 → ... → FFn → Scan-out
+```
+
+典型测试分三步：
+
+1. **Shift in**：串行移入目标内部状态；
+2. **Capture**：切回功能模式，运行一个或少量时钟捕获响应；
+3. **Shift out**：串行移出 FF 中的响应，同时可移入下一组测试状态。
+
+它同时提高：
+
+- controllability：内部状态可以直接写入；
+- observability：内部状态可以直接读出。
+
+并行加载也能做到，但需要从大量 PI/PO 到各 FF 的布线，面积开销通常更大。
+
+### 5.17 Scan Cell
+
+Scan cell 本质上是一个普通 D-FF 前面加选择逻辑：
+
+$$
+D_{FF}=\begin{cases}
+D,&\text{normal mode}\\
+S_{in},&\text{test/shift mode}
+\end{cases}
+$$
+
+课件给出两种实现：
+
+1. **同一时钟**：正常工作和 scan shift 共用 `CK`，用 mode signal 选择数据来源；
+2. **两个时钟**：`CK` 负责正常操作，`CKS` 负责扫描移位，控制清楚但多一套时钟布线。
+
+Full Serial Integrated Scan 中，组合逻辑 `CL` 的状态输入和输出接到 scan register `Rs`；测试时通过 $S_{in}$ 写状态，通过 $S_{out}$ 读状态。
+
+### 5.18 Integrated Scan 与 Boundary Scan
+
+**Integrated Scan** 把芯片内部功能 FF 改成 scan cells，主要测试芯片内部组合逻辑和状态。
+
+**Boundary Scan** 在模块或芯片 I/O 边界放扫描单元，主要用于：
+
+- 隔离不同模块；
+- 测试模块本身；
+- 测试芯片或模块之间的 interconnect，例如 PCB 焊点和连线。
+
+测试 interconnect 的基本过程：
+
+```text
+前一模块 R2 发送数据
+→ 经过模块间连线
+→ 后一模块 R1 捕获
+→ scan out 后比较
+```
+
+测试一个 module 时，则从前级边界寄存器施加输入，在后级边界寄存器捕获模块输出。
+
+### 5.19 Full Scan 与 Partial Scan
+
+| 方案 | 做法 | ATPG 难度 | 硬件/时序开销 |
+|---|---|---:|---:|
+| Full Scan | 所有或几乎所有 FF 加入 scan chain | 最低，近似组合 ATPG | 最大 |
+| Partial Scan | 只选一部分 FF 加入 scan chain | 较高，仍有部分时序性 | 较小 |
+
+Partial scan 的选择目标是：用尽量少的 scan FF，让测试生成仍可高效完成。选择方法包括：
+
+- Structural：根据反馈环和电路结构选择；
+- ATPG-based：根据难测故障、覆盖率或 timeout 结果选择。
+
+实际选择还要考虑 layout、关键路径、功耗和性能，因此加入 scan 的比例常常仍接近 100%。
+
+### 5.20 CH5 考前压缩版
+
+```text
+DFT：加测试硬件，让原电路更好测；正常模式必须透明。
+SFT：重新综合电路，删除或重构难测逻辑。
+
+难激活 → controllability 差 → 加 control point。
+难传播 → observability 差 → 加 observation point。
+多个故障共享测试点 → set covering，NP-complete。
+
+额外输入：并行 FF 快但费引脚；scan register 省引脚但费时间。
+额外输出：scan-out、MUX 复用、XOR tree。
+XOR tree：奇数个变化可见，偶数个变化可能 aliasing。
+
+时序测试 = 初始化 + 故障激活 + 故障传播。
+ILA = 按时间展开，把时序问题转成组合问题。
+Scan = shift in + capture + shift out。
+Integrated scan 测内部；boundary scan 测边界、模块和互连。
+Full scan 好测但开销大；partial scan 开销小但 ATPG 更难。
+```
+
+---
+
+## 6. 五章之间的核心关系
+
+[[#目录|返回目录]]
+
+### 6.1 从“测得出”到“怎么找”再到“让它好测”
 
 CH1 定义：
 
@@ -1607,7 +2033,13 @@ CH4 问：
 能不能把“存在这样的 t”写成 SAT 公式，让 solver 找？
 ```
 
-### 5.2 三个永远绕不开的动作
+CH5 问：
+
+```text
+如果 t 很难找到或覆盖率太低，能不能修改电路，让故障更容易激活和观察？
+```
+
+### 6.2 三个永远绕不开的动作
 
 不管 D-Algorithm、PODEM 还是 SAT-based ATPG，都在做同一件事：
 
@@ -1617,7 +2049,7 @@ CH4 问：
 | 传播  | Propagation | 差异要穿过门，不能被 controlling value 遮住              |
 | 观察  | Observation | 差异最终要到 primary output                        |
 
-### 5.3 公式和算法速记
+### 6.3 公式和算法速记
 
 | 内容 | 速记 |
 |---|---|
@@ -1637,8 +2069,13 @@ CH4 问：
 | Tseitin XOR | 4 clauses |
 | Miter condition | $M=1$ iff good/faulty outputs differ |
 | D-chain 目的 | 加强差异传播信息，不改变 SAT 答案 |
+| Control point | 改善 controllability，帮助激活故障 |
+| Observation point | 改善 observability，帮助观察故障 |
+| XOR 压缩检测条件 | 奇数个输入响应发生翻转 |
+| Scan 流程 | shift in → capture → shift out |
+| ILA | 沿时间展开时序电路 |
 
-### 5.4 高频易错点
+### 6.4 高频易错点
 
 1. Defect 和 fault 不是一回事。defect 是物理现实，fault 是抽象模型。
 2. Fault coverage 高不等于没有坏芯片，只是坏芯片逃过测试的概率降低。
@@ -1652,8 +2089,14 @@ CH4 问：
 10. SAT 的 learned clause 不是随便加的，它由 conflict analysis 和 resolution 保证不会改变 satisfiability。
 11. D-chain 是冗余约束，答案不变，但 solver 更容易推理。
 12. Good-Diff 去掉 B 变量不一定总省，多输入都可能有差异时编码会变贵。
+13. DFT 是增加测试硬件，SFT 是重新综合，两者不要混淆。
+14. Control point 帮助激活，observation point 帮助传播后的观察。
+15. XOR tree 中偶数个响应同时翻转可能互相抵消，产生 aliasing。
+16. Scan 不等于完全没有时序开销；它用移位时间换取少量 I/O 和较简单的 ATPG。
+17. Boundary scan 重点是芯片边界、模块和互连；integrated scan 重点是内部逻辑。
+18. Partial scan 不是固定比例，而是在测试难度与面积、时序、布线之间折中。
 
-### 5.5 考前压缩版
+### 6.5 考前压缩版
 
 如果只能记一页：
 
@@ -1677,4 +2120,10 @@ CH4:
 SAT-based ATPG = miter + Tseitin CNF + M=1。
 现代 SAT solver = preprocessing + VSIDS + BCP + watched literals + conflict learning + non-chronological backtracking。
 D-chain 给 solver 加故障传播结构信息，通常增大公式但减少求解时间。
+
+CH5:
+DFT = 修改电路使它更好测，核心是 controllability + observability。
+Control point 帮助激活，observation point 帮助观察。
+时序测试需要初始化、激活、传播；ILA 做时间展开，scan 直接访问内部状态。
+Scan 操作 = shift in + capture + shift out。
 ```
