@@ -4,36 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "61d3c82b0c76d717",
+        "id": "80f2ba850f03a509",
         "type": "tabs",
         "children": [
           {
-            "id": "c010d13112883ebc",
+            "id": "f739b23bbbe92811",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Uni Freiburg/能量收集/PROJECT/Zhanyu_Presentation_Script_QA_References.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L02_Static_Metrics.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Zhanyu_Presentation_Script_QA_References"
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_SS26_L02_Static_Metrics"
             }
           },
           {
-            "id": "5f885a64b298e1e0",
+            "id": "0a2950d19ff48d6d",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "IC/实例/eetop.cn_模拟大规模集成电路课程设计报告.pdf"
+                "file": "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "eetop.cn_模拟大规模集成电路课程设计报告"
+              "title": "The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,38 +192,29 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "realclaudian:Open Claudian": false
     }
   },
-  "active": "c010d13112883ebc",
+  "active": "0a2950d19ff48d6d",
   "lastOpenFiles": [
-    "IC/实例/eetop.cn_模拟大规模集成电路课程设计报告.pdf",
-    "Uni Freiburg/Test and reliability/CH5/05-dft_annot.pdf",
-    "Uni Freiburg/Test and reliability/CH5/ex05.pdf",
-    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
-    "Uni Freiburg/Test and reliability/CH5/ex05_slides.pdf",
-    "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
-    "找工/CV (1).pdf",
-    "找工/old/CV (1).pdf",
-    "IC/实例/2stageamp/2stageamp.md",
-    "IC/实例/10b250Minterleaving/eetop.cn__PHD_CCLiu_Design of High-Speed Energy-Efficient SAR ADC.pdf",
-    "Uni Freiburg/RF_Design/tmp/pdfs/lectures12/lectures12.txt",
-    "Uni Freiburg/RF_Design/tmp/pdfs/lectures12",
-    "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
-    "Uni Freiburg/能量收集/PROJECT/SnapperGPS_specifications.md",
-    "Uni Freiburg/RF_Design/Skripte_Vorlesung-01bis12.pdf",
-    "找工/微信图片_20260719151827_41_1.jpg",
-    "找工/微信图片_20260719151825_40_1.jpg",
-    "找工/微信图片_20260719151824_39_1.jpg",
-    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
-    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
+    "Uni Freiburg/data converter/tasks_ADC_DAC_SS26.pdf",
     "Uni Freiburg/能量收集/PROJECT/stm32.md",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L02_Static_Metrics.pdf",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E08/Data_Converters_E08.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E08",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E07/Data_Converters_E07.pdf",
+    "Uni Freiburg/data converter/Exercises/Data_Converters_E07",
+    "找工/old/CV.pdf",
+    "找工/CV (1).pdf",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/yang2023_fig4.png",
+    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.txt",
+    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife2021.pdf",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-18.png",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-17.png",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/wildlife-temp-16.png",
+    "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/animal2020.txt",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/SPG179-80-page1.png",
     "Uni Freiburg/能量收集/PROJECT/TEG.md",
     "Uni Freiburg/能量收集/PROJECT/Energy_Harvesting_no_solar_CN.md",
@@ -242,8 +232,15 @@
     "IC/SARADC/A Tale of two ADCs/A Tale of two ADCs.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_06_Vibrational_Energy_Harvesting_II.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_09_Power_Management.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_03_Thermoelectric_Energy_Harvesting.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_02_Solar_Energy_Harvesting.md",
+    "Uni Freiburg/能量收集/chapter_markdown/Chapter_01_Introduction.md",
+    "Uni Freiburg/能量收集/PROJECT/Long Term Animal Tracking - Hybrid Harvesting Concept.md",
+    "Uni Freiburg/能量收集/PROJECT/GPS_GNSS_selection_no_solar.md",
+    "Uni Freiburg/Test and reliability/CH1-CH4_完整学习笔记.md",
+    "claude-memory/user_profile.md",
     "未命名.canvas"
   ]
 }
