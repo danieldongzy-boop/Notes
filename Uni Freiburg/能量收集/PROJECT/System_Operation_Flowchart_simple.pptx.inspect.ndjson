@@ -1,0 +1,35 @@
+{"kind":"deck","id":"pr/fik0pu","name":"Deck"}
+{"kind":"layout","layoutId":"e567bf3d-a655-411f-b1c0-f6bbfd749ea0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"3fad671c-9f75-47cd-90f4-095b4cc548e3","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/cao31m","slide":1,"title":"System Operation Flowchart","textShapes":17}
+{"kind":"shape","id":"sh/6hs7q9gn","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/t43q1ofy","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/83upsjyt","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/je18vuxw","slide":1,"name":"title","text":"System Operation Flowchart","textPreview":"System Operation Flowchart","textChars":26,"textLines":1,"bbox":[70,24,610,42]}
+{"kind":"shape","id":"sh/yds7m9gb","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/lgjqx4f2","slide":1,"name":"subtitle","text":"Normal sensing cycle and periodic data upload","textPreview":"Normal sensing cycle and periodic data upload","textChars":45,"textLines":1,"bbox":[82,82,540,28]}
+{"kind":"textbox","id":"sh/kfapozyh","slide":1,"name":"continuous-label","text":"CONTINUOUS","textPreview":"CONTINUOUS","textChars":10,"textLines":1,"bbox":[105,150,130,24]}
+{"kind":"textbox","id":"sh/bahoruh0","slide":1,"name":"minute-label","text":"EVERY MINUTE","textPreview":"EVERY MINUTE","textChars":12,"textLines":1,"bbox":[535,150,350,24]}
+{"kind":"textbox","id":"sh/a987ipgf","slide":1,"name":"harvest","text":"TEG + LTC3108-1\nHarvest Energy","textPreview":"TEG + LTC3108-1 | Harvest Energy","textChars":30,"textLines":2,"bbox":[78,200,170,72]}
+{"kind":"textbox","id":"sh/snuxkfu5","slide":1,"name":"storage","text":"Charge\nSupercapacitor","textPreview":"Charge | Supercapacitor","textChars":21,"textLines":2,"bbox":[290,200,170,72]}
+{"kind":"textbox","id":"sh/t83ytkvq","slide":1,"name":"wake","text":"RTC Wakes\nSTM32WLE5","textPreview":"RTC Wakes | STM32WLE5","textChars":19,"textLines":2,"bbox":[502,200,170,72]}
+{"kind":"textbox","id":"sh/6lcfi5wf","slide":1,"name":"collect","text":"Read ADXL362\nAcquire LC76G Fix","textPreview":"Read ADXL362 | Acquire LC76G Fix","textChars":30,"textLines":2,"bbox":[714,200,185,72]}
+{"kind":"textbox","id":"sh/rmlgrad0","slide":1,"name":"store","text":"Process and Store\nActivity + Position","textPreview":"Process and Store | Activity + Position","textChars":37,"textLines":2,"bbox":[941,200,185,72]}
+{"kind":"textbox","id":"sh/4juxgve9","slide":1,"name":"upload-due","text":"Upload Interval\nReached?","textPreview":"Upload Interval | Reached?","textChars":24,"textLines":2,"bbox":[953,340,160,94]}
+{"kind":"textbox","id":"sh/5k3ep0vu","slide":1,"name":"transmit","text":"Send Buffered Data\nvia Integrated LoRa","textPreview":"Send Buffered Data | via Integrated LoRa","textChars":38,"textLines":2,"bbox":[714,351,185,72]}
+{"kind":"textbox","id":"sh/ihsfe5w3","slide":1,"name":"sleep","text":"Return to Stop 2\nWait for Next Cycle","textPreview":"Return to Stop 2 | Wait for Next Cycle","textChars":36,"textLines":2,"bbox":[953,520,185,72]}
+{"kind":"shape","id":"sh/jilwnado","slide":1,"bbox":[248,236,42,0]}
+{"kind":"shape","id":"sh/ofexszud","slide":1,"bbox":[460,236,42,0]}
+{"kind":"shape","id":"sh/pgny14vy","slide":1,"bbox":[672,236,42,0]}
+{"kind":"shape","id":"sh/dkj6p0j6","slide":1,"bbox":[899,236,42,0]}
+{"kind":"shape","id":"sh/cjapwvil","slide":1,"bbox":[1033,272,0.5,68]}
+{"kind":"shape","id":"sh/bi1onq10","slide":1,"bbox":[899,387,54,0]}
+{"kind":"shape","id":"sh/qh8nu50f","slide":1,"bbox":[1033,434,12.5,86]}
+{"kind":"shape","id":"sh/pwz6l0ju","slide":1,"bbox":[806.5,423,146.5,133]}
+{"kind":"shape","id":"sh/ovq5svi9","slide":1,"bbox":[587,272,458.5,344]}
+{"kind":"textbox","id":"sh/3uhojq1o","slide":1,"name":"few-days-label","text":"EVERY FEW DAYS","textPreview":"EVERY FEW DAYS","textChars":14,"textLines":1,"bbox":[930,305,210,24]}
+{"kind":"textbox","id":"sh/2t8nql0j","slide":1,"name":"yes-label","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[903,353,44,22]}
+{"kind":"textbox","id":"sh/1sz6hgjy","slide":1,"name":"no-label","text":"NO","textPreview":"NO","textChars":2,"textLines":1,"bbox":[1024,452,44,22]}
+{"kind":"textbox","id":"sh/grq5obid","slide":1,"name":"loop-label","text":"Next scheduled RTC wake-up","textPreview":"Next scheduled RTC wake-up","textChars":26,"textLines":1,"bbox":[550,610,300,26]}
+{"kind":"textbox","id":"sh/6x43yhgb","slide":1,"name":"summary-callout","text":"Harvest continuously; sense every minute; upload every few days","textPreview":"Harvest continuously; sense every minute; upload every few days","textChars":63,"textLines":1,"bbox":[170,470,420,62]}
+{"kind":"notes","id":"nt/cao31m","slide":1,"text":""}

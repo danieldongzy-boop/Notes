@@ -1,6 +1,6 @@
 # RF & Microwave Devices and Circuits — 详细公式学习笔记 (Detailed Formula Study Notes)
 
-> **来源 (Source):** Script-Lectures-1-to-6 (1).pdf, 233 pages  
+> **来源 (Source):** `Skripte_Vorlesung-01bis12.pdf`, 496 pages  
 > **授课 (Lecturer):** Prof. Dr. Rüdiger Quay / Dr.-Ing. Bersant Gashi  
 > **学校 (University):** INATECH Universität Freiburg, Version 17.2  
 > **课程 (Course):** RF and Microwave Devices and Circuits  
@@ -28,7 +28,14 @@
 15. [第十五章：趋肤效应与表面粗糙度](#ch15)
 16. [第十六章：天线原理与特性参数](#ch16)
 17. [第十七章：阵列天线与 MIMO](#ch17)
-18. [附录：常数表、频段划分、单位换算](#appendix)
+18. [第七讲：RF 半导体与有源器件基础](#lec7)
+19. [第八讲：RF 半导体制造工艺](#lec8)
+20. [第九讲：载流子输运、结与场效应晶体管](#lec9)
+21. [第十讲：双极晶体管与 RF 功率半导体](#lec10)
+22. [第十一讲：RF 增益、稳定性与放大器基础](#lec11)
+23. [第十二讲：功率放大器、接收电路与 RF 系统](#lec12)
+24. [Lectures 7-12 公式速查与易错点](#lec7-12-summary)
+25. [附录：常数表、频段划分、单位换算](#appendix)
 
 ---
 
@@ -1172,6 +1179,779 @@ $$
 
 ---
 
+<h1 id="lec7">第七讲：RF 半导体与有源器件基础</h1>
+<h2>Lecture 7: RF Semiconductors and Active-Device Fundamentals</h2>
+
+> 本讲从无源网络进入有源器件。核心问题是：如何用偏置控制载流子的产生与运动，并把直流功率转换为 RF 功率。  
+> *This lecture moves from passive networks to active devices: bias controls carrier generation and transport, enabling DC-to-RF power conversion.*
+
+### 7.1 有源器件、工作点与线性化 (Active Devices, Bias Point, and Linearization)
+
+晶体管的非线性关系可写成 $i_D=f(v_{GS},v_{DS})$。在静态工作点 $Q$ 附近作 Taylor 展开：
+
+$$
+i_D \approx I_{D,Q}
++g_m v_{gs}
++g_{ds}v_{ds}
++\frac{1}{2}g_m'v_{gs}^{2}
++\frac{1}{6}g_m''v_{gs}^{3}+\cdots
+$$
+
+其中小信号参数为
+
+$$
+\boxed{g_m=\left.\frac{\partial I_D}{\partial V_{GS}}\right|_Q},\qquad
+\boxed{g_{ds}=\left.\frac{\partial I_D}{\partial V_{DS}}\right|_Q},\qquad
+r_o=\frac{1}{g_{ds}}
+$$
+
+| 工作方式 Mode | 条件 Condition | 模型 Model | 主要用途 Main Use |
+|---|---|---|---|
+| 小信号 Small-signal | RF 摆幅远小于偏置量 | 一阶线性化、S 参数 | LNA、小信号增益与稳定性 |
+| 大信号 Large-signal | RF 摆幅与偏置相当 | 完整非线性模型、谐波平衡 | PA、混频器、振荡器 |
+
+### 7.2 本征模型与外部寄生 (Intrinsic Model and Extrinsic Parasitics)
+
+RF 小信号模型由本征晶体管和外部壳层组成：
+
+| 区域 | 典型元件 | 物理来源 |
+|---|---|---|
+| 本征 Intrinsic | $g_m$, $g_{ds}$, $C_{gs}$, $C_{gd}$, $C_{ds}$ | 沟道电荷、跨导、输出电导 |
+| 外部 Extrinsic | $R_g,R_s,R_d$, $L_g,L_s,L_d$, pad capacitances | 栅/源/漏金属、互连、焊盘和衬底 |
+
+常见近似输入阻抗和 Miller 放大为
+
+$$
+Z_{in}\approx R_g+\frac{1}{j\omega(C_{gs}+C_{gd}(1-A_v))}
+$$
+
+因此 $C_{gd}$ 不只是一个小寄生，它同时提供输入输出反馈，会限制增益、带宽并影响稳定性。  
+*The gate-drain capacitance is a feedback element; through the Miller effect it limits gain and bandwidth and can threaten stability.*
+
+### 7.3 晶体、能带与材料选择 (Crystal, Energy Bands, and Material Choice)
+
+电子允许能级形成价带与导带，两者间隔为禁带宽度 $E_g$：
+
+$$
+E_g=E_C-E_V
+$$
+
+本征载流子浓度的主要温度关系为
+
+$$
+\boxed{n_i=\sqrt{N_CN_V}\exp\left(-\frac{E_g}{2k_BT}\right)}
+$$
+
+| 材料参数 Material Metric | RF 影响 RF Impact |
+|---|---|
+| 迁移率 $\mu_n,\mu_p$ | 决定低场速度、导通电阻和跨导 |
+| 饱和速度 $v_{sat}$ | 决定短沟道高速输运与渡越时间 |
+| 禁带宽度 $E_g$ | 影响漏电、最高结温与击穿能力 |
+| 临界电场 $E_{crit}$ | 决定可承受电压和功率密度 |
+| 热导率 $\kappa$ | 决定结温和散热能力 |
+| 介电常数 $\varepsilon_r$ | 影响结电容、场分布和器件尺寸 |
+
+粗略功率器件材料优值可写成
+
+$$
+\mathrm{FOM}_{Baliga}\propto \varepsilon\mu E_{crit}^{3}
+$$
+
+Si 的优势是大尺寸高质量晶圆、成熟 CMOS 工艺和低成本；III-V 材料通常具有更高电子迁移率或饱和速度；GaN/SiC 依靠宽禁带和高临界电场适合高压高功率。  
+*Silicon wins in manufacturability and integration; III-V materials offer superior transport; GaN and SiC excel at high voltage and power density.*
+
+### 7.4 漂移输运与电导率 (Drift Transport and Conductivity)
+
+低场下
+
+$$
+\boxed{v_d=\mu E},\qquad
+\boxed{J=q(n\mu_n+p\mu_p)E=\sigma E}
+$$
+
+$$
+\boxed{\rho=\frac{1}{\sigma}=\frac{1}{q(n\mu_n+p\mu_p)}}
+$$
+
+高场时速度不再与电场成正比，而趋近 $v_{sat}$。一个常用经验模型是
+
+$$
+v(E)\approx\frac{\mu E}{1+\mu E/v_{sat}}
+$$
+
+器件速度的第一层直觉是
+
+$$
+\boxed{\tau_{tr}\approx\frac{L}{v}},\qquad
+f\sim\frac{1}{2\pi\tau_{tr}}
+$$
+
+所以缩短栅长 $L_g$、提高载流子速度可以提升截止频率，但会同时加剧短沟道效应、隧穿、击穿和寄生影响。
+
+### 7.5 异质结、应变与能带工程 (Heterojunctions, Strain, and Bandgap Engineering)
+
+不同半导体组合时，晶格失配近似为
+
+$$
+\boxed{\epsilon_{misfit}=\frac{a_{layer}-a_{sub}}{a_{sub}}}
+$$
+
+薄层可通过弹性应变维持赝晶结构；超过临界厚度后会出现失配位错。异质结的导带和价带偏移满足
+
+$$
+\Delta E_C+\Delta E_V=\Delta E_g
+$$
+
+能带工程可实现载流子限制、调制掺杂和高迁移率二维电子气 (2DEG)，这是 HEMT 与 HBT 的物理基础。  
+*Bandgap engineering confines carriers and separates dopants from the transport channel, enabling HEMTs and HBTs.*
+
+### 7.6 衬底与外延 (Substrates and Epitaxy)
+
+| 方法 Method | 特点 Characteristics | RF 应用 RF Use |
+|---|---|---|
+| Czochralski (CZ) | 从熔体拉制大尺寸单晶 | Si、GaAs 衬底 |
+| CVD | 气相前驱体发生化学反应并沉积 | Si、介质与多晶层 |
+| MOCVD | 金属有机源，产能高、适合量产 | GaAs、GaN、InP 异质结构 |
+| MBE | 超高真空、原子束、界面控制精确 | 研究与高精度 III-V 外延 |
+
+外延决定层厚、掺杂、界面陡峭度与缺陷密度；这些参数最后会反映到迁移率、击穿、电容、噪声与可靠性中。
+
+---
+
+<h1 id="lec8">第八讲：RF 半导体制造工艺</h1>
+<h2>Lecture 8: RF Semiconductor Fabrication</h2>
+
+### 8.1 从晶圆到芯片的工艺循环 (Wafer-to-Chip Process Loop)
+
+一轮典型工艺不断重复：薄膜生长/沉积 -> 涂胶 -> 曝光 -> 显影 -> 刻蚀或注入 -> 去胶 -> 清洗 -> 退火 -> 测量。先进工艺可包含数百到上千步骤，完整制造周期可达数月。  
+*Fabrication repeatedly combines deposition, lithography, etching or implantation, stripping, cleaning, annealing, and metrology.*
+
+### 8.2 掺杂与离子注入 (Doping and Ion Implantation)
+
+注入剂量与电流、时间和面积的关系为
+
+$$
+\boxed{Q_{dose}=\int J_{ion}(t)\,dt},\qquad [Q_{dose}]=\mathrm{cm^{-2}}
+$$
+
+注入能量主要控制平均投影深度 $R_p$，剂量控制掺杂总量。注入会破坏晶格，因此需要退火完成晶格修复与电激活。离子通道效应 (channeling) 可通过倾斜晶圆或预非晶化降低。
+
+扩散的基本方程为
+
+$$
+\frac{\partial C}{\partial t}=D\frac{\partial^2C}{\partial x^2},\qquad
+D=D_0\exp\left(-\frac{E_a}{k_BT}\right)
+$$
+
+### 8.3 光刻与分辨率 (Lithography and Resolution)
+
+投影光刻的 Rayleigh 关系：
+
+$$
+\boxed{CD=k_1\frac{\lambda}{NA}},\qquad
+\boxed{DOF=k_2\frac{\lambda}{NA^2}}
+$$
+
+减小曝光波长或增大数值孔径 $NA$ 可提高分辨率，但会缩小景深。EUV 使用约 $13.5\ \mathrm{nm}$ 波长；电子束光刻分辨率高但串行写入、吞吐量低，常用于掩模与原型。  
+*Shorter wavelength and larger numerical aperture improve resolution, but a larger NA reduces depth of focus.*
+
+### 8.4 刻蚀、沉积与金属化 (Etching, Deposition, and Metallization)
+
+| 工艺 | 优势 | 限制 |
+|---|---|---|
+| 湿法刻蚀 Wet etch | 选择性高、成本低 | 多为各向同性，容易侧蚀 |
+| 干法/RIE Dry etch | 各向异性、可形成陡直侧壁 | 等离子损伤、设备复杂 |
+| Lift-off | 适合难刻蚀金属与 T-gate | 胶形貌和覆盖性要求高 |
+| PVD/蒸发/溅射 | 金属沉积常用 | 台阶覆盖依方法而异 |
+| CVD/ALD | 覆盖性和厚度控制好 | 温度、前驱体与速率限制 |
+
+RF 器件尤其敏感于栅长、栅电阻、欧姆接触电阻、钝化层陷阱与互连电感。工艺偏差会同时改变直流工作点和 S 参数，因此版图寄生和工艺统计必须进入模型。
+
+### 8.5 工艺总结 (Process Summary)
+
+> 制造并非只负责“画出晶体管”。工艺定义了 $L_g$、接触电阻、寄生电容、缺陷与热路径，也就定义了器件的 $f_T$、$f_{max}$、噪声、击穿和可靠性。  
+> *Fabrication defines geometry, contacts, parasitics, defects, and thermal paths; consequently it defines RF speed, noise, breakdown, and reliability.*
+
+---
+
+<h1 id="lec9">第九讲：载流子输运、结与场效应晶体管</h1>
+<h2>Lecture 9: Carrier Transport, Junctions, and Field-Effect Transistors</h2>
+
+### 9.1 漂移、扩散与 Einstein 关系 (Drift, Diffusion, and Einstein Relation)
+
+$$
+J_n=q n\mu_nE+qD_n\nabla n
+$$
+
+$$
+J_p=q p\mu_pE-qD_p\nabla p
+$$
+
+$$
+\boxed{\frac{D_n}{\mu_n}=\frac{D_p}{\mu_p}=\frac{k_BT}{q}}
+$$
+
+掺杂提高载流子浓度并降低电阻率，但离化杂质散射会降低迁移率。因此“重掺杂”不等价于无限提高电导，RF 设计必须在接触电阻、迁移率、电容和击穿之间折中。  
+*Doping increases carrier concentration but also increases impurity scattering; conductivity, capacitance, and breakdown must be traded together.*
+
+### 9.2 纳米尺度限制 (Nanoscale Limits)
+
+| 限制 Limit | 物理机制 Mechanism | 后果 Consequence |
+|---|---|---|
+| 量子限制 Quantum confinement | 尺寸接近 de Broglie 波长 | 能级离散、阈值变化 |
+| 隧穿 Tunneling | 势垒过薄 | 栅漏电、关断泄漏 |
+| 速度饱和 Velocity saturation | 高横向电场 | 电流不再服从平方律 |
+| 冲击电离 Impact ionization | 载流子获得足够能量 | 雪崩击穿、可靠性下降 |
+| 热载流子 Hot carriers | 高场载流子注入介质/界面 | 参数漂移与退化 |
+
+击穿电压的直觉关系为 $V_{BR}\sim E_{crit}L_{drift}$；提高电压需要更长、更轻掺杂的漂移区，却会增加导通电阻。
+
+### 9.3 PN 结、Schottky 结与 RF 二极管模型 (PN, Schottky, and RF-Diode Model)
+
+理想二极管方程：
+
+$$
+\boxed{I=I_S\left(e^{qV/(nk_BT)}-1\right)}
+$$
+
+小信号结电导和动态电阻：
+
+$$
+g_d=\frac{dI}{dV}\approx\frac{I_D}{nV_T},\qquad
+\boxed{r_d\approx\frac{nV_T}{I_D}},\quad V_T=\frac{k_BT}{q}
+$$
+
+结电容近似为
+
+$$
+\boxed{C_j(V)=\frac{C_{j0}}{(1-V/V_{bi})^m}}
+$$
+
+RF 等效电路通常包括串联电阻 $R_s$、结电容 $C_j$、动态电阻 $r_d$ 和封装寄生。其速度常由 $R_sC_j$ 时间常数限制：
+
+$$
+f_c\sim\frac{1}{2\pi R_sC_j}
+$$
+
+Schottky 结由金属-半导体接触形成，多数载流子导电、反向恢复快，适用于检波、混频和高速开关；PN 结通常有少数载流子存储。
+
+### 9.4 MOS 电容与界面 (MOS Capacitor and Interfaces)
+
+单位面积氧化层电容为
+
+$$
+\boxed{C_{ox}'=\frac{\varepsilon_{ox}}{t_{ox}}}
+$$
+
+p 型衬底 MOS 随栅压经历累积、耗尽和反型。强反型层形成 MOSFET 沟道。界面态和费米能级钉扎会改变阈值、电容、噪声和稳定性；钝化的目标是降低界面陷阱密度 $D_{it}$。
+
+### 9.5 长沟道 MOSFET 基本关系 (Long-Channel MOSFET Relations)
+
+在线性区 $V_{DS}<V_{GS}-V_{TH}$：
+
+$$
+I_D=\mu_nC_{ox}'\frac{W}{L}
+\left[(V_{GS}-V_{TH})V_{DS}-\frac{V_{DS}^2}{2}\right]
+$$
+
+在饱和区：
+
+$$
+\boxed{I_D\approx\frac{1}{2}\mu_nC_{ox}'\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})}
+$$
+
+$$
+\boxed{g_m\approx\frac{2I_D}{V_{OV}}=\sqrt{2\mu_nC_{ox}'\frac{W}{L}I_D}},\qquad
+r_o\approx\frac{1}{\lambda I_D}
+$$
+
+这里 $V_{OV}=V_{GS}-V_{TH}$。短沟道 RF MOSFET 会出现速度饱和，平方律只能提供定性直觉。
+
+### 9.6 FET 小信号与大信号行为 (FET Small- and Large-Signal Behavior)
+
+小信号截止频率的一阶近似：
+
+$$
+\boxed{f_T\approx\frac{g_m}{2\pi(C_{gs}+C_{gd})}}
+$$
+
+最大振荡频率 $f_{max}$ 还受 $R_g$、$g_{ds}$ 和反馈电容 $C_{gd}$ 限制，通常以功率增益降为 1 的频率定义。大信号输入会造成增益压缩：
+
+$$
+G(P_{in})=\frac{P_{out}}{P_{in}}
+$$
+
+当实际增益比小信号线性外推低 $1\ \mathrm{dB}$ 时，对应 $P_{1\mathrm{dB}}$。  
+*At the 1-dB compression point, gain is 1 dB below the small-signal extrapolation.*
+
+### 9.7 MOSFET、MESFET 与 HEMT (MOSFET, MESFET, and HEMT)
+
+| 器件 | 栅结构 | 主要优势 | 主要限制 |
+|---|---|---|---|
+| MOSFET | 金属-氧化物-半导体 | 高集成度、低成本、CMOS 系统 | 氧化层与衬底损耗、击穿 |
+| MESFET | Schottky 栅/半导体 | 结构直接、III-V 高速 | 栅漏电、栅正向摆幅有限 |
+| HEMT/pHEMT | 异质结 + 2DEG | 高迁移率、高 $g_m$、低噪声 | 外延和工艺复杂 |
+| GaN HEMT | 极化诱导 2DEG | 高压、高功率密度、高温 | 陷阱、动态导通电阻、热管理 |
+
+设计时不能只比较 $f_T$；还要同时比较 $f_{max}$、噪声系数、输出功率、击穿、效率、线性度和工艺集成度。
+
+---
+
+<h1 id="lec10">第十讲：双极晶体管与 RF 功率半导体</h1>
+<h2>Lecture 10: Bipolar Transistors and RF Power Semiconductors</h2>
+
+### 10.1 BJT 的控制关系 (BJT Control Relations)
+
+在正向有源区：
+
+$$
+\boxed{I_C\approx I_Se^{V_{BE}/V_T}},\qquad
+\boxed{\beta=\frac{I_C}{I_B}},\qquad
+\boxed{g_m=\frac{I_C}{V_T}}
+$$
+
+$$
+r_\pi=\frac{\beta}{g_m},\qquad
+r_o\approx\frac{V_A}{I_C}
+$$
+
+其中 $V_A$ 描述 Early 效应。BJT 是少数载流子注入器件，基区渡越时间、结电容和电荷存储决定 RF 速度。
+
+### 10.2 $f_T$、$f_{max}$ 与渡越时间 (Cutoff Frequencies and Transit Time)
+
+$$
+\boxed{f_T=\frac{g_m}{2\pi(C_\pi+C_\mu)}\approx\frac{1}{2\pi\tau_F}}
+$$
+
+$f_T$ 是短路电流增益 $|h_{21}|$ 外推到 1 的频率；$f_{max}$ 是单向功率增益外推到 1 的频率。前者偏向本征输运，后者更敏感于基极/栅极电阻、输出电导和反馈电容。
+
+### 10.3 HBT 与 SiGe HBT (Heterojunction Bipolar Transistor)
+
+HBT 使用宽禁带发射极与窄禁带基区来抑制基区向发射极的反向空穴注入，从而在较高基区掺杂下仍保持高电流增益。高基区掺杂可降低基极电阻，改善 $f_{max}$。SiGe 基区还可通过 Ge 梯度形成准电场，加速载流子通过基区。  
+*A wide-bandgap emitter suppresses back injection; a heavily doped base lowers base resistance, and a graded SiGe base accelerates transport.*
+
+Gummel plot 用半对数坐标同时观察 $I_C$、$I_B$ 随 $V_{BE}$ 的变化，可识别理想因子、漏电、复合和电流增益退化。
+
+### 10.4 FET、BJT/HBT 与 BiCMOS 对比 (Device and Integration Comparison)
+
+| 项目 | FET | BJT/HBT |
+|---|---|---|
+| 控制量 | 栅电压 | 基极电流/$V_{BE}$ |
+| 输入阻抗 | 通常较高 | 较低 |
+| 跨导效率 | 约 $g_m/I_D\sim2/V_{OV}$ | $g_m/I_C=1/V_T$，通常更高 |
+| 噪声/线性 | 依结构和偏置 | HBT 常有高 $g_m$ 与良好线性 |
+| 集成 | CMOS 最强 | SiGe BiCMOS 兼顾 RF 与数字 |
+
+BiCMOS 把高速低噪声 HBT 与高密度 CMOS 集成在同一平台，但工艺步骤和成本更高。
+
+### 10.5 LDMOS 与 RF 功率器件 (LDMOS and RF Power Devices)
+
+LDMOS 使用横向漂移区分担高电压，并通过多指布局减小栅电阻和分布寄生。功率器件的重要矛盾是：漂移区加长和减小掺杂可提高击穿电压，却会提高导通电阻。
+
+热阻模型：
+
+$$
+\boxed{T_j=T_{case}+P_{diss}R_{\theta JC}}
+$$
+
+若包含多层热路径，可用热阻网络或温度依赖热阻进行计算。封装寄生、键合线电感、热界面和散热器都属于功率设计的一部分。
+
+### 10.6 宽禁带半导体与极化 (Wide-Bandgap Semiconductors and Polarization)
+
+| 材料 | 关键优势 | 常见 RF 器件 |
+|---|---|---|
+| Si | 成本、集成与成熟度 | RF CMOS、LDMOS |
+| SiGe | 高性能 HBT + CMOS | SiGe BiCMOS |
+| GaAs | 高迁移率、低噪声 | pHEMT、HBT |
+| GaN | 高 $E_{crit}$、高功率密度 | GaN HEMT |
+| SiC | 高击穿、高热导率 | 高压功率器件、GaN 衬底 |
+
+AlGaN/GaN 中自发极化与压电极化形成界面片电荷，可在无需传统沟道掺杂的情况下产生 2DEG：
+
+$$
+\boxed{n_s\approx\frac{|\sigma_{pol}|}{q}}
+$$
+
+这同时带来高电流密度和高频能力，但表面/缓冲层陷阱会引起 current collapse、动态 $R_{on}$ 和记忆效应。
+
+---
+
+<h1 id="lec11">第十一讲：RF 增益、稳定性与放大器基础</h1>
+<h2>Lecture 11: RF Gain, Stability, and Amplifier Fundamentals</h2>
+
+### 11.1 基本增益量 (Basic Gain Quantities)
+
+$$
+A_v=\frac{V_{out}}{V_{in}},\qquad
+A_i=\frac{I_{out}}{I_{in}},\qquad
+G=\frac{P_{out}}{P_{in}},\qquad
+g_m=\frac{\partial I_{out}}{\partial V_{in}}
+$$
+
+功率增益使用 $10\log_{10}$，电压/电流幅度比在阻抗相同且为实数时可使用 $20\log_{10}$。不同端口阻抗下不能直接把 $20\log|V_2/V_1|$ 当作功率增益。
+
+### 11.2 源与负载失配下的换能增益 (Transducer Gain with Mismatch)
+
+定义
+
+$$
+\Delta=S_{11}S_{22}-S_{12}S_{21}
+$$
+
+输入和输出反射系数为
+
+$$
+\Gamma_{in}=S_{11}+\frac{S_{12}S_{21}\Gamma_L}{1-S_{22}\Gamma_L}
+$$
+
+$$
+\Gamma_{out}=S_{22}+\frac{S_{12}S_{21}\Gamma_S}{1-S_{11}\Gamma_S}
+$$
+
+换能功率增益：
+
+$$
+\boxed{
+G_T=
+\frac{(1-|\Gamma_S|^2)|S_{21}|^2(1-|\Gamma_L|^2)}
+{|(1-S_{11}\Gamma_S)(1-S_{22}\Gamma_L)-S_{12}S_{21}\Gamma_S\Gamma_L|^2}}
+$$
+
+若器件近似单向 $S_{12}\approx0$：
+
+$$
+G_T\approx
+\frac{1-|\Gamma_S|^2}{|1-S_{11}\Gamma_S|^2}
+|S_{21}|^2
+\frac{1-|\Gamma_L|^2}{|1-S_{22}\Gamma_L|^2}
+$$
+
+最大功率传输要求端口共轭匹配：$\Gamma_S=\Gamma_{in}^*$、$\Gamma_L=\Gamma_{out}^*$。双向器件需要联立求解，不能直接令 $\Gamma_S=S_{11}^*$、$\Gamma_L=S_{22}^*$。
+
+### 11.3 稳定性判据 (Stability Criteria)
+
+无条件稳定的 Rollett 条件为
+
+$$
+\boxed{K=\frac{1-|S_{11}|^2-|S_{22}|^2+|\Delta|^2}{2|S_{12}S_{21}|}>1}
+$$
+
+$$
+\boxed{|\Delta|<1}
+$$
+
+也可使用 $\mu$ 判据：
+
+$$
+\boxed{\mu=\frac{1-|S_{11}|^2}{|S_{22}-\Delta S_{11}^*|+|S_{12}S_{21}|}>1}
+$$
+
+若不满足，则为条件稳定，必须在 Smith Chart 上画源/负载稳定圆，选择稳定区域内的匹配点。稳定性必须在完整工作带宽和带外频率检查，而不只是中心频率。
+
+当 $K>1$ 且 $|\Delta|<1$，最大可用增益
+
+$$
+\boxed{MAG=\left|\frac{S_{21}}{S_{12}}\right|\left(K-\sqrt{K^2-1}\right)}
+$$
+
+若 $K<1$，常引用最大稳定增益
+
+$$
+\boxed{MSG=\left|\frac{S_{21}}{S_{12}}\right|}
+$$
+
+但 MSG 本身不代表该匹配在实际电路中一定安全。
+
+### 11.4 功率波、dBm 与大信号效率 (Power Waves, dBm, and Efficiency)
+
+对实数参考阻抗 $Z_0$：
+
+$$
+a=\frac{V+Z_0I}{2\sqrt{Z_0}},\qquad
+b=\frac{V-Z_0I}{2\sqrt{Z_0}},\qquad
+P=|a|^2-|b|^2
+$$
+
+$$
+\boxed{P[\mathrm{dBm}]=10\log_{10}\frac{P}{1\ \mathrm{mW}}}
+$$
+
+$$
+\boxed{P[\mathrm{W}]=10^{(P_{dBm}-30)/10}}
+$$
+
+漏极/集电极效率和功率附加效率：
+
+$$
+\boxed{\eta_D=\frac{P_{RF,out}}{P_{DC}}},\qquad
+\boxed{PAE=\frac{P_{RF,out}-P_{RF,in}}{P_{DC}}}
+$$
+
+不要混淆增益和效率：高增益不必然高效率，高 PAE 也不必然高线性度。
+
+### 11.5 非线性模型与谐波 (Nonlinear Models and Harmonics)
+
+若
+
+$$
+y(t)=a_0+a_1x(t)+a_2x^2(t)+a_3x^3(t)+\cdots
+$$
+
+单音 $x=A\cos\omega_0t$ 会产生 DC、$2\omega_0$、$3\omega_0$ 等谐波。大信号电路需同时考虑非线性电流源和随电压变化的电荷/电容，常采用谐波平衡 (harmonic balance) 或时域仿真。
+
+### 11.6 匹配、偏置与稳定化网络 (Matching, Biasing, and Stabilization)
+
+典型 RF 放大器由输入匹配、晶体管、输出匹配、偏置网络和稳定化网络组成。Bias-T 的理想目标是让 DC 与 RF 走不同路径：
+
+$$
+|X_L|=\omega L\gg Z_0,\qquad
+|X_C|=\frac{1}{\omega C}\ll Z_0
+$$
+
+实际中应使用多级去耦、四分之一波长高阻线、径向 stub 或合适的 RF choke，并检查元件自谐振。串/并联电阻、反馈和有损匹配可提升稳定性，但通常牺牲增益、噪声或效率。
+
+### 11.7 小信号放大器设计流程 (Small-Signal Amplifier Workflow)
+
+1. 选择偏置点并取得该偏置、温度和频率下的 S 参数/噪声参数。  
+2. 检查 $K,|\Delta|$ 或 $\mu$，必要时先稳定化。  
+3. 在增益、噪声、输入/输出回波损耗和带宽之间选择 $\Gamma_S,\Gamma_L$。  
+4. 用分布或集总网络实现匹配，并加入偏置与去耦。  
+5. 联合仿真版图、封装和元件 Q 值，验证带内外稳定性。  
+6. 最后检查 P1dB、IIP3、噪声系数和工艺/温度角落。  
+
+---
+
+<h1 id="lec12">第十二讲：功率放大器、接收电路与 RF 系统</h1>
+<h2>Lecture 12: Power Amplifiers, Receive Circuits, and RF Systems</h2>
+
+### 12.1 功率放大器类别 (Power-Amplifier Classes)
+
+| 类别 Class | 导通角 | 理想最大效率 | 特点 |
+|---|---:|---:|---|
+| A | $360^\circ$ | 电阻负载 25%，变压器/谐振负载 50% | 线性最好，静态功耗大 |
+| B | $180^\circ$ | $\pi/4\approx78.5\%$ | 推挽恢复完整波形，有交越失真 |
+| AB | $180^\circ$ 到 $360^\circ$ | 介于 A 与 B | 线性度和效率折中 |
+| C | 小于 $180^\circ$ | 可高于 B | 强非线性，依靠谐振网络恢复基波 |
+| D/开关类 | 开关工作 | 理想 100% | 受开关损耗、寄生与带宽限制 |
+
+PA 的最佳负载不是简单的 $Z_0^*$，而是在给定偏置、频率与输入功率下通过负载牵引 (load-pull) 得到的最佳大信号阻抗。
+
+### 12.2 Doherty 与动态负载调制 (Doherty and Load Modulation)
+
+Doherty PA 由 carrier/main 与 peaking/auxiliary 放大器组成。低功率时仅主放工作；接近峰值时辅助放导通，通过四分之一波长阻抗反转器改变主放看到的等效负载，使其在功率回退区仍维持较高效率。  
+*The peaking path modulates the carrier amplifier's effective load, improving backed-off efficiency for high-PAPR signals.*
+
+设计关键包括功率分配、相位对齐、器件尺寸比、阻抗反转器带宽和辅助支路开启规律。DC/envelope modulation 则通过随包络改变电源电压提升回退效率。
+
+### 12.3 两音测试、IM3 与截点 (Two-Tone Test, IM3, and Intercept Points)
+
+输入 $f_1,f_2$ 经三阶非线性产生
+
+$$
+2f_1-f_2,\qquad 2f_2-f_1
+$$
+
+它们最危险，因为靠近有用信号、通常无法滤除。小信号区内，基波输出斜率为 $1\ \mathrm{dB/dB}$，IM3 斜率为 $3\ \mathrm{dB/dB}$。输入三阶截点可由单个工作点估算：
+
+$$
+\boxed{IIP3\approx P_{in}+\frac{\Delta_{IM3}}{2}}
+$$
+
+$$
+\boxed{OIP3\approx P_{out}+\frac{\Delta_{IM3}}{2}},\qquad
+OIP3\approx IIP3+G
+$$
+
+其中 $\Delta_{IM3}$ 是基波与 IM3 的 dB 间隔。截点是线性外推概念，并非器件可以实际工作的功率点。
+
+### 12.4 ACPR、EVM 与效率折中 (ACPR, EVM, and Efficiency Tradeoff)
+
+邻道功率比
+
+$$
+\boxed{ACPR=10\log_{10}\frac{P_{adjacent}}{P_{main}}}
+$$
+
+通常为负 dBc，越负表示邻道泄漏越小。EVM 衡量星座点相对理想值的 RMS 误差：
+
+$$
+\boxed{EVM_{rms}=\sqrt{\frac{\sum_k|S_k-\hat S_k|^2}{\sum_k|S_k|^2}}}
+$$
+
+现代调制具有高 PAPR，PA 必须功率回退以满足 ACPR/EVM，导致平均效率下降。Doherty、包络跟踪和数字预失真分别从负载、电源和信号线性化角度改善这一矛盾。
+
+### 12.5 宽带与行波放大器 (Broadband and Traveling-Wave Amplifiers)
+
+行波放大器把多个晶体管的输入电容和输出电容分别吸收到人工传输线中。若两条线相速度匹配，各级输出在前向端同相叠加，反向波被终端吸收。  
+*Distributed amplification trades area and DC power for wide bandwidth by absorbing device capacitances into artificial transmission lines.*
+
+主要限制是线路损耗、终端功耗、相速失配、器件增益随频率下降以及芯片面积。
+
+### 12.6 混频器 (Mixers)
+
+非线性或时变乘法产生和频与差频：
+
+$$
+\cos\omega_{RF}t\cos\omega_{LO}t
+=\frac{1}{2}\cos(\omega_{RF}-\omega_{LO})t
++\frac{1}{2}\cos(\omega_{RF}+\omega_{LO})t
+$$
+
+$$
+\boxed{f_{IF}=|f_{RF}-f_{LO}|}
+$$
+
+| 指标 | 定义/意义 |
+|---|---|
+| Conversion gain | $G_c=P_{IF}/P_{RF}$，有源混频器可大于 1 |
+| Conversion loss | $L_c=P_{RF}/P_{IF}$，无源混频器常用 |
+| Isolation | LO-RF、LO-IF、RF-IF 泄漏 |
+| Linearity | P1dB、IIP3、杂散表 |
+| Noise | SSB/DSB 噪声系数、$1/f$ 噪声上变频 |
+
+镜像频率满足与目标 RF 相同的 IF 差频，因此接收机通常需要前置选择滤波或 I/Q 架构抑制镜像。
+
+### 12.7 RF 噪声与噪声系数 (RF Noise and Noise Figure)
+
+电阻可用噪声功率：
+
+$$
+\boxed{N=k_BT_0B}
+$$
+
+电压噪声谱密度：
+
+$$
+\boxed{\overline{v_n^2}=4k_BTRB}
+$$
+
+噪声因子与噪声系数：
+
+$$
+\boxed{F=\frac{SNR_{in}}{SNR_{out}}},\qquad
+\boxed{NF=10\log_{10}F}
+$$
+
+级联系统 Friis 公式：
+
+$$
+\boxed{F_{tot}=F_1+\frac{F_2-1}{G_1}+\frac{F_3-1}{G_1G_2}+\cdots}
+$$
+
+所有 $F$ 和 $G$ 必须使用线性值。第一级 LNA 的噪声和增益决定整机噪声性能。
+
+带源失配的四噪声参数形式：
+
+$$
+\boxed{F=F_{min}+\frac{4R_n}{Z_0}
+\frac{|\Gamma_S-\Gamma_{opt}|^2}
+{(1-|\Gamma_S|^2)|1+\Gamma_{opt}|^2}}
+$$
+
+最低噪声匹配 $\Gamma_S=\Gamma_{opt}$ 一般不等于最大增益匹配，因此 LNA 必须在 $NF$、增益、稳定性和输入回波损耗之间折中。
+
+### 12.8 低频噪声与相位噪声 (Low-Frequency Noise and Phase Noise)
+
+器件噪声常见组成：热噪声、散粒噪声和闪烁噪声：
+
+$$
+\overline{i_{shot}^2}=2qIB,qquad
+S_{1/f}(f)\propto\frac{1}{f^\alpha}
+$$
+
+混频器和振荡器会把低频 $1/f$ 噪声转换到载波附近。振荡器相位噪声通常以载波偏移 $\Delta f$ 处的单边带功率密度表示，单位 dBc/Hz。
+
+### 12.9 振荡条件与 Leeson 直觉 (Oscillation and Leeson Intuition)
+
+Barkhausen 条件：
+
+$$
+\boxed{|A(j\omega_0)\beta(j\omega_0)|=1},\qquad
+\boxed{\angle A\beta=2\pi n}
+$$
+
+起振时环路增益需略大于 1，振幅增长后由非线性把有效环路增益压回 1。Leeson 型近似显示高 Q、较高载波功率和较低器件噪声可改善相位噪声：
+
+$$
+\mathcal{L}(\Delta f)\approx10\log_{10}
+\left[\frac{Fk_BT}{2P_s}
+\left(1+\left(\frac{f_0}{2Q_L\Delta f}\right)^2\right)
+\left(1+\frac{f_c}{|\Delta f|}\right)\right]
+$$
+
+倍频器把频率乘以 $N$，理想情况下相位噪声恶化约
+
+$$
+\boxed{\Delta\mathcal{L}\approx20\log_{10}N}
+$$
+
+### 12.10 收发机前端与集成 (Transceiver Front Ends and Integration)
+
+接收链通常为：天线/双工器 -> 预选滤波 -> LNA -> mixer -> IF/baseband。发射链通常为：基带/IQ -> mixer/upconverter -> driver -> PA -> 滤波/双工器 -> 天线。
+
+| 系统指标 | 主要受哪些模块影响 |
+|---|---|
+| 灵敏度 Sensitivity | $kTB$、总 NF、所需 SNR |
+| 选择性 Selectivity | RF/IF 滤波器、线性度、相位噪声 |
+| 最大输入 | LNA/mixer P1dB 与 IIP3 |
+| 发射频谱 | PA 线性度、ACPR、LO 泄漏与滤波 |
+| 功耗 | PA 平均效率、LNA/LO/数据转换器偏置 |
+
+封装和 PCB 不是理想连接：焊盘、电感、键合线、走线、地回路与热阻必须与芯片协同仿真。SoC 集成度越高，模块间耦合、衬底噪声、供电隔离和热耦合越重要。
+
+---
+
+<h1 id="lec7-12-summary">Lectures 7-12 公式速查与易错点</h1>
+
+### 核心公式速查 (Formula Quick Reference)
+
+| 主题 | 公式 |
+|---|---|
+| 漂移速度 | $v_d=\mu E$，高场趋近 $v_{sat}$ |
+| 电导率 | $\sigma=q(n\mu_n+p\mu_p)$ |
+| Einstein 关系 | $D/\mu=k_BT/q$ |
+| 二极管 | $I=I_S(e^{V/(nV_T)}-1)$ |
+| MOSFET 跨导 | $g_m\approx2I_D/V_{OV}$ |
+| BJT 跨导 | $g_m=I_C/V_T$ |
+| 截止频率 | $f_T\approx g_m/[2\pi C_{in}]$ |
+| 稳定性 | $K>1$ 且 $|\Delta|<1$，或 $\mu>1$ |
+| PAE | $(P_{out}-P_{in})/P_{DC}$ |
+| IIP3 | $P_{in}+\Delta_{IM3}/2$ |
+| 热噪声 | $N=kTB$ |
+| 噪声级联 | $F_{tot}=F_1+(F_2-1)/G_1+\cdots$ |
+| 混频 | $f_{IF}=|f_{RF}-f_{LO}|$ |
+| 振荡 | $|A\beta|=1,\ \angle A\beta=2\pi n$ |
+
+### 最容易混淆的概念 (Common Pitfalls)
+
+1. **$f_T$ vs. $f_{max}$：** $f_T$ 是电流增益边界，$f_{max}$ 是功率增益边界；两者不是器件可正常提供高增益的工作频率。  
+2. **小信号共轭匹配 vs. PA 最佳负载：** 小信号共轭匹配用于线性功率传输；PA 的最佳阻抗来自大信号 load-pull。  
+3. **增益 vs. 效率：** $G=P_{out}/P_{in}$；$\eta=P_{out}/P_{DC}$；PAE 还扣除 RF 输入功率。  
+4. **稳定性中心频率 vs. 全频段稳定性：** 中心频率 $K>1$ 不足以保证电路不会在带外振荡。  
+5. **NF 的 dB 值不能直接代入 Friis：** 必须先转换成线性噪声因子和线性增益。  
+6. **$\Gamma_{opt}$ vs. 最大增益匹配：** 最低噪声阻抗通常不等于输入共轭匹配。  
+7. **IIP3/OIP3 是外推点：** 它们不是实际可达到的无失真输出功率。  
+8. **ACPR 符号：** 以 dBc 表示时通常是负值，数值越负越好。  
+9. **Barkhausen 条件：** 它描述稳态振荡；可靠起振要求小信号环路增益初始大于 1。  
+10. **材料高迁移率不等于器件全面更优：** 还必须比较 $E_{crit}$、热导率、寄生、工艺和成本。
+
+### Lectures 7-12 学习检查清单 (Study Checklist)
+
+- [ ] 能从偏置点写出晶体管小信号线性化参数；
+- [ ] 能解释本征模型与 $R/L/C$ 外部寄生的来源；
+- [ ] 能用迁移率、饱和速度、禁带、临界电场和热导率比较材料；
+- [ ] 能说明注入、光刻、刻蚀、沉积和退火如何影响 RF 参数；
+- [ ] 能区分 PN、Schottky、MOS、MOSFET、MESFET、HEMT、BJT 和 HBT；
+- [ ] 能解释 LDMOS、GaN HEMT 和 SiGe HBT 的应用优势；
+- [ ] 能由 S 参数计算 $\Delta$、$K$、MAG/MSG 和 $G_T$；
+- [ ] 能区分 P1dB、IIP3/OIP3、ACPR、EVM、效率与 PAE；
+- [ ] 能使用 Friis 公式计算级联 NF；
+- [ ] 能说明 LNA 噪声匹配和增益匹配为何不同；
+- [ ] 能写出混频频率关系与 Barkhausen 条件；
+- [ ] 能从系统角度串联 LNA、mixer、LO、driver、PA、滤波器和天线。
+
+---
+
 <h1 id="appendix">附录</h1>
 <h2>Appendix: Constants, Frequency Bands, Unit Conversions</h2>
 
@@ -1247,6 +2027,6 @@ $$
 
 ---
 
-> **编辑日期 Date Compiled:** 2026-05-27  
+> **编辑日期 Date Compiled:** 2026-07-19  
 > **用途 Purpose:** Obsidian 个人学习笔记 / Personal Study Notes  
-> **备注 Note:** 本文档从 233 页课程讲义中提取、整理并双语化。建议在 Obsidian 中使用 `[[wikilinks]]` 交叉引用相关章节。考试时间: 2026 年 9 月 1 日，笔试 90 分钟，闭卷。*Extracted, organized, and bilingualized from 233-page course script. Use Obsidian wikilinks for cross-referencing. Exam: 01 Sep 2026, 90 min written, closed book.*
+> **备注 Note:** 本文档从 496 页、Lectures 1-12 完整课程讲义中提取、整理并双语化。建议在 Obsidian 中使用 `[[wikilinks]]` 交叉引用相关章节。考试时间: 2026 年 9 月 1 日，笔试 90 分钟，闭卷。*Extracted, organized, and bilingualized from the complete 496-page Lectures 1-12 script. Use Obsidian wikilinks for cross-referencing. Exam: 01 Sep 2026, 90 min written, closed book.*

@@ -1,0 +1,61 @@
+{"kind":"deck","id":"pr/zod4yu","name":"Deck"}
+{"kind":"layout","layoutId":"306aa838-e0a2-44a5-ac34-9892e12d111d","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"c985eb8f-2f10-4299-b321-0e172c133b9d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/7tvtwn","slide":1,"title":"System Operation Flowchart","textShapes":30}
+{"kind":"shape","id":"sh/2l8zelsv","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/p8jip0rm","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/47ahgva1","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/fihgj6t4","slide":1,"name":"title","text":"System Operation Flowchart","textPreview":"System Operation Flowchart","textChars":26,"textLines":1,"bbox":[70,24,610,42]}
+{"kind":"shape","id":"sh/uh8zalsz","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/hkzylgba","slide":1,"name":"subtitle","text":"1-minute sensing cycle  |  Buffered LoRa upload every few days","textPreview":"1-minute sensing cycle  |  Buffered LoRa upload every few days","textChars":62,"textLines":1,"bbox":[82,78,620,28]}
+{"kind":"textbox","id":"sh/gjqhcbap","slide":1,"name":"energy-label","text":"ENERGY PATH","textPreview":"ENERGY PATH","textChars":11,"textLines":1,"bbox":[738,82,125,22]}
+{"kind":"textbox","id":"sh/zel0va9o","slide":1,"name":"teg","text":"TEG Array","textPreview":"TEG Array","textChars":9,"textLines":1,"bbox":[738,106,130,46]}
+{"kind":"textbox","id":"sh/edszm5s3","slide":1,"name":"pmic","text":"LTC3108-1\nPMIC","textPreview":"LTC3108-1 | PMIC","textChars":14,"textLines":2,"bbox":[892,106,130,46]}
+{"kind":"textbox","id":"sh/8vehcz6t","slide":1,"name":"storage","text":"Supercapacitor\nEnergy Storage","textPreview":"Supercapacitor | Energy Storage","textChars":29,"textLines":2,"bbox":[1046,106,160,46]}
+{"kind":"textbox","id":"sh/9wnyl47e","slide":1,"name":"wake","text":"RTC Wake-Up\nSTM32WLE5","textPreview":"RTC Wake-Up | STM32WLE5","textChars":21,"textLines":2,"bbox":[70,190,150,62]}
+{"kind":"textbox","id":"sh/mtwzapon","slide":1,"name":"energy-decision","text":"Stored Energy\nAbove Threshold?","textPreview":"Stored Energy | Above Threshold?","textChars":30,"textLines":2,"bbox":[268,176,160,90]}
+{"kind":"textbox","id":"sh/7u5gjup8","slide":1,"name":"activity","text":"Read Activity\nADXL362","textPreview":"Read Activity | ADXL362","textChars":21,"textLines":2,"bbox":[472,190,155,62]}
+{"kind":"textbox","id":"sh/krex8z6x","slide":1,"name":"gnss","text":"Acquire GNSS Fix\nLC76G","textPreview":"Acquire GNSS Fix | LC76G","textChars":22,"textLines":2,"bbox":[670,190,165,62]}
+{"kind":"textbox","id":"sh/lsnyh472","slide":1,"name":"fix-decision","text":"Valid Fix Before\nTimeout?","textPreview":"Valid Fix Before | Timeout?","textChars":25,"textLines":2,"bbox":[878,176,160,90]}
+{"kind":"textbox","id":"sh/ypcf6por","slide":1,"name":"record","text":"Process and Store\nTimestamp + Activity + Position","textPreview":"Process and Store | Timestamp + Activity + Position","textChars":49,"textLines":2,"bbox":[1074,190,160,62]}
+{"kind":"textbox","id":"sh/zqlgfupc","slide":1,"name":"harvest-sleep","text":"Remain in Stop 2\nand Continue Harvesting","textPreview":"Remain in Stop 2 | and Continue Harvesting","textChars":40,"textLines":2,"bbox":[268,310,160,60]}
+{"kind":"textbox","id":"sh/cnux4f6l","slide":1,"name":"timeout","text":"Log GNSS Timeout\nKeep Previous Valid Position","textPreview":"Log GNSS Timeout | Keep Previous Valid Position","textChars":45,"textLines":2,"bbox":[878,310,160,60]}
+{"kind":"shape","id":"sh/xo3ydk76","slide":1,"name":"record-merge","bbox":[1149,363,10,10]}
+{"kind":"textbox","id":"sh/d8bmlcvy","slide":1,"name":"upload-decision","text":"Upload Interval\nReached?","textPreview":"Upload Interval | Reached?","textChars":24,"textLines":2,"bbox":[1074,394,160,90]}
+{"kind":"textbox","id":"sh/s725s7ed","slide":1,"name":"transmit","text":"Transmit Buffered Data\nIntegrated LoRa","textPreview":"Transmit Buffered Data | Integrated LoRa","textChars":38,"textLines":2,"bbox":[840,408,175,62]}
+{"kind":"textbox","id":"sh/r6t4j2ds","slide":1,"name":"ack-decision","text":"ACK\nReceived?","textPreview":"ACK | Received?","textChars":13,"textLines":2,"bbox":[620,394,160,90]}
+{"kind":"textbox","id":"sh/q5knqhw7","slide":1,"name":"sleep","text":"Return to Stop 2\nRTC Keeps Time","textPreview":"Return to Stop 2 | RTC Keeps Time","textChars":31,"textLines":2,"bbox":[1074,548,160,60]}
+{"kind":"textbox","id":"sh/54bmhcvm","slide":1,"name":"mark-sent","text":"Mark Records Sent","textPreview":"Mark Records Sent","textChars":17,"textLines":1,"bbox":[620,548,160,60]}
+{"kind":"textbox","id":"sh/4j25o7e1","slide":1,"name":"retain","text":"Retain Buffer\nRetry Next Upload Window","textPreview":"Retain Buffer | Retry Next Upload Window","textChars":38,"textLines":2,"bbox":[840,548,175,60]}
+{"kind":"shape","id":"sh/3it4f2dg","slide":1,"bbox":[868,129,24,0]}
+{"kind":"shape","id":"sh/ih0nmxwb","slide":1,"bbox":[1022,129,24,0]}
+{"kind":"shape","id":"sh/p0v6twvq","slide":1,"bbox":[220,221,48,0]}
+{"kind":"shape","id":"sh/ozm50rel","slide":1,"bbox":[428,221,44,0]}
+{"kind":"shape","id":"sh/mlgjutc3","slide":1,"bbox":[627,221,43,0]}
+{"kind":"shape","id":"sh/7mpknyt8","slide":1,"bbox":[835,221,43,0]}
+{"kind":"shape","id":"sh/8nylw3ut","slide":1,"bbox":[1038,221,36,0]}
+{"kind":"shape","id":"sh/9o72p8be","slide":1,"bbox":[348,266,0,44]}
+{"kind":"shape","id":"sh/yhwjqtcr","slide":1,"bbox":[958,266,0,44]}
+{"kind":"shape","id":"sh/zi5kjytc","slide":1,"bbox":[1154,252,0,111]}
+{"kind":"shape","id":"sh/kjy1sjux","slide":1,"bbox":[1038,340,111,28]}
+{"kind":"shape","id":"sh/lk72lobi","slide":1,"bbox":[1154,373,0,21]}
+{"kind":"shape","id":"sh/id032dcv","slide":1,"bbox":[1015,439,59,0]}
+{"kind":"shape","id":"sh/3e9kvitg","slide":1,"bbox":[780,439,60,0]}
+{"kind":"shape","id":"sh/36pgraxw","slide":1,"bbox":[1154,484,0,64]}
+{"kind":"shape","id":"sh/25gzypgb","slide":1,"bbox":[700,484,0,64]}
+{"kind":"shape","id":"sh/p87ytkf2","slide":1,"bbox":[700,484,227.5,64]}
+{"kind":"shape","id":"sh/o7yh0fyh","slide":1,"bbox":[700,608,454,24]}
+{"kind":"shape","id":"sh/f25gnax0","slide":1,"bbox":[1015,578,59,0]}
+{"kind":"shape","id":"sh/e1wfu5gf","slide":1,"bbox":[145,252,123,88]}
+{"kind":"shape","id":"sh/14nypkfq","slide":1,"bbox":[145,252,929,326]}
+{"kind":"textbox","id":"sh/g3ehwfyl","slide":1,"name":"energy-note","text":"Continuous charging","textPreview":"Continuous charging","textChars":19,"textLines":1,"bbox":[1065,151,140,20]}
+{"kind":"textbox","id":"sh/zy9gzex4","slide":1,"name":"energy-yes","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[428,190,44,20]}
+{"kind":"textbox","id":"sh/yx0z69wj","slide":1,"name":"energy-no","text":"NO","textPreview":"NO","textChars":2,"textLines":1,"bbox":[330,275,48,20]}
+{"kind":"textbox","id":"sh/wjadkre1","slide":1,"name":"fix-yes","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[1033,190,44,20]}
+{"kind":"textbox","id":"sh/hkjetwvm","slide":1,"name":"fix-no","text":"NO","textPreview":"NO","textChars":2,"textLines":1,"bbox":[934,275,48,20]}
+{"kind":"textbox","id":"sh/uhsvy1wv","slide":1,"name":"upload-yes","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[1017,410,48,20]}
+{"kind":"textbox","id":"sh/vi1wr6dg","slide":1,"name":"upload-no","text":"NO","textPreview":"NO","textChars":2,"textLines":1,"bbox":[1152,494,48,20]}
+{"kind":"textbox","id":"sh/47udobed","slide":1,"name":"ack-yes","text":"YES","textPreview":"YES","textChars":3,"textLines":1,"bbox":[674,500,48,20]}
+{"kind":"textbox","id":"sh/583exgvi","slide":1,"name":"ack-no","text":"NO","textPreview":"NO","textChars":2,"textLines":1,"bbox":[792,500,48,20]}
+{"kind":"textbox","id":"sh/ilcvm1w7","slide":1,"name":"loop-note","text":"Dashed arrows indicate the next scheduled RTC wake-up","textPreview":"Dashed arrows indicate the next scheduled RTC wake-up","textChars":53,"textLines":1,"bbox":[82,625,470,24]}
+{"kind":"notes","id":"nt/7tvtwn","slide":1,"text":""}

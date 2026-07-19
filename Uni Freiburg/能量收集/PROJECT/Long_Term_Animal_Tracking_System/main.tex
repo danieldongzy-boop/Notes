@@ -1,0 +1,457 @@
+\documentclass[paper=a4]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{outlines}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{parskip} % Automatically handles paragraph spacing cleanly
+\usepackage{siunitx}
+\usepackage{float} % Crucial for strict [H] positioning
+
+\geometry{
+ a4paper,
+ left=20mm,
+ top=15mm,
+ right=20mm,
+ bottom=20mm
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    citecolor=green,
+    urlcolor=blue,
+    pdftitle={Deep Learning Lab 26 - Exercise 1},
+}
+
+\newcommand{\code}[1]{\texttt{#1}} % code style
+
+\begin{document}
+
+\title{Energy Harvesting Lab Course (SS 2026) \\ \Large    Long Term Animal Tracking System}
+\author{Arvind | Ajay | Zhanyu} 
+\date{Deadline: 23/07/2026} % Removes the default date to save space
+\maketitle
+
+\section{Project Requirements}
+Based on the operational parameters and architectural benchmarks established in recent wildlife telemetry research, the target animal tracking system must satisfy the following technical requirements:
+
+\begin{itemize}
+    \item \textbf{Energy Autonomy:} The tracking collar must be entirely self-powered.
+    \item \textbf{Sensing Capabilities:}
+    \begin{itemize}
+        \item \textbf{Positioning:} The system must incorporate a low-power Global Navigation Satellite System (GNSS/GPS) receiver to accurately determine geographical coordinates.
+        \item \textbf{Activity Monitoring:} A digital accelerometer configured with hardware interrupts must monitor behavioral dynamics to reliably classify and differentiate between the animal's sleep and awake states.
+    \end{itemize}
+    \item \textbf{Operational Lifetime:} The device architecture, power management, and material encapsulation must be optimized to ensure an uninterrupted deployment life of at least \textbf{2 years} without human intervention or battery replacement.
+    \item \textbf{Component Constraints:} To ensure reproducibility, cost-efficiency, and design reliability, the system configuration is strictly restricted to \textbf{commercially available components}.
+    \item \textbf{Data Telemetry:} Stored sensor logs, positioning coordinates, and diagnostic metrics must be wirelessly exfiltrated to a central base station via a long-range, low-power network infrastructure at a periodic interval of \textbf{every few days}.
+\end{itemize}
+
+\section{Power Budget}
+
+\subsection{Sensors}
+To minimize power management vulnerabilities and maximize runtime durability, the system configuration is restricted strictly to high-efficiency, commercially available modules..
+
+\subsubsection{Activity Sensor (Accelerometer)}
+
+\paragraph{Bosch Sensortec BMA280}
+The BMA280 is a advanced 14-bit triaxial acceleration sensor. This evaluation profiles steady-state continuous consumption and calculated state-switching energy thresholds under a typical supply framework.
+
+\begin{table}[H]
+\centering
+\caption{BMA280 Power Consumption and Turn-on Energy Penalty Matrix ($V_{DD} = 2.4\text{ V}$)}
+\label{tab:bma280_metrics}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption ($\mu\text{A}$)}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time ($\text{ms}$)}} & 
+\textbf{\shortstack{Continuous \\ Power ($\mu\text{W}$)}} & 
+\textbf{\shortstack{Turn-on Energy \\ Penalty ($\text{nJ}$)}} \\ 
+\midrule
+Normal Mode               & 130   & 0   & 312.0  & 0 \\
+Deep Suspend Mode         & 1     & 1.3 & 2.4    & 405.6 \\
+Suspend Mode              & 2.1   & 1.3 & 5.04   & 405.6 \\
+Standby Mode              & 62    & 1.0 & 148.8  & 312.0 \\
+Low-Power Mode 1 ($25\text{ms}$) & 6.5   & 1.3 & 15.6   & 405.6 \\
+Low-Power Mode 2 ($25\text{ms}$) & 66    & 1.0 & 158.4  & 312.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{STMicroelectronics LIS2DH12}
+The LIS2DH12 is an ultra-low-power triaxial linear accelerometer belonging to the ``femto'' family. It features specialized power-down and low-power configuration configurations optimized for continuous interrupt-driven motion tracking.
+
+\begin{table}[H]
+\centering
+\caption{LIS2DH12 Power Consumption and Turn-on Energy Penalty Matrix ($V_{dd} = 2.5\text{ V}$)}
+\label{tab:lis2dh12_power_metrics}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption ($\mu\text{A}$)}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time ($\text{ms}$)}} & 
+\textbf{\shortstack{Continuous \\ Power ($\mu\text{W}$)}} & 
+\textbf{\shortstack{Turn-on Energy \\ Penalty ($\text{nJ}$)}} \\ 
+\midrule
+Power-Down Mode      & 0.5  & 0   & 1.25  & 0 \\
+Low-Power Mode (1\,Hz)  & 2    & 1.0 & 5.0   & 5.0 \\
+Low-Power Mode (50\,Hz) & 6    & 1.0 & 15.0  & 15.0 \\
+Normal Mode (1\,Hz)     & 2    & 1.6 & 5.0   & 8.0 \\
+Normal Mode (50\,Hz)    & 11   & 1.6 & 27.5  & 44.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Analog Devices ADXL362}
+The ADXL362 is a micropower, 3-axis digital MEMS accelerometer. Unlike power duty-cycled components, it continuously samples the full bandwidth of the sensor across all operational parameters, minimizing aliasing vulnerabilities.
+
+\begin{table}[H]
+\centering
+\caption{ADXL362 Power Consumption and Filter Settling Energy Penalty Matrix ($V_S = 2.0\text{ V}$)}
+\label{tab:adxl362_power_metrics}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption ($\mu\text{A}$)}} & 
+\textbf{\shortstack{Typical Turn-on / \\ Wake-up Time}} & 
+\textbf{\shortstack{Continuous \\ Power ($\mu\text{W}$)}} & 
+\textbf{\shortstack{Turn-on Energy \\ Penalty ($\mu\text{J}$)}} \\ 
+\midrule
+Standby Mode                & 0.01  & 5\,ms (from Power-up) & 0.02  & N/A \\
+Wake-Up Mode                & 0.27  & 5\,ms (from Power-up) & 0.54  & N/A \\
+Normal Operation (12.5\,Hz ODR) & 1.1   & 320\,ms               & 2.2   & 0.704 \\
+Normal Operation (50\,Hz ODR)   & 1.5   & 80\,ms                & 3.0   & 0.240 \\
+Normal Operation (100\,Hz ODR)  & 1.8   & 40\,ms                & 3.6   & 0.144 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Positioning Sensor (GNSS/GPS)}
+Given the strict energy autonomy requirement of the tracking collar (without solar harvesting), the positioning subsystem must minimize both active energy draw and the amount of stored or transmitted data[cite: 5]. The system target requires one datapoint per minute, which drastically impacts the daily energy budget. The following evaluates conventional continuous-tracking modules against a low-energy snapshot approach.
+
+\paragraph{Quectel LC76G and LC86G Series (Conventional GNSS)}
+These conventional modules actively download satellite signals and compute the latitude and longitude locally on the device[cite: 8]. While they produce highly compressed, transmission-ready data payloads, they require significant active on-time and power to calculate a fix. Operating at one fix per minute consumes massive amounts of daily energy, even under optimistic warm-start conditions[cite: 11].
+
+\begin{table}[H]
+\centering
+\caption{Conventional GNSS Power, Energy, and Data Metrics (at 1 fix/min)}
+\label{tab:quectel_gnss_metrics}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Scenario / Module} & 
+\textbf{\shortstack{Active Tracking \\ Power ($\text{mW}$)}} & 
+\textbf{\shortstack{Energy per \\ Fix ($\text{J}$)}} & 
+\textbf{\shortstack{Daily Energy \\ ($\text{J/day}$)}} & 
+\textbf{\shortstack{Processed Data \\ per Fix ($\text{Bytes}$)}} \\ 
+\midrule
+Optimistic (e.g., LC76G) & $\approx 33.0$ & 0.23 & 331 & 20 -- 40 \\
+Conservative (Thermal Tracker) & $\approx 99.0$ & 0.621 & 894 & 20 -- 40 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{SnapperGPS (Snapshot GNSS)}
+Unlike conventional receivers, a Snapshot GNSS approach simply records a brief raw signal excerpt (a snapshot) and offloads the heavy mathematical location processing to the base station or cloud[cite: 8]. This drastically reduces the energy required per fix, making minute-scale sampling energetically realistic[cite: 13]. However, this method introduces a massive penalty in local data storage, requiring raw signal files rather than lightweight coordinates[cite: 24, 25].
+
+\begin{table}[H]
+\centering
+\caption{Snapshot GNSS Energy and Data Metrics (at 1 fix/min)}
+\label{tab:snappergps_metrics}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Component} & 
+\textbf{\shortstack{Energy per \\ Snapshot ($\text{J}$)}} & 
+\textbf{\shortstack{Daily Energy \\ ($\text{J/day}$)}} & 
+\textbf{\shortstack{Raw Data \\ per Fix ($\text{kB}$)}} & 
+\textbf{\shortstack{Data per Day}} \\ 
+\midrule
+SnapperGPS PCB v2 & $\approx 0.004$ & $\approx 5.8$ & $\approx 6.0$ & $8.64\text{ MB}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Transfer Modules}
+To guarantee reliable telemetry without depleting the micro-energy harvesting supercapacitor buffer, the wireless communication sub-system is profiled across discrete transmission, reception, and deep sleep cycles to select the optimal low-power wide-area network (LPWAN) or short-range architecture.
+
+\subsubsection{Wireless Transceivers and SoCs}
+
+\paragraph{Semtech SX1262 (LoRa Transceiver IC)}
+The SX1262 is a sub-GHz LoRa transceiver engineered for ultra-long-range wireless data telemetry. This evaluation profiles active transmission power scaling, reception steady-states, and nano-power sleep modes under standard voltage limits.
+
+\begin{table}[H]
+\centering
+\caption{SX1262 Power Consumption and Operating State Power Matrix ($V_{DD} = 3.3\text{ V}$)}
+\label{tab:sx1262_metrics}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time}} & 
+\textbf{\shortstack{Continuous / Active \\ Power}} \\ 
+\midrule
+Deep Sleep Mode (Cold Start) & $160\text{ nA}$  & $3.5\text{ ms}$ & $0.528\text{ }\mu\text{W}$ \\
+Standby Mode (RC Osc)        & $600\text{ }\mu\text{A}$ & $0.2\text{ ms}$ & $1.98\text{ mW}$ \\
+Receive (Rx) Mode (High Sens)& $4.6\text{ mA}$  & $0.5\text{ ms}$ & $15.18\text{ mW}$ \\
+Transmit (Tx) Mode ($+14\text{ dBm}$) & $42.0\text{ mA}$ & $0.5\text{ ms}$ & $138.60\text{ mW}$ \\
+Transmit (Tx) Mode ($+22\text{ dBm}$) & $118.0\text{ mA}$ & $0.5\text{ ms}$ & $389.40\text{ mW}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Nordic Semiconductor nRF52840 (BLE SoC)}
+The nRF52840 is an advanced multiprotocol system-on-chip optimized for ultra-low-power Bluetooth Low Energy (BLE) and short-range wireless mesh topologies. It incorporates a highly dynamic internal DC-DC regulator system.
+
+\begin{table}[H]
+\centering
+\caption{nRF52840 Power Consumption and State Transition Matrix ($V_{DD} = 3.0\text{ V}$, DC-DC Enabled)}
+\label{tab:nrf52840_metrics}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time}} & 
+\textbf{\shortstack{Continuous / Active \\ Power}} \\ 
+\midrule
+System OFF (Deep Sleep)      & $400\text{ nA}$  & $3.0\text{ ms}$ & $1.20\text{ }\mu\text{W}$ \\
+System ON (Idle State)       & $1.5\text{ }\mu\text{A}$  & $0\text{ ms}$   & $4.50\text{ }\mu\text{W}$ \\
+Rx Active (1\,Mbps BLE)      & $4.6\text{ mA}$  & $0.4\text{ ms}$ & $13.80\text{ mW}$ \\
+Tx Active ($0\text{ dBm}$ Output)   & $4.8\text{ mA}$  & $0.4\text{ ms}$ & $14.40\text{ mW}$ \\
+Tx Active ($+8\text{ dBm}$ Peak)   & $14.8\text{ mA}$ & $0.4\text{ ms}$ & $44.40\text{ mW}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Murata CMWX1ZZABZ-078 (Integrated LoRaWAN Module)}
+The CMWX1ZZABZ-078 is a shielded ultra-low-power module containing an embedded STM32L0 microcontroller alongside an SX1276 core, designed to unify processing and long-range communication onto a singular silicon package.
+
+\begin{table}[H]
+\centering
+\caption{CMWX1ZZABZ-078 Power Consumption and Functional Parameter Profile ($V_{DD} = 3.3\text{ V}$)}
+\label{tab:murata_metrics}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time}} & 
+\textbf{\shortstack{Continuous / Active \\ Power}} \\ 
+\midrule
+Stop Mode (MCU + RF Sleep)   & $1.5\text{ }\mu\text{A}$  & $0.8\text{ ms}$ & $4.95\text{ }\mu\text{W}$ \\
+MCU Active Mode (Range 3)    & $87.0\text{ }\mu\text{A}$ & $0\text{ ms}$   & $287.10\text{ }\mu\text{W}$ \\
+RF Receive (Rx) Active Mode  & $23.0\text{ mA}$ & $0.6\text{ ms}$ & $75.90\text{ mW}$ \\
+RF Transmit (Tx) Mode ($+14\text{ dBm}$) & $36.0\text{ mA}$ & $0.6\text{ ms}$ & $118.80\text{ mW}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Silicon Labs EFR32BG22 (Mighty Gecko BLE SoC)}
+The EFR32BG22 is an ultra-low-power target component utilizing an ARM Cortex-M33 architecture. It offers optimized energy thresholds for long-term telemetry architectures that require tight power constraints.
+
+\begin{table}[H]
+\centering
+\caption{EFR32BG22 Current and Active Power Characteristics ($V_{DD} = 3.0\text{ V}$)}
+\label{tab:efr32bg22_metrics}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption}} & 
+\textbf{\shortstack{Typical Wake-up \\ Time}} & 
+\textbf{\shortstack{Continuous / Active \\ Power}} \\ 
+\midrule
+EM4 Shutoff Mode (Deepest Sleep) & $170\text{ nA}$  & $8.0\text{ ms}$ & $0.510\text{ }\mu\text{W}$ \\
+EM2 Deep Sleep Mode (RAM Retained) & $1.4\text{ }\mu\text{A}$  & $0.02\text{ ms}$ & $4.20\text{ }\mu\text{W}$ \\
+Radio Rx Mode (Active)       & $3.6\text{ mA}$  & $0.15\text{ ms}$ & $10.80\text{ mW}$ \\
+Radio Tx Mode ($0\text{ dBm}$ Output)   & $4.1\text{ mA}$  & $0.15\text{ ms}$ & $12.30\text{ mW}$ \\
+Radio Tx Mode ($+6\text{ dBm}$ Peak)   & $8.2\text{ mA}$  & $0.15\text{ ms}$ & $24.60\text{ mW}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Quectel BG95-M3 (Cellular Multi-Mode LPWAN)}
+The BG95-M3 is a highly integrated multi-mode cellular LPWAN module supporting NB-IoT, LTE-M, and EGPRS networks. While presenting extended range capabilities, it creates significant peak energy demands on low-power harvesters.
+
+\begin{table}[H]
+\centering
+\caption{BG95-M3 Cellular LPWAN Operations Power Performance Array ($V_{DD} = 3.3\text{ V}$)}
+\label{tab:bg95m3_metrics}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Operating Mode} & 
+\textbf{\shortstack{Typical Current \\ Consumption}} & 
+\textbf{\shortstack{Typical Network \\ Attach Time}} & 
+\textbf{\shortstack{Continuous / Active \\ Power}} \\ 
+\midrule
+Power Saving Mode (PSM Deep Sleep) & $3.9\text{ }\mu\text{A}$  & $> 10\text{ s}$ & $12.87\text{ }\mu\text{W}$ \\
+eDRX Idle Mode (Cellular Standby)  & $1.2\text{ mA}$  & $< 2\text{ s}$  & $3.96\text{ mW}$ \\
+LTE-M Tx Mode Active (Max Surge)   & $205.0\text{ mA}$ & $1.5\text{ s}$  & $676.50\text{ mW}$ \\
+NB-IoT Tx Mode Active (Max Surge)  & $190.0\text{ mA}$ & $2.0\text{ s}$  & $627.00\text{ mW}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Energy Consumption Calculations (1-Minute Cycle)}
+Based on the established schedule, the system operates on a 60-second cycle where the total consumed energy must remain strictly below the \SI{500}{\milli\joule} threshold. The following calculations detail the energy expenditure for the selected modules (ADXL362, LC76G, and SX1262) in both their normal (active) and power-saving (standby/sleep) states. Energy ($E$) is calculated as Power ($P$) multiplied by Time ($t$).
+
+\subsubsection{Activity Sensor: ADXL362}
+The accelerometer monitors activity with a very brief active window and spends the remainder of the minute in standby.
+\begin{itemize}
+    \item \textbf{Normal Operation (Active):}
+    \begin{align*}
+        t_{\text{active}} &= \SI{40}{\milli\second} = \SI{0.04}{\second} \\
+        P_{\text{active}} &= \SI{3.6}{\micro\watt} = \SI{0.0036}{\milli\watt} \\
+        E_{\text{active}} &= \SI{0.0036}{\milli\watt} \times \SI{0.04}{\second} = \SI{0.000144}{\milli\joule}
+    \end{align*}
+    
+    \item \textbf{Standby Mode:}
+    \begin{align*}
+        t_{\text{standby}} &= \SI{59}{\second} \\
+        P_{\text{standby}} &= \SI{0.02}{\micro\watt} = \SI{0.00002}{\milli\watt} \\
+        E_{\text{standby}} &= \SI{0.00002}{\milli\watt} \times \SI{59}{\second} = \SI{0.00118}{\milli\joule}
+    \end{align*}
+\end{itemize}
+
+\subsubsection{Position Sensor: Quectel LC76G}
+The GNSS module requires the largest power draw, operating for 15 seconds to acquire a fix before dropping into power-saving mode.
+\begin{itemize}
+    \item \textbf{Normal Operation (Active Tracking):}
+    \begin{align*}
+        t_{\text{active}} &= \SI{15}{\second} \\
+        P_{\text{active}} &= \SI{33}{\milli\watt} \\
+        E_{\text{active}} &= \SI{33}{\milli\watt} \times \SI{15}{\second} = \SI{495}{\milli\joule}
+    \end{align*}
+    
+    \item \textbf{Power Saving Mode:}
+    \begin{align*}
+        t_{\text{standby}} &= \SI{45}{\second} \\
+        P_{\text{standby}} &= \SI{43}{\micro\watt} = \SI{0.043}{\milli\watt} \\
+        E_{\text{standby}} &= \SI{0.043}{\milli\watt} \times \SI{45}{\second} = \SI{1.935}{\milli\joule}
+    \end{align*}
+\end{itemize}
+
+\subsubsection{Data Transfer: Semtech SX1262}
+The LoRa transceiver requires high power for transmission but only remains active for a fraction of a second, spending the rest of the cycle in deep sleep.
+\begin{itemize}
+    \item \textbf{Normal Operation (Active Tx at +14 dBm):}
+    \begin{align*}
+        t_{\text{active}} &= \SI{1}{\milli\second} = \SI{0.001}{\second} \\
+        P_{\text{active}} &= \SI{138}{\milli\watt} \\
+        E_{\text{active}} &= \SI{138}{\milli\watt} \times \SI{0.001}{\second} = \SI{0.138}{\milli\joule}
+    \end{align*}
+    
+    \item \textbf{Deep Sleep Mode:}
+    \begin{align*}
+        t_{\text{sleep}} &= \SI{59}{\second} \\
+        P_{\text{sleep}} &= \SI{0.5}{\micro\watt} = \SI{0.0005}{\milli\watt} \\
+        E_{\text{sleep}} &= \SI{0.0005}{\milli\watt} \times \SI{59}{\second} = \SI{0.0295}{\milli\joule}
+    \end{align*}
+\end{itemize}
+
+\subsubsection{Worst-Case Peak Energy Demand}
+Because the system firmware enforces a strict time-division multiplexing schedule---ensuring that only one module is active at any given moment---the components never draw their active power concurrently. Consequently, the absolute maximum energy drained from the supercapacitor during a single continuous active state is dictated not by the simultaneous sum of all modules, but by the single most energy-intensive operation (the worst-case event).
+
+Comparing the discrete active energy payloads:
+\begin{align*}
+    E_{\text{ADXL362 (Active)}} &= \SI{0.000144}{\milli\joule} \\
+    E_{\text{SX1262 (Active)}} &= \SI{0.138}{\milli\joule} \\
+    E_{\text{LC76G (Active)}} &= \SI{495.0}{\milli\joule}
+\end{align*}
+
+To determine the maximum required buffer capacity for a single operation:
+\begin{align*}
+    E_{\text{worst-case}} &= \max(E_{\text{ADXL362}}, E_{\text{SX1262}}, E_{\text{LC76G}}) \\
+    E_{\text{worst-case}} &= \SI{495.0}{\milli\joule}
+\end{align*}
+
+Thus, the worst-case energy demand required to sustain the system through its heaviest operational block is \SI{495}{\milli\joule}, driven entirely by the 15-second GNSS acquisition phase. Because this maximum transient load remains under the \SI{500}{\milli\joule} threshold, the thermal energy-harvesting supercapacitor buffer is correctly sized to prevent system brownouts during peak operation.
+
+\subsection{Energy Harvester}
+To supply the required power budget, the system utilizes High-Density (HD) Thermoelectric Generators (TEG) from TEC Microsystems. The selected module is the \textbf{1MD06-097-05\_TEG}.
+
+\subsubsection*{Electrical Specifications}
+The selected module comprises $N = 97$ High-Density Bismuth Telluride (BiTe) thermocouple pairs. The baseline electrical characteristics governing its energy conversion are as follows:
+\begin{itemize}
+    \item \textbf{Seebeck Coefficient per Couple:} $\approx 0.4\text{ mV/K}$
+    \item \textbf{AC Resistance (ACR) per Couple:} $\approx 0.0288\ \Omega$ (at $27^\circ\text{C}$)
+    \item \textbf{Total Module Seebeck Coefficient ($\alpha_{TEG}$):} $38.8\text{ mV/K}$
+    \item \textbf{Base Internal Resistance (ACR\textsubscript{total}):} $\approx 2.79\ \Omega$
+\end{itemize}
+
+\subsubsection*{Performance Calculation: Single TEG ($\Delta T = 5\text{ K}$)}
+In active field deployments, thermal contact limits and the standard Seebeck effect introduce an operational resistance penalty, pushing the effective internal resistance ($R_{eff}$) approximately 15\% higher than the baseline ACR.
+
+Under a thermal gradient of $5\text{ K}$, the electrical outputs are derived as follows:
+\begin{align*}
+    \alpha_{TEG} &= N \cdot 0.4\text{ mV/K} = 97 \cdot 0.4\text{ mV/K} = \mathbf{38.8\text{ mV/K}} \\
+    V_{oc} &= \alpha_{TEG} \cdot \Delta T = 38.8\text{ mV/K} \cdot 5\text{ K} = \mathbf{194\text{ mV}} \\
+    R_{eff} &\approx 1.15 \cdot (97 \cdot 0.0288\ \Omega) \approx \mathbf{3.21\ \Omega} \\
+    V_{load} &= \frac{V_{oc}}{2} = \mathbf{97\text{ mV}} \\
+    P_{max} &= \frac{V_{oc}^2}{4 \cdot R_{eff}} = \frac{(0.194\text{ V})^2}{4 \cdot 3.21\ \Omega} \approx \mathbf{2.93\text{ mW}}
+\end{align*}
+\textit{Note: $V_{load}$ and $P_{max}$ assume optimal impedance matching with the downstream power management circuit.}
+
+\subsubsection*{Performance Calculation: Five TEG Array (Series)}
+To significantly increase the total open-circuit voltage ($V_{oc}$), five identical 1MD06-097-05\_TEG modules are connected in series. This configuration quintuples the generated voltage, which is essential for reaching the cold-start voltage thresholds of efficient inductor-based power management integrated circuits (PMICs).
+
+\begin{align*}
+    V_{oc\text{ (total)}} &= 5 \cdot V_{oc\text{ (single)}} = 5 \cdot 194\text{ mV} = \mathbf{970\text{ mV}} \\
+    R_{eff\text{ (total)}} &= 5 \cdot 3.21\ \Omega = \mathbf{16.05\ \Omega} \\
+    V_{load\text{ (total)}} &= \frac{V_{oc\text{ (total)}}}{2} = \mathbf{485\text{ mV}} \\
+    P_{max\text{ (total)}} &= \frac{V_{oc\text{ (total)}}^2}{4 \cdot R_{eff\text{ (total)}}} = \frac{(0.970\text{ V})^2}{4 \cdot 16.05\ \Omega} \approx \mathbf{14.66\text{ mW}}
+\end{align*}
+
+This series configuration yields a continuous theoretical power income of $14.66\text{ mW}$ at $\Delta T = 5\text{ K}$.
+
+\subsection{Boost Converter}
+To bridge the gap between the TEG array output and the required system operating voltage, the \textbf{LTC3108-1} has been selected. This component is an ultra-low voltage step-up converter and power manager specifically designed for harvesting energy from low-voltage sources, such as TEGs.
+
+\subsubsection*{Electrical Specifications}
+The LTC3108-1 is highly integrated and engineered to operate from sources with extremely low input voltages. Key electrical characteristics are summarized below:
+
+\begin{itemize}
+    \item \textbf{Minimum Input Voltage (Startup):} $\SI{20}{\milli\volt}$
+    \item \textbf{Selectable Main Output ($V_{OUT}$):} \SI{2.5}{\volt}, \SI{3.0}{\volt}, \SI{3.7}{\volt}, or \SI{4.5}{\volt}
+    \item \textbf{Integrated LDO Output:} \SI{2.2}{\volt} at \SI{3}{\milli\ampere}
+    \item \textbf{Package Type:} 12-Lead ($3\text{ mm} \times 4\text{ mm}$) DFN or 16-Lead SSOP
+\end{itemize}
+
+\subsubsection*{Design Integration}
+The LTC3108-1 utilizes a compact external step-up transformer to achieve its ultra-low startup capability. This architecture enables the system to generate a stable, regulated output voltage even when the input source—such as the selected \SI{388}{\milli\volt} open-circuit TEG array—is far below the thresholds of standard commercial DC-DC converters. The integrated LDO provides a dedicated rail for powering the system's microcontroller, while the main output can be programmed to charge the intermediate supercapacitor storage bank.
+
+\subsection{Supercapacitor Sizing}
+
+The localization system consumes a maximum of approximately $\SI{500}{\milli\joule}$ per burst. Assuming the supercapacitor operates within the voltage range of $\SI{5}{\volt}$ ($V_{\max}$) to $\SI{2}{\volt}$ ($V_{\min}$), the usable stored energy $E$ is determined by:
+
+\begin{equation}
+    E = \frac{1}{2} C \left(V_{\max}^2 - V_{\min}^2\right)
+\end{equation}
+
+Given the required energy $E = \SI{0.5}{\joule}$, the minimum required capacitance $C$ is calculated as follows:
+
+\begin{align*}
+    0.5 &= \frac{1}{2} \cdot C \cdot \left(5^2 - 2^2\right) \\
+    0.5 &= \frac{1}{2} \cdot C \cdot (25 - 4) \\
+    C &= \frac{0.5}{0.5 \cdot 21} \approx \SI{0.0476}{\farad}
+\end{align*}
+
+To provide sufficient design margin for converter efficiency losses, capacitor leakage, aging over the 2-year deployment, and the transient current peaks during GPS acquisition, a larger capacitance is necessary. Consequently, a commercially available \textbf{\SI{0.22}{\farad}} supercapacitor is adopted. This selection provides an ample safety factor of approximately $4.6\times$ over the theoretical minimum, ensuring reliable operation under worst-case environmental and load conditions.
+
+\end{document}

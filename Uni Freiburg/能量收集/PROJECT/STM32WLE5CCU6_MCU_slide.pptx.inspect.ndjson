@@ -1,0 +1,37 @@
+{"kind":"deck","id":"pr/wwh0u0","name":"Deck"}
+{"kind":"layout","layoutId":"4799f754-9fa2-4868-b077-be0a645b8efa","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"50001266-658e-46ff-b993-f87639ee87b6","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/3ik0yk","slide":1,"title":"Microcontroller and LoRa SoC","textShapes":26}
+{"kind":"shape","id":"sh/jyt03ylg","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/kzm1w3m1","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/50vi583m","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/614jyd47","slide":1,"name":"title","text":"Microcontroller and LoRa SoC","textPreview":"Microcontroller and LoRa SoC","textChars":28,"textLines":1,"bbox":[70,26,610,42]}
+{"kind":"shape","id":"sh/72d07ils","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/s3m10nmd","slide":1,"name":"component-heading","text":"➢  STMicroelectronics STM32WLE5CCU6","textPreview":"➢  STMicroelectronics STM32WLE5CCU6","textChars":35,"textLines":1,"bbox":[82,93,620,34]}
+{"kind":"textbox","id":"sh/t4vi9s3i","slide":1,"name":"summary","text":"48 MHz Arm Cortex-M4  |  Integrated sub-GHz LoRa  |  UFQFPN48: 7 × 7 × 0.6 mm","textPreview":"48 MHz Arm Cortex-M4  |  Integrated sub-GHz LoRa  |  UFQFPN48: 7 × 7 × 0.6 mm","textChars":77,"textLines":1,"bbox":[110,126,700,30]}
+{"kind":"textbox","id":"sh/u54j2x43","slide":1,"name":"header-0","text":"Operating Mode","textPreview":"Operating Mode","textChars":14,"textLines":1,"bbox":[88,174,285,42]}
+{"kind":"textbox","id":"sh/f6x0bilo","slide":1,"name":"header-1","text":"Typical Current","textPreview":"Typical Current","textChars":15,"textLines":1,"bbox":[373,174,185,42]}
+{"kind":"textbox","id":"sh/f650j6pc","slide":1,"name":"header-2","text":"Approx. Power","textPreview":"Approx. Power","textChars":13,"textLines":1,"bbox":[558,174,210,42]}
+{"kind":"textbox","id":"sh/u5wzal8r","slide":1,"name":"cell-0-0","text":"Stop 2 with RTC","textPreview":"Stop 2 with RTC","textChars":15,"textLines":1,"bbox":[88,216,285,42]}
+{"kind":"textbox","id":"sh/hs7ilg7i","slide":1,"name":"cell-0-1","text":"1.07 µA @ 3.0 V","textPreview":"1.07 µA @ 3.0 V","textChars":15,"textLines":1,"bbox":[373,216,185,42]}
+{"kind":"textbox","id":"sh/gryhcbqx","slide":1,"name":"cell-0-2","text":"3.21 µW","textPreview":"3.21 µW","textChars":7,"textLines":1,"bbox":[558,216,210,42]}
+{"kind":"textbox","id":"sh/725gf6pg","slide":1,"name":"cell-1-0","text":"Low-Power Run @ 2 MHz","textPreview":"Low-Power Run @ 2 MHz","textChars":21,"textLines":1,"bbox":[88,258,285,42]}
+{"kind":"textbox","id":"sh/61wz618v","slide":1,"name":"cell-1-1","text":"220 µA @ 3.0 V","textPreview":"220 µA @ 3.0 V","textChars":14,"textLines":1,"bbox":[373,258,185,42]}
+{"kind":"textbox","id":"sh/t4nihg76","slide":1,"name":"cell-1-2","text":"0.66 mW","textPreview":"0.66 mW","textChars":7,"textLines":1,"bbox":[558,258,210,42]}
+{"kind":"textbox","id":"sh/s3eh8bql","slide":1,"name":"cell-2-0","text":"Run @ 48 MHz (SMPS)","textPreview":"Run @ 48 MHz (SMPS)","textChars":19,"textLines":1,"bbox":[88,300,285,42]}
+{"kind":"textbox","id":"sh/ryp0rqpk","slide":1,"name":"cell-2-1","text":"3.45 mA @ 3.0 V","textPreview":"3.45 mA @ 3.0 V","textChars":15,"textLines":1,"bbox":[373,300,185,42]}
+{"kind":"textbox","id":"sh/qxgzi58z","slide":1,"name":"cell-2-2","text":"10.35 mW","textPreview":"10.35 mW","textChars":8,"textLines":1,"bbox":[558,300,210,42]}
+{"kind":"textbox","id":"sh/mtk3a9s7","slide":1,"name":"cell-3-0","text":"LoRa Receive","textPreview":"LoRa Receive","textChars":12,"textLines":1,"bbox":[88,342,285,42]}
+{"kind":"textbox","id":"sh/nutkju9s","slide":1,"name":"cell-3-1","text":"4.82 mA @ 3.0 V","textPreview":"4.82 mA @ 3.0 V","textChars":15,"textLines":1,"bbox":[373,342,185,42]}
+{"kind":"textbox","id":"sh/8v2lczad","slide":1,"name":"cell-3-2","text":"14.46 mW","textPreview":"14.46 mW","textChars":8,"textLines":1,"bbox":[558,342,210,42]}
+{"kind":"textbox","id":"sh/9wb2l4ry","slide":1,"name":"cell-4-0","text":"LoRa TX @ +14 dBm","textPreview":"LoRa TX @ +14 dBm","textChars":17,"textLines":1,"bbox":[88,384,285,42]}
+{"kind":"textbox","id":"sh/ahk3e983","slide":1,"name":"cell-4-1","text":"26 mA @ 3.3 V","textPreview":"26 mA @ 3.3 V","textChars":13,"textLines":1,"bbox":[373,384,185,42]}
+{"kind":"textbox","id":"sh/vidkne9o","slide":1,"name":"cell-4-2","text":"85.8 mW","textPreview":"85.8 mW","textChars":7,"textLines":1,"bbox":[558,384,210,42]}
+{"kind":"textbox","id":"sh/wjmlgjq9","slide":1,"name":"energy-callout-label","text":"MCU energy per 1-minute cycle","textPreview":"MCU energy per 1-minute cycle","textChars":29,"textLines":1,"bbox":[96,446,310,30]}
+{"kind":"textbox","id":"sh/xkv2poru","slide":1,"name":"energy-callout-value","text":"≈ 0.71 mJ/min","textPreview":"≈ 0.71 mJ/min","textChars":13,"textLines":1,"bbox":[414,442,205,38]}
+{"kind":"textbox","id":"sh/ql0j25sz","slide":1,"name":"cycle-assumption","text":"Assumption: 50 ms at 48 MHz; remaining 59.95 s in Stop 2 with RTC","textPreview":"Assumption: 50 ms at 48 MHz; remaining 59.95 s in Stop 2 with RTC","textChars":65,"textLines":1,"bbox":[96,480,590,38]}
+{"kind":"textbox","id":"sh/srqx47yt","slide":1,"name":"package-caption","text":"UFQFPN48 package","textPreview":"UFQFPN48 package","textChars":16,"textLines":1,"bbox":[906,566,220,26]}
+{"kind":"textbox","id":"sh/rqhwv2x8","slide":1,"name":"selected-module","text":"Selected SoC: STM32WLE5CCU6 — MCU + LoRa in one chip","textPreview":"Selected SoC: STM32WLE5CCU6 — MCU + LoRa in one chip","textChars":52,"textLines":1,"bbox":[390,575,500,52]}
+{"kind":"chart","id":"ch/bel8fqhg","slide":1,"name":"","chartType":"bar","title":"Active Power (mW)","bbox":[825,96,405,265]}
+{"kind":"image","id":"im/ytkzu1o3","slide":1,"name":"","alt":"STMicroelectronics STM32WLE5CCU6 UFQFPN48 package","bbox":[865,370,310,205]}
+{"kind":"notes","id":"nt/3ik0yk","slide":1,"text":""}
