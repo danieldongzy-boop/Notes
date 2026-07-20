@@ -56,9 +56,21 @@
               "icon": "lucide-file",
               "title": "RF_Microwave_Detailed_Bilingual_Study_Notes"
             }
+          },
+          {
+            "id": "a32ee4035b8c3bff",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "eetop.cn_8bit_SAR_ADC设计总结"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -115,7 +127,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -221,12 +234,15 @@
       "bases:新建数据库": false
     }
   },
-  "active": "7ebd2d9d747cd942",
+  "active": "a32ee4035b8c3bff",
   "lastOpenFiles": [
+    "IC/实例/2stageamp/2stageamp.md",
+    "IC/实例/8bit adc/eetop.cn_8bit_SAR_ADC设计总结.pdf",
+    "IC/实例/10b250Minterleaving/eetop.cn__PHD_CCLiu_Design of High-Speed Energy-Efficient SAR ADC.pdf",
+    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
     "Uni Freiburg/RF_Design/tmp/pdfs/lectures12/lectures12.txt",
     "Uni Freiburg/RF_Design/tmp/pdfs/lectures12",
     "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
-    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
     "Uni Freiburg/能量收集/PROJECT/SnapperGPS_specifications.md",
     "Uni Freiburg/RF_Design/Skripte_Vorlesung-01bis12.pdf",
     "Uni Freiburg/RF_Design/未确认 675463.crdownload",
@@ -240,9 +256,6 @@
     "Uni Freiburg/能量收集/Exercise/Exercise 5_ Energy Storage/Exercise 5_Capacitors , batteries , efficiencies and leakage currents_SOLVED.pdf",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_08_Storage_Concepts_II_Rechargeable_Batteries.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_07_Storage_Concepts_I_Capacitive.md",
-    "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L02_Static_Metrics.pdf",
-    "Uni Freiburg/data converter/tasks_ADC_DAC_SS26.pdf",
     "Uni Freiburg/能量收集/PROJECT/stm32.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
     "Uni Freiburg/能量收集/PROJECT/tmp/pdfs/yang2023_fig4.png",
