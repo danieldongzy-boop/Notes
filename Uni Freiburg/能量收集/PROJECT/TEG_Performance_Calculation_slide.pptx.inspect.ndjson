@@ -1,0 +1,51 @@
+{"kind":"deck","id":"pr/eg2b6k","name":"Deck"}
+{"kind":"layout","layoutId":"30d80850-5dfc-4ffb-8d70-4ac1dadaa040","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"c4afe89b-1edc-4bbb-8f57-a4c8cd1de2a0","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ziwolv","slide":1,"title":"TEG Performance at a 5 K Thermal Gradient","textShapes":32}
+{"kind":"shape","id":"sh/94vahcrq","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/m14bmh8z","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/n2dsfm9k","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/0zmtk7qt","slide":1,"name":"title","text":"TEG Performance at a 5 K Thermal Gradient","textPreview":"TEG Performance at a 5 K Thermal Gradient","textChars":41,"textLines":1,"bbox":[70,26,760,42]}
+{"kind":"shape","id":"sh/10vadcre","slide":1,"name":"title-rule","bbox":[70,75,900,0]}
+{"kind":"textbox","id":"sh/edkbix83","slide":1,"name":"subtitle","text":"1MD06-097-05 TEG  |  97 thermocouples  |  Optimal electrical load matching","textPreview":"1MD06-097-05 TEG  |  97 thermocouples  |  Optimal electrical load matching","textChars":74,"textLines":1,"bbox":[82,85,850,30]}
+{"kind":"textbox","id":"sh/zetsb298","slide":1,"name":"single-heading","text":"Single TEG","textPreview":"Single TEG","textChars":10,"textLines":1,"bbox":[82,130,250,34]}
+{"kind":"textbox","id":"sh/cb2tgnqx","slide":1,"name":"single-context","text":"ΔT = 5 K  |  R_eff = 1.15 × ACR","textPreview":"ΔT = 5 K  |  R_eff = 1.15 × ACR","textChars":31,"textLines":1,"bbox":[330,132,280,30]}
+{"kind":"textbox","id":"sh/dcba9sri","slide":1,"name":"array-heading","text":"Five TEGs in Series","textPreview":"Five TEGs in Series","textChars":19,"textLines":1,"bbox":[665,130,300,34]}
+{"kind":"textbox","id":"sh/d0vihkb6","slide":1,"name":"array-context","text":"Voltage scales 5×","textPreview":"Voltage scales 5×","textChars":17,"textLines":1,"bbox":[990,132,190,30]}
+{"kind":"shape","id":"sh/szmhofal","slide":1,"name":"column-divider","bbox":[640,130,0,392]}
+{"kind":"shape","id":"sh/rydgfat0","slide":1,"name":"single-1-rule","bbox":[82,236,530,0]}
+{"kind":"textbox","id":"sh/qx4zm5sf","slide":1,"name":"single-1-formula","text":"α_TEG = N × 0.4 mV/K\n= 97 × 0.4 mV/K","textPreview":"α_TEG = N × 0.4 mV/K | = 97 × 0.4 mV/K","textChars":36,"textLines":2,"bbox":[92,168,385,68]}
+{"kind":"textbox","id":"sh/5wvyd0bu","slide":1,"name":"single-1-result","text":"38.8 mV/K","textPreview":"38.8 mV/K","textChars":9,"textLines":1,"bbox":[474,168,128,68]}
+{"kind":"shape","id":"sh/4vmhkfap","slide":1,"name":"single-2-rule","bbox":[82,304,530,0]}
+{"kind":"textbox","id":"sh/3udgbat4","slide":1,"name":"single-2-formula","text":"V_oc = α_TEG × ΔT\n= 38.8 mV/K × 5 K","textPreview":"V_oc = α_TEG × ΔT | = 38.8 mV/K × 5 K","textChars":35,"textLines":2,"bbox":[92,236,385,68]}
+{"kind":"textbox","id":"sh/itkzi5sj","slide":1,"name":"single-2-result","text":"194 mV","textPreview":"194 mV","textChars":6,"textLines":1,"bbox":[474,236,128,68]}
+{"kind":"shape","id":"sh/hsby90by","slide":1,"name":"single-3-rule","bbox":[82,372,530,0]}
+{"kind":"textbox","id":"sh/gr2hgvad","slide":1,"name":"single-3-formula","text":"R_eff ≈ 1.15 × (97 × 0.0288 Ω)","textPreview":"R_eff ≈ 1.15 × (97 × 0.0288 Ω)","textChars":30,"textLines":1,"bbox":[92,304,385,68]}
+{"kind":"textbox","id":"sh/8b6hwvi9","slide":1,"name":"single-3-result","text":"3.21 Ω","textPreview":"3.21 Ω","textChars":6,"textLines":1,"bbox":[474,304,128,68]}
+{"kind":"shape","id":"sh/9cfip0ju","slide":1,"name":"single-4-rule","bbox":[82,440,530,0]}
+{"kind":"textbox","id":"sh/m9ozulk3","slide":1,"name":"single-4-formula","text":"V_load = V_oc / 2","textPreview":"V_load = V_oc / 2","textChars":17,"textLines":1,"bbox":[92,372,385,68]}
+{"kind":"textbox","id":"sh/nax0nq1o","slide":1,"name":"single-4-result","text":"97 mV","textPreview":"97 mV","textChars":5,"textLines":1,"bbox":[474,372,128,68]}
+{"kind":"shape","id":"sh/07mhsv2d","slide":1,"name":"single-5-rule","bbox":[82,508,530,0]}
+{"kind":"textbox","id":"sh/l8fyl0ji","slide":1,"name":"single-5-formula","text":"P_max = V_oc² / (4R_eff)\n= (0.194 V)² / (4 × 3.21 Ω)","textPreview":"P_max = V_oc² / (4R_eff) | = (0.194 V)² / (4 × 3.21 Ω)","textChars":52,"textLines":2,"bbox":[92,440,385,68]}
+{"kind":"textbox","id":"sh/yl4zqlk7","slide":1,"name":"single-5-result","text":"2.93 mW","textPreview":"2.93 mW","textChars":7,"textLines":1,"bbox":[474,440,128,68]}
+{"kind":"shape","id":"sh/zmdgjq1s","slide":1,"name":"array-1-rule","bbox":[665,253,515,0]}
+{"kind":"textbox","id":"sh/43qh4fih","slide":1,"name":"array-1-formula","text":"V_oc,total = 5 × V_oc,single\n= 5 × 194 mV","textPreview":"V_oc,total = 5 × V_oc,single | = 5 × 194 mV","textChars":41,"textLines":2,"bbox":[675,168,370,85]}
+{"kind":"textbox","id":"sh/54zixkj2","slide":1,"name":"array-1-result","text":"970 mV","textPreview":"970 mV","textChars":6,"textLines":1,"bbox":[1042,168,128,85]}
+{"kind":"shape","id":"sh/fylk3el4","slide":1,"name":"array-2-rule","bbox":[665,338,515,0]}
+{"kind":"textbox","id":"sh/exs3u9kj","slide":1,"name":"array-2-formula","text":"R_eff,total = 5 × 3.21 Ω","textPreview":"R_eff,total = 5 × 3.21 Ω","textChars":24,"textLines":1,"bbox":[675,253,370,85]}
+{"kind":"textbox","id":"sh/10325o3a","slide":1,"name":"array-2-result","text":"16.05 Ω","textPreview":"16.05 Ω","textChars":7,"textLines":1,"bbox":[1042,253,128,85]}
+{"kind":"shape","id":"sh/gzulwj2p","slide":1,"name":"array-3-rule","bbox":[665,423,515,0]}
+{"kind":"textbox","id":"sh/32lk7ylg","slide":1,"name":"array-3-formula","text":"V_load,total = V_oc,total / 2","textPreview":"V_load,total = V_oc,total / 2","textChars":29,"textLines":1,"bbox":[675,338,370,85]}
+{"kind":"textbox","id":"sh/21c3ytkv","slide":1,"name":"array-3-result","text":"485 mV","textPreview":"485 mV","textChars":6,"textLines":1,"bbox":[1042,338,128,85]}
+{"kind":"shape","id":"sh/p4329836","slide":1,"name":"array-4-rule","bbox":[665,508,515,0]}
+{"kind":"textbox","id":"sh/o3ul032l","slide":1,"name":"array-4-formula","text":"P_max,total = V_oc,total² / (4R_eff,total)\n= (0.970 V)² / (4 × 16.05 Ω)","textPreview":"P_max,total = V_oc,total² / (4R_eff,total) | = (0.970 V)² / (4 × 16.05 Ω)","textChars":71,"textLines":2,"bbox":[675,423,370,85]}
+{"kind":"textbox","id":"sh/j6hkvulw","slide":1,"name":"array-4-result","text":"14.66 mW","textPreview":"14.66 mW","textChars":8,"textLines":1,"bbox":[1042,423,128,85]}
+{"kind":"textbox","id":"sh/i58jmp4b","slide":1,"name":"takeaway","text":"Series connection raises the matched-load voltage to a PMIC-friendly level","textPreview":"Series connection raises the matched-load voltage to a PMIC-friendly level","textChars":74,"textLines":1,"bbox":[88,532,530,30]}
+{"kind":"textbox","id":"sh/apc329c7","slide":1,"name":"voc-value","text":"970 mV","textPreview":"970 mV","textChars":6,"textLines":1,"bbox":[680,558,170,34]}
+{"kind":"textbox","id":"sh/vqlkbuts","slide":1,"name":"voc-label","text":"Open-circuit voltage","textPreview":"Open-circuit voltage","textChars":20,"textLines":1,"bbox":[680,591,170,24]}
+{"kind":"textbox","id":"sh/wrul4zud","slide":1,"name":"vload-value","text":"485 mV","textPreview":"485 mV","textChars":6,"textLines":1,"bbox":[870,558,170,34]}
+{"kind":"textbox","id":"sh/xcn2d4by","slide":1,"name":"vload-label","text":"Matched-load voltage","textPreview":"Matched-load voltage","textChars":20,"textLines":1,"bbox":[870,591,170,24]}
+{"kind":"textbox","id":"sh/idw369cj","slide":1,"name":"pmax-value","text":"14.66 mW","textPreview":"14.66 mW","textChars":8,"textLines":1,"bbox":[1060,558,170,34]}
+{"kind":"textbox","id":"sh/je5kfet4","slide":1,"name":"pmax-label","text":"Maximum array power","textPreview":"Maximum array power","textChars":19,"textLines":1,"bbox":[1060,591,170,24]}
+{"kind":"textbox","id":"sh/kfel8ja9","slide":1,"name":"assumption","text":"Assumption: V_load and P_max use optimal impedance matching; R_eff includes a 15% field-operation penalty.","textPreview":"Assumption: V_load and P_max use optimal impedance matching; R_eff includes a 15% field-operation penalty.","textChars":106,"textLines":1,"bbox":[88,625,1080,30]}
+{"kind":"notes","id":"nt/ziwolv","slide":1,"text":""}

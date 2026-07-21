@@ -1,0 +1,41 @@
+{"kind":"deck","id":"pr/ion79a","name":"Deck"}
+{"kind":"layout","layoutId":"d92194d8-be5c-4ba0-8e35-5812a597b6c1","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"d3a64d47-8808-4a49-adb6-cb437bb4a656","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/iygvsy","slide":1,"title":"System Operation Flowchart","textShapes":23}
+{"kind":"shape","id":"sh/3eps7uh0","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/4fitgzyl","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/pgra94zq","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/qh0bi9gb","slide":1,"name":"title","text":"System Operation Flowchart","textPreview":"System Operation Flowchart","textChars":26,"textLines":1,"bbox":[70,24,610,42]}
+{"kind":"shape","id":"sh/ri9cbehw","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/cjitkjyh","slide":1,"name":"subtitle","text":"Power conversion path and 1-minute task schedule","textPreview":"Power conversion path and 1-minute task schedule","textChars":48,"textLines":1,"bbox":[82,82,620,28]}
+{"kind":"textbox","id":"sh/dkrudoz2","slide":1,"name":"power-label","text":"POWER PATH","textPreview":"POWER PATH","textChars":10,"textLines":1,"bbox":[80,125,160,24]}
+{"kind":"textbox","id":"sh/6lwb6507","slide":1,"name":"teg","text":"5x TEG Array\n1MD06-097-05","textPreview":"5x TEG Array | 1MD06-097-05","textChars":25,"textLines":2,"bbox":[78,158,205,72]}
+{"kind":"textbox","id":"sh/7m5szahs","slide":1,"name":"boost","text":"Boost Converter\nLTC3108-1","textPreview":"Boost Converter | LTC3108-1","textChars":25,"textLines":2,"bbox":[343,158,205,72]}
+{"kind":"textbox","id":"sh/7mhkjy58","slide":1,"name":"storage","text":"Energy Storage\n0.22 F Supercapacitor","textPreview":"Energy Storage | 0.22 F Supercapacitor","textChars":36,"textLines":2,"bbox":[608,158,220,72]}
+{"kind":"textbox","id":"sh/6l8jaton","slide":1,"name":"buck","text":"Buck Converter\nRegulated System Supply","textPreview":"Buck Converter | Regulated System Supply","textChars":38,"textLines":2,"bbox":[888,158,245,72]}
+{"kind":"shape","id":"sh/t8j2l8ny","slide":1,"bbox":[283,194,60,0]}
+{"kind":"shape","id":"sh/87q1c36d","slide":1,"bbox":[548,194,60,0]}
+{"kind":"shape","id":"sh/jihkfypw","slide":1,"bbox":[828,194,60,0]}
+{"kind":"textbox","id":"sh/yh8j6tob","slide":1,"name":"power-note","text":"Boost charges the storage element; buck conversion supplies a stable rail to the loads below","textPreview":"Boost charges the storage element; buck conversion supplies a stable rail to the loads below","textChars":92,"textLines":1,"bbox":[690,236,455,30]}
+{"kind":"textbox","id":"sh/lkz2ho72","slide":1,"name":"task-label","text":"1-MINUTE TASK FLOW","textPreview":"1-MINUTE TASK FLOW","textChars":18,"textLines":1,"bbox":[80,300,220,24]}
+{"kind":"textbox","id":"sh/kjq18j6h","slide":1,"name":"wake","text":"RTC / MCU\nStart Cycle","textPreview":"RTC / MCU | Start Cycle","textChars":21,"textLines":2,"bbox":[70,370,160,72]}
+{"kind":"textbox","id":"sh/bex0bep0","slide":1,"name":"activity","text":"Read ADXL362\nActivity","textPreview":"Read ADXL362 | Activity","textChars":21,"textLines":2,"bbox":[270,370,160,72]}
+{"kind":"textbox","id":"sh/adoj29of","slide":1,"name":"gnss","text":"Acquire LC76G\nGNSS Fix","textPreview":"Acquire LC76G | GNSS Fix","textChars":22,"textLines":2,"bbox":[470,370,160,72]}
+{"kind":"textbox","id":"sh/epo3e987","slide":1,"name":"store","text":"Process and Store\nActivity + Position","textPreview":"Process and Store | Activity + Position","textChars":37,"textLines":2,"bbox":[670,370,160,72]}
+{"kind":"textbox","id":"sh/zaxkne9s","slide":1,"name":"radio","text":"SX1261 LoRa\nTransmission","textPreview":"SX1261 LoRa | Transmission","textChars":24,"textLines":2,"bbox":[870,370,160,72]}
+{"kind":"textbox","id":"sh/0b6lgjqd","slide":1,"name":"sleep","text":"Return to Sleep\nNext 60 s Cycle","textPreview":"Return to Sleep | Next 60 s Cycle","textChars":31,"textLines":2,"bbox":[1070,370,160,72]}
+{"kind":"shape","id":"sh/1cf2pory","slide":1,"bbox":[230,406,40,0]}
+{"kind":"shape","id":"sh/mdo3i983","slide":1,"bbox":[430,406,40,0]}
+{"kind":"shape","id":"sh/nexkre9o","slide":1,"bbox":[630,406,40,0]}
+{"kind":"shape","id":"sh/of6lkjq9","slide":1,"bbox":[830,406,40,0]}
+{"kind":"shape","id":"sh/9gz2toru","slide":1,"bbox":[1030,406,40,0]}
+{"kind":"shape","id":"sh/ah83mt8f","slide":1,"bbox":[150,442,1000,24]}
+{"kind":"textbox","id":"sh/bihkvy90","slide":1,"name":"time-70","text":"Cycle start","textPreview":"Cycle start","textChars":11,"textLines":1,"bbox":[70,336,160,24]}
+{"kind":"textbox","id":"sh/lcj6lsb2","slide":1,"name":"time-270","text":"0-0.04 s","textPreview":"0-0.04 s","textChars":8,"textLines":1,"bbox":[270,336,160,24]}
+{"kind":"textbox","id":"sh/kba5snah","slide":1,"name":"time-470","text":"30-45 s","textPreview":"30-45 s","textChars":7,"textLines":1,"bbox":[470,336,160,24]}
+{"kind":"textbox","id":"sh/ja14jitw","slide":1,"name":"time-670","text":"After GNSS","textPreview":"After GNSS","textChars":10,"textLines":1,"bbox":[670,336,160,24]}
+{"kind":"textbox","id":"sh/y9snqdsb","slide":1,"name":"time-870","text":"55 s / 75 ms","textPreview":"55 s / 75 ms","textChars":12,"textLines":1,"bbox":[870,336,160,24]}
+{"kind":"textbox","id":"sh/t036pcbe","slide":1,"name":"time-1070","text":"Until 60 s","textPreview":"Until 60 s","textChars":10,"textLines":1,"bbox":[1070,336,160,24]}
+{"kind":"textbox","id":"sh/sfa5w7at","slide":1,"name":"loop-note","text":"Dashed arrow: RTC starts the next scheduled cycle","textPreview":"Dashed arrow: RTC starts the next scheduled cycle","textChars":49,"textLines":1,"bbox":[430,512,420,26]}
+{"kind":"textbox","id":"sh/7e1on2t8","slide":1,"name":"summary-callout","text":"Energy is converted and buffered first; sensing, GNSS and LoRa tasks then run sequentially.","textPreview":"Energy is converted and buffered first; sensing, GNSS and LoRa tasks then run sequentially.","textChars":91,"textLines":1,"bbox":[300,570,680,54]}
+{"kind":"notes","id":"nt/iygvsy","slide":1,"text":""}

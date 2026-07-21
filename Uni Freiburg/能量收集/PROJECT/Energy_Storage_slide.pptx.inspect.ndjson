@@ -1,0 +1,36 @@
+{"kind":"deck","id":"pr/e21v83","name":"Deck"}
+{"kind":"layout","layoutId":"228dae4a-29fc-4c03-b32b-53fe8343df58","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"47a366d4-8a75-4d1f-94e0-d502cb58d959","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/d9cvvh","slide":1,"title":"Energy Storage","textShapes":25}
+{"kind":"shape","id":"sh/ad8n2l4n","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/xgzmxgne","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/wfq54bmt","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/ji14zq54","slide":1,"name":"title","text":"Energy Storage","textPreview":"Energy Storage","textChars":14,"textLines":1,"bbox":[70,26,610,42]}
+{"kind":"shape","id":"sh/ihsn6l4z","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/54jm10na","slide":1,"name":"component-heading","text":"➢  Candidate storage devices","textPreview":"➢  Candidate storage devices","textChars":28,"textLines":1,"bbox":[82,93,620,34]}
+{"kind":"textbox","id":"sh/kja58vmp","slide":1,"name":"summary","text":"Supercapacitors and rechargeable button-cell battery","textPreview":"Supercapacitors and rechargeable button-cell battery","textChars":52,"textLines":1,"bbox":[110,126,700,30]}
+{"kind":"textbox","id":"sh/zmx4nm50","slide":1,"name":"header-0","text":"Device","textPreview":"Device","textChars":6,"textLines":1,"bbox":[88,174,240,58]}
+{"kind":"textbox","id":"sh/ylo3u14f","slide":1,"name":"header-1","text":"Capacity","textPreview":"Capacity","textChars":8,"textLines":1,"bbox":[328,174,120,58]}
+{"kind":"textbox","id":"sh/0v69cvy9","slide":1,"name":"header-2","text":"Max./Nominal Voltage","textPreview":"Max./Nominal Voltage","textChars":20,"textLines":1,"bbox":[448,174,160,58]}
+{"kind":"textbox","id":"sh/lwfa50zu","slide":1,"name":"header-3","text":"Key Property","textPreview":"Key Property","textChars":12,"textLines":1,"bbox":[608,174,200,58]}
+{"kind":"textbox","id":"sh/yt4ra5gj","slide":1,"name":"cell-0-0","text":"NEXT 104Z5.5V11.5X8.5F","textPreview":"NEXT 104Z5.5V11.5X8.5F","textChars":22,"textLines":1,"bbox":[88,232,240,58]}
+{"kind":"textbox","id":"sh/zuxs3qh4","slide":1,"name":"cell-0-1","text":"0.1 F","textPreview":"0.1 F","textChars":5,"textLines":1,"bbox":[328,232,120,58]}
+{"kind":"textbox","id":"sh/8j6tgfyl","slide":1,"name":"cell-0-2","text":"5.5 VDC","textPreview":"5.5 VDC","textChars":7,"textLines":1,"bbox":[448,232,160,58]}
+{"kind":"textbox","id":"sh/9kfa9kz6","slide":1,"name":"cell-0-3","text":"ESR < 16 Ω\nLeakage 0.14 mA","textPreview":"ESR < 16 Ω | Leakage 0.14 mA","textChars":26,"textLines":2,"bbox":[608,232,200,58]}
+{"kind":"textbox","id":"sh/mhobe5gf","slide":1,"name":"cell-1-0","text":"BZ015B603ZSB","textPreview":"BZ015B603ZSB","textChars":12,"textLines":1,"bbox":[88,290,240,58]}
+{"kind":"textbox","id":"sh/nixs7ah0","slide":1,"name":"cell-1-1","text":"0.06 F","textPreview":"0.06 F","textChars":6,"textLines":1,"bbox":[328,290,120,58]}
+{"kind":"textbox","id":"sh/onm94bi1","slide":1,"name":"cell-1-2","text":"5.5 VDC","textPreview":"5.5 VDC","textChars":7,"textLines":1,"bbox":[448,290,160,58]}
+{"kind":"textbox","id":"sh/povadgzm","slide":1,"name":"cell-1-3","text":"ESR 80 mΩ\nLeakage 10 µA","textPreview":"ESR 80 mΩ | Leakage 10 µA","textChars":23,"textLines":2,"bbox":[608,290,200,58]}
+{"kind":"textbox","id":"sh/583yl8ne","slide":1,"name":"cell-2-0","text":"VOLTCRAFT LIR2032","textPreview":"VOLTCRAFT LIR2032","textChars":17,"textLines":1,"bbox":[88,348,240,58]}
+{"kind":"textbox","id":"sh/k7uhs36t","slide":1,"name":"cell-2-1","text":"45 mAh","textPreview":"45 mAh","textChars":6,"textLines":1,"bbox":[328,348,120,58]}
+{"kind":"textbox","id":"sh/j6lgji58","slide":1,"name":"cell-2-2","text":"3.6 V","textPreview":"3.6 V","textChars":5,"textLines":1,"bbox":[448,348,160,58]}
+{"kind":"textbox","id":"sh/i5szqdon","slide":1,"name":"cell-2-3","text":"Rechargeable lithium\n< 400 cycles","textPreview":"Rechargeable lithium | < 400 cycles","textChars":33,"textLines":2,"bbox":[608,348,200,58]}
+{"kind":"textbox","id":"sh/tc3ypsna","slide":1,"name":"energy-label","text":"Estimated nominal stored energy","textPreview":"Estimated nominal stored energy","textChars":31,"textLines":1,"bbox":[96,446,310,30]}
+{"kind":"textbox","id":"sh/sbuhwn6p","slide":1,"name":"energy-value","text":"LIR2032: ≈ 583 J","textPreview":"LIR2032: ≈ 583 J","textChars":16,"textLines":1,"bbox":[405,442,275,38]}
+{"kind":"textbox","id":"sh/7algni5k","slide":1,"name":"energy-note","text":"Battery energy uses capacity × nominal voltage; supercapacitor energy uses ½CV².","textPreview":"Battery energy uses capacity × nominal voltage; supercapacitor energy uses ½CV².","textChars":80,"textLines":1,"bbox":[96,480,600,44]}
+{"kind":"textbox","id":"sh/h0nitsnm","slide":1,"name":"chart-note","text":"NEXT 1.51 J  |  BZ015 0.91 J  |  LIR2032 583.2 J","textPreview":"NEXT 1.51 J  |  BZ015 0.91 J  |  LIR2032 583.2 J","textChars":48,"textLines":1,"bbox":[835,355,385,24]}
+{"kind":"textbox","id":"sh/ylovep4j","slide":1,"name":"lir2032-caption","text":"VOLTCRAFT LIR2032","textPreview":"VOLTCRAFT LIR2032","textChars":17,"textLines":1,"bbox":[875,554,285,26]}
+{"kind":"textbox","id":"sh/zmhwnul4","slide":1,"name":"selected-module","text":"Selected storage device: LIR2032","textPreview":"Selected storage device: LIR2032","textChars":32,"textLines":1,"bbox":[390,575,500,52]}
+{"kind":"chart","id":"ch/at8z2xcz","slide":1,"name":"","chartType":"bar","title":"Nominal Stored Energy (J)","bbox":[825,96,405,265]}
+{"kind":"image","id":"im/z69sb21g","slide":1,"name":"","alt":"lir2032","bbox":[875,382,285,174]}
+{"kind":"notes","id":"nt/d9cvvh","slide":1,"text":""}

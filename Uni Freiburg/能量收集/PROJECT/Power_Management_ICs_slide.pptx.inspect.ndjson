@@ -1,0 +1,36 @@
+{"kind":"deck","id":"pr/65icx0","name":"Deck"}
+{"kind":"layout","layoutId":"45045a47-2c4d-48fe-a4f8-50e2a2f7e837","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"035ebd3e-629f-4219-920f-028c32698eb4","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/qk3hm9","slide":1,"title":"Power Management ICs","textShapes":25}
+{"kind":"shape","id":"sh/twzmhonq","slide":1,"name":"left-rail","bbox":[8,0,28,720]}
+{"kind":"shape","id":"sh/6ton694f","slide":1,"name":"left-rule","bbox":[29,15,0,535]}
+{"kind":"shape","id":"sh/rux4fe50","slide":1,"name":"footer-rule","bbox":[630,677,650,0]}
+{"kind":"textbox","id":"sh/4r654zm9","slide":1,"name":"title","text":"Power Management ICs","textPreview":"Power Management ICs","textChars":20,"textLines":1,"bbox":[70,26,610,42]}
+{"kind":"shape","id":"sh/5sfmd4nu","slide":1,"name":"title-rule","bbox":[70,75,710,0]}
+{"kind":"textbox","id":"sh/ipon2po3","slide":1,"name":"component-heading","text":"➢  Energy-harvesting PMIC comparison","textPreview":"➢  Energy-harvesting PMIC comparison","textChars":36,"textLines":1,"bbox":[82,93,620,34]}
+{"kind":"textbox","id":"sh/jqx4bu5o","slide":1,"name":"summary","text":"Cold-start capability  |  Regulated outputs  |  Conversion efficiency","textPreview":"Cold-start capability  |  Regulated outputs  |  Conversion efficiency","textChars":69,"textLines":1,"bbox":[110,126,700,30]}
+{"kind":"textbox","id":"sh/w3m50z6x","slide":1,"name":"header-0","text":"Device","textPreview":"Device","textChars":6,"textLines":1,"bbox":[88,174,205,58]}
+{"kind":"textbox","id":"sh/h4vm9kni","slide":1,"name":"header-1","text":"Cold-Start Input","textPreview":"Cold-Start Input","textChars":16,"textLines":1,"bbox":[293,174,145,58]}
+{"kind":"textbox","id":"sh/dozqpcru","slide":1,"name":"header-2","text":"Regulated Outputs","textPreview":"Regulated Outputs","textChars":17,"textLines":1,"bbox":[438,174,260,58]}
+{"kind":"textbox","id":"sh/cnqpg7a9","slide":1,"name":"header-3","text":"Efficiency","textPreview":"Efficiency","textChars":10,"textLines":1,"bbox":[698,174,110,58]}
+{"kind":"textbox","id":"sh/bmh8n29o","slide":1,"name":"cell-0-0","text":"e-peas DS-AEM30940","textPreview":"e-peas DS-AEM30940","textChars":18,"textLines":1,"bbox":[88,232,205,58]}
+{"kind":"textbox","id":"sh/qlo7exs3","slide":1,"name":"cell-0-1","text":"380 mV at 3 µW","textPreview":"380 mV at 3 µW","textChars":14,"textLines":1,"bbox":[293,232,145,58]}
+{"kind":"textbox","id":"sh/pkfqlcry","slide":1,"name":"cell-0-2","text":"1.2/1.8 V LV LDO\n1.8-4.1 V HV LDO","textPreview":"1.2/1.8 V LV LDO | 1.8-4.1 V HV LDO","textChars":33,"textLines":2,"bbox":[438,232,260,58]}
+{"kind":"textbox","id":"sh/oj6pc7ad","slide":1,"name":"cell-0-3","text":"80-90%","textPreview":"80-90%","textChars":6,"textLines":1,"bbox":[698,232,110,58]}
+{"kind":"textbox","id":"sh/3ix8j2ts","slide":1,"name":"cell-1-0","text":"Texas Instruments BQ25505","textPreview":"Texas Instruments BQ25505","textChars":25,"textLines":1,"bbox":[88,290,205,58]}
+{"kind":"textbox","id":"sh/2ho7axs7","slide":1,"name":"cell-1-1","text":"≥ 600 mV","textPreview":"≥ 600 mV","textChars":8,"textLines":1,"bbox":[293,290,145,58]}
+{"kind":"textbox","id":"sh/1gfqhsbm","slide":1,"name":"cell-1-2","text":"2.0-5.5 V battery output","textPreview":"2.0-5.5 V battery output","textChars":24,"textLines":1,"bbox":[438,290,260,58]}
+{"kind":"textbox","id":"sh/gf6p8na1","slide":1,"name":"cell-1-3","text":"80-90%","textPreview":"80-90%","textChars":6,"textLines":1,"bbox":[698,290,110,58]}
+{"kind":"textbox","id":"sh/szaponix","slide":1,"name":"cell-2-0","text":"Linear Technology LTC3108-1","textPreview":"Linear Technology LTC3108-1","textChars":27,"textLines":1,"bbox":[88,348,205,58]}
+{"kind":"textbox","id":"sh/t0jqxsji","slide":1,"name":"cell-2-1","text":"20 mV","textPreview":"20 mV","textChars":5,"textLines":1,"bbox":[293,348,145,58]}
+{"kind":"textbox","id":"sh/6x87mx0r","slide":1,"name":"cell-2-2","text":"2.5/3.0/3.7/4.5 V VOUT\n2.2 V LDO","textPreview":"2.5/3.0/3.7/4.5 V VOUT | 2.2 V LDO","textChars":32,"textLines":2,"bbox":[438,348,260,58]}
+{"kind":"textbox","id":"sh/7yh8v21c","slide":1,"name":"cell-2-3","text":"30%","textPreview":"30%","textChars":3,"textLines":1,"bbox":[698,348,110,58]}
+{"kind":"textbox","id":"sh/kvqpkni1","slide":1,"name":"key-label","text":"Key integration advantage","textPreview":"Key integration advantage","textChars":25,"textLines":1,"bbox":[96,446,300,30]}
+{"kind":"textbox","id":"sh/5wzqtsjm","slide":1,"name":"key-value","text":"Dual regulated LDO outputs","textPreview":"Dual regulated LDO outputs","textChars":26,"textLines":1,"bbox":[385,442,300,38]}
+{"kind":"textbox","id":"sh/i987id0v","slide":1,"name":"efficiency-note","text":"The selected AEM30940 combines 80-90% reported efficiency with separate low- and high-voltage rails.","textPreview":"The selected AEM30940 combines 80-90% reported efficiency with separate low- and high-voltage rails.","textChars":100,"textLines":1,"bbox":[96,480,600,44]}
+{"kind":"textbox","id":"sh/4ru9w7i5","slide":1,"name":"chart-note","text":"80-90% ranges plotted at their midpoint.","textPreview":"80-90% ranges plotted at their midpoint.","textChars":40,"textLines":1,"bbox":[850,355,350,24]}
+{"kind":"textbox","id":"sh/zm5sv6ls","slide":1,"name":"aem30940-caption","text":"e-peas AEM30940","textPreview":"e-peas AEM30940","textChars":15,"textLines":1,"bbox":[875,554,285,26]}
+{"kind":"textbox","id":"sh/ylwb2lk7","slide":1,"name":"selected-module","text":"Selected PMIC: DS-AEM30940","textPreview":"Selected PMIC: DS-AEM30940","textChars":26,"textLines":1,"bbox":[390,575,500,52]}
+{"kind":"chart","id":"ch/j2tsjq1c","slide":1,"name":"","chartType":"bar","title":"Reported Efficiency (%)","bbox":[825,96,405,265]}
+{"kind":"image","id":"im/ahsz25gz","slide":1,"name":"","alt":"aem30940","bbox":[875,382,285,174]}
+{"kind":"notes","id":"nt/qk3hm9","slide":1,"text":""}
