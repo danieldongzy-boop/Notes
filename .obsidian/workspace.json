@@ -18,21 +18,8 @@
               "icon": "lucide-file-text",
               "title": "Data_Converters_SS26_L02_Static_Metrics"
             }
-          },
-          {
-            "id": "0a2950d19ff48d6d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "IC/BGR/Razavi- The Design of a Low-Voltage Bandgap Reference/The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "The_Design_of_a_Low-Voltage_Bandgap_Reference_The_Analog_Mind"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 433.5
+    "width": 392.5
   },
   "right": {
     "id": "bd999d6bb133d2ad",
@@ -196,30 +183,30 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "0a2950d19ff48d6d",
+  "active": "61452fc3811fb5a8",
   "lastOpenFiles": [
-    "找工/微信图片_20260719151827_41_1.jpg",
-    "找工/微信图片_20260719151825_40_1.jpg",
-    "找工/微信图片_20260719151824_39_1.jpg",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored_montage.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-9.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-8.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-7.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-6.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-5.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-4.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored/slide-3.png",
-    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp_restored",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-8.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-7.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-6.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-5.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-4.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-3.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-2.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-16.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-15.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-14.png",
+    "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp/slide-13.png",
     "Uni Freiburg/能量收集/PROJECT/animal_tracking_marp",
+    "Uni Freiburg/能量收集/PROJECT/TEG_Performance_Calculation_slide.pptx.inspect.ndjson",
+    "Uni Freiburg/能量收集/PROJECT/TEG_Performance_Calculation_slide.pptx",
+    "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_voltage_conversion.pptx.inspect.ndjson",
+    "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_voltage_conversion.pptx",
     "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_slide.pptx.inspect.ndjson",
     "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_slide.pptx",
     "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_simple.pptx.inspect.ndjson",
     "Uni Freiburg/能量收集/PROJECT/System_Operation_Flowchart_simple.pptx",
     "Uni Freiburg/能量收集/PROJECT/SnapperGPS_specifications.md",
     "Uni Freiburg/能量收集/PROJECT/STM32WLE5CCU6_MCU_slide.pptx.inspect.ndjson",
-    "Uni Freiburg/能量收集/PROJECT/STM32WLE5CCU6_MCU_slide.pptx",
-    "Uni Freiburg/能量收集/PROJECT/Long_Term_Animal_Tracking_System/main.tex",
-    "Uni Freiburg/能量收集/PROJECT/Long_Term_Animal_Tracking_System",
     "Uni Freiburg/能量收集/PROJECT/stm32.md",
     "Uni Freiburg/能量收集/chapter_markdown/Chapter_05_Vibrational_Energy_Harvesting_I.md",
     "Uni Freiburg/能量收集/PROJECT/TEG.md",
