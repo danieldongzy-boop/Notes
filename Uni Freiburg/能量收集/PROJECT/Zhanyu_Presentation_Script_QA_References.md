@@ -1,51 +1,84 @@
 # Zhanyu - Presentation Script, Q&A, and References
 
 Presentation date: 24 July 2026  
-Target speaking time: about 5 minutes  
+Target speaking time: about 4 minutes, leaving time for slide changes and pauses
 Slides: PDF pages 16, 18, 19, 21, and 22
+Speaking note: present the English text only. The Chinese text is for understanding and rehearsal.
 
-## Final checks before export
+## Important PPT checks before the presentation
 
-1. On the Power Management slide, change `38 mV @ 3 uW` to `380 mV @ 3 uW`. The e-peas specification states a 380 mV cold start and harvesting from 50 mV only after startup.
-2. Use one radio architecture consistently. The current deck selects the discrete SX1261 on slide 6, but the final system uses the STM32WLE5 with an integrated LoRa radio. The recommended final architecture is STM32WLE5 without a separate SX1261 in the BOM. The SX1261 can remain on the comparison slide, but should not be labelled as the selected module.
-3. On the system flowchart, replace the single `1.8 V` label with `regulated 1.8 V and 3.0/3.3 V rails`. The GNSS uses 1.8 V, while the MCU power figures shown on slide 16 were calculated at 3.0 or 3.3 V.
-4. In the worst-case energy calculation, the radio sleep energy is about `0.017 mJ`, not `2.682 mJ`. The complete radio energy, active plus sleep, is about `2.682 mJ`.
-5. The complete one-minute system energy is about `500 mJ/min`, not only 495 mJ. This includes GNSS active and standby energy, the radio, the accelerometer, and the MCU, but still excludes some board-level losses and PMIC quiescent current.
-6. The BOM should contain quantity, unit price, subtotal, unit mass, and total mass. Do not include both STM32WLE5 and SX1261 as required parts if the integrated-radio architecture is used.
+1. The system flowchart says that data is sent through the integrated LoRa radio, but the BOM also lists a separate SX1261. Confirm whether both devices are really required. The script below follows the current slides without claiming that either item can be removed.
+2. The BOM reports a total weight of `370.9 mg`, but several row values appear to mix milligrams and grams. In particular, `0.3 mg` for the LC76G and `2.6 mg` for the LIR2032 are not plausible. Confirm the unit before presenting the total as a verified mass.
+3. The BOM currently has no quantity, unit price, subtotal, unit mass, or total mass columns. This makes it unclear whether the `€65` TEG cost represents one module or the five-module array.
+4. On the system flowchart, the single `1.8 V` label should ideally become `regulated 1.8 V and 3.0/3.3 V rails`, because the GNSS uses 1.8 V while the MCU figures use 3.0 or 3.3 V.
+5. On the worst-case energy slide, the radio sleep energy should be about `0.017 mJ`, not `2.682 mJ`. The total radio energy, active plus sleep, is about `2.682 mJ`.
 
-## Five-minute presentation script
+## Concise bilingual presentation script
 
-### Slide 12 - Power Management ICs (about 65 seconds)
+### PDF page 16 - Power Management ICs (about 50 seconds)
 
-The power-management IC is the interface between the thermoelectric generator, the rechargeable storage element, and the electronic load. We compared three commercial devices. The LTC3108-1 has the lowest start-up voltage, but it needs an external transformer and its reported efficiency is much lower. The BQ25505 is efficient, but its cold-start voltage is at least 600 millivolts. We therefore selected the e-peas AEM30940. It can cold-start from 380 millivolts at 3 microwatts, supports maximum-power-point tracking, and provides two regulated output rails. This is useful because the GNSS operates at 1.8 volts, while the controller and radio can use a higher rail. At a five-kelvin temperature difference, our five-TEG array produces about 14.66 milliwatts at its maximum-power point. Assuming 90 percent conversion efficiency, approximately 13.2 milliwatts is available to the system.
+**English**
 
-Transition: With the power path defined, the next step is to minimize the number of active electronic components.
+Here we compare three power-management ICs. We selected the AEM30940 because it can cold-start from 380 millivolts at 3 microwatts, reaches about 80 to 90 percent efficiency, and provides two regulated outputs. This is suitable for our sensors and controller. With five TEGs and a temperature difference of five kelvin, the array produces about 14.66 milliwatts. After an assumed 90 percent conversion efficiency, about 13.19 milliwatts is available to the system.
 
-### Slide 16 - Microcontroller (about 55 seconds)
+**中文**
 
-For the controller, we selected the STM32WLE5CCU6. It combines a 48-megahertz Arm Cortex-M4 processor and a sub-gigahertz LoRa radio in one package. This removes the need for a separate microcontroller and SX1261 transceiver, reducing PCB area, mass, cost, and standby losses. Most of the time, the controller remains in Stop 2 mode with the real-time clock active, where it consumes about 3.21 microwatts at 3 volts. We assume only 50 milliseconds of processor activity in each one-minute cycle. Under this assumption, the controller consumes approximately 0.71 millijoules per minute, which is very small compared with the roughly 495-millijoule GNSS acquisition. The integrated radio is activated only during the scheduled upload every few days.
+这里我们比较了三款电源管理芯片。我们选择 AEM30940，因为它可以在 3 微瓦输入功率、380 毫伏电压下冷启动，效率约为 80% 到 90%，并且能够提供两路稳压输出，适合我们的传感器和控制器。五片 TEG 在 5 开尔文温差下可以产生约 14.66 毫瓦功率。假设转换效率为 90%，系统最终可以获得约 13.19 毫瓦。
 
-Transition: These low-power states are coordinated by the operating sequence shown on the next slide.
+**Transition:** Next, I will introduce the controller and its low-power operation.
+**过渡：** 接下来介绍控制器及其低功耗运行方式。
 
-### Slide 17 - System Operation Flowchart (about 70 seconds)
+### PDF page 18 - Microcontroller (about 40 seconds)
 
-This flowchart combines the continuous energy path with the duty-cycled data path. Five TEG modules are connected in series to raise the voltage, and the AEM30940 extracts energy and manages the rechargeable LIR2032 storage cell. The PMIC then provides regulated rails for the electronics. Every minute, the real-time clock wakes the STM32WLE5. The controller reads the ADXL362, requests a position fix from the LC76G, and stores the activity and position record locally. It then checks whether the upload interval has been reached. Normally, it immediately returns to Stop 2 mode. Every few days, it sends the buffered data through the integrated LoRa radio before returning to sleep. This architecture separates a relatively expensive GNSS event from infrequent communication, while energy is harvested continuously and the battery supplies short power peaks.
+**English**
 
-Transition: The same architecture determines which components and quantities appear in the final BOM.
+We selected the STM32WLE5CCU6 as the controller. It combines a 48-megahertz Arm Cortex-M4 processor with sub-gigahertz LoRa capability in a compact package. Most of the time, it stays in Stop 2 mode with the real-time clock running and consumes only about 3.21 microwatts. Assuming 50 milliseconds of active processing per minute, its energy use is about 0.71 millijoules per minute, which is very small compared with the GNSS acquisition.
 
-### Slide 19 - Bill of Materials (about 55 seconds)
+**中文**
 
-The bill of materials contains only commercially available components, as required. The main functional parts are five thermoelectric generators, one AEM30940 power-management IC, one LIR2032 rechargeable cell, one ADXL362 accelerometer, one LC76G GNSS module, and one STM32WLE5 controller with integrated LoRa. The final table also includes the antenna, passives, PCB, thermal interface, heat spreader, enclosure, and collar attachment, because these items affect both cost and mass. The main cost drivers are the TEG array and the GNSS and radio hardware, while the integrated controller reduces component count. Based on the completed BOM, the component total is [TOTAL COST] and the estimated complete mass is [TOTAL MASS], leaving a margin below the one-kilogram requirement.
+我们选择 STM32WLE5CCU6 作为控制器。它在一个紧凑封装中集成了 48 兆赫兹 Arm Cortex-M4 处理器和亚 GHz LoRa 功能。大部分时间它处于带实时时钟的 Stop 2 模式，功耗只有约 3.21 微瓦。假设每分钟只进行 50 毫秒的运算，它每分钟消耗约 0.71 毫焦，远低于 GNSS 定位所需的能量。
 
-Fallback if the final total is not ready: replace the last sentence with: `The final supplier prices are still being consolidated, but the architecture already minimizes component count and remains comfortably below the one-kilogram mass limit.`
+**Transition:** The next slide shows how all components work together.
+**过渡：** 下一页展示所有部件如何协同工作。
 
-Transition: Finally, all component values and design assumptions are traceable to the following sources.
+### PDF page 19 - System Operation Flowchart (about 55 seconds)
 
-### Slide 20 - References and conclusion (about 45 seconds)
+**English**
 
-These references are primarily manufacturer datasheets and official product pages. They provide the electrical limits, operating currents, start-up conditions, package sizes, and storage specifications used in our comparisons and energy calculations. We use distributor pages only where a manufacturer page is not readily available for the exact commercial storage component. The key result is that the proposed system is electrically energy-positive at the assumed five-kelvin temperature difference: about 13.2 milliwatts is available after conversion, compared with an estimated average system demand of about 8.3 milliwatts. However, the temperature difference must exist across the TEG itself. Therefore, the thermal interface and outdoor validation remain the most important practical risks.
+This flowchart has two parts. In the continuous energy path, five TEGs supply the AEM30940, which manages the rechargeable LIR2032 cell. In the data path, the real-time clock wakes the controller every minute. The controller reads the ADXL362, obtains a position from the LC76G, and stores both results. Normally, it then returns to Stop 2 mode. Every few days, the buffered data is transmitted to the base station. In this way, energy is harvested continuously, sensing happens every minute, and communication happens much less often.
 
-Closing sentence: Thank you. We are happy to answer your questions.
+**中文**
+
+这个流程图分为两部分。在持续供能路径中，五片 TEG 为 AEM30940 供电，由它管理可充电的 LIR2032 电池。在数据路径中，实时时钟每分钟唤醒一次控制器。控制器读取 ADXL362 的活动数据，通过 LC76G 获取位置，并保存这两类信息。通常系统随后返回 Stop 2 模式。每隔几天，缓存的数据会发送到基站。因此，系统可以持续采集能量、每分钟进行一次测量，同时大幅降低通信频率。
+
+**Transition:** Based on this design, the updated BOM is shown on the next slide.
+**过渡：** 根据这一设计，下一页给出了更新后的物料清单。
+
+### PDF page 21 - Bill of Materials (about 40 seconds)
+
+**English**
+
+The updated BOM lists seven commercial components: the activity sensor, GNSS module, LoRa transceiver, TEG harvester, power-management IC, rechargeable cell, and microcontroller. The total listed cost is 161 euros and 2 cents. The two largest cost items are the AEM30940 at 70 euros and the TEG harvester at 65 euros. Together, they account for most of the total cost. The table currently reports a total component weight of 370.9 milligrams, which is below the one-kilogram limit.
+
+**中文**
+
+更新后的 BOM 列出了七个商用部件：活动传感器、GNSS 模块、LoRa 收发器、TEG 能量采集器、电源管理芯片、可充电电池和微控制器。清单中的总成本为 161.02 欧元。其中成本最高的是 70 欧元的 AEM30940 和 65 欧元的 TEG 能量采集器，两者占总成本的大部分。表格目前给出的部件总重量为 370.9 毫克，低于 1 千克的限制。
+
+**Transition:** Finally, these are the main sources used for our component data.
+**过渡：** 最后，这些是我们获取部件数据时使用的主要资料来源。
+
+### PDF page 22 - References and conclusion (about 35 seconds)
+
+**English**
+
+Our component values mainly come from manufacturer datasheets and official product pages. They provide the electrical limits, power consumption, start-up conditions, and package information used in our calculations. The main conclusion is that, at the assumed five-kelvin temperature difference, about 13.19 milliwatts is available after conversion, compared with an estimated average demand of about 8.3 milliwatts. The key remaining risk is whether this temperature difference can be maintained across the TEG in real outdoor conditions.
+
+**中文**
+
+我们的部件参数主要来自制造商数据手册和官方网站。这些资料提供了计算中使用的电气限制、功耗、启动条件和封装信息。主要结论是：在假设温差为 5 开尔文时，转换后可获得约 13.19 毫瓦，而系统的估算平均需求约为 8.3 毫瓦。剩余的主要风险是，在真实户外环境中能否在 TEG 两端维持这一温差。
+
+**Closing:** Thank you. We are happy to answer your questions.
+**结束语：** 谢谢。我们很乐意回答大家的问题。
 
 ## Likely questions and concise answers
 
@@ -83,7 +116,7 @@ The series connection raises the voltage. At 5 K, one module produces about 194 
 
 ### 9. Why use STM32WLE5 if an SX1261 was already selected?
 
-The final architecture should use only the STM32WLE5 integrated radio. The SX1261 slide is useful as a radio comparison, but a separate SX1261 should not be included in the final BOM. Integrating the radio reduces component count, mass, PCB area, and interface overhead.
+The current slides are inconsistent: the flowchart uses the STM32WLE5 integrated radio, while the BOM also lists an SX1261. If the integrated radio is used, the separate SX1261 is normally unnecessary. The team should confirm the final radio architecture before the presentation and then use the same choice in the flowchart, energy calculation, and BOM.
 
 ### 10. Why do the slides show different LoRa transmit powers?
 
@@ -103,7 +136,7 @@ Buffering data reduces the number of radio start-ups and transmissions. A one-mi
 
 ### 14. Is the system really below 1000 g?
 
-The electronic components are far below the limit, but the final proof must include the enclosure, antennas, wiring, thermal spreader or heat sink, collar, and attachment hardware. The BOM should therefore include both unit mass and extended mass, followed by a mechanical contingency margin.
+The current BOM reports 370.9 milligrams, but its row values appear to mix milligrams and grams, so this total is not yet reliable. The final proof must use consistent units and include quantities, the enclosure, antennas, wiring, thermal spreader or heat sink, collar, and attachment hardware.
 
 ### 15. What is the biggest unresolved risk?
 
