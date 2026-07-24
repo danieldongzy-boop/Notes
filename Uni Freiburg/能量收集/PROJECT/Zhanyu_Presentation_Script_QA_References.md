@@ -1,8 +1,8 @@
 # Zhanyu - Presentation Script, Q&A, and References
 
 Presentation date: 24 July 2026  
-Target speaking time: about 4 minutes, leaving time for slide changes and pauses
-Slides: PDF pages 16, 18, 19, 21, and 22
+Target speaking time: about 5 minutes, including slide changes and pauses
+Slides: PDF pages 13, 14, 16, 19, 21, and 22
 Speaking note: present the English text only. The Chinese text is for understanding and rehearsal.
 
 ## Important PPT checks before the presentation
@@ -25,21 +25,34 @@ Here we compare three power-management ICs. We selected the AEM30940 because it 
 
 这里我们比较了三款电源管理芯片。我们选择 AEM30940，因为它可以在 3 微瓦输入功率、380 毫伏电压下冷启动，效率约为 80% 到 90%，并且能够提供两路稳压输出，适合我们的传感器和控制器。五片 TEG 在 5 开尔文温差下可以产生约 14.66 毫瓦功率。假设转换效率为 90%，系统最终可以获得约 13.19 毫瓦。
 
-**Transition:** Next, I will introduce the controller and its low-power operation.
-**过渡：** 接下来介绍控制器及其低功耗运行方式。
+**Transition:** Next, I will compare the storage options and explain our selection.
+**过渡：** 接下来我会比较储能方案，并说明我们的选择。
 
-### PDF page 18 - Microcontroller (about 40 seconds)
+### PDF page 13 - Storage (about 45 seconds)
 
 **English**
 
-We selected the STM32WLE5CCU6 as the controller. It combines a 48-megahertz Arm Cortex-M4 processor with sub-gigahertz LoRa capability in a compact package. Most of the time, it stays in Stop 2 mode with the real-time clock running and consumes only about 3.21 microwatts. Assuming 50 milliseconds of active processing per minute, its energy use is about 0.71 millijoules per minute, which is very small compared with the GNSS acquisition.
+This slide compares two supercapacitors with the rechargeable LIR2032 button cell. The supercapacitors have the advantage of fast charging and a high cycle life, but their stored energy is very limited. Between 2 and 4.5 volts, the 0.1-farad device stores only about 0.81 joules, and the 0.06-farad device stores about 0.49 joules. In contrast, the 45-milliampere-hour LIR2032 at 3.6 volts stores about 583 joules. This much higher energy density allows it to buffer a GNSS acquisition and temporary periods of low harvested power. Therefore, we selected the LIR2032. Its cycle-life rating is below 400 cycles, so the final design should avoid deep discharge cycles and must use correct charge protection.
 
 **中文**
 
-我们选择 STM32WLE5CCU6 作为控制器。它在一个紧凑封装中集成了 48 兆赫兹 Arm Cortex-M4 处理器和亚 GHz LoRa 功能。大部分时间它处于带实时时钟的 Stop 2 模式，功耗只有约 3.21 微瓦。假设每分钟只进行 50 毫秒的运算，它每分钟消耗约 0.71 毫焦，远低于 GNSS 定位所需的能量。
+这一页比较了两个超级电容和可充电的 LIR2032 纽扣电池。超级电容的优点是充电很快、循环寿命高，但储能非常有限。在 2 V 到 4.5 V 的工作范围内，0.1 F 电容只能储存约 0.81 J，0.06 F 电容只能储存约 0.49 J。相比之下，45 mAh、3.6 V 的 LIR2032 可以储存约 583 J。因此它能够缓冲一次 GNSS 定位和短时间的低采能阶段，所以我们选择 LIR2032。它的循环寿命低于 400 次，因此最终设计需要避免深度充放电，并正确设置充电保护。
 
-**Transition:** The next slide shows how all components work together.
-**过渡：** 下一页展示所有部件如何协同工作。
+**Transition:** The next slide quantifies how quickly each storage option can be charged.
+**过渡：** 下一页量化比较这些储能器件的充电时间。
+
+### PDF page 14 - Time to Charge (about 50 seconds)
+
+**English**
+
+Using the estimated PMIC output of 13.19 milliwatts, the two supercapacitors can be charged quickly from 2 to 4.5 volts: about 61.6 seconds for the 0.1-farad device and about 37 seconds for the 0.06-farad device. The LIR2032 stores much more energy, so charging it from empty takes about 12.28 hours in this ideal calculation. This calculation assumes that the full harvested power is available for charging and therefore represents the best case. After one GNSS burst, the cell has used approximately 0.139 coulombs. With an ideal charging current of about 3.66 milliamperes, the energy can be recovered in about 38 seconds. In practice, system consumption, battery losses, and changing temperature differences will make recovery slower.
+
+**中文**
+
+按照 PMIC 输出约 13.19 mW 计算，两个超级电容从 2 V 充到 4.5 V 很快：0.1 F 电容约需要 61.6 秒，0.06 F 电容约需要 37 秒。LIR2032 储能更多，因此从完全放电充满，在理想计算下约需要 12.28 小时。这里假设全部采集功率都用于充电，所以这是最佳情况。一次 GNSS burst 大约消耗 0.139 C 电量；在理想充电电流约 3.66 mA 下，理论上约 38 秒可以补回。实际恢复会更慢，因为系统本身也在耗电，电池和转换器存在损耗，而且温差会变化。
+
+**Transition:** With the storage choice and charging behavior defined, the next slide shows how the complete system operates.
+**过渡：** 明确了储能选择和充电行为后，下一页展示完整系统如何运行。
 
 ### PDF page 19 - System Operation Flowchart (about 55 seconds)
 
