@@ -1,0 +1,12 @@
+check,reproduced_value,unit,paper_value
+"Fig5 a1=0.5, a2=0.3 delay sensitivity",7.502653545104615,%/V,7.5
+"Fig6 nominal a1=0.5, a2=0.28",1.251089498279832,degC/V,<2 contour
+Fig6 worst within independent +/-10% box,2.529032727173909,degC/V,about 2.6
+Worst-box a1,0.55,,not reported
+Worst-box a2,0.308,,not reported
+16-bit FDC minimum at 50 MHz,0.762939453125,kHz,0.763
+16-bit FDC conversion time at 50 MHz,1.31072,ms,1.31
+N-mode energy,12.189696000000001,nJ,12.2
+P-mode energy,12.845056,nJ,12.8
+N-mode resolution FoM,3.1205621760000004,pJ*K^2,3.1
+P-mode resolution FoM,2.1708144639999998,pJ*K^2,2.2
