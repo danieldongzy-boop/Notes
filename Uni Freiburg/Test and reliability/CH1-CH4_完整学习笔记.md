@@ -1623,10 +1623,10 @@ DFT 的全称是 **Design-for-Testability**。它通常加入额外硬件；正�
 
 ### 5.2 DFT 与 SFT
 
-| 方法 | 全称 | 做法 | 结果 |
-|---|---|---|---|
-| DFT | Design-for-Testability | 增加 test point、scan 等测试硬件 | 原来的难测故障变得可测 |
-| SFT | Synthesis-for-Testability | 重新综合、改变逻辑结构 | 删除或重构造成难测问题的逻辑 |
+| 方法  | 全称                        | 做法                       | 结果             |
+| --- | ------------------------- | ------------------------ | -------------- |
+| DFT | Design-for-Testability    | 增加 test point、scan 等测试硬件 | 原来的难测故障变得可测    |
+| SFT | Synthesis-for-Testability | 重新综合、改变逻辑结构              | 删除或重构造成难测问题的逻辑 |
 
 课件例子中：
 
