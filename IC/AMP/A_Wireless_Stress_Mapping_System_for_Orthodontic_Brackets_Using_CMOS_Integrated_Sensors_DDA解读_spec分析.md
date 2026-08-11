@@ -91,25 +91,25 @@ Fig. 13 的 DDA 是一个带两组差分输入对的放大器：
 
 论文给出的 DDA 设计与实测参数如下：
 
-| 项目 | 数值/说明 |
-|---|---|
-| DDA 类型 | variable-gain differential difference amplifier |
-| 开环 DC 增益 | 92 dB |
-| GBW | 2 MHz |
-| 闭环增益范围 | 1 到 271，16 档数字选择 |
-| 反馈网络 | resistive T-network |
-| T-network 单位电阻 | `r = 109 kOhm` |
-| 增益公式 | `A_CL = (R/r)^2 + 3(R/r) + 1` |
-| `R/r` 取值 | 0 到 15 |
-| 负载电阻 | `R_L = 436 kOhm` |
-| ADC 输入电容 | 10 pF |
-| 输出附加极点 | 36 kHz |
-| 输入参考 offset | 38 到 270 uV，三颗 DDA 样本 |
-| 输入共模下限 | 690 到 800 mV |
-| 输入参考噪声积分带宽 | 1 Hz 到 36 kHz |
-| 输入参考噪声 | 10.8 uV_rms |
-| 最大增益输出噪声 | 2.1 mV_rms，约 0.6 LSB |
-| DDA + ADC + GC 电流 | 290 uA at 3.3 V |
+| 项目                | 数值/说明                                           |
+| ----------------- | ----------------------------------------------- |
+| DDA 类型            | variable-gain differential difference amplifier |
+| 开环 DC 增益          | 92 dB                                           |
+| GBW               | 2 MHz                                           |
+| 闭环增益范围            | 1 到 271，16 档数字选择                                |
+| 反馈网络              | resistive T-network                             |
+| T-network 单位电阻    | `r = 109 kOhm`                                  |
+| 增益公式              | `A_CL = (R/r)^2 + 3(R/r) + 1`                   |
+| `R/r` 取值          | 0 到 15                                          |
+| 负载电阻              | `R_L = 436 kOhm`                                |
+| ADC 输入电容          | 10 pF                                           |
+| 输出附加极点            | 36 kHz                                          |
+| 输入参考 offset       | 38 到 270 uV，三颗 DDA 样本                           |
+| 输入共模下限            | 690 到 800 mV                                    |
+| 输入参考噪声积分带宽        | 1 Hz 到 36 kHz                                   |
+| 输入参考噪声            | 10.8 uV_rms                                     |
+| 最大增益输出噪声          | 2.1 mV_rms，约 0.6 LSB                            |
+| DDA + ADC + GC 电流 | 290 uA at 3.3 V                                 |
 
 ## 5. 可变增益与二叉树搜索
 
