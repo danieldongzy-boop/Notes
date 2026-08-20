@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "4d75435d4c12771f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b107fa2553b2ec7c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f5096a2831e987c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L01_Sampling_Quantization_Reconstruction.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_SS26_L01_Sampling_Quantization_Reconstruction"
+            }
+          },
+          {
+            "id": "9d7ba0d4df3eba5c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/data converter/tasks_ADC_DAC_SS26.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "tasks_ADC_DAC_SS26"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3cc032f3f3863821",
+    "type": "split",
+    "children": [
+      {
+        "id": "3583252ecf8d0fd2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e28816125cd1ee21",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "50dc8ea17c3d95ea",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "d0b528082ab099e5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 315.8999938964844
+  },
+  "right": {
+    "id": "8f359eeb7e7e6c0f",
+    "type": "split",
+    "children": [
+      {
+        "id": "9cdb190a2d55ea7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5fcb6d3741b791f6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Uni Freiburg/Test and reliability/CH5/ex05.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "ex05 的反向链接列表"
+            }
+          },
+          {
+            "id": "c4cde88676e33091",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Uni Freiburg/能量收集/PROJECT/Zhanyu_Presentation_Script_QA_References.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Zhanyu_Presentation_Script_QA_References 的出链列表"
+            }
+          },
+          {
+            "id": "a70c8dcdf3e5ca30",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "9e4a50f3978b341c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 327.89996337890625
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "9d7ba0d4df3eba5c",
+  "lastOpenFiles": [
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L01_Sampling_Quantization_Reconstruction.pdf",
+    "Uni Freiburg/data converter/tasks_ADC_DAC_SS26.pdf",
+    "Uni Freiburg/完结",
+    "Uni Freiburg/完结/Test and reliability/08-cellaware_annot.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH1-CH4_完整学习笔记.md",
+    "Uni Freiburg/完结/Test and reliability/CH5/ex05.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH5/Exercise5_solution_from2024.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH5/ex05_slides.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH4/ex04.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH4/ex04_annot.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH3/ex03_slides_annot.pdf",
+    "Uni Freiburg/完结/Test and reliability/CH2/ex02_slides_annot.pdf",
+    "找工/微信图片_20260819101806_82_1.jpg",
+    "找工/微信图片_20260814164822_171_89.jpg",
+    "找工/微信图片_20260814164811_170_89.jpg",
+    "IC/AMP/_tmp_page7/paper-07.png",
+    "找工/演示/面试项目介绍.md",
+    "找工/演示/屏幕截图 2026-08-11 190209.png",
+    "找工/演示/屏幕截图 2026-08-11 190135.png",
+    "找工/演示/屏幕截图 2026-08-11 182803.png",
+    "找工/演示/屏幕截图 2026-08-11 182648.png",
+    "找工/演示/sar_comparator.png",
+    "找工/演示/sar_bootstrap.png",
+    "Uni Freiburg/Test and reliability/CLAUDE.md",
+    "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
+    "Uni Freiburg/完结/Test and reliability/CH2/CH2_课件解读_Fault_Simulation_中英对照.md",
+    "Uni Freiburg/完结/Test and reliability/CH1/课件解读_Fault_Collapsing_中英对照.md",
+    "Uni Freiburg/完结/Test and reliability/CH1/01b-intro_学习笔记.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/vue.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/react.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/migration.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/gallery-spec.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/video-recording.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/tracing.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/storage-state.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/test-generation.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/session-management.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/request-mocking.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/running-code.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/element-attributes.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/playwright-tests.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md",
+    "找工/演示/ppt_native_build/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md",
+    "找工/演示/ppt_native_build/node_modules/@oai/artifact-tool/node_modules/@oai/embedded-fonts/README.md",
+    "找工/演示/ppt_native_build/node_modules/pptxgenjs/node_modules/@types/node/README.md"
+  ]
+}
