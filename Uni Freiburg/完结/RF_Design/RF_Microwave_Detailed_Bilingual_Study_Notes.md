@@ -28,14 +28,15 @@
 15. [第十五章：趋肤效应与表面粗糙度](#ch15)
 16. [第十六章：天线原理与特性参数](#ch16)
 17. [第十七章：阵列天线与 MIMO](#ch17)
-18. [第七讲：RF 半导体与有源器件基础](#lec7)
-19. [第八讲：RF 半导体制造工艺](#lec8)
-20. [第九讲：载流子输运、结与场效应晶体管](#lec9)
-21. [第十讲：双极晶体管与 RF 功率半导体](#lec10)
-22. [第十一讲：RF 增益、稳定性与放大器基础](#lec11)
-23. [第十二讲：功率放大器、接收电路与 RF 系统](#lec12)
-24. [Lectures 7-12 公式速查与易错点](#lec7-12-summary)
-25. [附录：常数表、频段划分、单位换算](#appendix)
+18. [第十八章：RF 半导体与有源器件基础（Lecture 7）](#ch18)
+19. [第十九章：RF 半导体制造工艺（Lecture 8）](#ch19)
+20. [第二十章：载流子输运、结与场效应晶体管（Lecture 9）](#ch20)
+21. [第二十一章：双极晶体管与 RF 功率半导体（Lecture 10）](#ch21)
+22. [第二十二章：RF 增益、稳定性与放大器基础（Lecture 11）](#ch22)
+23. [第二十三章：功率放大器、接收电路与 RF 系统（Lecture 12）](#ch23)
+24. [第二十四章：课件 Questions 问题与答案](#questions)
+25. [第二十五章：Lectures 7-12 公式速查与易错点](#ch25)
+26. [附录：常数表、频段划分、单位换算](#appendix)
 
 ---
 
@@ -182,6 +183,7 @@ $$
 | **物理含义** Physical Meaning | 电场 $\vec{E}$ 和磁场 $\vec{H}$ 各自满足标准的波动方程，形式为 $\nabla^2\psi - \frac{1}{v^2}\frac{\partial^2\psi}{\partial t^2}=0$。这表明电磁扰动以波的形式在空间中传播。*Both E and H satisfy standard wave equation; EM disturbances propagate as waves in space.* |
 | **推导链** Derivation Chain  | Maxwell 方程组 → 取旋度 → 代入交叉耦合 → 消元 → 独立波动方程。*Maxwell → curl → substitute cross-coupling → eliminate → independent wave equations.*                                                                                               |
 | **关键洞察** Key Insight      | 麦克斯韦在引入位移电流时就预言了电磁波——电场和磁场互相"生"对方，形成一个自持的传播过程。*Maxwell predicted EM waves upon adding displacement current: E and H mutually generate each other in a self-sustaining propagation.*                                           |
+|                           |                                                                                                                                                                                                                               |
 
 ---
 
@@ -258,11 +260,11 @@ $$
 \boxed{\vec{S}(t) = \vec{E}(t) \times \vec{H}(t)} \quad [\text{W/m}^2]
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | $\vec{S}$ 的大小表示穿过单位面积的瞬时功率流，方向表示能量传播方向。满足右手定则：$\vec{E}$ × $\vec{H}$ → $\vec{S}$。*The magnitude of $\vec{S}$ is instantaneous power per unit area; direction is energy flow direction. Right-hand rule: $\vec{E}$ × $\vec{H}$ → $\vec{S}$.* |
-| **推导要点** Derivation | 由 Maxwell 方程组出发，计算 $\nabla\cdot(\vec{E}\times\vec{H})$，结合电场能量密度 $\frac{1}{2}\varepsilon E^2$ 和磁场能量密度 $\frac{1}{2}\mu H^2$ 的变化率，导出坡印廷定理（Poynting theorem）。*From Maxwell's equations, compute $\nabla\cdot(\vec{E}\times\vec{H})$, combine with time derivatives of energy densities.* |
-| **应用场景** Application | 天线辐射方向图计算（远场 $\vec{S}$ 空间分布）；PCB 走线的功率流分布可视化；电磁兼容（EMC）近场探测。*Antenna radiation pattern (far-field $\vec{S}$ distribution); PCB trace power flow visualization; EMC near-field probing.* |
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                                                                                                       |     |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
+| **物理含义** Physical Meaning | $\vec{S}$ 的大小表示穿过单位面积的瞬时功率流，方向表示能量传播方向。满足右手定则：$\vec{E}$ × $\vec{H}$ → $\vec{S}$。*The magnitude of $\vec{S}$ is instantaneous power per unit area; direction is energy flow direction. Right-hand rule: $\vec{E}$ × $\vec{H}$ → $\vec{S}$.*                                           |     |
+| **推导要点** Derivation       | 由 Maxwell 方程组出发，计算 $\nabla\cdot(\vec{E}\times\vec{H})$，结合电场能量密度 $\frac{1}{2}\varepsilon E^2$ 和磁场能量密度 $\frac{1}{2}\mu H^2$ 的变化率，导出坡印廷定理（Poynting theorem）。*From Maxwell's equations, compute $\nabla\cdot(\vec{E}\times\vec{H})$, combine with time derivatives of energy densities.* |     |
+| **应用场景** Application      | 天线辐射方向图计算（远场 $\vec{S}$ 空间分布）；PCB 走线的功率流分布可视化；电磁兼容（EMC）近场探测。*Antenna radiation pattern (far-field $\vec{S}$ distribution); PCB trace power flow visualization; EMC near-field probing.*                                                                                               |     |
 
 ### 3.2 时谐场中的时间平均坡印廷矢量 (Time-Averaged Poynting Vector)
 
@@ -1179,7 +1181,7 @@ $$
 
 ---
 
-<h1 id="lec7">第七讲：RF 半导体与有源器件基础</h1>
+<h1 id="ch18">第十八章：RF 半导体与有源器件基础（Lecture 7）</h1>
 <h2>Lecture 7: RF Semiconductors and Active-Device Fundamentals</h2>
 
 > 本讲从无源网络进入有源器件。核心问题是：如何用偏置控制载流子的产生与运动，并把直流功率转换为 RF 功率。  
@@ -1318,7 +1320,7 @@ $$
 
 ---
 
-<h1 id="lec8">第八讲：RF 半导体制造工艺</h1>
+<h1 id="ch19">第十九章：RF 半导体制造工艺（Lecture 8）</h1>
 <h2>Lecture 8: RF Semiconductor Fabrication</h2>
 
 ### 8.1 从晶圆到芯片的工艺循环 (Wafer-to-Chip Process Loop)
@@ -1374,7 +1376,7 @@ RF 器件尤其敏感于栅长、栅电阻、欧姆接触电阻、钝化层陷�
 
 ---
 
-<h1 id="lec9">第九讲：载流子输运、结与场效应晶体管</h1>
+<h1 id="ch20">第二十章：载流子输运、结与场效应晶体管（Lecture 9）</h1>
 <h2>Lecture 9: Carrier Transport, Junctions, and Field-Effect Transistors</h2>
 
 ### 9.1 漂移、扩散与 Einstein 关系 (Drift, Diffusion, and Einstein Relation)
@@ -1497,7 +1499,7 @@ $$
 
 ---
 
-<h1 id="lec10">第十讲：双极晶体管与 RF 功率半导体</h1>
+<h1 id="ch21">第二十一章：双极晶体管与 RF 功率半导体（Lecture 10）</h1>
 <h2>Lecture 10: Bipolar Transistors and RF Power Semiconductors</h2>
 
 ### 10.1 BJT 的控制关系 (BJT Control Relations)
@@ -1576,7 +1578,7 @@ $$
 
 ---
 
-<h1 id="lec11">第十一讲：RF 增益、稳定性与放大器基础</h1>
+<h1 id="ch22">第二十二章：RF 增益、稳定性与放大器基础（Lecture 11）</h1>
 <h2>Lecture 11: RF Gain, Stability, and Amplifier Fundamentals</h2>
 
 ### 11.1 基本增益量 (Basic Gain Quantities)
@@ -1721,7 +1723,7 @@ $$
 
 ---
 
-<h1 id="lec12">第十二讲：功率放大器、接收电路与 RF 系统</h1>
+<h1 id="ch23">第二十三章：功率放大器、接收电路与 RF 系统（Lecture 12）</h1>
 <h2>Lecture 12: Power Amplifiers, Receive Circuits, and RF Systems</h2>
 
 ### 12.1 功率放大器类别 (Power-Amplifier Classes)
@@ -1901,7 +1903,310 @@ $$
 
 ---
 
-<h1 id="lec7-12-summary">Lectures 7-12 公式速查与易错点</h1>
+<h1 id="questions">第二十四章：课件 Questions 问题与答案</h1>
+<h2>Questions from the lecture slides: answers and source pointers</h2>
+
+本章整理课件图片中的 27 道复习题。每道题给出考试可直接使用的答案，并在末尾注明课件 PDF 页码和对应主题；页码按 `Skripte_Vorlesung-01bis12.pdf` 的 PDF 页序计数。  
+*This chapter answers the 27 review questions shown in the lecture slides. The source pointer uses the PDF page number and the corresponding topic.*
+
+### 24.1 RF 系统、匹配与基本参数 (RF Systems, Matching, and Basic Quantities)
+
+#### Q1. Please draw and name components of a transceiver and name their principal limitations.
+
+**答案 Answer：**
+
+典型收发机可以画成：
+
+```text
+接收：Antenna -> RF filter/duplexer -> LNA -> Mixer + LO -> IF/baseband -> ADC/DSP
+发射：DAC/DSP -> IF/baseband -> Mixer + LO -> Driver -> PA -> RF filter/duplexer -> Antenna
+```
+
+主要限制是：LNA 的噪声系数和线性度、混频器的转换增益/损耗与镜像抑制、LO 的相位噪声和泄漏、PA 的效率/输出功率/ACPR、滤波器的插入损耗与选择性，以及 ADC/DAC 的采样率、动态范围和量化噪声。  
+**课件定位 Source：** PDF pp. 488-495，`Mobile Communication Handset`、`Receiver front-ends`、`Transceiver front-ends`；对应本笔记 [第二十三章](#ch23) §12.10。
+
+#### Q2. Why is the PAE of a power amplifier always smaller than 100%? Name loss mechanisms.
+
+**答案 Answer：**
+
+$$
+PAE=\frac{P_{RF,out}-P_{RF,in}}{P_{DC}}
+$$
+
+PAE 小于 100%，因为直流输入功率不可能全部转化为有用 RF 输出功率；必须扣除 RF 输入功率，而且存在晶体管导通/开关损耗、偏置网络损耗、匹配网络和金属/介质损耗、谐波功率、漏电与封装寄生损耗，最终还有热耗散。理想开关模型可以逼近 100%，但真实器件不能达到。  
+**课件定位 Source：** PDF pp. 412、439-448，`Efficiency`、`Classes of Power Amplifiers`；对应本笔记 [第二十二章](#ch22) §11.4 和 [第二十三章](#ch23) §12.1。
+
+#### Q3. Draw the equivalent circuit of a FET.
+
+**答案 Answer：**
+
+小信号 FET 等效电路包括：输入端的 $C_{gs}$，栅漏反馈电容 $C_{gd}$，输出端的 $C_{ds}$ 与 $g_{ds}$，受控电流源 $g_mv_{gs}$，以及外部 $R_g,R_s,R_d$、$L_g,L_s,L_d$ 和焊盘电容。常用本征模型为
+
+$$
+i_d=g_mv_{gs}+g_{ds}v_{ds},\qquad r_o=\frac{1}{g_{ds}}
+$$
+
+**课件定位 Source：** PDF pp. 329-332，`Equivalent circuit concept`、`Small-signal equivalent circuit FET II`；对应本笔记 [第二十章](#ch20) §9.6。
+
+#### Q4. Indicate an impedance of 100 Ohm in the Smith-Polar diagram with $Z_0=50\ \Omega$.
+
+**答案 Answer：**
+
+归一化阻抗为
+
+$$
+z=\frac{Z}{Z_0}=\frac{100}{50}=2+j0
+$$
+
+因此在 Smith-Polar 图的实轴正方向上，标记 $r=2$ 的点；它位于中心 $z=1$ 的右侧。  
+**课件定位 Source：** PDF pp. 141-143，`Display of parameters: Smith-Polar Chart II-IV`；对应本笔记 [第六章](#ch6) §6.2、§6.6。
+
+#### Q5. What does conjugate complex matching mean?
+
+**答案 Answer：**
+
+共轭匹配表示源阻抗等于负载输入阻抗的共轭：
+
+$$
+Z_S=Z_{in}^{*}
+$$
+
+等价地，功率波表示为 $\Gamma_S=\Gamma_{in}^{*}$。在给定源和负载条件下，这使负载获得最大平均功率；注意放大器的双向器件需要用完整的 $\Gamma_{in}$ 与 $\Gamma_{out}$ 联立求解。  
+**课件定位 Source：** PDF p. 184，`Concept of Matching`；对应本笔记 [第十一章](#ch11) §11.2 和 [第二十二章](#ch22) §11.2。
+
+#### Q6. What does $K>1$ mean regarding stability?
+
+**答案 Answer：**
+
+Rollett 稳定性因子
+
+$$
+K=\frac{1-|S_{11}|^2-|S_{22}|^2+|\Delta|^2}{2|S_{12}S_{21}|}
+$$
+
+$K>1$ 只是无条件稳定的一个条件；还必须满足 $|\Delta|<1$。两者同时满足时，对所有被动源、负载反射系数 $|\Gamma_S|,|\Gamma_L|\le1$ 都不会振荡。  
+**课件定位 Source：** PDF pp. 403-404，`Stability Analysis`；对应本笔记 [第二十二章](#ch22) §11.3。
+
+#### Q7. What is the equivalent wavelength of 100 GHz in vacuum and in a dielectric material with $\varepsilon_r=9$?
+
+**答案 Answer：**
+
+$$
+\lambda_0=\frac{c}{f}=\frac{3\times10^8}{100\times10^9}=3\ \mathrm{mm}
+$$
+
+对于非磁性均匀介质，$\lambda=\lambda_0/\sqrt{\varepsilon_r}$，所以
+
+$$
+\lambda=\frac{3\ \mathrm{mm}}{\sqrt{9}}=1\ \mathrm{mm}
+$$
+
+**课件定位 Source：** PDF pp. 67-75，`Some Numbers and Lengths`、`Propagation and Dielectrics`；对应本笔记 [第二章](#ch2) 和 [第四章](#ch4)。
+
+#### Q8. What power in W does 36 dBm denote?
+
+**答案 Answer：**
+
+$$
+P=1\ \mathrm{mW}\times10^{36/10}=3981\ \mathrm{mW}\approx3.98\ \mathrm{W}
+$$
+
+**课件定位 Source：** PDF p. 411，`Power in dBm`；对应本笔记 [第二十二章](#ch22) §11.4。
+
+### 24.2 半导体器件与工艺 (Semiconductor Devices and Processing)
+
+#### Q9. What is the great help and the great drawback of CMOS scaling to RF operation? (Two reasons)
+
+**答案 Answer：**
+
+最大的帮助是：缩短沟道减小渡越时间并提高 $f_T/f_{max}$，同时可以把 RF、数字基带和控制电路高密度集成。最大的缺点是：击穿电压和允许电压摆幅降低，导致输出功率和动态范围受限；此外短沟道、栅漏电、工艺波动和寄生耦合更严重。  
+**课件定位 Source：** PDF pp. 251-253、269，`Moore's Law`、`A modern silicon CMOS FET`、`Scaling: Silicon-wafer`；对应本笔记 [第十八章](#ch18) §7.3 和 [第二十章](#ch20) §9.6。
+
+#### Q10. Why do we use heterostructure in a bipolar transistor?
+
+**答案 Answer：**
+
+异质结构用宽禁带发射极和窄禁带基区形成能带偏移，抑制基区载流子反向注入，提高发射极注入效率；这样可以使用更高掺杂的基区来降低基极电阻，同时保持高电流增益和高 $f_{max}$。  
+**课件定位 Source：** PDF pp. 362-370，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [第二十一章](#ch21) §10.3。
+
+#### Q11. What are the (dis)advantages of a bipolar vs. a FET?
+
+**答案 Answer：**
+
+| 对比 | Bipolar/BJT/HBT | FET |
+|---|---|---|
+| 优点 | 高 $g_m/I$、高增益密度、通常具有良好线性；HBT 可获得高 $f_T/f_{max}$ | 栅极输入电流小、输入阻抗高、易与 CMOS 集成 |
+| 缺点 | 基极需要电流，输入阻抗较低，偏置和热稳定性更敏感 | $g_m/I$ 通常较低，短沟道、栅漏电和击穿限制明显 |
+
+**课件定位 Source：** PDF p. 372，`Comparison bipolar transistor vs. FET`；对应本笔记 [第二十一章](#ch21) §10.4。
+
+#### Q12. Explain the trade-off linearity vs. efficiency.
+
+**答案 Answer：**
+
+提高线性度通常需要更大的导通角、更大的偏置电流、功率回退或负反馈，使器件工作在更接近线性的区域，但会增加静态功耗并降低效率。提高效率则常使用 class-B/C、开关型或强非线性负载调制，减少器件导通时间，却会产生谐波、压缩和互调失真。  
+**课件定位 Source：** PDF pp. 418-420、439-448，`Harmonic Analysis`、`Classes of Power Amplifiers`；对应本笔记 [第二十二章](#ch22) §11.5 和 [第二十三章](#ch23) §12.1、§12.3。
+
+#### Q13. What is the advantage of BiCMOS technology?
+
+**答案 Answer：**
+
+BiCMOS 把 CMOS 的高密度、低功耗数字集成能力与 SiGe BJT/HBT 的高跨导、高速、低噪声 RF 性能结合起来，适合把基带、控制、PLL、LNA、PA driver 和高速接口集成在一个芯片/工艺平台中。代价是工艺复杂度、掩模数量和成本增加。  
+**课件定位 Source：** PDF pp. 373-374，`Co-Integration of technologies: BiCMOS`；对应本笔记 [第二十一章](#ch21) §10.4。
+
+#### Q14. Why do class-B and class-A have different PAE?
+
+**答案 Answer：**
+
+Class-A 导通角为 $360^\circ$，即使无 RF 输入也有静态电流，理想最大效率约为 50%（电阻负载为 25%）。Class-B 导通角为 $180^\circ$，理想静态功耗接近零，推挽结构的最大效率为
+
+$$
+\eta_{max,B}=\frac{\pi}{4}\approx78.5\%
+$$
+
+因此 class-B 的 PAE 理论上更高，但会有交越失真，实际 AB 类用于折中。  
+**课件定位 Source：** PDF pp. 439-442，`Classes of Power Amplifiers`；对应本笔记 [第二十三章](#ch23) §12.1。
+
+#### Q15. What is the drawback of the class-C operation?
+
+**答案 Answer：**
+
+Class-C 的导通角小于 $180^\circ$，效率高但输出电流脉冲非线性很强，产生大量谐波和波形失真；必须依靠高 Q 谐振/匹配网络恢复基波，因此通常是窄带的，不适合要求高线性度的宽带调制信号。  
+**课件定位 Source：** PDF p. 442，`Classes and Types of power amplifiers: class-C`；对应本笔记 [第二十三章](#ch23) §12.1。
+
+#### Q16. What is the free-space impedance (value)?
+
+**答案 Answer：**
+
+$$
+\eta_0=\sqrt{\frac{\mu_0}{\varepsilon_0}}=120\pi\ \Omega\approx376.73\ \Omega\approx377\ \Omega
+$$
+
+**课件定位 Source：** PDF p. 91，`Intuition: Properties of Free Space`；对应本笔记 [第三章](#ch3) §3.3。
+
+#### Q17. What is the difference between free-space and guided propagation along metals?
+
+**答案 Answer：**
+
+自由空间传播是在无导体边界的开放介质中传播，波阻抗接近 $\eta_0$，没有由导体截面决定的模式截止条件。金属导波结构利用导体边界约束场，传播由结构尺寸和介质决定，可能出现 TEM/TE/TM 模式、截止频率、导波波长 $\lambda_g$，并产生导体损耗、介质损耗和色散。  
+**课件定位 Source：** PDF pp. 100-113、159，`Propagation along Conductors`、`Waveguide Structures`；对应本笔记 [第五章](#ch5) 和 [第九章](#ch9)。
+
+#### Q18. How does one make a MESFET?
+
+**答案 Answer：**
+
+MESFET 以半导体沟道（常见 GaAs）为核心，在沟道两端制作低电阻欧姆源极和漏极，在沟道上方制作金属-半导体 Schottky 栅。栅压改变耗尽层宽度，从而控制沟道电流；沟道和接触可通过外延、掺杂/离子注入、刻蚀和金属化形成。  
+**课件定位 Source：** PDF pp. 346、352，`Metal-Semiconductor FET (MESFET)`、`Example: GaAs MESFET`；对应本笔记 [第二十章](#ch20) §9.7。
+
+#### Q19. Give three items which change a CMOS FET into an LDMOS.
+
+**答案 Answer：**
+
+三个关键变化可以写为：
+
+1. 在漏端加入轻掺杂、较长的横向漂移区（lateral drift region）；
+2. 使用漏极延伸/RESURF 或场板结构分散电场、提高击穿电压；
+3. 增强高压隔离和功率处理能力，例如更厚栅氧/漂移层、优化体区与源极短接以及多指功率布局。
+
+这些变化提高 $V_{BR}$ 和 RF 输出功率，但会增加导通电阻、面积和寄生电容。  
+**课件定位 Source：** PDF pp. 382-385，`LDMOS RF-Power-FETs`、`Thermal Considerations`；对应本笔记 [第二十一章](#ch21) §10.5。
+
+#### Q20. Why is a HEMT faster than a MESFET?
+
+**答案 Answer：**
+
+HEMT 在异质结界面形成高迁移率二维电子气（2DEG），载流子与离化杂质空间分离，散射更小；同时材料可提供更高饱和速度和更短渡越时间。因此通常具有更高 $g_m$、$f_T$ 和 $f_{max}$。  
+**课件定位 Source：** PDF pp. 347-354，`Hetero-structure-FET`、`pHEMT`；对应本笔记 [第二十章](#ch20) §9.7。
+
+#### Q21. What is the function of the heterobarrier in the HBT? Name one.
+
+**答案 Answer：**
+
+异质势垒通过导带/价带偏移阻止不希望的载流子反向注入，特别是抑制基区空穴进入发射极，提高发射极注入效率和电流增益；同时允许基区重掺杂以减小基极电阻。一个例子是 **SiGe HBT 的 Si 发射极 / SiGe 基区异质结**。  
+**课件定位 Source：** PDF pp. 362-369，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [第二十一章](#ch21) §10.3。
+
+#### Q22. How does the current evolve over input voltage near the threshold?
+
+**答案 Answer：**
+
+对 MOSFET，低于阈值时电流处于亚阈值区，近似指数变化：
+
+$$
+I_D\propto\exp\left(\frac{V_{GS}-V_{TH}}{nV_T}\right)
+$$
+
+超过阈值后形成反型沟道；长沟道饱和区近似
+
+$$
+I_D\approx\frac{1}{2}\mu C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2
+$$
+
+短沟道器件因速度饱和，增长会比平方律更接近线性并最终受限。  
+**课件定位 Source：** PDF pp. 318、322-326、340-341，`MOS`、`n-Channel MOSFET`、`FET Characteristics`；对应本笔记 [第二十章](#ch20) §9.5。
+
+#### Q23. How are $g_m$ and $g_{ds}$ defined and what does that have to do with power amplification?
+
+**答案 Answer：**
+
+$$
+g_m=\left.\frac{\partial I_D}{\partial V_{GS}}\right|_Q,\qquad
+g_{ds}=\left.\frac{\partial I_D}{\partial V_{DS}}\right|_Q
+$$
+
+$g_m$ 表示输入电压控制输出电流的能力，决定跨导增益、驱动能力和 $f_T$；$g_{ds}$ 表示输出端电压变化引起的电流变化，越小代表输出电阻越大、增益越高。功率放大还需同时考虑最大电流、电压摆幅、击穿、匹配、效率和热限制，不能只看 $g_m$。  
+**课件定位 Source：** PDF pp. 329、396-402，`Equivalent circuit concept`、`Amplification`；对应本笔记 [第二十章](#ch20) §9.6 和 [第二十二章](#ch22) §11.1。
+
+#### Q24. Which mechanisms limit the voltage in a device?
+
+**答案 Answer：**
+
+主要机制包括：冲击电离和雪崩击穿、Zener/带间隧穿、栅氧击穿、表面击穿、速度饱和导致的高场限制、热失控与结温上限，以及封装和互连的电场集中。宽禁带材料通过更高的临界电场提高耐压，但仍受陷阱、热和边缘终端限制。  
+**课件定位 Source：** PDF pp. 307-309，`Limits to Voltage: High-Field Effects`；对应本笔记 [第二十章](#ch20) §9.2 和 [第二十一章](#ch21) §10.6。
+
+#### Q25. What is the definition of the thermal resistance?
+
+**答案 Answer：**
+
+热阻定义为温度差与耗散功率之比：
+
+$$
+\boxed{R_\theta=\frac{\Delta T}{P_{diss}}},\qquad
+T_j=T_{case}+P_{diss}R_{\theta JC}
+$$
+
+单位为 $\mathrm{K/W}$ 或 $^\circ\mathrm{C/W}$；热阻越小，给定功耗下结温越低。  
+**课件定位 Source：** PDF pp. 384-385，`Power: Thermal Analysis: LDMOS`、`Thermal Considerations`；对应本笔记 [第二十一章](#ch21) §10.5。
+
+#### Q26. What is the equivalent circuit of a line?
+
+**答案 Answer：**
+
+传输线用单位长度分布参数表示：串联电阻 $R'$、串联电感 $L'$、并联电导 $G'$、并联电容 $C'$。电报方程为
+
+$$
+\frac{\partial V}{\partial z}=-(R'+j\omega L')I,\qquad
+\frac{\partial I}{\partial z}=-(G'+j\omega C')V
+$$
+
+无损线满足 $R'=G'=0$，并有 $Z_0=\sqrt{L'/C'}$、$v_p=1/\sqrt{L'C'}$。  
+**课件定位 Source：** PDF pp. 114-124，`Transmission Lines`；对应本笔记 [第五章](#ch5) §5.2-§5.5。
+
+#### Q27. Which are major loss mechanisms of a transmission line?
+
+**答案 Answer：**
+
+主要损耗包括：
+
+1. **导体损耗**：有限电导率和趋肤效应使电流集中在表面；
+2. **介质损耗**：介质损耗正切 $\tan\delta$ 导致电场能量转化为热；
+3. **辐射/泄漏损耗**：弯折、不连续、连接器、开路结构或非理想屏蔽把能量辐射出去；
+4. 高频下还要考虑表面粗糙度、衬底损耗和阻抗失配造成的有效传输损失。
+
+**课件定位 Source：** PDF pp. 155-159，`Loss Mechanisms in Transmission Lines`、`Summary`；对应本笔记 [第十四章](#ch14)、[第十五章](#ch15) 和 [第十章](#ch10)。
+
+---
+
+<h1 id="ch25">第二十五章：Lectures 7-12 公式速查与易错点</h1>
 
 ### 核心公式速查 (Formula Quick Reference)
 
@@ -2027,6 +2332,6 @@ $$
 
 ---
 
-> **编辑日期 Date Compiled:** 2026-07-19  
+> **编辑日期 Date Compiled:** 2026-08-21  
 > **用途 Purpose:** Obsidian 个人学习笔记 / Personal Study Notes  
 > **备注 Note:** 本文档从 496 页、Lectures 1-12 完整课程讲义中提取、整理并双语化。建议在 Obsidian 中使用 `[[wikilinks]]` 交叉引用相关章节。考试时间: 2026 年 9 月 1 日，笔试 90 分钟，闭卷。*Extracted, organized, and bilingualized from the complete 496-page Lectures 1-12 script. Use Obsidian wikilinks for cross-referencing. Exam: 01 Sep 2026, 90 min written, closed book.*
