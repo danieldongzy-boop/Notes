@@ -1,0 +1,854 @@
+                                                                               28.04.2026
+
+
+
+
+                   Data Converters
+                       Chapter 04
+             Digital-to-Analog Converters
+                              Summer Term 2026
+                            Dr.-Ing. Matthias Keller
+
+
+                           Laboratory for Microelectronics
+                   Department of Microsystems Engineering – IMTEK
+                                 University of Freiburg
+
+
+
+
+           Acknowledgement
+               Concepts & slides are partially based on the lecture
+
+                      VLSI Data Conversion Circuits
+                                          held by
+
+                   Prof. B. Murmann, PhD, University of Hawaiʻi
+
+             during his sabbatical at the University of Freiburg in 2009
+
+
+
+
+26-04-28                           Data Converters                         2
+
+
+
+
+                                                                                       1
+                                                                                               28.04.2026
+
+
+
+
+               Overview
+
+• Types
+      •    Thermometer
+      •    Binary Weighted
+      •    Segmented
+• Static Performance
+• Architectures
+
+
+
+
+26-04-28                                           Data Converters                         3
+
+
+
+
+               Ideal Digital-to-Analog Converter - DAC
+                • essentially a digitally controlled voltage, current, or charge source
+                                       • no quantization error!
+
+                                Vout
+
+
+
+
+                                              
+                                                                                 …
+
+
+
+
+                                       000   001       011           010   100   …   Din
+
+                                              example: unipolar DAC
+
+26-04-28                                           Data Converters                         4
+
+
+
+
+                                                                                                       2
+                                                                                                                                          28.04.2026
+
+
+
+
+                            Example – Resistor String 3-bit DAC
+  Vref                LSB                                    MSB
+     R            A         A              B   B                                                            Vref Vref
+                                                                                                   LSB          
+                                                                                                            2B      8
+     R                                                                                                        7
+                                                                                                   Vout,max  Vref
+                                                              C                                               8
+     R                                                                                                         2B  1
+                                                                                                   Vout,max  B Vref  Vref  LSB
+                                                                                                                2
+                                                                                         VDD
+     R
+                                                                                                   Vout
+     R
+                                                                                         VSS
+                                                                                                  • simple & inherently monotonic
+     R
+                                                                                                  • small area up to ~ 8 bits
+                                                             C                                      (256 unit resistors)
+     R
+                                                                                                  • unsuitable for high-resolution,
+                                                                                                    high-speed designs
+     R
+
+26-04-28                                                                     Data Converters                                          5
+
+
+
+
+                            Current Steering DAC – Thermometer
+
+                                                                                Iout
+                                                                                           • inherently monotonic
+                                                                                           • large encoder with 2B-1 outputs required
+                                                                                              - impractical for high resolution
+             I0       …               I0                I0              I0
+
+
+
+
+     S2B-1                      S3                 S2              S1
+
+           binary-to-thermometer encoder
+                            B bits
+
+                                     Din
+
+
+
+26-04-28                                                                     Data Converters                                          6
+
+
+
+
+                                                                                                                                                  3
+                                                                                                               28.04.2026
+
+
+
+
+                  Thermometer DAC – Principle (4-bit)
+                   analog output                                                                      15
+                                                                                                 14   14
+                                                                                            13   13   13
+                                                                                       12   12   12   12
+                                                                                  11   11   11   11   11
+                                                                             10   10   10   10   10   10
+                                                                         9   9    9    9    9    9    9
+                                                                     8   8   8    8    8    8    8    8
+                                                           7         7   7   7    7    7    7    7    7
+                                               6           6         6   6   6    6    6    6    6    6
+                                           5   5           5         5   5   5    5    5    5    5    5
+                                       4   4   4           4         4   4   4    4    4    4    4    4
+                                   3   3   3   3           3         3   3   3    3    3    3    3    3
+                           2       2   2   2   2           2         2   2   2    2    2    2    2    2
+                    1      1       1   1   1   1           1         1   1   1    1    1    1    1    1
+              0     1      2       3   4   5   6           7         8   9   10   11   12   13   14   15
+                                                   digital input code
+26-04-28                                           Data Converters                                         7
+
+
+
+
+                  Overview
+
+• Types
+      •    Thermometer
+      •    Binary Weighted
+      •    Segmented
+• Static Performance
+• Architectures
+
+
+
+
+26-04-28                                           Data Converters                                         8
+
+
+
+
+                                                                                                                       4
+                                                                                                                          28.04.2026
+
+
+
+
+                      Current Steering DAC – Binary Weighted
+
+                                                               Iout
+                                                                              • monotonicity is not guaranteed
+                                                                              • consider transition 100…  011…
+                                                                                 - 2B-1 source must match sum of others
+                                                                                   to within 1 LSB to make transition
+           2B-1I0 …            4I0          2I0        I0
+                                                                                   monotonic
+                                                                              • no encoder needed
+      DB                 D3            D2         D1
+
+                B bits
+
+                         Din
+
+
+
+
+26-04-28                                                    Data Converters                                         9
+
+
+
+
+                      Implementation of Weighted Elements
+
+                                 I0
+
+
+
+
+                                 2I0    ≡              I0                     I0
+
+
+
+
+                                 4I0    ≡              I0                 I0         I0      I0
+
+
+
+
+26-04-28                                                    Data Converters                                         10
+
+
+
+
+                                                                                                                                  5
+                                                                                                                  28.04.2026
+
+
+
+
+                  Binary Weighted DAC – Principle (4-bit)
+                   analog output                                                                        1
+                                                                                                   3    3
+                                               MSB transition                                 1    2    2
+                                                 problem                                 7    7    7    7
+                                                                                    1    6    6    6    6
+                                                                               3    3    5    5    5    5
+                                                                          1    2    2    4    4    4    4
+                                                                     15   15   15   15   15   15   15   15
+                                                           1         14   14   14   14   14   14   14   14
+                                               3           3         13   13   13   13   13   13   13   13
+                                           1   2           2         12   12   12   12   12   12   12   12
+                                       7   7   7           7         11   11   11   11   11   11   11   11
+                                   1   6   6   6           6         10   10   10   10   10   10   10   10
+                           3       3   5   5   5           5         9    9    9    9    9    9    9    9
+                    1      2       2   4   4   4           4         8    8    8    8    8    8    8    8
+              0     1      2       3   4   5   6           7         8    9    10   11   12   13   14   15
+                                                   digital input code
+26-04-28                                           Data Converters                                           11
+
+
+
+
+                  Overview
+
+• Types
+      •    Thermometer
+      •    Binary Weighted
+      •    Segmented
+• Static Performance
+• Architectures
+
+
+
+
+26-04-28                                           Data Converters                                           12
+
+
+
+
+                                                                                                                          6
+                                                                                                                                          28.04.2026
+
+
+
+
+                         Current Steering DAC – Segmented
+                                                                            # sources = 2Bt - 1
+
+                                                                                                      • thermometer MSB section
+                                                                                                        (+ encoder) with Bt = B-Bb bits
+       2BbI0 …             2BbI0              2BbI0           2BbI0                                   • typically Bt ≈ 4…8
+                                                                                          Iout        • easier to achieve monotonicity
+
+
+
+
+                                                                   # sources = Bb
+                                                                                                      • binary weighted LSB section
+                                                                                                        with Bb bits
+
+
+       2(Bb-1)I0 …         4I0                2I0             I0
+
+
+
+
+26-04-28                                                                Data Converters                                             13
+
+
+
+
+                         Segmented DAC – Principle (2-2)
+                          analog output                                                                                        1
+                                                                                                                          3    3
+                                                                   MSB transition                                    1    2    2
+                                                                     problem                                    15   15   15   15
+                                                                                                           1    14   14   14   14
+                                                                                                      3    3    13   13   13   13
+                                                                                                 1    2    2    12   12   12   12
+                                                                                           11    11   11   11   11   11   11   11
+                                                                                1          10    10   10   10   10   10   10   10
+                                                                    3           3           9    9    9    9    9    9    9    9
+                                                          1         2           2           8    8    8    8    8    8    8    8
+                                                      7   7         7           7           7    7    7    7    7    7    7    7
+                                          1           6   6         6           6           6    6    6    6    6    6    6    6
+                                   3      3           5   5         5           5           5    5    5    5    5    5    5    5
+                           1       2      2           4   4         4           4           4    4    4    4    4    4    4    4
+                     0     1       2      3           4   5         6           7           8    9    10   11   12   13   14   15
+                                                                        digital input code
+26-04-28                                                                Data Converters                                             14
+
+
+
+
+                                                                                                                                                  7
+                                                                   28.04.2026
+
+
+
+
+                Overview
+
+ • Types
+ • Static Performance
+ • Architectures
+
+
+
+
+  26-04-28                                  Data Converters   15
+
+
+
+
+                Static Errors – DNL & INL
+
+• mostly due to unit element mismatch
+• systematic errors
+   - contact & wiring resistance (IR drop)
+   - edge effects in unit element arrays
+   - process gradients
+   - finite current source output resistance
+• random errors
+   - lithography
+   - often Gaussian distribution (central limit theorem)
+
+
+
+
+  26-04-28                                  Data Converters   16
+
+
+
+
+                                                                           8
+                                                                                 28.04.2026
+
+
+
+
+           Gaussian Distribution – Probability Density Function
+
+                                                               x   2
+                                               1   
+                                     f ( x) 
+                                                       2
+                                                  e 2
+                                              2
+
+
+
+
+26-04-28                               Data Converters                      17
+
+
+
+
+           Yield-Plot
+                                                         C     x   2
+                              x            1                    C 
+                   P ( C           C )        e 2 dx  erf 
+                                                        2
+
+
+                                                                     
+                                             2  C                2
+
+
+
+
+26-04-28                               Data Converters                      18
+
+
+
+
+                                                                                         9
+                                                                                                                                                                28.04.2026
+
+
+
+
+                  MOS Current Sources – Mismatch
+
+                       V1                                  V1 = V2                                                                       
+                                                                                                    I  I1  I 2   g m Vth  I1
+                                                                                                                                            
+                                I1                                      I2
+                                                                                                    I    g         
+                  M1                           Vth       M2                                             m Vth 
+                                                                                                    I1     I1        
+             VB                          VB                        
+                                                                                                                   AVth                         A
+                                                                                                           V                      
+                                                                                                             th
+                                                                                                                   WL                          WL
+
+
+            example: W = 500µm, L = 0.2µm, gm/ID = 10S/A, AVth = 5mVµm, A = 1%µm
+                                                                    2                   2
+                                                     S 5mV                  1% 
+                                                                                                0.5%    0.1%   0.51%
+                                                                                                      2             2
+                                 I  10            
+                                     I1
+                                           A 10     10                         
+
+26-04-28                                                                     Data Converters                                                         19
+
+
+
+
+                  Thermometer DAC – Derivation DNL
+
+                                               step (k )  stepavg             I k  I I
+                                                                                                                        vout (V)
+                       DNL(k )                                                                                              4
+                                                      stepavg                      I    I                                     2
+                                                                                                                              1
+                                                                                                                              0
+                                                            I 
+                                stdev  DNL( k )   stdev     u                                                         -1
+
+                                                            I                                                              -2
+                                                                                                                             -3
+                                                                                                                             -4
+           Standard deviation of DNL for each code equals the                                                                                             Din
+
+                relative matching u of the unit elements.
+
+   Designers tend to rely on simulations rather than on equations
+ • get rough estimate using simple expressions (often too optimistic)
+ • run Monte-Carlo simulations to find actual yield or to center specs
+
+
+26-04-28                                                                     Data Converters                                                         20
+
+
+
+
+                                                                                                                                                                       10
+                                                                                                                                  28.04.2026
+
+
+
+
+               Thermometer DAC – Derivation INL
+                    I (k )  I out ,uniform
+           INL(k )  out
+                         stepavg                                                                               A N     
+                                                                                        var  INL(k )   var        k
+                        k
+                                  k   N                       k                                                A  B    
+                        I  N I
+                             j               j            NI j
+                                                                                                                     A  
+                     j 1            j 1
+                                                  k          j 1
+                                                                                 k                     N 2 var       
+                             1 N                                     N
+                                                                                                                   A B 
+                               Ij
+                             N j 1
+                                                  I   Ij                  j
+                                                                                                                 X
+                                                   j 1           j  k 1
+                                                                                                        N 2 var  
+                        A N                                                                                     Y 
+                            k
+                        A B
+                                                      cov  X , Y  
+                                                          2
+                             X          2
+                                             2
+              note that var     X   X2  Y2  2               
+                             Y   Y    X Y        X Y 
+              from this approximation it follows
+                                           k                                                              k 
+                    var  INL(k )   k 1    u2                                       INL (k )  k 1    u
+                                         N                                                                N 
+26-04-28                                                          Data Converters                                            21
+
+
+
+
+               Thermometer DAC – Plot INL
+
+
+
+
+                   standard deviation of INL is maximum at mid-scale, i.e., k = N/2
+
+                                                    N  N /2      1        1 B
+                                  INL ,max          1    u    N u    2 u
+                                                    2     N      2        2
+
+26-04-28                                                          Data Converters                                            22
+
+
+
+
+                                                                                                                                         11
+                                                                                                                               28.04.2026
+
+
+
+
+                         Thermometer DAC – Achievable Resolution
+
+                                           1 B                                          
+                                                                                           2
+                                                                                                                    
+                             INL ,max      2 u               B  log 2  4  INL ,max    2  2log 2  INL ,max 
+                                           2                                     u                      u 
+                                                                                           
+
+                                                          Example: INL,max = 0.1LSB
+
+                                                        u                                   B
+                                                       1%                                   8.6
+                                                      0.5%                                 10.6
+                                                      0.2%                                 13.3
+                                                      0.1%                                 15.3
+
+
+
+
+26-04-28                                                            Data Converters                                       23
+
+
+
+
+                         Binary Weighted DAC – DNL & INL
+• DNL depends on transition  number of switching elements
+• worst case: 0111… 1000…
+   - turning on MSB & turning off all LSBs
+
+            DNL
+             2
+                   2 B 1  1  u2   2 B 1  u2   2 B  1 u2
+                           
+                       
+                          0111...           1000...
+
+• example
+   - B = 12, u = 1%  DNL = 0.64LSB
+   - much worse than thermometer DAC
+     (DNL = u = 0.01LSB)
+
+• INL same as for thermometer DAC
+   why?
+
+26-04-28                                                            Data Converters                                       24
+
+
+
+
+                                                                                                                                      12
+                                                                                                         28.04.2026
+
+
+
+
+              Segmented DAC – DNL & INL
+• DNL depends on transition  number of switching elements
+• worst case occurs when all sources of the binary section turn
+  off and the first MSB of the thermometer section turns on
+   - remember: B = Bb+Bt
+       equal to an binary weighted DAC with Bb+1 bits
+
+• INL same as for thermometer DAC
+   why?
+
+
+
+
+26-04-28                                     Data Converters                                        25
+
+
+
+
+              Comparison
+
+                                 thermometer                    segmented         binary weighted
+
+                   INL                                              1 B
+                                                                      2 u
+               (worst case)                                          2
+
+                  DNL
+                                      u                       2 Bb 1  1 u      2 B  1 u
+               (worst case)
+
+
+                number of
+                switchable          2B  1                     Bb  2 Bt  1            B
+                 elements
+
+
+
+
+26-04-28                                     Data Converters                                        26
+
+
+
+
+                                                                                                                13
+                                                                                              28.04.2026
+
+
+
+
+           Example – B = 12, u = 1%
+
+                                                       segmented
+                          thermometer                                  binary weighted
+                                                      Bb = 7, Bt = 5
+
+               INL                                     0.32 LSB
+           (worst case)
+
+
+              DNL
+                           0.01LSB                      0.16 LSB          0.64 LSB
+           (worst case)
+
+
+            number of
+            switchable       4095                          38                12
+             elements
+
+
+
+
+26-04-28                            Data Converters                                      27
+
+
+
+
+           Overview
+
+• Types
+• Static Performance
+• Architectures
+
+
+
+
+26-04-28                            Data Converters                                      28
+
+
+
+
+                                                                                                     14
+                                                                                                           28.04.2026
+
+
+
+
+            R-2R Ladder Network
+
+                                                                                       8-bit
+                                                                                        
+                                                                                      27R+RF
+
+
+
+
+                                                                               itot
+
+
+
+                                                  vout  itot RF
+                                                     N 1
+                                                                  VREF 1
+                                              itot   Dk
+                                                     k 0         2 N k 2 R
+
+26-04-28                                        Data Converters                                       29
+
+
+
+
+            Charge-Scaling DAC
+           Ctot  2 N C
+
+
+
+
+                                                                                          8-bit
+                                                                                           
+                                                                                      256 unit caps
+
+             consider arbitrary yet single Dk = 1, i.e., switch k closed, with 0 ≤ k ≤ N-1
+
+              capacitive voltage divider between Ctot-Ck = 2NC-2kC and Ck = 2kC
+
+                                              1
+                                         s  2  2k  C
+                                          N
+                                                                  2k
+                          vout ,k                          VREF  N VREF  2k  N VREF
+                                       1            1             2
+                                            
+                                    s 2k C s  2 N  2k  C
+
+26-04-28                                        Data Converters                                       30
+
+
+
+
+                                                                                                                  15
+                                                                                                                      28.04.2026
+
+
+
+
+            Charge-Scaling DAC
+
+           example: Dk=N-1 = 1, i.e., MSB turned on
+
+
+                                                                                                          VREF
+                                                                    vout ,k  N 1  2( N 1) N VREF 
+                                                                                                           2
+
+
+
+             in order to obtain total output voltage, apply principle of superposition
+
+                                        N 1                 N 1
+                                  vout   vout ,k   Dk 2k  N VREF
+                                        k 0                 k 0
+
+
+
+
+26-04-28                                   Data Converters                                                       31
+
+
+
+
+            Charge Scaling DAC – Split Array
+            series connection of attenuation capacitor
+           and total capacitor of capacitor array yields C
+
+
+
+
+                                                                                                    8-bit
+                                                                                                     
+                                                                                                32 unit caps
+
+
+
+
+26-04-28                                   Data Converters                                                       32
+
+
+
+
+                                                                                                                             16
+                                                                                                          28.04.2026
+
+
+
+
+              Cyclic DAC
+
+
+                                                                       1           1            
+                                                             vout [n]   Dn1VREF  va  n  1 
+                                                                       2           2            
+
+
+
+
+            • N-bits  at least N clock cycles required for a complete D/A conversion
+                            • starts with conversion of LSB, i.e., D0
+                             output after N clock cycles equals VREF/2N
+
+26-04-28                                   Data Converters                                           33
+
+
+
+
+              Pipeline DAC
+
+
+
+
+   First D/A conversion requires N clock cycles as signal must make its way through the pipeline.
+              Second conversion may start after D0 of first conversion was processed.
+        After N clock cycles (first conversion ready), conversion is provided every clock cycle.
+
+
+
+
+26-04-28                                   Data Converters                                           34
+
+
+
+
+                                                                                                                 17
+

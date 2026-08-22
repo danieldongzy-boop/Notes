@@ -1,0 +1,488 @@
+                                                                               22.04.2026
+
+
+
+
+                   Data Converters
+                     Chapter 02
+            Static Metrics & Nonidealities
+                              Summer Term 2026
+                            Dr.-Ing. Matthias Keller
+
+
+                           Laboratory for Microelectronics
+                   Department of Microsystems Engineering – IMTEK
+                                 University of Freiburg
+
+
+
+
+           Acknowledgement
+               Concepts & slides are partially based on the lecture
+
+                      VLSI Data Conversion Circuits
+                                          held by
+
+                   Prof. B. Murmann, PhD, University of Hawaiʻi
+
+             during his sabbatical at the University of Freiburg in 2009
+
+
+
+
+26-04-22                           Data Converters                         2
+
+
+
+
+                                                                                       1
+                                                                                                      22.04.2026
+
+
+
+
+                Static Nonidealities
+
+    Static deviations of transfer characteristics from ideality:
+    • offset
+    • gain error
+    • differential nonlinearity (DNL)
+    • integral nonlinearity (INL)
+
+
+
+
+26-04-22                                          Data Converters                                 3
+
+
+
+
+                Offset & Gain Error
+
+                    general idea (neglecting staircase nature of transfer functions)
+
+
+
+                  out                                               out
+
+                                ideal                                     ideal
+
+
+
+
+                                    with offset                            with gain error
+
+
+                                                  in                                         in
+
+
+
+
+26-04-22                                          Data Converters                                 4
+
+
+
+
+                                                                                                              2
+                                                                                                                   22.04.2026
+
+
+
+
+                     Offset & Gain Error – ADC
+
+                             definitions based on endpoints of transfer characteristic
+                                    • ½ LSB before (after) first (last) transition
+                      • offset is the deviation of bottom endpoint from its ideal location
+           • gain error is the deviation of the top endpoint from its ideal location with offset removed
+
+
+                      Dout                                           Dout                   gain error
+
+
+
+                                  ideal                                     ideal
+
+
+
+
+                                                  vin                                                    vin
+                              offset
+
+26-04-22                                          Data Converters                                              5
+
+
+
+
+                     Offset & Gain Error – DAC
+
+               • same idea, endpoints are directly defined by analog output values at minimum
+                                          and maximum digital input
+                              • errors are specified along the vertical axes
+
+
+                       vout
+                                                                    vout
+
+                                          ideal                                     ideal       gain error
+
+
+
+
+                                                   Din                                               Din
+                     offset
+
+
+26-04-22                                          Data Converters                                              6
+
+
+
+
+                                                                                                                           3
+                                                                                                    22.04.2026
+
+
+
+
+                 Differential Nonlinearity – DNL
+
+    • In an ideal world, all ADC codes would have equal width; all DAC output increments
+      would have same size.
+    • DNL(k) is a vector that quantifies for each code k the deviation of this width from the
+      “average” width (step size).
+
+    • DNL(k) is a measure of uniformity, it does not depend on gain and offset errors
+       scaling and shifting a transfer characteristic does not alter its uniformity and thus
+      DNL(k).
+
+
+
+
+26-04-22                                      Data Converters                                   7
+
+
+
+
+                 Example DNL – 3-bit ADC
+
+   Dout                                                                   width W
+                                                                code
+                                                                            (V)
+    111
+                                                                111      undefined
+    110
+                                                                110          1
+    101
+                                                                101         0.5
+    100
+                                                                100          0
+    011
+                                                                011          1
+    010
+                                                                010         1.5
+    001
+
+    000
+                                                                001         0.5
+            -3   -2   -1   0   1   2   3 vin (V)                000      undefined
+
+26-04-22                                      Data Converters                                   8
+
+
+
+
+                                                                                                            4
+                                                                                                                                                      22.04.2026
+
+
+
+
+                            Example DNL – 3-bit ADC
+
+           • average code width
+              - ADC with perfect uniformity would divide range between first and last transition
+                into 6 equal steps
+              - average code width (= LSB size) results in
+
+                                          1.5V  ( 3V )                                    Dout
+                                 Wavg                    0.75V                                111
+                                                6
+                                                                                                110
+
+                                                                                                101
+           • calculate DNL(k) for each code based on
+                                                                                                100
+                                                   W (k )  Wavg                                011
+                                   DNL(k )                                                     010
+                                                       Wavg
+                                                                                                001
+                                                                                                000
+                                                                                                      -3   -2   -1   0    1     2   3   vin(V)
+
+
+
+       26-04-22                                                    Data Converters                                                               9
+
+
+
+
+                            Example DNL – 3-bit ADC
+
+Dout                                                                                                                     width           DNL
+                                                                                W (k )  Wavg              code
+                                                                                                                         W (V)          (LSB)
+111                                                           DNL(k ) 
+                                                                                     Wavg                  111       undef.             undef.
+110
+                                                                                                           110            1             0.33
+101                                                               1.5V  ( 3V )
+                                                           Wavg                  0.75V
+                                                                        6                                  101            0.5           -0.33
+100
+                                                                                                           100            0               -1
+011
+                                                                                                           011            1             0.33
+010
+                                                                                                           010            1.5             1
+001
+
+000
+                                                                                                           001            0.5           -0.33
+                  -3   -2   -1     0      1    2      3 vin (V)                                            000       undef.             undef.
+
+       26-04-22                                                    Data Converters                                                               10
+
+
+
+
+                                                                                                                                                              5
+                                                                                                   22.04.2026
+
+
+
+
+               Example DNL – 3-bit ADC
+
+    • positive (negative) DNL implies wide (narrow) code
+                                                                           code   DNL (LSB)
+    • DNL = -1 LSB implies missing code
+                                                                           111    undefined
+    • impossible to have DNL < -1 LSB for an ADC
+                                                                           110      0.33
+    • DNL typically given in terms of min/max number across                101      -0.33
+      all codes
+                                                                           100       -1
+
+                                                                           011      0.33
+
+                                                                           010       1
+
+                                                                           001      -0.33
+
+                                                                           000    undefined
+                                     Ahmed, JSSC 12/2005
+
+
+26-04-22                                    Data Converters                                   11
+
+
+
+
+               DNL – DAC
+
+    same approach
+    • calculate output increments for each digital code
+    • calculate increment that divides range into equal steps
+    • calculate DNL for each code 𝑘 based on
+
+                                                     step (k )  stepavg
+                                     DNL(k ) 
+                                                              stepavg
+
+
+
+
+26-04-22                                    Data Converters                                   12
+
+
+
+
+                                                                                                           6
+                                                                                                                      22.04.2026
+
+
+
+
+                     Example DNL – 3-bit DAC
+
+vout (V)                                                                 step (k)   DNL (LSB)
+        4                                                                       7     0.41
+                            1.5 𝑉        3.5 𝑉
+        2     𝑠𝑡𝑒𝑝
+                                     7                                          6     -0.30
+        1
+                            0.71 𝑉
+                                                                                5     0.41
+        0
+                                                                                4     1.11
+      -1                                                                                        DNL < -1 LSB
+                                                                                3     -1.7
+                                                                                                 non-monotonic DAC
+      -2
+                                                                                2     0.41
+      -3
+                                                                                1     -0.30
+      -4
+                                                        Din
+
+   26-04-22                                            Data Converters                                     13
+
+
+
+
+                     Integral Nonlinearity – INL
+
+                 For each “relevant point” of the transfer characteristic, quantify distance
+                            from a straight line drawn through the endpoints.
+                       As with DNL, INL is independent of gain and offset errors.
+
+
+
+                     Dout                                                vout
+
+
+                                                 INL
+
+
+                                                                                        INL
+
+
+
+                                                       vin                                         Din
+                                         ADC                                           DAC
+
+   26-04-22                                            Data Converters                                     14
+
+
+
+
+                                                                                                                              7
+                                                                                                                                     22.04.2026
+
+
+
+
+                   Example INL – 3-bit ADC
+
+      Dout       T(1)             …           T(7)
+                                                                        • “straight line” reference is uniform stair-
+           111                                                            case between first and last transition
+           110
+                                                                        • INL for each code is
+
+           101                                                                         T (k )  Tuniform ( k )
+                                                                           INL(k ) 
+                                                                                               Wavg
+           100
+
+           011                                                          • INL(0) is undefined
+                                                                        • obviously: INL(001) = INL(111) = 0
+           010
+
+           001
+
+           000
+                  -3    -2   -1   0   1   2    3 vin (V)
+
+26-04-22                                              Data Converters                                                           15
+
+
+
+
+                   Example INL – 3-bit ADC
+
+                                                                                                                          INL
+                                                                                   code         T(k)       Tuniform(k)
+      Dout       T(1)             …           T(7)                                                                       (LSB)
+
+           111                                                                         111        3              3         0
+
+           110                                                                     110            1              2         -1
+
+           101                                                                     101           0.5             1        -0.5
+                                                      T (k )  Tuniform (k )
+           100                            INL(k )                                 100          0.25             0       0.25
+                                                                 Wavg
+           011                                                                     011            -1             -1        0
+                                                  3V  (3V )
+           010                             Wavg               1V                 010           -2.5            -2       -0.5
+                                                       6
+           001                                                                     001            -3             -3        0
+           000                                                                     000         undef.        undef.      undef.
+                  -3    -2   -1   0   1   2    3 vin (V)
+
+26-04-22                                              Data Converters                                                           16
+
+
+
+
+                                                                                                                                             8
+                                                                                                            22.04.2026
+
+
+
+
+                Example INL – 3-bit ADC
+                                              k 1
+                                                                                   DNL        INL
+              Note that INL(k )   DNL(i )                               code
+                                                                                  (LSB)      (LSB)
+                                              i 1
+
+                                                                          111    undefined     0
+                              W (k )  Wavg
+               DNL(k )                                                   110       1         -1
+                                    Wavg
+                                                                          101      -0.5       -0.5
+                             T (k )  Tuniform ( k )
+               INL(k )                                                   100      -0.75     0.25
+                                     Wavg
+                                                                          011      0.25        0
+                         3V  (3V )                                      010       0.5       -0.5
+              Wavg                   1V
+                              6
+                                                                          001      -0.5        0
+
+                                                                          000    undefined undefined
+
+
+26-04-22                                                Data Converters                                17
+
+
+
+
+                INL – DAC
+
+    • same idea
+       - find ideal output values located on a straight line between endpoints
+       - calculate INL for each code
+                       Vout (k )  Vout ,uniform (k )
+           INL(k ) 
+                                 stepavg
+
+    • if for all codes |INL| < 0.5 LSB
+       DNL -1 LSB  monotonicity
+
+
+                                      worst case: + 0.5LSB  -0.5LSB
+                                                    flat
+
+
+
+26-04-22                                                Data Converters                                18
+
+
+
+
+                                                                                                                    9
+

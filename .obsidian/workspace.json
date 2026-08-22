@@ -20,21 +20,31 @@
             }
           },
           {
-            "id": "fc8a9fae3e17dc06",
+            "id": "a656b69db2bdab8b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/完结/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
-                "mode": "source",
-                "source": false
+                "file": "Uni Freiburg/signal/Exercises/Cheat Sheet/CheatSheet_SignalProcessing.pdf"
               },
-              "icon": "lucide-file",
-              "title": "RF_Microwave_Detailed_Bilingual_Study_Notes"
+              "icon": "lucide-file-text",
+              "title": "CheatSheet_SignalProcessing"
+            }
+          },
+          {
+            "id": "4c737d89721d6b1d",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/RF_Design/Skripte_Vorlesung-01bis12.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Skripte_Vorlesung-01bis12"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -172,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Uni Freiburg/完结/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+                "file": "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,23 +192,49 @@
             }
           },
           {
-            "id": "c9e08b54624affb1",
+            "id": "4550c5935211802b",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Uni Freiburg/完结/RF_Design/Skripte_Vorlesung-01bis12.pdf"
+                "file": "Uni Freiburg/signal/Exercises/Mock Exam/MockExam_Signal_Processing.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Skripte_Vorlesung-01bis12"
+              "title": "MockExam_Signal_Processing"
+            }
+          },
+          {
+            "id": "924a9e3c83b34c87",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L05_Sample_Hold.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Data_Converters_SS26_L05_Sample_Hold"
+            }
+          },
+          {
+            "id": "00187607c8f37fee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RF_Microwave_Detailed_Bilingual_Study_Notes"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 635.1000061035156
+    "width": 780.7000122070312
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,20 +247,25 @@
       "bases:新建数据库": false
     }
   },
-  "active": "fc8a9fae3e17dc06",
+  "active": "00187607c8f37fee",
   "lastOpenFiles": [
-    "Uni Freiburg/完结/RF_Design/Skripte_Vorlesung-01bis12.pdf",
-    "Uni Freiburg/完结/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
-    "Uni Freiburg/完结/RF_Design/tmp/pdfs/qa/script.txt",
-    "Uni Freiburg/完结/RF_Design/tmp/pdfs/qa",
-    "Uni Freiburg/完结/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
+    "Uni Freiburg/RF_Design/Skripte_Vorlesung-01bis12.pdf",
+    "Uni Freiburg/RF_Design/RF_Microwave_Detailed_Bilingual_Study_Notes.md",
+    "Uni Freiburg/signal/Exercises/Cheat Sheet/CheatSheet_SignalProcessing.pdf",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L05_Sample_Hold.pdf",
+    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L06_Comparators.pdf",
     "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L04_DACs.pdf",
     "Uni Freiburg/data converter/tasks_ADC_DAC_SS26.pdf",
+    "Uni Freiburg/data converter/tmp/pdfs/l04render/page-17.png",
+    "Uni Freiburg/data converter/tmp/pdfs/l04render/page-16.png",
+    "Uni Freiburg/data converter/tmp/pdfs/l04render",
+    "Uni Freiburg/data converter/tmp/L04.txt",
+    "Uni Freiburg/signal/Exercises/Mock Exam/MockExam_Signal_Processing.pdf",
+    "Uni Freiburg/data converter/tmp/pdfs/l02render/page-9.png",
+    "Uni Freiburg/data converter/tmp/pdfs/l02render/page-8.png",
+    "Uni Freiburg/data converter/tmp/pdfs/l02render",
     "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L03_Spectral_Metrics.pdf",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L02_Static_Metrics.pdf",
-    "Uni Freiburg/data converter/Lecture Notes/Data_Converters_SS26_L01_Sampling_Quantization_Reconstruction.pdf",
-    "Uni Freiburg/完结",
-    "Uni Freiburg/完结/Test and reliability/08-cellaware_annot.pdf",
+    "Uni Freiburg/RF_Design/RF_Lectures_1_to_6_课件详细解读与题型解析.md",
     "Uni Freiburg/完结/Test and reliability/CH1-CH4_完整学习笔记.md",
     "找工/微信图片_20260819101806_82_1.jpg",
     "找工/微信图片_20260814164822_171_89.jpg",
@@ -233,10 +274,6 @@
     "找工/演示/面试项目介绍.md",
     "找工/演示/屏幕截图 2026-08-11 190209.png",
     "找工/演示/屏幕截图 2026-08-11 190135.png",
-    "找工/演示/屏幕截图 2026-08-11 182803.png",
-    "找工/演示/屏幕截图 2026-08-11 182648.png",
-    "找工/演示/sar_comparator.png",
-    "找工/演示/sar_bootstrap.png",
     "Uni Freiburg/Test and reliability/CLAUDE.md",
     "IC/AMP/A_Wireless_Stress_Mapping_System_for_Orthodontic_Brackets_Using_CMOS_Integrated_Sensors_DDA解读_spec分析.md",
     "Uni Freiburg/完结/Test and reliability/CH2/CH2_课件解读_Fault_Simulation_中英对照.md",

@@ -318,6 +318,7 @@ $$
 | 说明 Explanation                                                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 介质中的波长比真空中更短。例如 GaAs ($\varepsilon_r=12.9$) 中 10 GHz 的波长从 3 cm 缩短至 $3/\sqrt{12.9} \approx 0.83$ cm。这对 MMIC 设计至关重要——片上结构的物理尺寸直接由介质波长决定。*Wavelength is shorter in media. E.g. 10 GHz in GaAs: 3 cm → $3/\sqrt{12.9} \approx 0.83$ cm. Critical for MMIC design — on-chip structures are sized by medium wavelength.* |
+|                                                                                                                                                                                                                                                                                                                    |
 
 ### 4.3 有效介电常数 (Effective Permittivity) — 微带线
 
@@ -464,10 +465,10 @@ $$
 \boxed{Z_0 = \sqrt{\frac{L'}{C'}}} \quad [\Omega]
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | 特性阻抗是传输线本身的"内在"属性，不是可以测量的集中电阻。它等于前行波电压与前行波电流的比值：$Z_0 = V^+/I^+$。*Intrinsic property of the line, not a lumped resistor. It equals the ratio of forward wave voltage to current.* |
-| **在RF中的标准值** Standard RF Values | 绝大多数 RF 同轴线和微带线设计为 $Z_0 = 50$ Ω。有线电视系统用 75 Ω。100 Ω 差分对用于高速数字。*Most RF coax and microstrip: $Z_0=50$ Ω. CATV: 75 Ω. 100 Ω differential for high-speed digital.* |
+| 项目 Item                                  | 说明 Explanation                                                                                                                                                                                                                |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **物理含义** Physical Meaning                | 特性阻抗是传输线本身的"内在"属性，不是可以测量的集中电阻。它等于前行波电压与前行波电流的比值：$Z_0 = V^+/I^+$。*Intrinsic property of the line, not a lumped resistor. It equals the ratio of forward wave voltage to current.*                                              |
+| **在RF中的标准值** Standard RF Values          | 绝大多数 RF 同轴线和微带线设计为 $Z_0 = 50$ Ω。有线电视系统用 75 Ω。100 Ω 差分对用于高速数字。*Most RF coax and microstrip: $Z_0=50$ Ω. CATV: 75 Ω. 100 Ω differential for high-speed digital.*                                                                |
 | **典型微带线 $Z_0$** Typical Microstrip $Z_0$ | GaAs ($\varepsilon_r=13$, $w/h=0.1$, $q=0.55$): $Z_{01} \approx 260$ Ω。GaAs ($w/h=2$, $q=0.7$): $Z_{01} \approx 80$ Ω。通过 Hammerstad 公式可精确计算。*GaAs thin line: ~260 Ω; wider line: ~80 Ω. Exact values via Hammerstad formula.* |
 
 ### 5.6 相速度与导波长 (Phase Velocity and Guided Wavelength)
