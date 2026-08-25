@@ -1,0 +1,119 @@
+Gedächtnisprotokoll
+Signale & Systeme WS24
+ ●   19.03.2024
+ ●   Prof. Rupitsch
+ ●   120 min Zeit, 120 Punkte,
+ ●   Formelsammlung gegeben
+ ●   nur TR erlaubt (nicht Grafikfähig)
+ ●   Mind. eine Aufgabe und evtl. Teilaufgaben fehlen noch in dem Aufschrieb
+Aufgabe 1 (16,5 Pkt.)
+  a) Zeige Linearität, Kausalität, Zeitinvarianz bei den folgenden Aufgaben.
+     Ankreuzaufgaben, aber man musste das System aus der Übung kennen
+  ● y(t) = d/dx x(t) + 5
+  ● y(t) = x(t) * sin(wt)
+
+  b) Ja oder Nein in folgende Tabelle eintragen. Außer dort wo ein x ist (es waren vmtl.
+     noch mehr x)
+
+
+      y[n] =         Gedächtnis    Kausal        Linear          Zeitinvariant   Stabil
+
+
+
+
+      2 * x[n]
+
+      max(x[n],                    x             x               x               x
+      x[n-1],...,
+      x[-inf])
+
+
+  c) Wahr/Falsch ankreuzen, falsche Antworten gaben -1.
+
+
+                                                          Wahr                   Falsch
+
+      Irgendwas mit Hilberttransformierte,
+      Imaginärteil…
+
+      Eine Reihenschaltung von zwei linearen
+      Systemen ergibt wiederum ein lineares
+      Gesamtsystem
+
+      Eine Reihenschaltung von zwei nichtlinearen
+      Systemen ergibt wiederum ein nichtlineares
+      Gesamtsystem
+Aufgabe 2
+Gegeben ist das folgende periodische Signal
+
+
+
+
+   a) Zeichne das Signal in gegebenes Koordinatensystem, dabei beachte dass die
+      Funktion periodisch fortgesetzt wird
+   b) Berechne den Gleichanteil a_0
+   c) Es sei a_n = a_n,linear + a_n,konstant. (a_n,linear war gegeben mit einer Funktion,
+      die von cos(π n) abhing). Berechne a_n für n = 0, 1, 2, 3
+      (Dabei wollten sie darauf raus, dass man nur den konstanten Anteil berechnen muss,
+      da der andere ja schon gegeben ist. Wegen Linearität darf man wohl beide addieren)
+Aufgabe 3
+
+
+
+
+Zeichnung gegeben und Übertragungsfunktion gegeben mit G(s) = 1/(RCs + LCs^2 + 1)
+   a) Leite die Übertragungsfunktion direkt im Laplacebereich her
+   b) Was für ein Filter ist das?
+   c) Welche Ordnung hat der Filter und woran an der Übertragungsfunktion kann man
+      das ablesen?
+   d) Gebe den erwarteten Abfall pro Dekade an für R = 0
+   e) Beweise dass die Fouriertransformation ein Spezialfall der Laplacetransformation ist
+      2P
+Aufgabe 4
+  a) Folgende Zeichnung gegeben. Gebe an welches Signal Du spiegelst und gebe die
+     vier verschiedenen Bereiche an, für die das Faltungsintegral ausgewertet wird.
+     Außerdem die Integralgrenzen (-inf/+inf gilt aber nicht). Integrale nicht ausrechnen!
+
+
+
+
+  b) Berechne das Faltungsintegral für den Bereich in dem das kleine Rechteck sich
+     vollständig im großen befindet
+Aufgabe 5
+Übertragungsfunktion gegeben mit H(z) = z^2 / (z^2 - z + 0.5)
+   a) Pol und Nullstellen berechnen und einzeichnen
+   b) Welche Art von Filter ist das?
+   c) ROC einzeichnen. Ist das System reell, stabil und kausal und warum?
+       -> reel ist ein system auch bei konjugiert komplexen PS und NS
+   d) Welche Verstärkung erwartest Du in dB?
+   e) Amplitude für Betrag von H(e^Omega) für Omega gleich 0 und π berechnen. Daraus
+       dann in gegebenen Plot von 0 bis 2 π einpinseln
+   f) y[n] (ging nicht mit Partialbruchzerlegung) und die ersten drei Werte der
+       Sprungantwort berechnen
+Aufgabe 6
+
+
+
+
+  a) Was ist die Grenzfrequenz des Filters in Hz?
+  b) Irgendwie zeigen wie man bei bestimmten Signal und Filterspektren auf
+     Ausgangssignal kommt
+  c) Wahr/Falsch aufgaben mit Nyquisttheorem, Erweiterung des Abtasttheorem für
+     Bandpass-Signale und “Hat ein punktsymmetrisches Signal im Frequenzgereich bei
+     0 Hz eine Amplitude von 0?”
+Aufgabe 7
+  -   Verschiedene Bilder mit Tiefpass, ADU, DAU, Sample/Holdglied usw. in richtige
+      Reihenfolge bringen für Audioaufnahme und -ausgabe bei Autotuneeffekt
+  -   Leakage warum? Kann Zero Pafdding was dagegen machen?
+  -   Wann kommt es nicht zu Leakage?
+  -   Was ist die Gruppenlaufzeit, warum sollten sie bei Audiosignalen konstant sein?
+  -   Warum ist ein idealer Tiefpass nicht realisierbar?
+  -   Für was verwendet man DFT und DTFT und was ist der Unterschied?
+  -   Welchen Vorteil hat ein Rechteckfenster?
+Aufgabe 8
+1 Hz Abtastfrequenz
+x[n] = [2, 0, 2, 4]
+    a) Berechne die DFT
+    b) Was ist die Frequenzauflösung? Ordne den Amplituden aus a) die einzelnen
+        Frequenzen zu
+

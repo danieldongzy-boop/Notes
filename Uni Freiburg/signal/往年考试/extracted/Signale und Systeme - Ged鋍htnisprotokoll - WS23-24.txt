@@ -1,0 +1,106 @@
+Signale und Systeme – WS 23/24 – Gedächtnisprotokoll (100 P)
+
+Aufgabe 1
+
+   a) Linearität, Zeitinvarianz und Kausalität wie in Übung 1
+   b) Ja/Nein-Tabelle geg. Verschiedene Signale ges. Reel, stabil, zeitinvariant, kausal,
+      Gedächtnis, …
+   c) …
+
+Aufgabe 2 (12 P)
+                                  1
+Übertragungsfunktion 𝐺(𝑠) = (𝑠+1)∗(𝑠+2)
+
+   a)   Pol-/Nullstellen berechnen
+   b)   Annahme: rechtsseitiges Signal und dann P/N-Diagramm mit ROC einzeichnen
+   c)   Zeigen, dass Fourier eine spezielle Form von Laplace ist oder andersrum
+   d)   Schwingkreis gegeben (Filter) was, was für ein Filter, wieviel dB Abfall
+
+Aufgabe 3
+                𝑡−2
+𝑋(𝑡) = 𝑎 ∗ 𝑟𝑒𝑐𝑡(    )
+                 2
+𝑌(𝑡) = 𝑟𝑒𝑐𝑡(𝑡 + 1,5)
+   a) Aufstellen der Faltungsintegrale von X(t) und Y(t) – Bestimmen der Integralgrenzen und
+      Integralbereiche (ohne Berechnung) (7,5 P)
+
+𝑋(𝑡) = 𝑟𝑒𝑐𝑡(𝑡 − 0,5)
+            𝑡−3
+𝑌(𝑡) = 𝑟𝑒𝑐𝑡(    )
+             2
+   b) Berechnen Sie die Faltung der gegebenen Signale für den Bereich t=3 bis t=4.
+
+Aufgabe 4
+
+Ankreuztabelle wahr/falsch.
+
+   a) Kurzes rechteck-förmiges Signal im Zeitbereich wird zu schmalbandigem Signal im
+      Frequenzbereich.
+   b) dreieckförmiges Signal im Zeitbereich ist ein si^2 im Frequenzbereich
+   c) rechteckförmiges Signal im Frequenzbereich ist ein si-Signal im Zeitbereich
+   d) Fourier Transformation ist 2π-periodisch im Frequenzbereich
+   e) Verschobenes Signal nach links im Zeitbereich ist fallende Phase im
+   f) Frequenzbereich
+   g) ungerades Signal (punktsymmetrisch) im Zeitbereich hat Frequenzkomponente
+   h) ungleich 0 bei 0 Hz im Frequenzbereich
+   i) Konstantes Signal im Frequenzbereich entspricht Dirac im Zeitbereich
+   j) gerades, reales Signal (symmetrisch) im Frequenzbereich ist gerades, reales Signal im
+      Zeitbereich
+   k) Fourier Transformation ist eine nicht-lineare Operation
+   l)   Durch die Abtastung im Zeitbereich können Replika entstehen im Spektrum beim Vielfachen
+        der Abtastfrequenz
+
+Aufgabe 5
+
+        Funktion gegeben durch:
+
+                2𝑡 + 1 für − 𝑇0 ≤ 𝑡 < 0
+                −1      für     0 ≤ 𝑡 < 𝑇0
+        a)   Bestimmen Sie T und w0
+        b)   Zeichnen Sie die Funktion von -2T0 bis 2T0
+        c)   Berechne a0
+        d)   Berechnen Sie an bis n = 4
+
+
+
+Aufgabe 6
+
+Abgebildet war ein Schaltkreis unter anderem mit einem Teil, dass ein Rechtecksignal beinhaltet
+
+Aufgabe 7 (22 P)
+                                              𝑧2
+Gegebene Übertragungsfunktion 𝐻(𝑧) =
+                                           𝑧 2 −𝑧+0,5
+
+   a)   Pol-/Nullstellen berechnen
+   b)   Stabil, Kausal, Reell? Jeweils mit Begründung.
+   c)   Frequenzgang für Ω = 0, π, 2π – danach den zugehörigen Frequenzgang zeichnen
+   d)   Welche Filtercharakteristik ist zu erkennen?
+   e)   Aufstellen der Differenzengleichung von y(n)
+   f)   Berechnen der ersten 4 Sprungantworten
+
+Aufgabe 8
+
+x[n] gegeben
+
+   a) Mit Hilfe von DFT X[m] berechnen
+   b) Berechnen Sie die Frequenzauflösung des Spektrums Δƒ in Bezug auf die Teilaufgabe a)
+
+Aufgabe 9 (15 P)
+
+   a)   Was ist Leakage? Kann Zero Padding dazu eingesetzt werden, Leakage zu reduzieren?
+   b)   Was macht zero padding?
+   c)   Welchen Vorteil hat ein Rechteckfenster zu anderen Fensterfunktionen?
+   d)   Wann tritt trotz Fensterung kein Leakage auf?
+   e)   Was sind Gruppenlaufzeiten und inwiefern sind diese relevant?
+   f)   Wozu diene DTFT und DFT? Was ist der Unterschied der beiden?
+   g)   Wie hängt die Impulsantwort von der Sprungantwort ab?
+   h)   Weshalb ist ein idealer Filter nicht möglich?
+   i)   Lassen sich durch Zero-Padding zwei sehr nahe beieinander liegende Frequenzen besser
+        erkennen?
+j) Nenne 3 Methoden zur Anregung, um LTI-Systemidentifikationen zu ermitteln.
+k) Audio-Signal wird mit Mikro aufgenommen und über Lautsprecher ausgegeben. Gegeben
+   waren 6 Blöcke: A=Tiefpass, B=Tiefpass, C=Sample&Hold, D=A/D, E=D/A,
+   F=DSP(Signalverarbeiterung). Ordne die Blöcke in der richtigen Reihenfolge zwischen Mikro
+   und Lautsprecher an.
+

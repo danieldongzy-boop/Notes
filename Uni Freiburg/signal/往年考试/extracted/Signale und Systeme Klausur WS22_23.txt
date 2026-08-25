@@ -1,0 +1,131 @@
+Signale und Systeme Klausur 2023
+Aufgabe 1 (13,5 P) 1,5P für jede korrekte Antwort
+   ● Linearität, Zeitinvarianz und Kausalität zeigen
+   ● Ankreuzaufgaben
+   ● Eine: y = dx/dt + 2
+   ● Eine Integrale
+   ● eine x(t)*cos(wt) Funktion (ähnlich ÜB 1)
+
+Aufgabe 2 (9 P)
+CR-Filter (u_a über R)
+   a) Um welchen Filter handelt es sich? (1P)
+       Lösung: Hochpass
+   b) Mit Spannungsteiler im Laplace-Bereich Aufstellen (und für t>0 in Zeitbereich
+       umformen) (3,5 P)
+   c) Stabilität im Laplace- und Zeitbereich prüfen und begründen (ohne Ergebnis in a)
+       G(s) = k/(s+a) annehmen) (2P) (0,75P für Laplace-Bereich, 1P für Zeitbereich und
+       0,25P für umformung/vereinfachung im Zeitbereich)
+   d) ???(1P)
+   e) Begründen Sie, warum es möglich ist, den Endwert zu berechnen und geben Sie
+       diesen an, mit einer Sprungfunktion am Eingang. (1,5P)
+
+Aufgabe 3 (10,5 P)
+Faltung rechnerisch ermitteln von 2 Rechtecken:
+                       1
+𝑥(𝑡) = 𝑎 * 𝑟𝑒𝑐𝑡(𝑡 − 2 )
+                 𝑡−4
+ℎ(𝑡) = 𝑏 * 𝑟𝑒𝑐𝑡( 2 )
+   ●   Wie in ÜB 3
+   ●   (Evtl. über Multiplikation im Frequenzbereich mit Transfo-Tabellen)
+
+Aufgabe 4 (4 P)
+   ● Eingangssignal und Ausgangssignal gegeben
+   ● Impulsantwort skizzieren
+Aufgabe 5 (7,5 P) (richtige Antwort +0,75, falsch -0,75)
+Wahr, Falsch-Tabelle…
+   a) Kurzes rechteck-förmiges Signal im Zeitbereich wird zu schmalbandigem Signal im
+       Frequenzbereich.
+       Lösung: falsch
+   b) dreickförmiges Signal im Zeitbereich ist ein si^2 im Frequenzbereich
+       Lösung: wahr
+   c) rechteckförmiges Signal im Frequenzbereich ist ein si-Signal im Zeitbereich
+       Lösung: wahr
+   d) Fourier Transformation ist 2π-periodisch im Frequenzbereich
+       Lösung: falsch
+   e) Verschobenes Signal nach links im Zeitbereich ist fallende Phase im
+       Frequenzbereich
+       Lösung: falsch
+   f) ungerades Signal (punktsymmetrisch) im Zeitbereich hat Frequenzkomponente
+       ungleich 0 bei 0 Hz im Frequenzbereich
+       Lösung: falsch
+   g) Konstantes Signal im Frequenzbereich entspricht Dirac im Zeitbereich
+       Lösung: wahr
+   h) gerades, reales Signal (symmetrisch) im Frequenzbereich ist gerades, reales Signal
+       im Zeitbereich
+       Lösung: ?
+   i) Fourier Transformation ist eine nicht-lineare Operation
+       Lösung: ?
+   j)   Eine Faltung im Zeitbereich entspricht einer Multiplikation im Frequenzbereich?
+        Lösung: wahr
+
+Aufgabe 6 (10 P)
+Fouriertransformation
+
+
+
+
+   a) Berechnen Sie a_0. (4P)
+   b) Berechnen Sie a_n. (6P)
+
+Aufgabe 7 (9 P) (ähnlich zu ÜB 7)
+Sinussignal 𝑥1(𝑡) mit 𝑓 = 1 𝑘𝐻𝑧 und Amplitude 𝐴 = 1𝑉 wird mit 𝑓𝑎 = 300 𝐻𝑧 abgetastet.
+   a) Zeigen Sie, dass das Signal 𝑥2(𝑡) = 𝑠𝑖𝑛(2π · 100𝑡) die gleichen Folge an
+      Abtastwerten 𝑥[𝑛] liefert. (2 P)
+   b) Frequenz zeichnen (4,5 P)
+   c) Wie lässt sich das Signal aus Aufgabe b) rekonstruieren? Unterstützen Sie Ihre
+      Argumentation mithilfe eines Kriteriums, das auf einer Ungleichung beruht. (2,5 P)
+      Lösung: Hier war mehr als die reine Funktion des Nyquist-Shanon-Theorem
+      (Abtasttheorem) gefragt. (Irgendwas mit zwei Rekonstruktionsfiltern…)
+
+
+Aufgabe 8 (27 P)
+Z Transfo
+               2
+              (𝑧 +1)(𝑧−𝑧0,1)
+𝐺(𝑠) = 𝐺0 ·            3
+                   (𝑧+𝑎)
+   a) Pol- und Nullstellen berechnen und in Diagramm mit EK zeichnen. 𝑧0,1soll hierbei alle
+                                            1
+        Gleichanteile herausfiltern und 𝑎 = 4 (7P)
+   b) Ist das System kausal? Ist es stabil und reel? Begründen sie. Zeichnen Sie
+      zusätzlich den ROC-Bereich in das Pol-/Nullstellen Diagramm ein. (6 P)
+   c) Welchem Filtertyp ähnelt das System? Begründen Sie (4 P)
+   d) Frequenzhergang |G(e^omega)| bestimmen, G0 soll nur von c und a abhängig
+      sein?Berechne für Ω = (0, π) und übertrage es ins π/𝑟𝑎𝑑-Diagramm? (5 P)
+   e) ?(irgendwas grafisches einzeichnen, Frequenzgang einzeichnen Werte
+      für|G(e^omega)|(Impulsantwort?) mit c und c=10)? (2 P)
+   f)   ?(Pol- und Nullstellen erweitern… und dann nur neue ins Pol-/Nullstellen Diagramm
+        einzeichnen)? Störsignal bei 50 (k?)Hz soll mit neuer Nullstelle unterdrückt werden.
+        Signal wird mit 400 (k)Hz abgetastet (3 P)
+
+Aufgabe 9 DFT (10,5 P)
+𝑥[𝑛] = [2, 1 − 𝑗, 0, 1 + 𝑗] (oder so? Müsste man nicht die inverse DFT berechnen?)
+    a) 𝑋[𝑚] mit DFT ermitteln. (4,5 P)
+    b) Betrag |𝑋[𝑚]| und Phase im Intervall [-3 Hz, 3 Hz] zeichnen (6 P)
+
+
+Aufgabe 10 (19 P)
+Allgemeine Fragen (ähnlich wie Messtechnik-Klausur)
+    a) Was ist Leakage? Kann Zero Padding dazu eingesetzt werden, Leakage zu
+       reduzieren? (2 P)
+    b) Welchen Vorteil hat ein Rechteckfenster zu anderen Fensterfunktionen? (1P)
+    c) Wann tritt trotz Fensterung kein Leakage auf? (1P)
+    d) Wozu dienen DTFT und DFT? Was ist der Unterschied der beiden? (2P)
+    e) Gruppenlaufzeit bei Audio-Signalen soll irgendwas aufweisen oder aussagen
+       warum…?) (2 P)
+    f) Nenne 3 Methoden zur Anregung, um LTI-Systemidentifikationen zu ermitteln. (3 P)
+    g) Wie stehen Impulsantwort und Sprungantwort zueinander? (1,5 P)
+                          𝑑
+        Lösung: ℎ(𝑡) =      𝑦 (𝑡)
+                          𝑑𝑡 σ
+   h) Nennen Sie 4 Filter. (2 P)
+   i) Lassen sich durch Zero-Padding zwei sehr nahe beieinander liegende Frequenzen
+      besser erkennen? (1,5 P)
+      Lösung: Nein Zero-Padding erhöht nicht die Auflösung, sondern “glättet” eher das
+      Signal
+   j) Audio-Signal wird mit Mikro aufgenommen und über Lautsprecher ausgegeben.
+      Gegeben waren 6 Blöcke: A=Tiefpass, B=Tiefpass, C=Sample&Hold, D=A/D, E=D/A,
+      F=DSP(Signalverarbeiterung)
+      Ordne die Blöcke in der richtigen Reihenfolge zwischen Mikro und Lautsprecher an.
+      (3 P)
+
