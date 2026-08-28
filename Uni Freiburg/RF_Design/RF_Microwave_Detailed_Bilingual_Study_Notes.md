@@ -11,37 +11,59 @@
 
 # 目录 Table of Contents
 
-1. [第一章：Maxwell 方程组与电磁场基础](#ch1)
-2. [第二章：自由空间中的波动方程](#ch2)
-3. [第三章：坡印廷矢量与电磁能量](#ch3)
-4. [第四章：介质中的波传播与电介质](#ch4)
-5. [第五章：导波传播与传输线理论](#ch5)
-6. [第六章：反射系数与史密斯圆图](#ch6)
-7. [第七章：S 参数与多端口网络](#ch7)
-8. [第八章：Z / Y / h 参数体系](#ch8)
-9. [第九章：波导结构与传输媒介](#ch9)
-10. [第十章：微带线与真实无源结构](#ch10)
-11. [第十一章：匹配理论与阻抗变换](#ch11)
-12. [第十二章：四分之一波长变换与短截线](#ch12)
-13. [第十三章：功分器、合成器与耦合器](#ch13)
-14. [第十四章：损耗机制全面分析](#ch14)
-15. [第十五章：趋肤效应与表面粗糙度](#ch15)
-16. [第十六章：天线原理与特性参数](#ch16)
-17. [第十七章：阵列天线与 MIMO](#ch17)
-18. [第十八章：RF 半导体与有源器件基础（Lecture 7）](#ch18)
-19. [第十九章：RF 半导体制造工艺（Lecture 8）](#ch19)
-20. [第二十章：载流子输运、结与场效应晶体管（Lecture 9）](#ch20)
-21. [第二十一章：双极晶体管与 RF 功率半导体（Lecture 10）](#ch21)
-22. [第二十二章：RF 增益、稳定性与放大器基础（Lecture 11）](#ch22)
-23. [第二十三章：功率放大器、接收电路与 RF 系统（Lecture 12）](#ch23)
-24. [第二十四章：课件 Questions 问题与答案](#questions)
-25. [第二十五章：Lectures 7-12 公式速查与易错点](#ch25)
-26. [附录：常数表、频段划分、单位换算](#appendix)
+> **课件结构说明 / Script structure:** PDF 的课程目录不是按“第几章”编号，而是按三大部分组织：`2.1 High Frequency Concepts and Passive Structures`、`2.2 Active RF-Devices`、`2.3 RF-Circuits and Systems`。下面的目录完全沿用课件编号；括号内为 PDF 页码，页码为 PDF 文件页序。  
+> **重点标记 / Exam markers:** `【重点】` = 建议优先掌握、常见计算/解释题；`【理解】` = 需要理解但通常不是单独大题；`【拓展】` = 课件中的背景或工程例子，考试优先级较低。
+
+## 2.1 Part 1: High Frequency Concepts and Passive Structures
+
+1. [2.1.1 Motivation: RF and Microwave Applications](#s211)（PDF pp. 17-60）【理解】
+2. [2.1.2 Maxwell Equations, Waves, and Media](#s212)（PDF pp. 61-109）【重点】
+3. [2.1.3 Time Domain vs. Frequency Domain](#s213)（PDF pp. 110-116）【重点】
+4. [2.1.4 RF Parameters and Measurements](#s214)（PDF pp. 117-158）【重点】
+5. [2.1.5 Waveguide Structures and Models](#s215)（PDF pp. 139-205）【重点】
+6. [2.1.6 Modern Antennas and Antenna Design](#s216)（PDF pp. 206-233）【重点】
+
+## 2.2 Part 2: Active RF-Devices
+
+7. [2.2.1 Concepts of RF-Semiconductor Devices](#s221)（PDF pp. 234-328）【重点】
+8. [2.2.2 Active RF-Semiconductor Devices](#s222)（PDF pp. 329-355）【重点】
+9. [2.2.3 RF Figures of Merit](#s223)（PDF pp. 396-420）【重点】
+
+## 2.3 Part 3: RF-Circuits and Systems
+
+10. [2.3.1 Circuit Fundamentals](#s231)（PDF pp. 422-435）【重点】
+11. [2.3.2 Amplifier Circuits](#s232)（PDF pp. 436-465）【重点】
+12. [2.3.3 Receive Circuits](#s233)（PDF pp. 466-479）【重点】
+13. [2.3.4 Oscillators and Sources](#s234)（PDF pp. 480-486）【重点】
+14. [2.3.5 General Concept of Mixers](#s235)（PDF pp. 467-479）【重点】
+15. [2.3.6 RF Systems: Transmitters and Receivers](#s236)（PDF pp. 487-496）【理解】
+
+## Review Questions and Study Aids
+
+16. [Questions from the lecture slides: answers and source pointers](#questions)
+17. [公式速查与易错点 / Formula Quick Reference and Pitfalls](#summary)
+18. [附录：常数表、频段划分、单位换算](#appendix)
 
 ---
 
-<h1 id="ch1">第一章：Maxwell 方程组与电磁场基础</h1>
-<h2>Chapter 1: Maxwell's Equations and Electromagnetic Fundamentals</h2>
+<h1 id="s211">2.1.1 Motivation: RF and Microwave Applications</h1>
+<h2>2.1.1 Motivation and Applications</h2>
+> **课件定位 / Script location:** PDF pp. 17-60. **考试标记 / Exam marker:** `【理解】` 主要用于建立 RF 应用背景；直接计算题优先级较低。
+
+RF 技术的共同特点是：信号波长与器件、互连或天线尺寸可比，电路必须同时考虑传播延迟、反射、辐射、损耗和电磁兼容。典型应用包括无线通信、雷达、卫星通信、汽车毫米波雷达、IoT 和高速有线链路。  
+*RF systems operate where wavelength is comparable to circuit or antenna dimensions, so propagation, reflection, radiation, loss, and EMC must be considered together.*
+
+$$
+\lambda_0=\frac{c_0}{f},\qquad \theta=\beta l=\frac{2\pi l}{\lambda_g}
+$$
+
+当电长度 $\theta$ 不再远小于 1 时，集总模型失效，走线本身成为电路元件。这个判断是后续传输线、S 参数和匹配理论的出发点。
+
+---
+
+<h1 id="s212">2.1.2 Maxwell Equations, Waves, and Media: Maxwell 方程组与电磁场基础</h1>
+<h2>2.1.2 Maxwell's Equations and Electromagnetic Fundamentals</h2>
+> **课件定位 / Script location:** PDF pp. 61-89. **考试标记 / Exam marker:** `【重点】` Maxwell 方程、本构关系、波动方程。
 
 Maxwell 方程组是所有 RF 与微波分析的起点。本节详细展开四个方程的物理意义、推导脉络、以及本构关系的应用背景。
 *Maxwell's Equations are the starting point for all RF and microwave analysis. This section details the physical meaning, derivation context, and application of constitutive relations.*
@@ -152,8 +174,9 @@ $$
 
 ---
 
-<h1 id="ch2">第二章：自由空间中的波动方程</h1>
-<h2>Chapter 2: Wave Equation in Free Space</h2>
+<h1 id="s2121">2.1.2.1 Wave Propagation and Boundaries: 自由空间中的波动方程</h1>
+<h2>2.1.2.1 Wave Propagation and Boundaries</h2>
+> **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 波动方程、平面波、边界条件。
 
 ### 2.1 从 Maxwell 到波动方程 (From Maxwell to Wave Equation)
 
@@ -251,8 +274,9 @@ $$
 
 ---
 
-<h1 id="ch3">第三章：坡印廷矢量与电磁能量</h1>
-<h2>Chapter 3: Poynting Vector and Electromagnetic Energy</h2>
+<h1 id="s2122">2.1.2.2 Propagation and Dielectrics: 坡印廷矢量与电磁能量</h1>
+<h2>2.1.2.2 Poynting Vector and Electromagnetic Energy</h2>
+> **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 功率流、波阻抗、介质传播。
 
 ### 3.1 瞬时坡印廷矢量 (Instantaneous Poynting Vector)
 
@@ -295,8 +319,9 @@ $$
 
 ---
 
-<h1 id="ch4">第四章：介质中的波传播与电介质</h1>
-<h2>Chapter 4: Wave Propagation in Media and Dielectrics</h2>
+<h1 id="s2122-dielectric">2.1.2.2 Propagation and Dielectrics: 介质中的波传播与电介质</h1>
+<h2>2.1.2.2 Wave Propagation in Media and Dielectrics</h2>
+> **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 波长、介电常数、损耗正切。
 
 ### 4.1 折射率 (Refractive Index)
 
@@ -377,8 +402,17 @@ $$
 
 ---
 
-<h1 id="ch5">第五章：导波传播与传输线理论</h1>
-<h2>Chapter 5: Guided Wave Propagation and Transmission Line Theory</h2>
+<h1 id="s213">2.1.3 Time Domain vs. Frequency Domain</h1>
+<h2>2.1.3 Time Domain vs. Frequency Domain: 时域与频域</h2>
+> **课件定位 / Script location:** PDF pp. 110-116. **考试标记 / Exam marker:** `【重点】` 频率、波长、电长度、时域/频域转换。
+
+本节对应课件的时域/频域过渡；相关公式和传输线表达式在下方 `2.1.5.1` 章节继续展开。
+
+---
+
+<h1 id="s2151">2.1.5.1 Guided Wave Propagation in Dielectric Media: 导波传播与传输线理论</h1>
+<h2>2.1.5.1 Guided Wave Propagation and Transmission Line Theory</h2>
+> **课件定位 / Script location:** PDF pp. 117-138. **考试标记 / Exam marker:** `【重点】` 电报方程、传播常数、特性阻抗、导波长。
 
 ### 5.1 自由传播 vs. 导波传播 (Free vs. Guided Propagation)
 
@@ -510,8 +544,9 @@ $$
 
 ---
 
-<h1 id="ch6">第六章：反射系数与史密斯圆图</h1>
-<h2>Chapter 6: Reflection Coefficient and Smith Chart</h2>
+<h1 id="s2151-reflection">2.1.5.1 Guided Wave Propagation: 反射系数与史密斯圆图</h1>
+<h2>2.1.5.1 Reflection Coefficient and Smith Chart</h2>
+> **课件定位 / Script location:** PDF pp. 126-138. **考试标记 / Exam marker:** `【重点】` 反射系数、VSWR、回波损耗、Smith Chart。
 
 ### 6.1 电压反射系数 (Voltage Reflection Coefficient)
 
@@ -597,8 +632,17 @@ $$
 
 ---
 
-<h1 id="ch7">第七章：S 参数与多端口网络</h1>
-<h2>Chapter 7: S-Parameters and Multi-Port Networks</h2>
+<h1 id="s214">2.1.4 RF Parameters and Measurements</h1>
+<h2>2.1.4 RF Parameters and Measurements: RF 参数与测量</h2>
+> **课件定位 / Script location:** PDF pp. 117-158. **考试标记 / Exam marker:** `【重点】` 功率波、S 参数、网络分析仪；多极矩为 `【理解】`。
+
+本节的详细内容分为下方 `2.1.4.1` 参数体系和 `2.1.4.2` S 参数两部分。
+
+---
+
+<h1 id="s2142">2.1.4.2 Transmission and Reflection: S 参数与多端口网络</h1>
+<h2>2.1.4.2 S-Parameters and Multi-Port Networks</h2>
+> **课件定位 / Script location:** PDF pp. 149-158. **考试标记 / Exam marker:** `【重点】` S 参数定义、功率波、测量。
 
 ### 7.1 S 参数定义 (S-Parameter Definition) — 二端口网络
 
@@ -672,8 +716,9 @@ $$
 
 ---
 
-<h1 id="ch8">第八章：Z / Y / h 参数体系</h1>
-<h2>Chapter 8: Z / Y / h Parameter Systems (Multi-parameter Comparison)</h2>
+<h1 id="s2141">2.1.4.1 RF Parameters: Z / Y / h 参数体系</h1>
+<h2>2.1.4.1 Z / Y / h Parameter Systems</h2>
+> **课件定位 / Script location:** PDF pp. 110-116. **考试标记 / Exam marker:** `【理解】` 参数体系对比；重点仍是 S 参数。
 
 ### 8.1 四种参数体系对比 (Four Parameter System Comparison)
 
@@ -701,8 +746,9 @@ $$
 
 ---
 
-<h1 id="ch9">第九章：波导结构与传输媒介</h1>
-<h2>Chapter 9: Waveguide Structures and Transmission Media</h2>
+<h1 id="s215">2.1.5 Waveguide Structures and Models: 波导结构与传输媒介</h1>
+<h2>2.1.5 Waveguide Structures and Transmission Media</h2>
+> **课件定位 / Script location:** PDF pp. 139-180. **考试标记 / Exam marker:** `【重点】` TEM/TE/TM、同轴线、波导与模式。
 
 ### 9.1 常见传输线媒介分类 (Classification of Transmission Media)
 
@@ -751,8 +797,9 @@ $$
 
 ---
 
-<h1 id="ch10">第十章：微带线与真实无源结构</h1>
-<h2>Chapter 10: Microstrip Lines and Real Passive Structures</h2>
+<h1 id="s2152">2.1.5.2 Transmission Lines and Real Passive Structures: 微带线与真实无源结构</h1>
+<h2>2.1.5.2 Microstrip Lines and Real Passive Structures</h2>
+> **课件定位 / Script location:** PDF pp. 160-180. **考试标记 / Exam marker:** `【重点】` 微带线、有效介电常数、布局寄生。
 
 ### 10.1 微带线的重要性 (Importance of Microstrip)
 
@@ -804,8 +851,9 @@ $$
 
 ---
 
-<h1 id="ch11">第十一章：匹配理论与阻抗变换</h1>
-<h2>Chapter 11: Matching Theory and Impedance Transformation</h2>
+<h1 id="s2152-matching">2.1.5.2 Transmission Lines and Real Passive Structures: 匹配理论与阻抗变换</h1>
+<h2>2.1.5.2 Matching Theory and Impedance Transformation</h2>
+> **课件定位 / Script location:** PDF pp. 181-198. **考试标记 / Exam marker:** `【重点】` 共轭匹配、Smith Chart 匹配、阻抗变换。
 
 ### 11.1 为什么需要匹配？(Why Matching?)
 
@@ -841,8 +889,9 @@ $$
 
 ---
 
-<h1 id="ch12">第十二章：四分之一波长变换与短截线</h1>
-<h2>Chapter 12: Quarter-Wave Transformer and Stubs</h2>
+<h1 id="s2153">2.1.5.3 Divider, Combiner, Couplers, and Stubs: 四分之一波长变换与短截线</h1>
+<h2>2.1.5.3 Quarter-Wave Transformer and Stubs</h2>
+> **课件定位 / Script location:** PDF pp. 181-205. **考试标记 / Exam marker:** `【重点】` 四分之一波长变换、开路/短路枝节。
 
 ### 12.1 四分之一波长变换器 (Quarter-Wave Transformer)
 
@@ -884,8 +933,9 @@ $$
 
 ---
 
-<h1 id="ch13">第十三章：功分器、合成器与耦合器</h1>
-<h2>Chapter 13: Dividers, Combiners, and Couplers</h2>
+<h1 id="s2153-divider">2.1.5.3 Divider, Combiner, Couplers, and Stubs: 功分器、合成器与耦合器</h1>
+<h2>2.1.5.3 Dividers, Combiners, and Couplers</h2>
+> **课件定位 / Script location:** PDF pp. 181-205. **考试标记 / Exam marker:** `【理解】` Wilkinson、定向耦合器的结构和关键阻抗。
 
 ### 13.1 Wilkinson 功分器 (Wilkinson Power Divider)
 
@@ -910,8 +960,9 @@ $$
 
 ---
 
-<h1 id="ch14">第十四章：损耗机制全面分析</h1>
-<h2>Chapter 14: Comprehensive Loss Mechanism Analysis</h2>
+<h1 id="s2152-loss">2.1.5.2 Transmission Lines: 损耗机制全面分析</h1>
+<h2>2.1.5.1 Comprehensive Loss Mechanism Analysis</h2>
+> **课件定位 / Script location:** PDF pp. 126-138、181-205. **考试标记 / Exam marker:** `【重点】` $\alpha$、导体损耗、介质损耗。
 
 ### 14.1 传播常数回顾 (Propagation Constant Review)
 
@@ -975,8 +1026,9 @@ $$
 
 ---
 
-<h1 id="ch15">第十五章：趋肤效应与表面粗糙度</h1>
-<h2>Chapter 15: Skin Effect and Surface Roughness</h2>
+<h1 id="s2152-skin">2.1.5.2 Transmission Lines: 趋肤效应与表面粗糙度</h1>
+<h2>2.1.5.1 Skin Effect and Surface Roughness</h2>
+> **课件定位 / Script location:** PDF pp. 126-138. **考试标记 / Exam marker:** `【理解】` 趋肤深度与粗糙度修正；通常作为损耗分析的一部分。
 
 ### 15.1 趋肤深度 (Skin Depth)
 
@@ -1035,8 +1087,17 @@ $$
 
 ---
 
-<h1 id="ch16">第十六章：天线原理与特性参数</h1>
-<h2>Chapter 16: Antenna Principles and Characteristic Parameters</h2>
+<h1 id="s216">2.1.6 Modern Antennas and Antenna Design</h1>
+<h2>2.1.6 Modern Antennas and Antenna Design: 现代天线与天线设计</h2>
+> **课件定位 / Script location:** PDF pp. 206-233. **考试标记 / Exam marker:** `【重点】` 增益、方向性、孔径和链路预算；具体 CST 展示为 `【拓展】`。
+
+本节的公式集中在 `2.1.6.1`，阵列、SAR 与 MIMO 集中在 `2.1.6.2`。
+
+---
+
+<h1 id="s2161">2.1.6.1 Antenna Principles: 天线原理与特性参数</h1>
+<h2>2.1.6.1 Antenna Principles and Characteristic Parameters</h2>
+> **课件定位 / Script location:** PDF pp. 206-232. **考试标记 / Exam marker:** `【重点】` 增益、方向性、有效孔径、Friis 方程。
 
 ### 16.1 天线定义 (Antenna Definition)
 
@@ -1147,8 +1208,9 @@ $$
 
 ---
 
-<h1 id="ch17">第十七章：阵列天线与 MIMO</h1>
-<h2>Chapter 17: Array Antennas and MIMO</h2>
+<h1 id="s2162">2.1.6.2 Some Insight Into Modern Antennas: 阵列天线与 MIMO</h1>
+<h2>2.1.6.2 Array Antennas and MIMO</h2>
+> **课件定位 / Script location:** PDF pp. 221-233. **考试标记 / Exam marker:** `【理解】` 阵列因子、波束成形、MIMO；重点是概念而非复杂推导。
 
 ### 17.1 方向图乘法 (Pattern Multiplication)
 
@@ -1182,8 +1244,9 @@ $$
 
 ---
 
-<h1 id="ch18">第十八章：RF 半导体与有源器件基础（Lecture 7）</h1>
-<h2>Lecture 7: RF Semiconductors and Active-Device Fundamentals</h2>
+<h1 id="s221">2.2.1 Concepts of RF-Semiconductor Devices: RF 半导体与有源器件基础</h1>
+<h2>2.2.1 Concepts of RF-Semiconductor Devices</h2>
+> **课件定位 / Script location:** PDF pp. 234-328. **考试标记 / Exam marker:** `【重点】` 载流子输运、材料参数、RF 小信号模型；晶圆照片和工艺史为 `【拓展】`。
 
 > 本讲从无源网络进入有源器件。核心问题是：如何用偏置控制载流子的产生与运动，并把直流功率转换为 RF 功率。  
 > *This lecture moves from passive networks to active devices: bias controls carrier generation and transport, enabling DC-to-RF power conversion.*
@@ -1321,8 +1384,9 @@ $$
 
 ---
 
-<h1 id="ch19">第十九章：RF 半导体制造工艺（Lecture 8）</h1>
-<h2>Lecture 8: RF Semiconductor Fabrication</h2>
+<h1 id="s222">2.2.1.3 Equivalent Circuit Approaches / 2.2.1.4 Device Processing: RF 半导体制造工艺</h1>
+<h2>2.2.1.3-2.2.1.4 RF Semiconductor Fabrication</h2>
+> **课件定位 / Script location:** PDF pp. 268-296. **考试标记 / Exam marker:** `【理解】` 掺杂、光刻、刻蚀、沉积和退火的作用；具体设备品牌与工厂流程为 `【拓展】`。
 
 ### 8.1 从晶圆到芯片的工艺循环 (Wafer-to-Chip Process Loop)
 
@@ -1377,8 +1441,9 @@ RF 器件尤其敏感于栅长、栅电阻、欧姆接触电阻、钝化层陷�
 
 ---
 
-<h1 id="ch20">第二十章：载流子输运、结与场效应晶体管（Lecture 9）</h1>
-<h2>Lecture 9: Carrier Transport, Junctions, and Field-Effect Transistors</h2>
+<h1 id="s223">2.2.2 Active RF-Semiconductor Devices: 载流子输运、结与场效应晶体管</h1>
+<h2>2.2.2 Active RF-Semiconductor Devices</h2>
+> **课件定位 / Script location:** PDF pp. 297-355. **考试标记 / Exam marker:** `【重点】` PN/Schottky、MOSFET、MESFET、HEMT、$g_m$、$g_{ds}$、$f_T$。
 
 ### 9.1 漂移、扩散与 Einstein 关系 (Drift, Diffusion, and Einstein Relation)
 
@@ -1500,8 +1565,9 @@ $$
 
 ---
 
-<h1 id="ch21">第二十一章：双极晶体管与 RF 功率半导体（Lecture 10）</h1>
-<h2>Lecture 10: Bipolar Transistors and RF Power Semiconductors</h2>
+<h1 id="s224">2.2.2 Active RF-Semiconductor Devices: 双极晶体管与 RF 功率半导体</h1>
+<h2>2.2.2 BJT/HBT and RF Power Semiconductors</h2>
+> **课件定位 / Script location:** PDF pp. 356-394. **考试标记 / Exam marker:** `【重点】` BJT/HBT、SiGe、LDMOS、宽禁带半导体；具体产业案例为 `【拓展】`。
 
 ### 10.1 BJT 的控制关系 (BJT Control Relations)
 
@@ -1579,8 +1645,9 @@ $$
 
 ---
 
-<h1 id="ch22">第二十二章：RF 增益、稳定性与放大器基础（Lecture 11）</h1>
-<h2>Lecture 11: RF Gain, Stability, and Amplifier Fundamentals</h2>
+<h1 id="s231">2.3.1 Circuit Fundamentals: RF 增益、稳定性与放大器基础</h1>
+<h2>2.3.1 Circuit Fundamentals</h2>
+> **课件定位 / Script location:** PDF pp. 395-435. **考试标记 / Exam marker:** `【重点】` 增益、S 参数、稳定性、匹配、偏置和功率波。
 
 ### 11.1 基本增益量 (Basic Gain Quantities)
 
@@ -1724,8 +1791,9 @@ $$
 
 ---
 
-<h1 id="ch23">第二十三章：功率放大器、接收电路与 RF 系统（Lecture 12）</h1>
-<h2>Lecture 12: Power Amplifiers, Receive Circuits, and RF Systems</h2>
+<h1 id="s232">2.3.2 Amplifier Circuits: 功率放大器、接收电路与 RF 系统</h1>
+<h2>2.3.2 Amplifier Circuits</h2>
+> **课件定位 / Script location:** PDF pp. 436-465. **考试标记 / Exam marker:** `【重点】` PA 类别、效率、线性度、IIP3/OIP3、ACPR；行波放大器为 `【理解】`。
 
 ### 12.1 功率放大器类别 (Power-Amplifier Classes)
 
@@ -1789,6 +1857,10 @@ $$
 *Distributed amplification trades area and DC power for wide bandwidth by absorbing device capacitances into artificial transmission lines.*
 
 主要限制是线路损耗、终端功耗、相速失配、器件增益随频率下降以及芯片面积。
+
+<h1 id="s233">2.3.3 Receive Circuits: 接收电路</h1>
+<h2>2.3.3.1 RF-Noise / 2.3.3.2 Low-Noise Amplifiers</h2>
+> **课件定位 / Script location:** PDF pp. 466-479. **考试标记 / Exam marker:** `【重点】` 热噪声、噪声因子、Friis 公式、LNA 噪声匹配。
 
 ### 12.6 混频器 (Mixers)
 
@@ -1864,6 +1936,10 @@ $$
 
 混频器和振荡器会把低频 $1/f$ 噪声转换到载波附近。振荡器相位噪声通常以载波偏移 $\Delta f$ 处的单边带功率密度表示，单位 dBc/Hz。
 
+<h1 id="s234">2.3.4 Oscillators and Sources: 振荡器与信号源</h1>
+<h2>2.3.4.1 Feedback / 2.3.4.2 Phase-Noise</h2>
+> **课件定位 / Script location:** PDF pp. 480-486. **考试标记 / Exam marker:** `【重点】` Barkhausen 条件与相位噪声；倍频器为 `【理解】`。
+
 ### 12.9 振荡条件与 Leeson 直觉 (Oscillation and Leeson Intuition)
 
 Barkhausen 条件：
@@ -1888,6 +1964,14 @@ $$
 \boxed{\Delta\mathcal{L}\approx20\log_{10}N}
 $$
 
+<h1 id="s235">2.3.5 General Concept of Mixers: 混频器</h1>
+<h2>2.3.5.1 Mixing and Intermodulation / 2.3.5.2 Passive and Active Mixers</h2>
+> **课件定位 / Script location:** PDF pp. 467-479. **考试标记 / Exam marker:** `【重点】` 和频、差频、镜像、转换增益/损耗与线性度。
+
+<h1 id="s236">2.3.6 RF Systems: Transmitters and Receivers</h1>
+<h2>2.3.6.1 Transmitter Front-Ends / 2.3.6.2 Receiver Front-Ends / 2.3.6.3 Transceiver Examples</h2>
+> **课件定位 / Script location:** PDF pp. 487-496. **考试标记 / Exam marker:** `【理解】` 系统框图、模块功能和主要限制；详细架构案例为 `【拓展】`。
+
 ### 12.10 收发机前端与集成 (Transceiver Front Ends and Integration)
 
 接收链通常为：天线/双工器 -> 预选滤波 -> LNA -> mixer -> IF/baseband。发射链通常为：基带/IQ -> mixer/upconverter -> driver -> PA -> 滤波/双工器 -> 天线。
@@ -1904,7 +1988,7 @@ $$
 
 ---
 
-<h1 id="questions">第二十四章：课件 Questions 问题与答案</h1>
+<h1 id="questions">Review Questions: 课件 Questions 问题与答案</h1>
 <h2>Questions from the lecture slides: answers and source pointers</h2>
 
 本章整理课件图片中的 27 道复习题。每道题给出考试可直接使用的答案，并在末尾注明课件 PDF 页码和对应主题；页码按 `Skripte_Vorlesung-01bis12.pdf` 的 PDF 页序计数。  
@@ -1924,7 +2008,7 @@ $$
 ```
 
 主要限制是：LNA 的噪声系数和线性度、混频器的转换增益/损耗与镜像抑制、LO 的相位噪声和泄漏、PA 的效率/输出功率/ACPR、滤波器的插入损耗与选择性，以及 ADC/DAC 的采样率、动态范围和量化噪声。  
-**课件定位 Source：** PDF pp. 488-495，`Mobile Communication Handset`、`Receiver front-ends`、`Transceiver front-ends`；对应本笔记 [第二十三章](#ch23) §12.10。
+**课件定位 Source：** PDF pp. 488-495，`Mobile Communication Handset`、`Receiver front-ends`、`Transceiver front-ends`；对应本笔记 [2.3.6 RF Systems](#s236) §12.10。
 
 #### Q2. Why is the PAE of a power amplifier always smaller than 100%? Name loss mechanisms.
 
@@ -1935,7 +2019,7 @@ PAE=\frac{P_{RF,out}-P_{RF,in}}{P_{DC}}
 $$
 
 PAE 小于 100%，因为直流输入功率不可能全部转化为有用 RF 输出功率；必须扣除 RF 输入功率，而且存在晶体管导通/开关损耗、偏置网络损耗、匹配网络和金属/介质损耗、谐波功率、漏电与封装寄生损耗，最终还有热耗散。理想开关模型可以逼近 100%，但真实器件不能达到。  
-**课件定位 Source：** PDF pp. 412、439-448，`Efficiency`、`Classes of Power Amplifiers`；对应本笔记 [第二十二章](#ch22) §11.4 和 [第二十三章](#ch23) §12.1。
+**课件定位 Source：** PDF pp. 412、439-448，`Efficiency`、`Classes of Power Amplifiers`；对应本笔记 [2.3.1 Circuit Fundamentals](#s231) §11.4 和 [2.3.2 Amplifier Circuits](#s232) §12.1。
 
 #### Q3. Draw the equivalent circuit of a FET.
 
@@ -1947,7 +2031,7 @@ $$
 i_d=g_mv_{gs}+g_{ds}v_{ds},\qquad r_o=\frac{1}{g_{ds}}
 $$
 
-**课件定位 Source：** PDF pp. 329-332，`Equivalent circuit concept`、`Small-signal equivalent circuit FET II`；对应本笔记 [第二十章](#ch20) §9.6。
+**课件定位 Source：** PDF pp. 329-332，`Equivalent circuit concept`、`Small-signal equivalent circuit FET II`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6。
 
 #### Q4. Indicate an impedance of 100 Ohm in the Smith-Polar diagram with $Z_0=50\ \Omega$.
 
@@ -1960,7 +2044,7 @@ z=\frac{Z}{Z_0}=\frac{100}{50}=2+j0
 $$
 
 因此在 Smith-Polar 图的实轴正方向上，标记 $r=2$ 的点；它位于中心 $z=1$ 的右侧。  
-**课件定位 Source：** PDF pp. 141-143，`Display of parameters: Smith-Polar Chart II-IV`；对应本笔记 [第六章](#ch6) §6.2、§6.6。
+**课件定位 Source：** PDF pp. 141-143，`Display of parameters: Smith-Polar Chart II-IV`；对应本笔记 [2.1.5 Waveguide Structures and Models](#s215) §6.2、§6.6。
 
 #### Q5. What does conjugate complex matching mean?
 
@@ -1973,7 +2057,7 @@ Z_S=Z_{in}^{*}
 $$
 
 等价地，功率波表示为 $\Gamma_S=\Gamma_{in}^{*}$。在给定源和负载条件下，这使负载获得最大平均功率；注意放大器的双向器件需要用完整的 $\Gamma_{in}$ 与 $\Gamma_{out}$ 联立求解。  
-**课件定位 Source：** PDF p. 184，`Concept of Matching`；对应本笔记 [第十一章](#ch11) §11.2 和 [第二十二章](#ch22) §11.2。
+**课件定位 Source：** PDF p. 184，`Concept of Matching`；对应本笔记 [2.1.5.2 Transmission Lines](#s2152-matching) §11.2 和 [2.3.1 Circuit Fundamentals](#s231) §11.2。
 
 #### Q6. What does $K>1$ mean regarding stability?
 
@@ -1986,7 +2070,7 @@ K=\frac{1-|S_{11}|^2-|S_{22}|^2+|\Delta|^2}{2|S_{12}S_{21}|}
 $$
 
 $K>1$ 只是无条件稳定的一个条件；还必须满足 $|\Delta|<1$。两者同时满足时，对所有被动源、负载反射系数 $|\Gamma_S|,|\Gamma_L|\le1$ 都不会振荡。  
-**课件定位 Source：** PDF pp. 403-404，`Stability Analysis`；对应本笔记 [第二十二章](#ch22) §11.3。
+**课件定位 Source：** PDF pp. 403-404，`Stability Analysis`；对应本笔记 [2.3.1 Circuit Fundamentals](#s231) §11.3。
 
 #### Q7. What is the equivalent wavelength of 100 GHz in vacuum and in a dielectric material with $\varepsilon_r=9$?
 
@@ -2002,7 +2086,7 @@ $$
 \lambda=\frac{3\ \mathrm{mm}}{\sqrt{9}}=1\ \mathrm{mm}
 $$
 
-**课件定位 Source：** PDF pp. 67-75，`Some Numbers and Lengths`、`Propagation and Dielectrics`；对应本笔记 [第二章](#ch2) 和 [第四章](#ch4)。
+**课件定位 Source：** PDF pp. 67-75，`Some Numbers and Lengths`、`Propagation and Dielectrics`；对应本笔记 [2.1.2.1 Wave Propagation and Boundaries](#s2121) 和 [2.1.2.2 Propagation and Dielectrics](#s2122-dielectric)。
 
 #### Q8. What power in W does 36 dBm denote?
 
@@ -2012,7 +2096,7 @@ $$
 P=1\ \mathrm{mW}\times10^{36/10}=3981\ \mathrm{mW}\approx3.98\ \mathrm{W}
 $$
 
-**课件定位 Source：** PDF p. 411，`Power in dBm`；对应本笔记 [第二十二章](#ch22) §11.4。
+**课件定位 Source：** PDF p. 411，`Power in dBm`；对应本笔记 [2.3.1 Circuit Fundamentals](#s231) §11.4。
 
 ### 24.2 半导体器件与工艺 (Semiconductor Devices and Processing)
 
@@ -2021,14 +2105,14 @@ $$
 **答案 Answer：**
 
 最大的帮助是：缩短沟道减小渡越时间并提高 $f_T/f_{max}$，同时可以把 RF、数字基带和控制电路高密度集成。最大的缺点是：击穿电压和允许电压摆幅降低，导致输出功率和动态范围受限；此外短沟道、栅漏电、工艺波动和寄生耦合更严重。  
-**课件定位 Source：** PDF pp. 251-253、269，`Moore's Law`、`A modern silicon CMOS FET`、`Scaling: Silicon-wafer`；对应本笔记 [第十八章](#ch18) §7.3 和 [第二十章](#ch20) §9.6。
+**课件定位 Source：** PDF pp. 251-253、269，`Moore's Law`、`A modern silicon CMOS FET`、`Scaling: Silicon-wafer`；对应本笔记 [2.2.1 Concepts of RF-Semiconductor Devices](#s221) §7.3 和 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6。
 
 #### Q10. Why do we use heterostructure in a bipolar transistor?
 
 **答案 Answer：**
 
 异质结构用宽禁带发射极和窄禁带基区形成能带偏移，抑制基区载流子反向注入，提高发射极注入效率；这样可以使用更高掺杂的基区来降低基极电阻，同时保持高电流增益和高 $f_{max}$。  
-**课件定位 Source：** PDF pp. 362-370，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [第二十一章](#ch21) §10.3。
+**课件定位 Source：** PDF pp. 362-370，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.3。
 
 #### Q11. What are the (dis)advantages of a bipolar vs. a FET?
 
@@ -2039,21 +2123,21 @@ $$
 | 优点 | 高 $g_m/I$、高增益密度、通常具有良好线性；HBT 可获得高 $f_T/f_{max}$ | 栅极输入电流小、输入阻抗高、易与 CMOS 集成 |
 | 缺点 | 基极需要电流，输入阻抗较低，偏置和热稳定性更敏感 | $g_m/I$ 通常较低，短沟道、栅漏电和击穿限制明显 |
 
-**课件定位 Source：** PDF p. 372，`Comparison bipolar transistor vs. FET`；对应本笔记 [第二十一章](#ch21) §10.4。
+**课件定位 Source：** PDF p. 372，`Comparison bipolar transistor vs. FET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.4。
 
 #### Q12. Explain the trade-off linearity vs. efficiency.
 
 **答案 Answer：**
 
 提高线性度通常需要更大的导通角、更大的偏置电流、功率回退或负反馈，使器件工作在更接近线性的区域，但会增加静态功耗并降低效率。提高效率则常使用 class-B/C、开关型或强非线性负载调制，减少器件导通时间，却会产生谐波、压缩和互调失真。  
-**课件定位 Source：** PDF pp. 418-420、439-448，`Harmonic Analysis`、`Classes of Power Amplifiers`；对应本笔记 [第二十二章](#ch22) §11.5 和 [第二十三章](#ch23) §12.1、§12.3。
+**课件定位 Source：** PDF pp. 418-420、439-448，`Harmonic Analysis`、`Classes of Power Amplifiers`；对应本笔记 [2.3.1 Circuit Fundamentals](#s231) §11.5 和 [2.3.2 Amplifier Circuits](#s232) §12.1、§12.3。
 
 #### Q13. What is the advantage of BiCMOS technology?
 
 **答案 Answer：**
 
 BiCMOS 把 CMOS 的高密度、低功耗数字集成能力与 SiGe BJT/HBT 的高跨导、高速、低噪声 RF 性能结合起来，适合把基带、控制、PLL、LNA、PA driver 和高速接口集成在一个芯片/工艺平台中。代价是工艺复杂度、掩模数量和成本增加。  
-**课件定位 Source：** PDF pp. 373-374，`Co-Integration of technologies: BiCMOS`；对应本笔记 [第二十一章](#ch21) §10.4。
+**课件定位 Source：** PDF pp. 373-374，`Co-Integration of technologies: BiCMOS`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.4。
 
 #### Q14. Why do class-B and class-A have different PAE?
 
@@ -2066,14 +2150,14 @@ $$
 $$
 
 因此 class-B 的 PAE 理论上更高，但会有交越失真，实际 AB 类用于折中。  
-**课件定位 Source：** PDF pp. 439-442，`Classes of Power Amplifiers`；对应本笔记 [第二十三章](#ch23) §12.1。
+**课件定位 Source：** PDF pp. 439-442，`Classes of Power Amplifiers`；对应本笔记 [2.3.2 Amplifier Circuits](#s232) §12.1。
 
 #### Q15. What is the drawback of the class-C operation?
 
 **答案 Answer：**
 
 Class-C 的导通角小于 $180^\circ$，效率高但输出电流脉冲非线性很强，产生大量谐波和波形失真；必须依靠高 Q 谐振/匹配网络恢复基波，因此通常是窄带的，不适合要求高线性度的宽带调制信号。  
-**课件定位 Source：** PDF p. 442，`Classes and Types of power amplifiers: class-C`；对应本笔记 [第二十三章](#ch23) §12.1。
+**课件定位 Source：** PDF p. 442，`Classes and Types of power amplifiers: class-C`；对应本笔记 [2.3.2 Amplifier Circuits](#s232) §12.1。
 
 #### Q16. What is the free-space impedance (value)?
 
@@ -2083,21 +2167,21 @@ $$
 \eta_0=\sqrt{\frac{\mu_0}{\varepsilon_0}}=120\pi\ \Omega\approx376.73\ \Omega\approx377\ \Omega
 $$
 
-**课件定位 Source：** PDF p. 91，`Intuition: Properties of Free Space`；对应本笔记 [第三章](#ch3) §3.3。
+**课件定位 Source：** PDF p. 91，`Intuition: Properties of Free Space`；对应本笔记 [2.1.2.2 Propagation and Dielectrics](#s2122) §3.3。
 
 #### Q17. What is the difference between free-space and guided propagation along metals?
 
 **答案 Answer：**
 
 自由空间传播是在无导体边界的开放介质中传播，波阻抗接近 $\eta_0$，没有由导体截面决定的模式截止条件。金属导波结构利用导体边界约束场，传播由结构尺寸和介质决定，可能出现 TEM/TE/TM 模式、截止频率、导波波长 $\lambda_g$，并产生导体损耗、介质损耗和色散。  
-**课件定位 Source：** PDF pp. 100-113、159，`Propagation along Conductors`、`Waveguide Structures`；对应本笔记 [第五章](#ch5) 和 [第九章](#ch9)。
+**课件定位 Source：** PDF pp. 100-113、159，`Propagation along Conductors`、`Waveguide Structures`；对应本笔记 [2.1.5 Waveguide Structures and Models](#s215) 和 [2.1.5.1 Guided Wave Propagation](#s2151)。
 
 #### Q18. How does one make a MESFET?
 
 **答案 Answer：**
 
 MESFET 以半导体沟道（常见 GaAs）为核心，在沟道两端制作低电阻欧姆源极和漏极，在沟道上方制作金属-半导体 Schottky 栅。栅压改变耗尽层宽度，从而控制沟道电流；沟道和接触可通过外延、掺杂/离子注入、刻蚀和金属化形成。  
-**课件定位 Source：** PDF pp. 346、352，`Metal-Semiconductor FET (MESFET)`、`Example: GaAs MESFET`；对应本笔记 [第二十章](#ch20) §9.7。
+**课件定位 Source：** PDF pp. 346、352，`Metal-Semiconductor FET (MESFET)`、`Example: GaAs MESFET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.7。
 
 #### Q19. Give three items which change a CMOS FET into an LDMOS.
 
@@ -2110,21 +2194,21 @@ MESFET 以半导体沟道（常见 GaAs）为核心，在沟道两端制作低�
 3. 增强高压隔离和功率处理能力，例如更厚栅氧/漂移层、优化体区与源极短接以及多指功率布局。
 
 这些变化提高 $V_{BR}$ 和 RF 输出功率，但会增加导通电阻、面积和寄生电容。  
-**课件定位 Source：** PDF pp. 382-385，`LDMOS RF-Power-FETs`、`Thermal Considerations`；对应本笔记 [第二十一章](#ch21) §10.5。
+**课件定位 Source：** PDF pp. 382-385，`LDMOS RF-Power-FETs`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.5。
 
 #### Q20. Why is a HEMT faster than a MESFET?
 
 **答案 Answer：**
 
 HEMT 在异质结界面形成高迁移率二维电子气（2DEG），载流子与离化杂质空间分离，散射更小；同时材料可提供更高饱和速度和更短渡越时间。因此通常具有更高 $g_m$、$f_T$ 和 $f_{max}$。  
-**课件定位 Source：** PDF pp. 347-354，`Hetero-structure-FET`、`pHEMT`；对应本笔记 [第二十章](#ch20) §9.7。
+**课件定位 Source：** PDF pp. 347-354，`Hetero-structure-FET`、`pHEMT`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.7。
 
 #### Q21. What is the function of the heterobarrier in the HBT? Name one.
 
 **答案 Answer：**
 
 异质势垒通过导带/价带偏移阻止不希望的载流子反向注入，特别是抑制基区空穴进入发射极，提高发射极注入效率和电流增益；同时允许基区重掺杂以减小基极电阻。一个例子是 **SiGe HBT 的 Si 发射极 / SiGe 基区异质结**。  
-**课件定位 Source：** PDF pp. 362-369，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [第二十一章](#ch21) §10.3。
+**课件定位 Source：** PDF pp. 362-369，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.3。
 
 #### Q22. How does the current evolve over input voltage near the threshold?
 
@@ -2143,7 +2227,7 @@ I_D\approx\frac{1}{2}\mu C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2
 $$
 
 短沟道器件因速度饱和，增长会比平方律更接近线性并最终受限。  
-**课件定位 Source：** PDF pp. 318、322-326、340-341，`MOS`、`n-Channel MOSFET`、`FET Characteristics`；对应本笔记 [第二十章](#ch20) §9.5。
+**课件定位 Source：** PDF pp. 318、322-326、340-341，`MOS`、`n-Channel MOSFET`、`FET Characteristics`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.5。
 
 #### Q23. How are $g_m$ and $g_{ds}$ defined and what does that have to do with power amplification?
 
@@ -2155,14 +2239,14 @@ g_{ds}=\left.\frac{\partial I_D}{\partial V_{DS}}\right|_Q
 $$
 
 $g_m$ 表示输入电压控制输出电流的能力，决定跨导增益、驱动能力和 $f_T$；$g_{ds}$ 表示输出端电压变化引起的电流变化，越小代表输出电阻越大、增益越高。功率放大还需同时考虑最大电流、电压摆幅、击穿、匹配、效率和热限制，不能只看 $g_m$。  
-**课件定位 Source：** PDF pp. 329、396-402，`Equivalent circuit concept`、`Amplification`；对应本笔记 [第二十章](#ch20) §9.6 和 [第二十二章](#ch22) §11.1。
+**课件定位 Source：** PDF pp. 329、396-402，`Equivalent circuit concept`、`Amplification`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6 和 [2.3.1 Circuit Fundamentals](#s231) §11.1。
 
 #### Q24. Which mechanisms limit the voltage in a device?
 
 **答案 Answer：**
 
 主要机制包括：冲击电离和雪崩击穿、Zener/带间隧穿、栅氧击穿、表面击穿、速度饱和导致的高场限制、热失控与结温上限，以及封装和互连的电场集中。宽禁带材料通过更高的临界电场提高耐压，但仍受陷阱、热和边缘终端限制。  
-**课件定位 Source：** PDF pp. 307-309，`Limits to Voltage: High-Field Effects`；对应本笔记 [第二十章](#ch20) §9.2 和 [第二十一章](#ch21) §10.6。
+**课件定位 Source：** PDF pp. 307-309，`Limits to Voltage: High-Field Effects`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.2 和 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.6。
 
 #### Q25. What is the definition of the thermal resistance?
 
@@ -2176,7 +2260,7 @@ T_j=T_{case}+P_{diss}R_{\theta JC}
 $$
 
 单位为 $\mathrm{K/W}$ 或 $^\circ\mathrm{C/W}$；热阻越小，给定功耗下结温越低。  
-**课件定位 Source：** PDF pp. 384-385，`Power: Thermal Analysis: LDMOS`、`Thermal Considerations`；对应本笔记 [第二十一章](#ch21) §10.5。
+**课件定位 Source：** PDF pp. 384-385，`Power: Thermal Analysis: LDMOS`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.5。
 
 #### Q26. What is the equivalent circuit of a line?
 
@@ -2190,7 +2274,7 @@ $$
 $$
 
 无损线满足 $R'=G'=0$，并有 $Z_0=\sqrt{L'/C'}$、$v_p=1/\sqrt{L'C'}$。  
-**课件定位 Source：** PDF pp. 114-124，`Transmission Lines`；对应本笔记 [第五章](#ch5) §5.2-§5.5。
+**课件定位 Source：** PDF pp. 114-124，`Transmission Lines`；对应本笔记 [2.1.5.1 Guided Wave Propagation](#s2151) §5.2-§5.5。
 
 #### Q27. Which are major loss mechanisms of a transmission line?
 
@@ -2203,11 +2287,11 @@ $$
 3. **辐射/泄漏损耗**：弯折、不连续、连接器、开路结构或非理想屏蔽把能量辐射出去；
 4. 高频下还要考虑表面粗糙度、衬底损耗和阻抗失配造成的有效传输损失。
 
-**课件定位 Source：** PDF pp. 155-159，`Loss Mechanisms in Transmission Lines`、`Summary`；对应本笔记 [第十四章](#ch14)、[第十五章](#ch15) 和 [第十章](#ch10)。
+**课件定位 Source：** PDF pp. 155-159，`Loss Mechanisms in Transmission Lines`、`Summary`；对应本笔记 [2.1.5.2 Transmission Lines](#s2152-loss)、[2.1.5.2 Transmission Lines](#s2152-skin) 和 [2.1.5.2 Transmission Lines](#s2152)。
 
 ---
 
-<h1 id="ch25">第二十五章：Lectures 7-12 公式速查与易错点</h1>
+<h1 id="summary">Formula Quick Reference and Pitfalls: 公式速查与易错点</h1>
 
 ### 核心公式速查 (Formula Quick Reference)
 
@@ -2333,6 +2417,6 @@ $$
 
 ---
 
-> **编辑日期 Date Compiled:** 2026-08-21  
+> **编辑日期 Date Compiled:** 2026-08-28  
 > **用途 Purpose:** Obsidian 个人学习笔记 / Personal Study Notes  
 > **备注 Note:** 本文档从 496 页、Lectures 1-12 完整课程讲义中提取、整理并双语化。建议在 Obsidian 中使用 `[[wikilinks]]` 交叉引用相关章节。考试时间: 2026 年 9 月 1 日，笔试 90 分钟，闭卷。*Extracted, organized, and bilingualized from the complete 496-page Lectures 1-12 script. Use Obsidian wikilinks for cross-referencing. Exam: 01 Sep 2026, 90 min written, closed book.*
