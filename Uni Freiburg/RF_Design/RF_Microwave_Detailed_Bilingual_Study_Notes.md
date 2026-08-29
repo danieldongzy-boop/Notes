@@ -26,7 +26,7 @@
 ## 2.2 Part 2: Active RF-Devices
 
 7. [2.2.1 Concepts of RF-Semiconductor Devices](#s221)（PDF pp. 234-328）【重点】
-8. [2.2.2 Active RF-Semiconductor Devices](#s222)（PDF pp. 329-355）【重点】
+8. [2.2.2 Active RF-Semiconductor Devices](#s222)（PDF pp. 329-394）【重点】
 9. [2.2.3 RF Figures of Merit](#s223)（PDF pp. 396-420）【重点】
 
 ## 2.3 Part 3: RF-Circuits and Systems
@@ -70,7 +70,7 @@ Maxwell 方程组是所有 RF 与微波分析的起点。本节详细展开四�
 
 ---
 
-### 1.1 微分形式 Maxwell 方程组 (Differential Form)
+### 2.1.2 Maxwell 方程组 (Differential Form)
 
 在时变场的一般介质中，Maxwell 方程组写作：
 *In general time-varying media, Maxwell's equations in differential form are:*
@@ -130,7 +130,7 @@ $$
 
 ---
 
-### 1.2 本构关系 (Constitutive Relations)
+### 2.1.2 本构关系 (Constitutive Relations)
 
 在均匀、各向同性（homogeneous, isotropic）介质中：
 *In homogeneous, isotropic media:*
@@ -161,7 +161,7 @@ $$
 
 ---
 
-### 1.3 矢量算子补充 (Vector Operator Supplement)
+### 2.1.2 矢量算子补充 (Vector Operator Supplement)
 
 纳布拉算子 $\nabla$ 的三种用法：
 *The three uses of the Nabla operator $\nabla$:*
@@ -178,7 +178,7 @@ $$
 <h2>2.1.2.1 Wave Propagation and Boundaries</h2>
 > **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 波动方程、平面波、边界条件。
 
-### 2.1 从 Maxwell 到波动方程 (From Maxwell to Wave Equation)
+### 2.1.2.1 从 Maxwell 到波动方程 (From Maxwell to Wave Equation)
 
 在无源真空中（$\rho=0, \vec{J}=0$），对法拉第定律取旋度：
 *In source-free vacuum ($\rho=0, \vec{J}=0$), take curl of Faraday's law:*
@@ -210,7 +210,7 @@ $$
 
 ---
 
-### 2.2 光速 (Speed of Light)
+### 2.1.2.1 光速 (Speed of Light)
 
 对比标准波动方程 $\nabla^2\psi - \frac{1}{v^2}\frac{\partial^2\psi}{\partial t^2}=0$，得：
 *Comparing with standard wave equation:*
@@ -227,7 +227,7 @@ $$
 
 ---
 
-### 2.3 时谐场解 (Time-Harmonic Solution)
+### 2.1.2.1 时谐场解 (Time-Harmonic Solution)
 
 对于沿 $+z$ 方向传播的时谐平面波：
 *For a time-harmonic plane wave propagating in $+z$ direction:*
@@ -278,7 +278,7 @@ $$
 <h2>2.1.2.2 Poynting Vector and Electromagnetic Energy</h2>
 > **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 功率流、波阻抗、介质传播。
 
-### 3.1 瞬时坡印廷矢量 (Instantaneous Poynting Vector)
+### 2.1.2.2 瞬时坡印廷矢量 (Instantaneous Poynting Vector)
 
 $$
 \boxed{\vec{S}(t) = \vec{E}(t) \times \vec{H}(t)} \quad [\text{W/m}^2]
@@ -290,7 +290,7 @@ $$
 | **推导要点** Derivation       | 由 Maxwell 方程组出发，计算 $\nabla\cdot(\vec{E}\times\vec{H})$，结合电场能量密度 $\frac{1}{2}\varepsilon E^2$ 和磁场能量密度 $\frac{1}{2}\mu H^2$ 的变化率，导出坡印廷定理（Poynting theorem）。*From Maxwell's equations, compute $\nabla\cdot(\vec{E}\times\vec{H})$, combine with time derivatives of energy densities.* |     |
 | **应用场景** Application      | 天线辐射方向图计算（远场 $\vec{S}$ 空间分布）；PCB 走线的功率流分布可视化；电磁兼容（EMC）近场探测。*Antenna radiation pattern (far-field $\vec{S}$ distribution); PCB trace power flow visualization; EMC near-field probing.*                                                                                               |     |
 
-### 3.2 时谐场中的时间平均坡印廷矢量 (Time-Averaged Poynting Vector)
+### 2.1.2.2 时谐场中的时间平均坡印廷矢量 (Time-Averaged Poynting Vector)
 
 对于时谐场（phasor 域），瞬时功率在一个周期内振荡，通常我们关心平均值：
 *For time-harmonic fields, instantaneous power oscillates within a period — we typically care about the average:*
@@ -305,7 +305,7 @@ $$
 | **$\vec{H}^*$** | $\vec{H}$ 的复共轭。$\text{Re}\{\vec{E}\times\vec{H}^*\}$ 只取有功功率（resistive power）。虚部对应无功功率（reactive power, 来回振荡）。*Complex conjugate of $\vec{H}$. $\text{Re}\{\vec{E}\times\vec{H}^*\}$ gives active/real power only. Imaginary part corresponds to reactive power.* |
 | **重要推论** Key Corollary | 对于 TEM 波：$H = E/\eta$，$\vec{E}\perp\vec{H}$，故 $|\vec{S}_{avg}| = \frac{1}{2}|E|^2/\eta = \frac{1}{2}|H|^2\eta$。*For TEM wave: $H = E/\eta$, $\vec{E}\perp\vec{H}$, so $|\vec{S}_{avg}| = \frac{1}{2}|E|^2/\eta = \frac{1}{2}|H|^2\eta$.* |
 
-### 3.3 自由空间的特征阻抗 (Intrinsic Impedance of Free Space)
+### 2.1.2.2 自由空间的特征阻抗 (Intrinsic Impedance of Free Space)
 
 $$
 \boxed{\eta_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}} = \frac{|\vec{E}|}{|\vec{H}|} \approx 377 \, \Omega}
@@ -323,7 +323,7 @@ $$
 <h2>2.1.2.2 Wave Propagation in Media and Dielectrics</h2>
 > **课件定位 / Script location:** PDF pp. 90-109. **考试标记 / Exam marker:** `【重点】` 波长、介电常数、损耗正切。
 
-### 4.1 折射率 (Refractive Index)
+### 2.1.2.2 折射率 (Refractive Index)
 
 $$
 \boxed{n = \sqrt{\varepsilon_r \mu_r} \approx \sqrt{\varepsilon_r}} \quad (\text{对非磁性介质 for non-magnetic media, } \mu_r=1)
@@ -334,7 +334,7 @@ $$
 | **物理含义** Physical Meaning | 折射率描述光/电磁波在介质中的速度减慢程度：$v_p = c/n$。$n$ 越大，波走得越慢。*Refractive index describes how much slower light/EM waves travel in a medium: $v_p = c/n$. Higher n → slower wave.*                                      |
 | **来源** Origin             | $\eta = \sqrt{\mu/\varepsilon} = \sqrt{\mu_0\mu_r/\varepsilon_0\varepsilon_r} = \eta_0 \sqrt{\mu_r/\varepsilon_r}$。非磁性材料中 $\eta=\eta_0/n$。*From intrinsic impedance; for non-magnetic: $\eta=\eta_0/n$.* |
 
-### 4.2 介质中的波长 (Wavelength in a Medium)
+### 2.1.2.2 介质中的波长 (Wavelength in a Medium)
 
 $$
 \boxed{\lambda = \frac{\lambda_0}{\sqrt{\varepsilon_{eff}}} = \frac{c}{f\sqrt{\varepsilon_{eff}}}}
@@ -345,7 +345,7 @@ $$
 | 介质中的波长比真空中更短。例如 GaAs ($\varepsilon_r=12.9$) 中 10 GHz 的波长从 3 cm 缩短至 $3/\sqrt{12.9} \approx 0.83$ cm。这对 MMIC 设计至关重要——片上结构的物理尺寸直接由介质波长决定。*Wavelength is shorter in media. E.g. 10 GHz in GaAs: 3 cm → $3/\sqrt{12.9} \approx 0.83$ cm. Critical for MMIC design — on-chip structures are sized by medium wavelength.* |
 |                                                                                                                                                                                                                                                                                                                    |
 
-### 4.3 有效介电常数 (Effective Permittivity) — 微带线
+### 2.1.2.2 有效介电常数 (Effective Permittivity) — 微带线
 
 微带线（microstrip）的独特之处在于场一部分在介质基底中、一部分在空气中。因此引入**有效介电常数** $\varepsilon_{eff}$：
 *Microstrip is unique — part of the field is in substrate, part in air. Hence the **effective permittivity**:*
@@ -365,7 +365,7 @@ $$
 | **微带线近似公式** Approximate Formula | $\varepsilon_{eff} = \frac{\varepsilon_r+1}{2} + \frac{\varepsilon_r-1}{2} \cdot \frac{1}{\sqrt{1+12h/w}}$。当 $w/h \to 0$ (窄线): $\varepsilon_{eff} \to (\varepsilon_r+1)/2$。当 $w/h \to \infty$ (宽线): $\varepsilon_{eff} \to \varepsilon_r$。*As $w/h \to 0$ (narrow): $\varepsilon_{eff} \to (\varepsilon_r+1)/2$. As $w/h \to \infty$ (wide): $\varepsilon_{eff} \to \varepsilon_r$.* |
 | **示例** Example (GaAs, $h=100$ µm, $w=10$ µm, $w/h=0.1$, $\varepsilon_r=13$) | $q=0.55$ → $\varepsilon_{eff} = 1 + 0.55(13-1) = 7.6$；线阻抗 $Z_{01} \approx 260$ Ω（场仿真结果）。若 $w/h=2$ 则 $q=0.7$ → $\varepsilon_{eff}=9.4$，$Z_{01} \approx 80$ Ω。*For $w/h=0.1$: $Z_{01}\approx 260$ Ω. For $w/h=2$: $Z_{01}\approx 80$ Ω.* |
 
-### 4.4 斯奈尔定律与全内反射 (Snell's Law & Total Internal Reflection)
+### 2.1.2.2 斯奈尔定律与全内反射 (Snell's Law & Total Internal Reflection)
 
 #### 斯奈尔折射定律 (Snell's Law of Refraction):
 $$
@@ -382,7 +382,7 @@ $$
 | **物理含义** Physical Meaning | 当波从光密介质 ($n_1$) 进入光疏介质 ($n_2$)，入射角 $\theta_1 > \theta_c$ 时发生全内反射（TIR），能量全部反射回 $n_1$ 中。*When wave enters from optically dense ($n_1$) to rare ($n_2$) medium and $\theta_1 > \theta_c$, total internal reflection occurs — all energy reflected.* |
 | **在RF中的应用** RF Applications | 介质波导（dielectric waveguide）就是利用全内反射原理在无金属化的情况下导引电磁波——基片集成波导（SIW）是典型代表。*Dielectric waveguides use TIR to guide EM waves without metallization — Substrate Integrated Waveguide (SIW) is a prime example.* |
 
-### 4.5 介质损耗正切 (Loss Tangent)
+### 2.1.2.2 介质损耗正切 (Loss Tangent)
 
 复杂情况下，介质的介电常数为复数：
 *In lossy cases, permittivity is complex:*
@@ -414,14 +414,14 @@ $$
 <h2>2.1.5.1 Guided Wave Propagation and Transmission Line Theory</h2>
 > **课件定位 / Script location:** PDF pp. 117-138. **考试标记 / Exam marker:** `【重点】` 电报方程、传播常数、特性阻抗、导波长。
 
-### 5.1 自由传播 vs. 导波传播 (Free vs. Guided Propagation)
+### 2.1.5.1 自由传播 vs. 导波传播 (Free vs. Guided Propagation)
 
 | 传播方式 Mode | 特征 Characteristic |
 |---|---|
 | **自由传播** Free Propagation | 产生 TEM 波（横电磁波）：$\vec{E}$ 和 $\vec{H}$ 均垂直于传播方向。如：自由空间中的平面波。*Produces TEM waves: both $\vec{E}$ and $\vec{H}$ perpendicular to propagation direction. E.g. plane wave in free space.* |
 | **沿导体传播** Guided Propagation | 沿导体传播时引入了纵向（沿传播方向）的场分量。这不是纯 TEM 模式，需要传输线理论。*Introduces longitudinal field components along conductors. Not pure TEM; needs transmission line theory.* |
 
-### 5.2 分布参数模型 (Distributed / Lumped Element Model)
+### 2.1.5.1 分布参数模型 (Distributed / Lumped Element Model)
 
 传输线（transmission line）用单位长度的四个分布参数建模：
 *A transmission line is modeled by four per-unit-length distributed parameters:*
@@ -437,7 +437,7 @@ $$
 - 集总参数假设：元件尺寸 $\ll \lambda$，电压电流在空间上不变。*Lumped: component size $\ll \lambda$, V and I are spatially uniform.*
 - 当 $l \gtrsim \lambda/10$ 时，传输线各点的电压电流都不同，必须用分布参数。*When $l \gtrsim \lambda/10$, V and I vary along the line — distributed model required.*
 
-### 5.3 电报方程 (Telegrapher's Equations)
+### 2.1.5.1 电报方程 (Telegrapher's Equations)
 
 对长度为 $dz$ 的传输线微分段应用基尔霍夫定律：
 *Applying Kirchhoff's laws to a differential segment $dz$:*
@@ -462,7 +462,7 @@ $$
 | **物理图像** Physical Picture | 电压沿线的减小是因为串联阻抗上的压降（$R$+$L$）；电流沿线的减小是因为并联导纳的分流（$G$+$C$）。*V decreases along line due to series impedance drop; I decreases due to shunt admittance leakage.* |
 | **历史背景** Historical | "Telegrapher's Equations" 的名称源于 19 世纪横跨大西洋的电报电缆分析——这是第一个真正需要分布参数模型的工程问题。*Named after 19th-century transatlantic telegraph cable analysis — the first engineering problem requiring distributed models.* |
 
-### 5.4 传播常数 (Propagation Constant)
+### 2.1.5.1 传播常数 (Propagation Constant)
 
 在频域中，电压和电流的解形式为 $V(z) = V^+ e^{-\gamma z} + V^- e^{+\gamma z}$，其中：
 *In frequency domain, solutions are $V(z) = V^+ e^{-\gamma z} + V^- e^{+\gamma z}$, where:*
@@ -488,7 +488,7 @@ $$
 \alpha \approx \frac{R'}{2Z_0} + \frac{G'Z_0}{2}, \quad \beta \approx \omega\sqrt{L'C'}
 $$
 
-### 5.5 特性阻抗 (Characteristic Impedance)
+### 2.1.5.1 特性阻抗 (Characteristic Impedance)
 
 $$
 \boxed{Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}}} \quad [\Omega]
@@ -505,7 +505,7 @@ $$
 | **在RF中的标准值** Standard RF Values          | 绝大多数 RF 同轴线和微带线设计为 $Z_0 = 50$ Ω。有线电视系统用 75 Ω。100 Ω 差分对用于高速数字。*Most RF coax and microstrip: $Z_0=50$ Ω. CATV: 75 Ω. 100 Ω differential for high-speed digital.*                                                                |
 | **典型微带线 $Z_0$** Typical Microstrip $Z_0$ | GaAs ($\varepsilon_r=13$, $w/h=0.1$, $q=0.55$): $Z_{01} \approx 260$ Ω。GaAs ($w/h=2$, $q=0.7$): $Z_{01} \approx 80$ Ω。通过 Hammerstad 公式可精确计算。*GaAs thin line: ~260 Ω; wider line: ~80 Ω. Exact values via Hammerstad formula.* |
 
-### 5.6 相速度与导波长 (Phase Velocity and Guided Wavelength)
+### 2.1.5.1 相速度与导波长 (Phase Velocity and Guided Wavelength)
 
 $$
 \boxed{v_p = \frac{\omega}{\beta} = \frac{1}{\sqrt{L'C'}} = \frac{c}{\sqrt{\varepsilon_{eff}}}} \quad [\text{m/s}]
@@ -520,7 +520,7 @@ $$
 | **物理含义** Physical Meaning    | $v_p$ 是恒定相位点的移动速度。$\lambda_g$ 是波在传输线中的实际空间周期。两者都由 $\varepsilon_{eff}$ 和 $f$ 决定。*$v_p$ is speed of constant-phase point. $\lambda_g$ is actual spatial period on the line. Both determined by $\varepsilon_{eff}$ and $f$.*           |
 | **设计意义** Design Significance | 微带线设计中使用 $\lambda_g$ 而非 $\lambda_0$！例如一个 $\lambda_g/4$ 变换器在 GaAs 基板上远短于真空中的 $\lambda_0/4$。*Use $\lambda_g$ not $\lambda_0$ for microstrip design! A $\lambda_g/4$ transformer on GaAs is much shorter than $\lambda_0/4$ in vacuum.* |
 
-### 5.7 通解 (General Voltage/Current Solution)
+### 2.1.5.1 通解 (General Voltage/Current Solution)
 
 $$
 A(x, \omega) = A_0 \cdot e^{-\gamma x} \cdot e^{j\omega t}
@@ -548,7 +548,7 @@ $$
 <h2>2.1.5.1 Reflection Coefficient and Smith Chart</h2>
 > **课件定位 / Script location:** PDF pp. 126-138. **考试标记 / Exam marker:** `【重点】` 反射系数、VSWR、回波损耗、Smith Chart。
 
-### 6.1 电压反射系数 (Voltage Reflection Coefficient)
+### 2.1.5.1 电压反射系数 (Voltage Reflection Coefficient)
 
 $$
 \boxed{\Gamma = \frac{V^-}{V^+} = \frac{Z_L - Z_0}{Z_L + Z_0}}
@@ -560,7 +560,7 @@ $$
 | **推导** Derivation | 在负载 $z=0$ 处：$V(0) = V^+ + V^- = Z_L I(0)$ 且 $I(0) = (V^+ - V^-)/Z_0$。消去 $I(0)$ 解得。*At load: $V(0)=V^++V^-=Z_L I(0)$ and $I(0)=(V^+-V^-)/Z_0$. Solve for $\Gamma$.* |
 | **极端情况** Extreme Cases | $Z_L \to \infty$ (开路 Open): $\Gamma=+1$，全反射、同相。$Z_L=0$ (短路 Short): $\Gamma=-1$，全反射、180° 反相。$Z_L=Z_0$ (匹配 Matched): $\Gamma=0$，零反射。*Open: $\Gamma=+1$, total reflection in phase. Short: $\Gamma=-1$, 180° out of phase. Matched: $\Gamma=0$, no reflection.* |
 
-### 6.2 归一化阻抗形式 (Normalized Impedance Form)
+### 2.1.5.1 归一化阻抗形式 (Normalized Impedance Form)
 
 令 $z_L = Z_L / Z_0$：
 *Let $z_L = Z_L / Z_0$:*
@@ -578,7 +578,7 @@ $$
 | **为什么归一化？** Why Normalize? | 归一化使所有阻抗相对于系统阻抗 $Z_0$ (通常 50 Ω) 表达，消除了绝对值，让史密斯圆图成为通用工具。*Normalization expresses all impedances relative to system $Z_0$ (typically 50 Ω), making the Smith Chart universally applicable.* |
 | **映射关系** Mapping | $z$ 复平面右半平面（$\text{Re}\{z\}>0$，即所有无源阻抗）被映射到 $\Gamma$ 复平面的单位圆内部（$|\Gamma|\le 1$）。这是共形映射（conformal mapping），保角。*Right-half z-plane (all passive impedances) maps to interior of unit circle in $\Gamma$-plane — a conformal (angle-preserving) mapping.* |
 
-### 6.3 电压驻波比 (VSWR — Voltage Standing Wave Ratio)
+### 2.1.5.1 电压驻波比 (VSWR — Voltage Standing Wave Ratio)
 
 $$
 \boxed{\text{VSWR} = \frac{V_{max}}{V_{min}} = \frac{1 + |\Gamma|}{1 - |\Gamma|}}
@@ -589,7 +589,7 @@ $$
 | **物理含义** Physical Meaning | 传输线上由于前向波与反射波干涉形成的驻波模式中，最大电压与最小电压之比。纯行波：VSWR=1（完美匹配）；纯驻波：VSWR→∞（全反射）。*Ratio of max to min voltage in standing wave pattern. Pure traveling wave: VSWR=1 (perfect match). Pure standing wave: VSWR→∞ (total reflection).* |
 | **取值范围** Range | $1 \le \text{VSWR} < \infty$。工程中通常要求 VSWR < 2 (即 $|\Gamma| < 0.33$)，对应回波损耗 > 9.5 dB。*Typically VSWR < 2 ($|\Gamma| < 0.33$, return loss > 9.5 dB).* |
 
-### 6.4 回波损耗 (Return Loss)
+### 2.1.5.1 回波损耗 (Return Loss)
 
 $$
 \boxed{\text{RL} = -20 \log_{10} |\Gamma|} \quad [\text{dB}]
@@ -600,7 +600,7 @@ $$
 | **为什么是负号？** Why Minus? | 回波损耗定义为正值（"损耗"多大），而 $|\Gamma|\le 1$ → $20\log_{10}|\Gamma| \le 0$ → 加负号得正值。*Defined as positive value representing "how much loss". Since $|\Gamma|\le 1$, $20\log_{10}|\Gamma|\le 0$, the minus sign makes it positive.* |
 | **典型值** Typical | −10 dB 回波损耗意味着 $|\Gamma|=0.316$，约 10% 功率被反射，VSWR≈1.92。−20 dB 回波损耗 ≈ $|\Gamma|=0.1$，1% 反射。天线通常要求 < −10 dB。*-10 dB RL → $|\Gamma|=0.316$, ~10% power reflected. -20 dB → $|\Gamma|=0.1$, 1% reflected. Antennas typically require < -10 dB.* |
 
-### 6.5 传送到负载的功率 (Power Delivered to Load)
+### 2.1.5.1 传送到负载的功率 (Power Delivered to Load)
 
 $$
 P_L = P_{inc} - P_{ref} = P_{inc}(1 - |\Gamma|^2)
@@ -610,7 +610,7 @@ $$
 |---|---|
 | **匹配效率** Matching Efficiency | 效率因子 $1-|\Gamma|^2$ 表示前向功率中真正被负载吸收的比例。即使 $|\Gamma|=0.1$，也有 $1-0.01 = 99\%$ 被吸收。*Efficiency factor $1-|\Gamma|^2$ is fraction of forward power absorbed by load. Even $|\Gamma|=0.1$, $1-0.01=99\%$ absorbed.* |
 
-### 6.6 史密斯圆图概论 (Smith Chart Overview)
+### 2.1.5.1 史密斯圆图概论 (Smith Chart Overview)
 
 史密斯圆图是 $\Gamma$ 复平面单位圆上的归一化阻抗/导纳网格图。
 *The Smith Chart is a normalized impedance/admittance grid on the unit circle of the $\Gamma$-plane.*
@@ -644,7 +644,7 @@ $$
 <h2>2.1.4.2 S-Parameters and Multi-Port Networks</h2>
 > **课件定位 / Script location:** PDF pp. 149-158. **考试标记 / Exam marker:** `【重点】` S 参数定义、功率波、测量。
 
-### 7.1 S 参数定义 (S-Parameter Definition) — 二端口网络
+### 2.1.4.2 S 参数定义 (S-Parameter Definition) — 二端口网络
 
 S 参数用**功率波**（power waves）描述网络，而非传统的电压/电流：
 *S-parameters describe networks using **power waves**, not traditional voltage/current:*
@@ -676,7 +676,7 @@ $$
 | **dB 转换** dB Conversion          | $                                                                                                                                                                                                                                                     | S_{ij} | _{dB} = 20\log_{10} | S_{ij} | $。注意功率增益 $ | S_{21} | ^2$ 在 dB 中为 $10\log_{10} | S_{21} | ^2 = 20\log_{10} | S_{21} | $。*Power gain $ | S_{21} | ^2$ in dB: $10\log_{10} | S_{21} | ^2 = 20\log_{10} | S_{21} | $.* |
 | **典型值** Typical                  | 良好放大器: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB。*Good amplifier: $S_{11}<-10$ dB, $S_{22}<-10$ dB, $S_{21}>10$ dB, $S_{12}<-20$ dB.*                                                                                         |        |                     |        |            |        |                          |        |                  |        |                 |        |                         |        |                  |        |     |
 
-### 7.2 级联网络的链矩阵 (Chain / ABCD Matrix for Cascading)
+### 2.1.4.2 级联网络的链矩阵 (Chain / ABCD Matrix for Cascading)
 
 当多个二端口网络级联时，S 参数矩阵不能直接相乘（不满足级联乘法），需要用 **ABCD 矩阵（链矩阵 / Chain Matrix）**：
 *When cascading two-ports, S-matrices don't directly multiply — use ABCD (chain) matrix:*
@@ -702,7 +702,7 @@ $$
 | **物理含义** Physical Meaning | 链矩阵让你可以把每个子模块（滤波器、放大器、衰减器）的行为编码为一个 2×2 矩阵，通过矩阵连乘得到整体系统的二端口特性。*Each sub-block (filter, amplifier, attenuator) is encoded as a 2×2 matrix; overall system = product of all matrices.*                |
 | **应用** Application        | MMIC 设计中，各无源结构（微带线、MIM 电容、电感）的 S 矩阵通过链矩阵级联，预测整体匹配网络的频率响应。*In MMIC design, S-matrices of passive structures (microstrip, MIM caps, inductors) are cascaded via ABCD to predict frequency response.* |
 
-### 7.3 S 参数测量 (S-Parameter Measurement Setup)
+### 2.1.4.2 S 参数测量 (S-Parameter Measurement Setup)
 
 测量 S 参数需要**矢量网络分析仪（VNA / NWA — Vector Network Analyzer）**：
 *S-parameters are measured with a Vector Network Analyzer (VNA):*
@@ -720,7 +720,7 @@ $$
 <h2>2.1.4.1 Z / Y / h Parameter Systems</h2>
 > **课件定位 / Script location:** PDF pp. 110-116. **考试标记 / Exam marker:** `【理解】` 参数体系对比；重点仍是 S 参数。
 
-### 8.1 四种参数体系对比 (Four Parameter System Comparison)
+### 2.1.4.1 四种参数体系对比 (Four Parameter System Comparison)
 
 | 参数体系 Parameter System | 定义式 Definition | 测量条件 Measurement Condition | 主要用途 Primary Use |
 |---|---|---|---|
@@ -729,7 +729,7 @@ $$
 | **h 参数 Hybrid** $h_{ij}$ | $\begin{bmatrix}V_1\\I_2\end{bmatrix} = \begin{bmatrix}h_{11}&h_{12}\\h_{21}&h_{22}\end{bmatrix}\begin{bmatrix}I_1\\V_2\end{bmatrix}$ | 混合条件 Mixed | 提取截止频率 $f_T$, $f_{max}$ Extraction of cut-off frequencies |
 | **S 参数 Scattering** $S_{ij}$ | $\begin{bmatrix}b_1\\b_2\end{bmatrix} = \begin{bmatrix}S_{11}&S_{12}\\S_{21}&S_{22}\end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix}$ | 50 Ω 匹配负载 50 Ω matched load | **通用 RF 测量与设计** Universal RF measurement & design |
 
-### 8.2 各参数体系的优势与应用 (Advantages and Applications)
+### 2.1.4.1 各参数体系的优势与应用 (Advantages and Applications)
 
 | 体系 System | 优势 Advantage | 局限 Limitation |
 |---|---|---|
@@ -738,7 +738,7 @@ $$
 | **h 参数** | 混合参数适合提取晶体管的特征频率 $f_T$（电流增益=1 的频率）和 $f_{max}$（最大振荡频率）。*Hybrid parameters ideal for extracting transistor $f_T$ (unity current gain frequency) and $f_{max}$ (maximum oscillation frequency).* | 低频实用，微波频段转用 S 参数后转换。*Practical at low freq; convert from S-parameters at microwave.* |
 | **S 参数** | 微波频率下的首选——参考 50 Ω 负载在物理上易于实现。功率波概念自然对应能量传输。*The preferred choice at microwave — 50 Ω reference load is physically easy to realize. Power wave concept naturally matches energy transfer.* | 不是所有电路拓扑都能直接从 S 参数直观理解（有时需转到 Z/Y）。*Not all circuit topologies are intuitive from S-parameters directly (sometimes need Z/Y conversion).* |
 
-### 8.3 史密斯圆图上的 Z 和 Y (Z and Y on Smith Chart)
+### 2.1.4.1 史密斯圆图上的 Z 和 Y (Z and Y on Smith Chart)
 
 - **阻抗表示 Z**：图中直接读出归一化阻抗 $z = r + jx$。串联元件沿等电阻圆移动。*Read normalized impedance $z = r + jx$. Series elements move along constant-r circles.*
 - **导纳表示 Y**：$y = 1/z = g + jb$。史密斯圆图旋转 180° 即为导纳图。并联元件沿等电导圆移动。*$y = 1/z = g + jb$. Rotating Smith Chart by 180° gives admittance chart. Shunt elements move along constant-g circles.*
@@ -750,7 +750,7 @@ $$
 <h2>2.1.5 Waveguide Structures and Transmission Media</h2>
 > **课件定位 / Script location:** PDF pp. 139-180. **考试标记 / Exam marker:** `【重点】` TEM/TE/TM、同轴线、波导与模式。
 
-### 9.1 常见传输线媒介分类 (Classification of Transmission Media)
+### 2.1.5 常见传输线媒介分类 (Classification of Transmission Media)
 
 | 类型 Type | 结构 Structure | 频率范围 Freq Range | 典型应用 Application |
 |---|---|---|---|
@@ -761,7 +761,7 @@ $$
 | **介质波导 / SIW** Dielectric Waveguide / SIW | 介质基片中的金属化通孔阵列 Metallized via arrays in dielectric substrate | 微波 ~ 毫米波 Microwave ~ mm-wave | 集成滤波器、天线馈电 Integrated filters, antenna feeds |
 | **片上天线** On-Chip Antenna | MMIC 内的金属贴片 Metal patch within MMIC | >100 GHz | 400 GHz 发射机 400 GHz transmitter |
 
-### 9.2 同轴电缆特性阻抗 (Coaxial Cable Characteristic Impedance)
+### 2.1.5 同轴电缆特性阻抗 (Coaxial Cable Characteristic Impedance)
 
 $$
 \boxed{Z_0 = \frac{60}{\sqrt{\varepsilon_r}} \ln\left( \frac{b}{a} \right)} \quad [\Omega]
@@ -778,7 +778,7 @@ $$
 | **推导思路** Derivation | 同轴线支持 TEM 模式。单位长度电容 $C' = 2\pi\varepsilon/\ln(b/a)$，单位长度电感 $L' = (\mu/2\pi)\ln(b/a)$，代入 $Z_0 = \sqrt{L'/C'}$ 得上述公式。*Coax supports TEM mode. $C' = 2\pi\varepsilon/\ln(b/a)$, $L' = (\mu/2\pi)\ln(b/a)$ → $Z_0 = \sqrt{L'/C'}$.* |
 | **典型半刚性电缆** Typical Semi-Rigid | PTFE 填充 $\varepsilon_r=2.08$, $2b=5.46$ mm, $2a=1.64$ mm → $Z_0 \approx 50$ Ω。可用频率上限 18 GHz（更高频需更小尺寸以避免高次模）。*Useful up to 18 GHz; higher frequencies require smaller dimensions to avoid higher-order modes.* |
 
-### 9.3 金属波导 (Metallic Waveguide)
+### 2.1.5 金属波导 (Metallic Waveguide)
 
 | 项目 Item | 说明 Explanation |
 |---|---|
@@ -786,7 +786,7 @@ $$
 | **截止频率** Cut-Off Frequency | 每个模式都有一个截止频率 $f_c$，低于该频率的模式不能传播（渐逝衰减）。波导尺寸决定 $f_c$。*Each mode has a cut-off frequency; below it, mode is evanescent. Waveguide dimensions determine $f_c$.* |
 | **应用** Application | 高功率雷达、卫星通信馈线、粒子加速器 RF 腔。*High-power radar, satellite comm feed lines, particle accelerator RF cavities.* |
 
-### 9.4 总结：关键概念对比 (Summary: Key Concept Comparison)
+### 2.1.5 总结：关键概念对比 (Summary: Key Concept Comparison)
 
 | 概念 Concept | 自由传播 Free | 导波传播 Guided |
 |---|---|---|
@@ -801,12 +801,12 @@ $$
 <h2>2.1.5.2 Microstrip Lines and Real Passive Structures</h2>
 > **课件定位 / Script location:** PDF pp. 160-180. **考试标记 / Exam marker:** `【重点】` 微带线、有效介电常数、布局寄生。
 
-### 10.1 微带线的重要性 (Importance of Microstrip)
+### 2.1.5.2 微带线的重要性 (Importance of Microstrip)
 
 微带线是 MMIC 设计中最重要的一种传输线。因为它**平面化**——只需一层金属化+一层接地层，可以在芯片上集成。
 *Microstrip is the most important transmission line in MMIC design — it's planar, requiring only one metallization + one ground, enabling on-chip integration.*
 
-### 10.2 微带线阻抗公式 — Hammerstad 修正 (Microstrip Impedance — Hammerstad Formulas)
+### 2.1.5.2 微带线阻抗公式 — Hammerstad 修正 (Microstrip Impedance — Hammerstad Formulas)
 
 基于 Wheeler 的工作，Hammerstad 提出了实用的微带线特性阻抗近似公式：
 *Based on Wheeler's work, Hammerstad proposed practical approximate formulas:*
@@ -829,7 +829,7 @@ $$
 | **趋势** Trend | $w/h$ 越大 → $Z_0$ 越低（宽线 = 低阻抗）。$w/h$ 越小 → $Z_0$ 越高（窄线 = 高阻抗）。*Larger $w/h$ → lower $Z_0$ (wide=low Z). Smaller $w/h$ → higher $Z_0$ (narrow=high Z).* |
 | **设计意义** Design | 微带线 + MIM 电容 → 片上匹配网络。不同宽度的微带线段提供不同的特性阻抗，与并联电容一起实现阻抗变换。*Microstrip lines of varying impedance + MIM capacitors → on-chip matching network.* |
 
-### 10.3 设计元素清单 (Design Element Inventory)
+### 2.1.5.2 设计元素清单 (Design Element Inventory)
 
 | 设计元素 Design Element | 功能 Function |
 |---|---|
@@ -842,7 +842,7 @@ $$
 | **空气桥 / 过孔** Air Bridges / Via Holes | 跨接、接地、低电感互连 Cross-connection, grounding, low-inductance interconnect |
 | **偏置 Tee** Bias Tee | DC 偏置注入 + RF 阻断 DC bias injection + RF blocking |
 
-### 10.4 布局工程注意事项 (Layout Engineering Considerations)
+### 2.1.5.2 布局工程注意事项 (Layout Engineering Considerations)
 
 | 规则 Rule | 说明 Explanation |
 |---|---|
@@ -855,7 +855,7 @@ $$
 <h2>2.1.5.2 Matching Theory and Impedance Transformation</h2>
 > **课件定位 / Script location:** PDF pp. 181-198. **考试标记 / Exam marker:** `【重点】` 共轭匹配、Smith Chart 匹配、阻抗变换。
 
-### 11.1 为什么需要匹配？(Why Matching?)
+### 2.1.5.2 为什么需要匹配？(Why Matching?)
 
 | 不匹配的后果 Consequence of Mismatch | 物理机制 Physical Mechanism |
 |---|---|
@@ -863,7 +863,7 @@ $$
 | **驻波** Standing Waves | 前向与反射波干涉产生驻波——线上某些点电压是其他点的数倍 *Interference of forward and reflected waves creates standing waves — voltage peaks several times higher than elsewhere* |
 | **有源器件振荡** Active Oscillation | 反射波在信号源与负载之间来回弹跳（zig-zag），在某些频率满足振荡条件（幅度+相位） *Reflected waves bounce between source and load, potentially satisfying oscillation conditions (amplitude + phase)* |
 
-### 11.2 共轭匹配 (Conjugate Matching) — 最大功率传输
+### 2.1.5.2 共轭匹配 (Conjugate Matching) — 最大功率传输
 
 $$
 \boxed{Z_L = Z_G^*} \quad \text{即} \quad R_L = R_G,\; X_L = -X_G
@@ -879,7 +879,7 @@ $$
 | **与"阻抗匹配"的区别** vs. "Impedance Match" | 共轭匹配（$Z_L=Z_G^*$）使功率传输最大；而 $Z_L=Z_0$（无反射匹配）使反射为零。两者在一般电路中不同，只有源阻抗为纯电阻 $Z_0$ 时两者一致。*Conjugate matching maximizes power; $Z_L=Z_0$ minimizes reflection. They differ unless source is purely resistive.* |
 | **黄金法则** Golden Rule | 这是整个 RF 放大器设计的核心原则。输入匹配网络的目标就是将一个任意负载阻抗变换到与源阻抗的共轭。*This is the core principle of RF amplifier design. The input matching network transforms an arbitrary load to the conjugate of the source.* |
 
-### 11.3 匹配网络类型 (Matching Network Types)
+### 2.1.5.2 匹配网络类型 (Matching Network Types)
 
 | 网络类型 Network Type | 元素 Elements | 适用场景 Application |
 |---|---|---|
@@ -893,7 +893,7 @@ $$
 <h2>2.1.5.3 Quarter-Wave Transformer and Stubs</h2>
 > **课件定位 / Script location:** PDF pp. 181-205. **考试标记 / Exam marker:** `【重点】` 四分之一波长变换、开路/短路枝节。
 
-### 12.1 四分之一波长变换器 (Quarter-Wave Transformer)
+### 2.1.5.3 四分之一波长变换器 (Quarter-Wave Transformer)
 
 在 $Z_0$ 系统与负载 $Z_L$ 之间插入一段长度为 $\lambda/4$、特性阻抗为 $Z_T$ 的传输线：
 *A $\lambda/4$ line with $Z_T$ inserted between $Z_0$ system and load $Z_L$:*
@@ -902,13 +902,13 @@ $$
 \boxed{Z_T = \sqrt{Z_0 \cdot Z_L}} \quad [\Omega]
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **推导** Derivation | 传输线输入阻抗公式：$Z_{in} = Z_T \frac{Z_L + jZ_T\tan(\beta l)}{Z_T + jZ_L\tan(\beta l)}$。当 $l=\lambda/4$ 时 $\beta l = \pi/2$，$\tan(\beta l)\to\infty$，得 $Z_{in} = Z_T^2/Z_L$。令 $Z_{in}=Z_0$ 解得 $Z_T = \sqrt{Z_0 Z_L}$。*When $\beta l = \pi/2$, $Z_{in} = Z_T^2/Z_L$. Set $Z_{in}=Z_0$ → $Z_T = \sqrt{Z_0 Z_L}$.* |
-| **窄带特性** Narrow-Band | $\lambda/4$ 变换器仅在一个频率（及其奇数谐波）上理想工作。偏离中心频率时失配增大。带宽与阻抗变换比有关——变换比越大，带宽越窄。*Works ideally at one frequency + odd harmonics. Mismatch increases away from center. Larger impedance ratio → narrower bandwidth.* |
-| **史密斯圆图对应** Smith Chart | 四分之一波长变换在史密斯圆图上是 180° 旋转（因为相位变化 $2\beta l = 2\cdot\pi/2 = \pi = 180°$）。*Quarter-wave transform = 180° rotation on Smith Chart (phase $2\beta l = 2\pi/2 = \pi$).* |
+| 说明 Explanation                                                                                                                                                                                                                                                                                           | 项目 Item                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| 传输线输入阻抗公式：$Z_{in} = Z_T \frac{Z_L + jZ_T\tan(\beta l)}{Z_T + jZ_L\tan(\beta l)}$。当 $l=\lambda/4$ 时 $\beta l = \pi/2$，$\tan(\beta l)\to\infty$，得 $Z_{in} = Z_T^2/Z_L$。令 $Z_{in}=Z_0$ 解得 $Z_T = \sqrt{Z_0 Z_L}$。*When $\beta l = \pi/2$, $Z_{in} = Z_T^2/Z_L$. Set $Z_{in}=Z_0$ → $Z_T = \sqrt{Z_0 Z_L}$.* | **推导** Derivation       |
+| $\lambda/4$ 变换器仅在一个频率（及其奇数谐波）上理想工作。偏离中心频率时失配增大。带宽与阻抗变换比有关——变换比越大，带宽越窄。*Works ideally at one frequency + odd harmonics. Mismatch increases away from center. Larger impedance ratio → narrower bandwidth.*                                                                                                | **窄带特性** Narrow-Band    |
+| 四分之一波长变换在史密斯圆图上是 180° 旋转（因为相位变化 $2\beta l = 2\cdot\pi/2 = \pi = 180°$）。*Quarter-wave transform = 180° rotation on Smith Chart (phase $2\beta l = 2\pi/2 = \pi$).*                                                                                                                                        | **史密斯圆图对应** Smith Chart |
 
-### 12.2 短截线 (Stubs) — 波长相关行为
+### 2.1.5.3 短截线 (Stubs) — 波长相关行为
 
 短截线的等效电抗由其长度相对于波长决定：
 *Stub equivalent reactance is determined by its length relative to wavelength:*
@@ -918,12 +918,12 @@ $$
 | **短路短截线** Short Stub | 感性 Inductive | 容性 Capacitive | $Z_{in} = jZ_0\tan(\beta l)$ |
 | **开路短截线** Open Stub | 容性 Capacitive | 感性 Inductive | $Z_{in} = -jZ_0\cot(\beta l)$ |
 
-| 项目 Item | 说明 Explanation |
-|---|---|
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **物理含义** Physical Meaning | 短截线利用终端的全反射（短路 → $\Gamma=-1$ 或开路 → $\Gamma=+1$）在输入端产生一个纯电抗。改变长度即可调节电抗值。*Stubs use total reflection at termination to produce a pure reactance at input. Varying length tunes the reactance value.* |
-| **设计用途** Design Use | 短截线实现并联电抗——与传输线主路并联，在史密斯圆图上提供所需的电纳移动（$+jB$ 或 $-jB$），将不匹配的阻抗"拖"到圆心（匹配点）。*Stubs provide shunt reactance — move impedance along constant-conductance circles on Smith Chart towards match.* |
+| **设计用途** Design Use       | 短截线实现并联电抗——与传输线主路并联，在史密斯圆图上提供所需的电纳移动（$+jB$ 或 $-jB$），将不匹配的阻抗"拖"到圆心（匹配点）。*Stubs provide shunt reactance — move impedance along constant-conductance circles on Smith Chart towards match.*           |
 
-### 12.3 四分之一波长变换器的其他用途 (Other Uses of $\lambda/4$ Lines)
+### 2.1.5.3 四分之一波长变换器的其他用途 (Other Uses of $\lambda/4$ Lines)
 
 | 用途 Use | 说明 Explanation |
 |---|---|
@@ -937,7 +937,7 @@ $$
 <h2>2.1.5.3 Dividers, Combiners, and Couplers</h2>
 > **课件定位 / Script location:** PDF pp. 181-205. **考试标记 / Exam marker:** `【理解】` Wilkinson、定向耦合器的结构和关键阻抗。
 
-### 13.1 Wilkinson 功分器 (Wilkinson Power Divider)
+### 2.1.5.3 Wilkinson 功分器 (Wilkinson Power Divider)
 
 | 项目 Item | 说明 Explanation |
 |---|---|
@@ -947,7 +947,7 @@ $$
 | **工作原理** Principle | $\lambda/4$ 线实现阻抗变换（50 Ω → 100 Ω → 两个 100 Ω 并联 = 50 Ω）。隔离电阻 $R$ 消耗偶模-奇模分析中的奇模功率（反射差模信号被电阻吸收）。*Quarter-wave transforms 50 Ω → 100 Ω each. Resistor absorbs odd-mode power (differential reflection signals).* |
 | **主要目的** Main Purpose | $\lambda/4$ 变换引起阻抗变换，使两个组件/过渡之间的失配最小化。通常会有反射，可能与前向信号产生破坏性干涉——通过增加终端电阻来避免。*Induce impedance transformation to minimize mismatch. Reflections are absorbed by termination resistor to avoid destructive interference.* |
 
-### 13.2 设计元素总览 (Design Element Overview)
+### 2.1.5.3 设计元素总览 (Design Element Overview)
 
 | 元素 Element | 功能 Function | S 参数特征 S-Parameter Feature |
 |---|---|---|
@@ -964,7 +964,7 @@ $$
 <h2>2.1.5.1 Comprehensive Loss Mechanism Analysis</h2>
 > **课件定位 / Script location:** PDF pp. 126-138、181-205. **考试标记 / Exam marker:** `【重点】` $\alpha$、导体损耗、介质损耗。
 
-### 14.1 传播常数回顾 (Propagation Constant Review)
+### 2.1.5.2 传播常数回顾 (Propagation Constant Review)
 
 $$
 \boxed{\gamma = \alpha + j\beta}
@@ -981,7 +981,7 @@ $$
 | 衬底并联电导损耗 Substrate Conductance Loss | $\alpha_G$ | 衬底有限电阻率 Finite substrate resistivity (parallel path) | $\propto f$ |
 | 辐射损耗 Radiation Loss | $\alpha_R$ | 开放结构向空间辐射能量 Open structure radiating into space | 通常较小，高频增大 Small typically, increases at high f |
 
-### 14.2 金属导体损耗公式 (Metallic Conductor Loss)
+### 2.1.5.2 金属导体损耗公式 (Metallic Conductor Loss)
 
 $$
 \boxed{\alpha_C = \frac{R'}{2Z_0}} \quad [\text{Np/m}]
@@ -994,7 +994,7 @@ $$
 | **物理含义** Physical Meaning | 金属线的串联电阻 $R'$ 消耗前行波的功率。损耗与电阻成正比，与 $Z_0$ 成反比——高阻抗线导体损耗更低（因为电流更小）。*Series metal resistance dissipates forward wave power. Loss ∝ R', ∝ 1/Z₀ — higher Z₀ lines have lower conductor loss (less current).* |
 | **简化思想** Simplified Thinking | 可以把 $\alpha_C$ 理解为信号每传播 1 米，辐射出的焦耳热占信号功率的比例。*Think of $\alpha_C$ as the fraction of signal power lost to Joule heating per meter.* |
 
-### 14.3 介质损耗公式 (Dielectric Loss)
+### 2.1.5.2 介质损耗公式 (Dielectric Loss)
 
 $$
 \boxed{\alpha_D = 8.686 \cdot \frac{\omega C' Z_0}{2} \cdot \tan \delta} \quad [\text{dB/m}]
@@ -1006,7 +1006,7 @@ $$
 | **频率依赖性** Frequency | $\alpha_D \propto \omega \propto f$，与导体损耗的 $\sqrt{f}$ 不同。在高频时介质损耗可能成为主导。*$\alpha_D \propto f$, different from conductor's $\sqrt{f}$. At high f, dielectric loss may dominate.* |
 | **典型材料损耗对比** Material Comparison | FR4 ($\tan\delta\approx0.02$) 不适合 1 GHz 以上；Rogers RO4003 ($\tan\delta\approx0.0027$) 适合到 Ku 波段；GaAs 半绝缘 ($\tan\delta\approx 0.0006$) 适合到毫米波。*FR4 unsuitable above 1 GHz; Rogers RO4003 good to Ku-band; GaAs SI good to mm-wave.* |
 
-### 14.4 衬底并联电导损耗 (Substrate Parallel Conductance Loss)
+### 2.1.5.2 衬底并联电导损耗 (Substrate Parallel Conductance Loss)
 
 $$
 \boxed{\alpha_G = \frac{8.686 \cdot \omega G' Z_0}{2}} \quad [\text{dB/m}]
@@ -1016,7 +1016,7 @@ $$
 |---|---|
 | **物理含义** Physical Meaning | 衬底不是完美绝缘体——有限的电导率 $G'$ 形成了一个并联漏电路径。对硅基 MMIC 尤其重要（硅的电阻率较低）。*Substrate isn't perfect insulator — finite $G'$ forms a parallel leakage path. Particularly important for Si-based MMIC (Si has lower resistivity).* |
 
-### 14.5 损耗机制的频率依赖性总结 (Frequency Dependence Summary)
+### 2.1.5.2 损耗机制的频率依赖性总结 (Frequency Dependence Summary)
 
 | 频率 Frequency | 主导损耗 Dominant Loss | 原因 Reason |
 |---|---|---|
@@ -1030,7 +1030,7 @@ $$
 <h2>2.1.5.1 Skin Effect and Surface Roughness</h2>
 > **课件定位 / Script location:** PDF pp. 126-138. **考试标记 / Exam marker:** `【理解】` 趋肤深度与粗糙度修正；通常作为损耗分析的一部分。
 
-### 15.1 趋肤深度 (Skin Depth)
+### 2.1.5.2 趋肤深度 (Skin Depth)
 
 $$
 \boxed{\delta_{skin} = \sqrt{\frac{\rho}{\pi f \mu_0 \mu_r}} = \sqrt{\frac{2\rho}{\omega \mu_0 \mu_r}}} \quad [\text{m}]
@@ -1057,7 +1057,7 @@ $$
 | 10 GHz | ~0.66 µm |
 | 100 GHz | ~0.21 µm |
 
-### 15.2 趋肤效应对导体损耗的影响 (Skin Effect Impact on Conductor Loss)
+### 2.1.5.2 趋肤效应对导体损耗的影响 (Skin Effect Impact on Conductor Loss)
 
 由于趋肤效应，导体的等效串联电阻 $R' \propto \sqrt{f}$，因此：
 *Due to skin effect, effective series resistance $R' \propto \sqrt{f}$, thus:*
@@ -1070,7 +1070,7 @@ $$
 |---|---|
 | **设计启示** Design Implication | 频率从 1 GHz 升到 10 GHz → 导体损耗增加约 $\sqrt{10} \approx 3.16$ 倍。*Going from 1 GHz to 10 GHz → conductor loss increases ~3.16×.* |
 
-### 15.3 表面粗糙度修正 (Surface Roughness Correction)
+### 2.1.5.2 表面粗糙度修正 (Surface Roughness Correction)
 
 实际加工的金属表面不是理想光滑的。表面微观峰谷用 RMS（Root Mean Square）粗糙度量化。粗糙度增加了电流路径的有效长度，从而增大损耗。
 *Real fabricated metal surfaces aren't perfectly smooth. Microscopic peaks and valleys — quantified by RMS roughness — increase effective current path length, hence increase loss.*
@@ -1099,12 +1099,12 @@ $$
 <h2>2.1.6.1 Antenna Principles and Characteristic Parameters</h2>
 > **课件定位 / Script location:** PDF pp. 206-232. **考试标记 / Exam marker:** `【重点】` 增益、方向性、有效孔径、Friis 方程。
 
-### 16.1 天线定义 (Antenna Definition)
+### 2.1.6.1 天线定义 (Antenna Definition)
 
 **天线：** 一种结构，使电磁能量在自由空间与导波装置之间进行转换。
 **Antenna:** A structure which enables the transfer of electromagnetic energy in free-space to and from a guiding device.
 
-### 16.2 天线类型分类 (Antenna Type Classification)
+### 2.1.6.1 天线类型分类 (Antenna Type Classification)
 
 | 类型 Type | 示例 Examples |
 |---|---|
@@ -1113,12 +1113,12 @@ $$
 | **微带天线** Microstrip Antennas | 矩形/圆形贴片 + 接地面 Rectangular/circular patch + ground plane |
 | **阵列/反射面/透镜** Arrays / Reflectors / Lenses | 相控阵 Phased array、抛物面 Parabolic dish、龙伯透镜 Luneburg lens |
 
-### 16.3 赫兹偶极子 (Hertz Dipole) — 最小天线
+### 2.1.6.1 赫兹偶极子 (Hertz Dipole) — 最小天线
 
 赫兹偶极子是最基本的辐射单元——一段长度远小于波长的电流元。所有更复杂的天线都可以理解为赫兹偶极子阵列。
 *The Hertz dipole is the most basic radiating element — a current element much shorter than wavelength. All more complex antennas can be understood as arrays of Hertz dipoles.*
 
-### 16.4 方向性系数 (Directivity)
+### 2.1.6.1 方向性系数 (Directivity)
 
 $$
 \boxed{D = \frac{4\pi \cdot U_{max}}{P_{rad}}}
@@ -1136,7 +1136,7 @@ $$
 | **在波束立体角下的表示** Beam Solid Angle | 定义波束立体角 $\Omega_A$ 为 $U_{max}\Omega_A = P_{rad}$，则 $D = 4\pi/\Omega_A$。$\Omega_A$ 越小（波束越窄），$D$ 越大。*Define beam solid angle $\Omega_A$; narrower beam → larger D.* |
 | **典型值** Typical | 半波偶极子: $D \approx 1.64$ (2.15 dBi)。小孔径天线: $D \approx 4-10$ (6-10 dBi)。大抛物面天线: $D \approx 10^4-10^6$ (40-60 dBi)。*Half-wave dipole: ~2.15 dBi. Small aperture: 6-10 dBi. Large parabolic: 40-60 dBi.* |
 
-### 16.5 天线增益 (Antenna Gain)
+### 2.1.6.1 天线增益 (Antenna Gain)
 
 $$
 \boxed{G = \eta \cdot D} \quad \text{或} \quad G_{\text{dBi}} = 10\log_{10}(\eta D)
@@ -1147,7 +1147,7 @@ $$
 | **物理含义** Physical Meaning | 增益 $G$ 是方向性 $D$ 乘以天线效率 $\eta$。它考虑了天线内部的欧姆损耗、介质损耗和阻抗失配导致的功率损失。$G$ 总是 ≤ $D$。*Gain = Directivity × Efficiency. Accounts for ohmic, dielectric, and mismatch losses. $G \leq D$ always.* |
 | **为什么用 dBi？** Why dBi? | "i"表示参考全向天线（isotropic）。dBi 是天线增益最常用的单位。*"i" indicates reference to isotropic antenna. dBi is the most common unit.* |
 
-### 16.6 天线效率 (Antenna Efficiency)
+### 2.1.6.1 天线效率 (Antenna Efficiency)
 
 $$
 \boxed{\eta = \frac{P_{rad}}{P_{in}} = \frac{P_{rad}}{P_{rad} + P_{loss}}}
@@ -1163,7 +1163,7 @@ $$
 |---|---|
 | **效率的关键性** Importance of Efficiency | 对于片上毫米波天线，效率可能是最关键的指标——由于片上金属薄、衬底损耗大，$\eta$ 可以低至 10-30%。提升效率需要优化金属厚度和衬底选择。*For on-chip mm-wave antennas, efficiency may be the most critical metric — thin metal and high substrate loss can reduce $\eta$ to 10-30%.* |
 
-### 16.7 Friis 传输方程 (Friis Transmission Equation)
+### 2.1.6.1 Friis 传输方程 (Friis Transmission Equation)
 
 $$
 \boxed{\frac{P_R}{P_T} = G_T G_R \left( \frac{\lambda}{4\pi R} \right)^2}
@@ -1183,7 +1183,7 @@ $$
 | **对数形式** Log Form | $P_{R,\text{dBm}} = P_{T,\text{dBm}} + G_{T,\text{dBi}} + G_{R,\text{dBi}} - 20\log_{10}(4\pi R/\lambda)$。*dB form for link budget calculation.* |
 | **应用** Application | 无线通信链路预算（Link Budget）、雷达方程（Radar Equation）的简化形式。*Wireless link budget; simplified form of radar equation.* |
 
-### 16.8 有效孔径 (Effective Aperture)
+### 2.1.6.1 有效孔径 (Effective Aperture)
 
 $$
 \boxed{A_{eff} = \frac{G \lambda^2}{4\pi} = \eta_{ap} \cdot A_{phys}}
@@ -1194,7 +1194,7 @@ $$
 | **物理含义** Physical Meaning | $A_{eff}$ 是天线"捕捉"入射电磁波功率的有效截面积。它与增益成正比、与频率平方成反比。*$A_{eff}$ is the effective cross-section for capturing incident EM wave power. ∝ $G$, ∝ $1/f^2$.* |
 | **孔径效率** Aperture Efficiency | $\eta_{ap} = A_{eff}/A_{phys} \le 1$，描述物理孔径的利用效率。均匀照射孔径的 $\eta_{ap}=1$；锥形照射（降低旁瓣）则 $\eta_{ap} < 1$。*Uniform illumination: $\eta_{ap}=1$. Tapered illumination (lower sidelobes): $\eta_{ap} < 1$.* |
 
-### 16.9 远场方向图 (Far-Field Pattern / Antenna Diagram)
+### 2.1.6.1 远场方向图 (Far-Field Pattern / Antenna Diagram)
 
 天线方向图是增益随空间角度 $(\theta,\phi)$ 变化的极坐标图：
 *Antenna diagram is a polar plot of gain vs. spatial angle $(\theta,\phi)$:*
@@ -1212,7 +1212,7 @@ $$
 <h2>2.1.6.2 Array Antennas and MIMO</h2>
 > **课件定位 / Script location:** PDF pp. 221-233. **考试标记 / Exam marker:** `【理解】` 阵列因子、波束成形、MIMO；重点是概念而非复杂推导。
 
-### 17.1 方向图乘法 (Pattern Multiplication)
+### 2.1.6.2 方向图乘法 (Pattern Multiplication)
 
 对于由 $N$ 个相同辐射单元组成的阵列：
 *For an array of $N$ identical radiating elements:*
@@ -1228,14 +1228,14 @@ $$
 | **物理含义** Physical Meaning | 阵列的总方向图 = 单元方向图 × 阵列因子。这个"乘法法则"是阵列天线设计的基石。*Total pattern = Element pattern × Array factor. The "Multiplication Law" is the cornerstone of array design.* |
 | **应用** Application | 相控阵雷达：通过改变各单元的相位差实现电子波束扫描（不机械转动天线）。*Phased-array radar: electronic beam steering by varying phase differences.* |
 
-### 17.2 合成孔径雷达 (SAR — Synthetic Aperture Radar)
+### 2.1.6.2 合成孔径雷达 (SAR — Synthetic Aperture Radar)
 
 | 项目 Item | 说明 Explanation |
 |---|---|
 | **原理** Principle | 通过移动平台（卫星/飞机）在不同位置发射和接收信号，利用信号处理合成一个等效的大孔径天线。分辨率远高于物理孔径。*Moving platform synthesizes a large equivalent aperture via signal processing. Resolution far exceeds physical aperture.* |
 | **应用** Application | 地球遥感（对地观测）、洪水监测、地形测绘。*Earth remote sensing, flood monitoring, terrain mapping.* |
 
-### 17.3 MIMO 天线（5G 移动通信）(MIMO for 5G Mobile Communication)
+### 2.1.6.2 MIMO 天线（5G 移动通信）(MIMO for 5G Mobile Communication)
 
 | 项目 Item | 说明 Explanation |
 |---|---|
@@ -1251,7 +1251,7 @@ $$
 > 本讲从无源网络进入有源器件。核心问题是：如何用偏置控制载流子的产生与运动，并把直流功率转换为 RF 功率。  
 > *This lecture moves from passive networks to active devices: bias controls carrier generation and transport, enabling DC-to-RF power conversion.*
 
-### 7.1 有源器件、工作点与线性化 (Active Devices, Bias Point, and Linearization)
+### 2.2.1.1 有源器件、工作点与线性化 (Active Devices, Bias Point, and Linearization)
 
 晶体管的非线性关系可写成 $i_D=f(v_{GS},v_{DS})$。在静态工作点 $Q$ 附近作 Taylor 展开：
 
@@ -1276,7 +1276,7 @@ $$
 | 小信号 Small-signal | RF 摆幅远小于偏置量 | 一阶线性化、S 参数 | LNA、小信号增益与稳定性 |
 | 大信号 Large-signal | RF 摆幅与偏置相当 | 完整非线性模型、谐波平衡 | PA、混频器、振荡器 |
 
-### 7.2 本征模型与外部寄生 (Intrinsic Model and Extrinsic Parasitics)
+### 2.2.1.3 本征模型与外部寄生 (Intrinsic Model and Extrinsic Parasitics)
 
 RF 小信号模型由本征晶体管和外部壳层组成：
 
@@ -1294,7 +1294,7 @@ $$
 因此 $C_{gd}$ 不只是一个小寄生，它同时提供输入输出反馈，会限制增益、带宽并影响稳定性。  
 *The gate-drain capacitance is a feedback element; through the Miller effect it limits gain and bandwidth and can threaten stability.*
 
-### 7.3 晶体、能带与材料选择 (Crystal, Energy Bands, and Material Choice)
+### 2.2.1.1 晶体、能带与材料选择 (Crystal, Energy Bands, and Material Choice)
 
 电子允许能级形成价带与导带，两者间隔为禁带宽度 $E_g$：
 
@@ -1326,7 +1326,7 @@ $$
 Si 的优势是大尺寸高质量晶圆、成熟 CMOS 工艺和低成本；III-V 材料通常具有更高电子迁移率或饱和速度；GaN/SiC 依靠宽禁带和高临界电场适合高压高功率。  
 *Silicon wins in manufacturability and integration; III-V materials offer superior transport; GaN and SiC excel at high voltage and power density.*
 
-### 7.4 漂移输运与电导率 (Drift Transport and Conductivity)
+### 2.2.1.1 漂移输运与电导率 (Drift Transport and Conductivity)
 
 低场下
 
@@ -1354,7 +1354,7 @@ $$
 
 所以缩短栅长 $L_g$、提高载流子速度可以提升截止频率，但会同时加剧短沟道效应、隧穿、击穿和寄生影响。
 
-### 7.5 异质结、应变与能带工程 (Heterojunctions, Strain, and Bandgap Engineering)
+### 2.2.1.1 异质结、应变与能带工程 (Heterojunctions, Strain, and Bandgap Engineering)
 
 不同半导体组合时，晶格失配近似为
 
@@ -1371,7 +1371,7 @@ $$
 能带工程可实现载流子限制、调制掺杂和高迁移率二维电子气 (2DEG)，这是 HEMT 与 HBT 的物理基础。  
 *Bandgap engineering confines carriers and separates dopants from the transport channel, enabling HEMTs and HBTs.*
 
-### 7.6 衬底与外延 (Substrates and Epitaxy)
+### 2.2.1.1 衬底与外延 (Substrates and Epitaxy)
 
 | 方法 Method | 特点 Characteristics | RF 应用 RF Use |
 |---|---|---|
@@ -1384,16 +1384,16 @@ $$
 
 ---
 
-<h1 id="s222">2.2.1.3 Equivalent Circuit Approaches / 2.2.1.4 Device Processing: RF 半导体制造工艺</h1>
+<h1 id="s2213">2.2.1.3 Equivalent Circuit Approaches / 2.2.1.4 Device Processing: RF 半导体制造工艺</h1>
 <h2>2.2.1.3-2.2.1.4 RF Semiconductor Fabrication</h2>
 > **课件定位 / Script location:** PDF pp. 268-296. **考试标记 / Exam marker:** `【理解】` 掺杂、光刻、刻蚀、沉积和退火的作用；具体设备品牌与工厂流程为 `【拓展】`。
 
-### 8.1 从晶圆到芯片的工艺循环 (Wafer-to-Chip Process Loop)
+### 2.2.1.3 从晶圆到芯片的工艺循环 (Wafer-to-Chip Process Loop)
 
 一轮典型工艺不断重复：薄膜生长/沉积 -> 涂胶 -> 曝光 -> 显影 -> 刻蚀或注入 -> 去胶 -> 清洗 -> 退火 -> 测量。先进工艺可包含数百到上千步骤，完整制造周期可达数月。  
 *Fabrication repeatedly combines deposition, lithography, etching or implantation, stripping, cleaning, annealing, and metrology.*
 
-### 8.2 掺杂与离子注入 (Doping and Ion Implantation)
+### 2.2.1.3 掺杂与离子注入 (Doping and Ion Implantation)
 
 注入剂量与电流、时间和面积的关系为
 
@@ -1410,7 +1410,7 @@ $$
 D=D_0\exp\left(-\frac{E_a}{k_BT}\right)
 $$
 
-### 8.3 光刻与分辨率 (Lithography and Resolution)
+### 2.2.1.3 光刻与分辨率 (Lithography and Resolution)
 
 投影光刻的 Rayleigh 关系：
 
@@ -1422,7 +1422,7 @@ $$
 减小曝光波长或增大数值孔径 $NA$ 可提高分辨率，但会缩小景深。EUV 使用约 $13.5\ \mathrm{nm}$ 波长；电子束光刻分辨率高但串行写入、吞吐量低，常用于掩模与原型。  
 *Shorter wavelength and larger numerical aperture improve resolution, but a larger NA reduces depth of focus.*
 
-### 8.4 刻蚀、沉积与金属化 (Etching, Deposition, and Metallization)
+### 2.2.1.3 刻蚀、沉积与金属化 (Etching, Deposition, and Metallization)
 
 | 工艺 | 优势 | 限制 |
 |---|---|---|
@@ -1434,18 +1434,18 @@ $$
 
 RF 器件尤其敏感于栅长、栅电阻、欧姆接触电阻、钝化层陷阱与互连电感。工艺偏差会同时改变直流工作点和 S 参数，因此版图寄生和工艺统计必须进入模型。
 
-### 8.5 工艺总结 (Process Summary)
+### 2.2.1.3 工艺总结 (Process Summary)
 
 > 制造并非只负责“画出晶体管”。工艺定义了 $L_g$、接触电阻、寄生电容、缺陷与热路径，也就定义了器件的 $f_T$、$f_{max}$、噪声、击穿和可靠性。  
 > *Fabrication defines geometry, contacts, parasitics, defects, and thermal paths; consequently it defines RF speed, noise, breakdown, and reliability.*
 
 ---
 
-<h1 id="s223">2.2.2 Active RF-Semiconductor Devices: 载流子输运、结与场效应晶体管</h1>
+<h1 id="s222">2.2.2 Active RF-Semiconductor Devices: 载流子输运、结与场效应晶体管</h1>
 <h2>2.2.2 Active RF-Semiconductor Devices</h2>
 > **课件定位 / Script location:** PDF pp. 297-355. **考试标记 / Exam marker:** `【重点】` PN/Schottky、MOSFET、MESFET、HEMT、$g_m$、$g_{ds}$、$f_T$。
 
-### 9.1 漂移、扩散与 Einstein 关系 (Drift, Diffusion, and Einstein Relation)
+### 2.2.1.1 漂移、扩散与 Einstein 关系 (Drift, Diffusion, and Einstein Relation)
 
 $$
 J_n=q n\mu_nE+qD_n\nabla n
@@ -1462,7 +1462,7 @@ $$
 掺杂提高载流子浓度并降低电阻率，但离化杂质散射会降低迁移率。因此“重掺杂”不等价于无限提高电导，RF 设计必须在接触电阻、迁移率、电容和击穿之间折中。  
 *Doping increases carrier concentration but also increases impurity scattering; conductivity, capacitance, and breakdown must be traded together.*
 
-### 9.2 纳米尺度限制 (Nanoscale Limits)
+### 2.2.1.5 纳米尺度限制 (Nanoscale Limits)
 
 | 限制 Limit | 物理机制 Mechanism | 后果 Consequence |
 |---|---|---|
@@ -1474,7 +1474,7 @@ $$
 
 击穿电压的直觉关系为 $V_{BR}\sim E_{crit}L_{drift}$；提高电压需要更长、更轻掺杂的漂移区，却会增加导通电阻。
 
-### 9.3 PN 结、Schottky 结与 RF 二极管模型 (PN, Schottky, and RF-Diode Model)
+### 2.2.1.2 PN 结、Schottky 结与 RF 二极管模型 (PN, Schottky, and RF-Diode Model)
 
 理想二极管方程：
 
@@ -1503,7 +1503,7 @@ $$
 
 Schottky 结由金属-半导体接触形成，多数载流子导电、反向恢复快，适用于检波、混频和高速开关；PN 结通常有少数载流子存储。
 
-### 9.4 MOS 电容与界面 (MOS Capacitor and Interfaces)
+### 2.2.1.4 MOS 电容与界面 (MOS Capacitor and Interfaces)
 
 单位面积氧化层电容为
 
@@ -1513,7 +1513,7 @@ $$
 
 p 型衬底 MOS 随栅压经历累积、耗尽和反型。强反型层形成 MOSFET 沟道。界面态和费米能级钉扎会改变阈值、电容、噪声和稳定性；钝化的目标是降低界面陷阱密度 $D_{it}$。
 
-### 9.5 长沟道 MOSFET 基本关系 (Long-Channel MOSFET Relations)
+### 2.2.2.1 长沟道 MOSFET 基本关系 (Long-Channel MOSFET Relations)
 
 在线性区 $V_{DS}<V_{GS}-V_{TH}$：
 
@@ -1535,7 +1535,7 @@ $$
 
 这里 $V_{OV}=V_{GS}-V_{TH}$。短沟道 RF MOSFET 会出现速度饱和，平方律只能提供定性直觉。
 
-### 9.6 FET 小信号与大信号行为 (FET Small- and Large-Signal Behavior)
+### 2.2.3.3 FET 小信号与大信号行为 (FET Small- and Large-Signal Behavior)
 
 小信号截止频率的一阶近似：
 
@@ -1552,7 +1552,7 @@ $$
 当实际增益比小信号线性外推低 $1\ \mathrm{dB}$ 时，对应 $P_{1\mathrm{dB}}$。  
 *At the 1-dB compression point, gain is 1 dB below the small-signal extrapolation.*
 
-### 9.7 MOSFET、MESFET 与 HEMT (MOSFET, MESFET, and HEMT)
+### 2.2.2.1 MOSFET、MESFET 与 HEMT (MOSFET, MESFET, and HEMT)
 
 | 器件 | 栅结构 | 主要优势 | 主要限制 |
 |---|---|---|---|
@@ -1565,11 +1565,11 @@ $$
 
 ---
 
-<h1 id="s224">2.2.2 Active RF-Semiconductor Devices: 双极晶体管与 RF 功率半导体</h1>
+<h2 id="s222-power">2.2.2 Active RF-Semiconductor Devices: 双极晶体管与 RF 功率半导体</h2>
 <h2>2.2.2 BJT/HBT and RF Power Semiconductors</h2>
 > **课件定位 / Script location:** PDF pp. 356-394. **考试标记 / Exam marker:** `【重点】` BJT/HBT、SiGe、LDMOS、宽禁带半导体；具体产业案例为 `【拓展】`。
 
-### 10.1 BJT 的控制关系 (BJT Control Relations)
+### 2.2.2.2 BJT 的控制关系 (BJT Control Relations)
 
 在正向有源区：
 
@@ -1586,7 +1586,7 @@ $$
 
 其中 $V_A$ 描述 Early 效应。BJT 是少数载流子注入器件，基区渡越时间、结电容和电荷存储决定 RF 速度。
 
-### 10.2 $f_T$、$f_{max}$ 与渡越时间 (Cutoff Frequencies and Transit Time)
+### 2.2.3.3 $f_T$、$f_{max}$ 与渡越时间 (Cutoff Frequencies and Transit Time)
 
 $$
 \boxed{f_T=\frac{g_m}{2\pi(C_\pi+C_\mu)}\approx\frac{1}{2\pi\tau_F}}
@@ -1594,14 +1594,14 @@ $$
 
 $f_T$ 是短路电流增益 $|h_{21}|$ 外推到 1 的频率；$f_{max}$ 是单向功率增益外推到 1 的频率。前者偏向本征输运，后者更敏感于基极/栅极电阻、输出电导和反馈电容。
 
-### 10.3 HBT 与 SiGe HBT (Heterojunction Bipolar Transistor)
+### 2.2.2.2 HBT 与 SiGe HBT (Heterojunction Bipolar Transistor)
 
 HBT 使用宽禁带发射极与窄禁带基区来抑制基区向发射极的反向空穴注入，从而在较高基区掺杂下仍保持高电流增益。高基区掺杂可降低基极电阻，改善 $f_{max}$。SiGe 基区还可通过 Ge 梯度形成准电场，加速载流子通过基区。  
 *A wide-bandgap emitter suppresses back injection; a heavily doped base lowers base resistance, and a graded SiGe base accelerates transport.*
 
 Gummel plot 用半对数坐标同时观察 $I_C$、$I_B$ 随 $V_{BE}$ 的变化，可识别理想因子、漏电、复合和电流增益退化。
 
-### 10.4 FET、BJT/HBT 与 BiCMOS 对比 (Device and Integration Comparison)
+### 2.2.2.3 FET、BJT/HBT 与 BiCMOS 对比 (Device and Integration Comparison)
 
 | 项目 | FET | BJT/HBT |
 |---|---|---|
@@ -1613,7 +1613,7 @@ Gummel plot 用半对数坐标同时观察 $I_C$、$I_B$ 随 $V_{BE}$ 的变化�
 
 BiCMOS 把高速低噪声 HBT 与高密度 CMOS 集成在同一平台，但工艺步骤和成本更高。
 
-### 10.5 LDMOS 与 RF 功率器件 (LDMOS and RF Power Devices)
+### 2.2.2.4 LDMOS 与 RF 功率器件 (LDMOS and RF Power Devices)
 
 LDMOS 使用横向漂移区分担高电压，并通过多指布局减小栅电阻和分布寄生。功率器件的重要矛盾是：漂移区加长和减小掺杂可提高击穿电压，却会提高导通电阻。
 
@@ -1625,7 +1625,7 @@ $$
 
 若包含多层热路径，可用热阻网络或温度依赖热阻进行计算。封装寄生、键合线电感、热界面和散热器都属于功率设计的一部分。
 
-### 10.6 宽禁带半导体与极化 (Wide-Bandgap Semiconductors and Polarization)
+### 2.2.2.4 宽禁带半导体与极化 (Wide-Bandgap Semiconductors and Polarization)
 
 | 材料 | 关键优势 | 常见 RF 器件 |
 |---|---|---|
@@ -1645,11 +1645,11 @@ $$
 
 ---
 
-<h1 id="s231">2.3.1 Circuit Fundamentals: RF 增益、稳定性与放大器基础</h1>
-<h2>2.3.1 Circuit Fundamentals</h2>
-> **课件定位 / Script location:** PDF pp. 395-435. **考试标记 / Exam marker:** `【重点】` 增益、S 参数、稳定性、匹配、偏置和功率波。
+<h1 id="s223">2.2.3 RF Figures of Merit: RF 增益、稳定性与放大器基础</h1>
+<h2>2.2.3 RF Figures of Merit</h2>
+> **课件定位 / Script location:** PDF pp. 396-420. **考试标记 / Exam marker:** `【重点】` 增益、稳定性、截止频率、效率和线性度。
 
-### 11.1 基本增益量 (Basic Gain Quantities)
+### 2.3.1 基本增益量 (Basic Gain Quantities)
 
 $$
 A_v=\frac{V_{out}}{V_{in}},\qquad
@@ -1660,7 +1660,7 @@ $$
 
 功率增益使用 $10\log_{10}$，电压/电流幅度比在阻抗相同且为实数时可使用 $20\log_{10}$。不同端口阻抗下不能直接把 $20\log|V_2/V_1|$ 当作功率增益。
 
-### 11.2 源与负载失配下的换能增益 (Transducer Gain with Mismatch)
+### 2.3.1.1 源与负载失配下的换能增益 (Transducer Gain with Mismatch)
 
 定义
 
@@ -1698,7 +1698,7 @@ $$
 
 最大功率传输要求端口共轭匹配：$\Gamma_S=\Gamma_{in}^*$、$\Gamma_L=\Gamma_{out}^*$。双向器件需要联立求解，不能直接令 $\Gamma_S=S_{11}^*$、$\Gamma_L=S_{22}^*$。
 
-### 11.3 稳定性判据 (Stability Criteria)
+### 2.3.1.3 稳定性判据 (Stability Criteria)
 
 无条件稳定的 Rollett 条件为
 
@@ -1732,7 +1732,7 @@ $$
 
 但 MSG 本身不代表该匹配在实际电路中一定安全。
 
-### 11.4 功率波、dBm 与大信号效率 (Power Waves, dBm, and Efficiency)
+### 2.3.2.2 功率波、dBm 与大信号效率 (Power Waves, dBm, and Efficiency)
 
 对实数参考阻抗 $Z_0$：
 
@@ -1759,7 +1759,7 @@ $$
 
 不要混淆增益和效率：高增益不必然高效率，高 PAE 也不必然高线性度。
 
-### 11.5 非线性模型与谐波 (Nonlinear Models and Harmonics)
+### 2.3.2.2 非线性模型与谐波 (Nonlinear Models and Harmonics)
 
 若
 
@@ -1769,7 +1769,11 @@ $$
 
 单音 $x=A\cos\omega_0t$ 会产生 DC、$2\omega_0$、$3\omega_0$ 等谐波。大信号电路需同时考虑非线性电流源和随电压变化的电荷/电容，常采用谐波平衡 (harmonic balance) 或时域仿真。
 
-### 11.6 匹配、偏置与稳定化网络 (Matching, Biasing, and Stabilization)
+<h1 id="s231">2.3.1 Circuit Fundamentals: 匹配、偏置与电路稳定性</h1>
+<h2>2.3.1 Circuit Fundamentals</h2>
+> **课件定位 / Script location:** PDF pp. 422-435. **考试标记 / Exam marker:** `【重点】` 匹配电路、DC 偏置、稳定化和基本拓扑。
+
+### 2.3.1.1 匹配、偏置与稳定化网络 (Matching, Biasing, and Stabilization)
 
 典型 RF 放大器由输入匹配、晶体管、输出匹配、偏置网络和稳定化网络组成。Bias-T 的理想目标是让 DC 与 RF 走不同路径：
 
@@ -1780,7 +1784,7 @@ $$
 
 实际中应使用多级去耦、四分之一波长高阻线、径向 stub 或合适的 RF choke，并检查元件自谐振。串/并联电阻、反馈和有损匹配可提升稳定性，但通常牺牲增益、噪声或效率。
 
-### 11.7 小信号放大器设计流程 (Small-Signal Amplifier Workflow)
+### 2.3.2.1 小信号放大器设计流程 (Small-Signal Amplifier Workflow)
 
 1. 选择偏置点并取得该偏置、温度和频率下的 S 参数/噪声参数。  
 2. 检查 $K,|\Delta|$ 或 $\mu$，必要时先稳定化。  
@@ -1795,7 +1799,7 @@ $$
 <h2>2.3.2 Amplifier Circuits</h2>
 > **课件定位 / Script location:** PDF pp. 436-465. **考试标记 / Exam marker:** `【重点】` PA 类别、效率、线性度、IIP3/OIP3、ACPR；行波放大器为 `【理解】`。
 
-### 12.1 功率放大器类别 (Power-Amplifier Classes)
+### 2.3.2.2 功率放大器类别 (Power-Amplifier Classes)
 
 | 类别 Class | 导通角 | 理想最大效率 | 特点 |
 |---|---:|---:|---|
@@ -1807,14 +1811,14 @@ $$
 
 PA 的最佳负载不是简单的 $Z_0^*$，而是在给定偏置、频率与输入功率下通过负载牵引 (load-pull) 得到的最佳大信号阻抗。
 
-### 12.2 Doherty 与动态负载调制 (Doherty and Load Modulation)
+### 2.3.2.2 Doherty 与动态负载调制 (Doherty and Load Modulation)
 
 Doherty PA 由 carrier/main 与 peaking/auxiliary 放大器组成。低功率时仅主放工作；接近峰值时辅助放导通，通过四分之一波长阻抗反转器改变主放看到的等效负载，使其在功率回退区仍维持较高效率。  
 *The peaking path modulates the carrier amplifier's effective load, improving backed-off efficiency for high-PAPR signals.*
 
 设计关键包括功率分配、相位对齐、器件尺寸比、阻抗反转器带宽和辅助支路开启规律。DC/envelope modulation 则通过随包络改变电源电压提升回退效率。
 
-### 12.3 两音测试、IM3 与截点 (Two-Tone Test, IM3, and Intercept Points)
+### 2.3.2.2 两音测试、IM3 与截点 (Two-Tone Test, IM3, and Intercept Points)
 
 输入 $f_1,f_2$ 经三阶非线性产生
 
@@ -1835,7 +1839,7 @@ $$
 
 其中 $\Delta_{IM3}$ 是基波与 IM3 的 dB 间隔。截点是线性外推概念，并非器件可以实际工作的功率点。
 
-### 12.4 ACPR、EVM 与效率折中 (ACPR, EVM, and Efficiency Tradeoff)
+### 2.3.2.2 ACPR、EVM 与效率折中 (ACPR, EVM, and Efficiency Tradeoff)
 
 邻道功率比
 
@@ -1851,7 +1855,7 @@ $$
 
 现代调制具有高 PAPR，PA 必须功率回退以满足 ACPR/EVM，导致平均效率下降。Doherty、包络跟踪和数字预失真分别从负载、电源和信号线性化角度改善这一矛盾。
 
-### 12.5 宽带与行波放大器 (Broadband and Traveling-Wave Amplifiers)
+### 2.3.2.1 宽带与行波放大器 (Broadband and Traveling-Wave Amplifiers)
 
 行波放大器把多个晶体管的输入电容和输出电容分别吸收到人工传输线中。若两条线相速度匹配，各级输出在前向端同相叠加，反向波被终端吸收。  
 *Distributed amplification trades area and DC power for wide bandwidth by absorbing device capacitances into artificial transmission lines.*
@@ -1862,7 +1866,7 @@ $$
 <h2>2.3.3.1 RF-Noise / 2.3.3.2 Low-Noise Amplifiers</h2>
 > **课件定位 / Script location:** PDF pp. 466-479. **考试标记 / Exam marker:** `【重点】` 热噪声、噪声因子、Friis 公式、LNA 噪声匹配。
 
-### 12.6 混频器 (Mixers)
+### 2.3.5.1 混频器 (Mixers)
 
 非线性或时变乘法产生和频与差频：
 
@@ -1886,7 +1890,7 @@ $$
 
 镜像频率满足与目标 RF 相同的 IF 差频，因此接收机通常需要前置选择滤波或 I/Q 架构抑制镜像。
 
-### 12.7 RF 噪声与噪声系数 (RF Noise and Noise Figure)
+### 2.3.3.1 RF 噪声与噪声系数 (RF Noise and Noise Figure)
 
 电阻可用噪声功率：
 
@@ -1925,7 +1929,7 @@ $$
 
 最低噪声匹配 $\Gamma_S=\Gamma_{opt}$ 一般不等于最大增益匹配，因此 LNA 必须在 $NF$、增益、稳定性和输入回波损耗之间折中。
 
-### 12.8 低频噪声与相位噪声 (Low-Frequency Noise and Phase Noise)
+### 2.3.3.1 低频噪声与相位噪声 (Low-Frequency Noise and Phase Noise)
 
 器件噪声常见组成：热噪声、散粒噪声和闪烁噪声：
 
@@ -1940,7 +1944,7 @@ $$
 <h2>2.3.4.1 Feedback / 2.3.4.2 Phase-Noise</h2>
 > **课件定位 / Script location:** PDF pp. 480-486. **考试标记 / Exam marker:** `【重点】` Barkhausen 条件与相位噪声；倍频器为 `【理解】`。
 
-### 12.9 振荡条件与 Leeson 直觉 (Oscillation and Leeson Intuition)
+### 2.3.4.1 振荡条件与 Leeson 直觉 (Oscillation and Leeson Intuition)
 
 Barkhausen 条件：
 
@@ -1972,7 +1976,7 @@ $$
 <h2>2.3.6.1 Transmitter Front-Ends / 2.3.6.2 Receiver Front-Ends / 2.3.6.3 Transceiver Examples</h2>
 > **课件定位 / Script location:** PDF pp. 487-496. **考试标记 / Exam marker:** `【理解】` 系统框图、模块功能和主要限制；详细架构案例为 `【拓展】`。
 
-### 12.10 收发机前端与集成 (Transceiver Front Ends and Integration)
+### 2.3.6.1 收发机前端与集成 (Transceiver Front Ends and Integration)
 
 接收链通常为：天线/双工器 -> 预选滤波 -> LNA -> mixer -> IF/baseband。发射链通常为：基带/IQ -> mixer/upconverter -> driver -> PA -> 滤波/双工器 -> 天线。
 
@@ -1994,7 +1998,7 @@ $$
 本章整理课件图片中的 27 道复习题。每道题给出考试可直接使用的答案，并在末尾注明课件 PDF 页码和对应主题；页码按 `Skripte_Vorlesung-01bis12.pdf` 的 PDF 页序计数。  
 *This chapter answers the 27 review questions shown in the lecture slides. The source pointer uses the PDF page number and the corresponding topic.*
 
-### 24.1 RF 系统、匹配与基本参数 (RF Systems, Matching, and Basic Quantities)
+### Questions A: RF 系统、匹配与基本参数 (RF Systems, Matching, and Basic Quantities)
 
 #### Q1. Please draw and name components of a transceiver and name their principal limitations.
 
@@ -2031,7 +2035,7 @@ $$
 i_d=g_mv_{gs}+g_{ds}v_{ds},\qquad r_o=\frac{1}{g_{ds}}
 $$
 
-**课件定位 Source：** PDF pp. 329-332，`Equivalent circuit concept`、`Small-signal equivalent circuit FET II`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6。
+**课件定位 Source：** PDF pp. 329-332，`Equivalent circuit concept`、`Small-signal equivalent circuit FET II`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.6。
 
 #### Q4. Indicate an impedance of 100 Ohm in the Smith-Polar diagram with $Z_0=50\ \Omega$.
 
@@ -2098,21 +2102,21 @@ $$
 
 **课件定位 Source：** PDF p. 411，`Power in dBm`；对应本笔记 [2.3.1 Circuit Fundamentals](#s231) §11.4。
 
-### 24.2 半导体器件与工艺 (Semiconductor Devices and Processing)
+### Questions B: 半导体器件与工艺 (Semiconductor Devices and Processing)
 
 #### Q9. What is the great help and the great drawback of CMOS scaling to RF operation? (Two reasons)
 
 **答案 Answer：**
 
 最大的帮助是：缩短沟道减小渡越时间并提高 $f_T/f_{max}$，同时可以把 RF、数字基带和控制电路高密度集成。最大的缺点是：击穿电压和允许电压摆幅降低，导致输出功率和动态范围受限；此外短沟道、栅漏电、工艺波动和寄生耦合更严重。  
-**课件定位 Source：** PDF pp. 251-253、269，`Moore's Law`、`A modern silicon CMOS FET`、`Scaling: Silicon-wafer`；对应本笔记 [2.2.1 Concepts of RF-Semiconductor Devices](#s221) §7.3 和 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6。
+**课件定位 Source：** PDF pp. 251-253、269，`Moore's Law`、`A modern silicon CMOS FET`、`Scaling: Silicon-wafer`；对应本笔记 [2.2.1 Concepts of RF-Semiconductor Devices](#s221) §7.3 和 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.6。
 
 #### Q10. Why do we use heterostructure in a bipolar transistor?
 
 **答案 Answer：**
 
 异质结构用宽禁带发射极和窄禁带基区形成能带偏移，抑制基区载流子反向注入，提高发射极注入效率；这样可以使用更高掺杂的基区来降低基极电阻，同时保持高电流增益和高 $f_{max}$。  
-**课件定位 Source：** PDF pp. 362-370，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.3。
+**课件定位 Source：** PDF pp. 362-370，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.3。
 
 #### Q11. What are the (dis)advantages of a bipolar vs. a FET?
 
@@ -2123,7 +2127,7 @@ $$
 | 优点 | 高 $g_m/I$、高增益密度、通常具有良好线性；HBT 可获得高 $f_T/f_{max}$ | 栅极输入电流小、输入阻抗高、易与 CMOS 集成 |
 | 缺点 | 基极需要电流，输入阻抗较低，偏置和热稳定性更敏感 | $g_m/I$ 通常较低，短沟道、栅漏电和击穿限制明显 |
 
-**课件定位 Source：** PDF p. 372，`Comparison bipolar transistor vs. FET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.4。
+**课件定位 Source：** PDF p. 372，`Comparison bipolar transistor vs. FET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.4。
 
 #### Q12. Explain the trade-off linearity vs. efficiency.
 
@@ -2137,7 +2141,7 @@ $$
 **答案 Answer：**
 
 BiCMOS 把 CMOS 的高密度、低功耗数字集成能力与 SiGe BJT/HBT 的高跨导、高速、低噪声 RF 性能结合起来，适合把基带、控制、PLL、LNA、PA driver 和高速接口集成在一个芯片/工艺平台中。代价是工艺复杂度、掩模数量和成本增加。  
-**课件定位 Source：** PDF pp. 373-374，`Co-Integration of technologies: BiCMOS`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.4。
+**课件定位 Source：** PDF pp. 373-374，`Co-Integration of technologies: BiCMOS`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.4。
 
 #### Q14. Why do class-B and class-A have different PAE?
 
@@ -2181,7 +2185,7 @@ $$
 **答案 Answer：**
 
 MESFET 以半导体沟道（常见 GaAs）为核心，在沟道两端制作低电阻欧姆源极和漏极，在沟道上方制作金属-半导体 Schottky 栅。栅压改变耗尽层宽度，从而控制沟道电流；沟道和接触可通过外延、掺杂/离子注入、刻蚀和金属化形成。  
-**课件定位 Source：** PDF pp. 346、352，`Metal-Semiconductor FET (MESFET)`、`Example: GaAs MESFET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.7。
+**课件定位 Source：** PDF pp. 346、352，`Metal-Semiconductor FET (MESFET)`、`Example: GaAs MESFET`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.7。
 
 #### Q19. Give three items which change a CMOS FET into an LDMOS.
 
@@ -2194,21 +2198,21 @@ MESFET 以半导体沟道（常见 GaAs）为核心，在沟道两端制作低�
 3. 增强高压隔离和功率处理能力，例如更厚栅氧/漂移层、优化体区与源极短接以及多指功率布局。
 
 这些变化提高 $V_{BR}$ 和 RF 输出功率，但会增加导通电阻、面积和寄生电容。  
-**课件定位 Source：** PDF pp. 382-385，`LDMOS RF-Power-FETs`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.5。
+**课件定位 Source：** PDF pp. 382-385，`LDMOS RF-Power-FETs`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.5。
 
 #### Q20. Why is a HEMT faster than a MESFET?
 
 **答案 Answer：**
 
 HEMT 在异质结界面形成高迁移率二维电子气（2DEG），载流子与离化杂质空间分离，散射更小；同时材料可提供更高饱和速度和更短渡越时间。因此通常具有更高 $g_m$、$f_T$ 和 $f_{max}$。  
-**课件定位 Source：** PDF pp. 347-354，`Hetero-structure-FET`、`pHEMT`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.7。
+**课件定位 Source：** PDF pp. 347-354，`Hetero-structure-FET`、`pHEMT`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.7。
 
 #### Q21. What is the function of the heterobarrier in the HBT? Name one.
 
 **答案 Answer：**
 
 异质势垒通过导带/价带偏移阻止不希望的载流子反向注入，特别是抑制基区空穴进入发射极，提高发射极注入效率和电流增益；同时允许基区重掺杂以减小基极电阻。一个例子是 **SiGe HBT 的 Si 发射极 / SiGe 基区异质结**。  
-**课件定位 Source：** PDF pp. 362-369，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.3。
+**课件定位 Source：** PDF pp. 362-369，`Heterojunction Bipolar Transistor`、`SiGe Heterobipolar Transistor`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.3。
 
 #### Q22. How does the current evolve over input voltage near the threshold?
 
@@ -2227,7 +2231,7 @@ I_D\approx\frac{1}{2}\mu C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2
 $$
 
 短沟道器件因速度饱和，增长会比平方律更接近线性并最终受限。  
-**课件定位 Source：** PDF pp. 318、322-326、340-341，`MOS`、`n-Channel MOSFET`、`FET Characteristics`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.5。
+**课件定位 Source：** PDF pp. 318、322-326、340-341，`MOS`、`n-Channel MOSFET`、`FET Characteristics`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.5。
 
 #### Q23. How are $g_m$ and $g_{ds}$ defined and what does that have to do with power amplification?
 
@@ -2239,14 +2243,14 @@ g_{ds}=\left.\frac{\partial I_D}{\partial V_{DS}}\right|_Q
 $$
 
 $g_m$ 表示输入电压控制输出电流的能力，决定跨导增益、驱动能力和 $f_T$；$g_{ds}$ 表示输出端电压变化引起的电流变化，越小代表输出电阻越大、增益越高。功率放大还需同时考虑最大电流、电压摆幅、击穿、匹配、效率和热限制，不能只看 $g_m$。  
-**课件定位 Source：** PDF pp. 329、396-402，`Equivalent circuit concept`、`Amplification`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.6 和 [2.3.1 Circuit Fundamentals](#s231) §11.1。
+**课件定位 Source：** PDF pp. 329、396-402，`Equivalent circuit concept`、`Amplification`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.6 和 [2.3.1 Circuit Fundamentals](#s231) §11.1。
 
 #### Q24. Which mechanisms limit the voltage in a device?
 
 **答案 Answer：**
 
 主要机制包括：冲击电离和雪崩击穿、Zener/带间隧穿、栅氧击穿、表面击穿、速度饱和导致的高场限制、热失控与结温上限，以及封装和互连的电场集中。宽禁带材料通过更高的临界电场提高耐压，但仍受陷阱、热和边缘终端限制。  
-**课件定位 Source：** PDF pp. 307-309，`Limits to Voltage: High-Field Effects`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s223) §9.2 和 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.6。
+**课件定位 Source：** PDF pp. 307-309，`Limits to Voltage: High-Field Effects`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §9.2 和 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.6。
 
 #### Q25. What is the definition of the thermal resistance?
 
@@ -2260,7 +2264,7 @@ T_j=T_{case}+P_{diss}R_{\theta JC}
 $$
 
 单位为 $\mathrm{K/W}$ 或 $^\circ\mathrm{C/W}$；热阻越小，给定功耗下结温越低。  
-**课件定位 Source：** PDF pp. 384-385，`Power: Thermal Analysis: LDMOS`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s224) §10.5。
+**课件定位 Source：** PDF pp. 384-385，`Power: Thermal Analysis: LDMOS`、`Thermal Considerations`；对应本笔记 [2.2.2 Active RF-Semiconductor Devices](#s222) §10.5。
 
 #### Q26. What is the equivalent circuit of a line?
 
