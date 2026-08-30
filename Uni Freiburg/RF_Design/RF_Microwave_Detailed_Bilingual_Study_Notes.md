@@ -2293,6 +2293,180 @@ $$
 
 **课件定位 Source：** PDF pp. 155-159，`Loss Mechanisms in Transmission Lines`、`Summary`；对应本笔记 [2.1.5.2 Transmission Lines](#s2152-loss)、[2.1.5.2 Transmission Lines](#s2152-skin) 和 [2.1.5.2 Transmission Lines](#s2152)。
 
+### Additional Practice Questions: 补充练习题
+
+#### Q28. What is the difference between RF, IF, and baseband signals in a receiver?
+
+**答案 Answer：**
+
+RF（radio frequency，射频）是天线接收到的高频载波信号；例如 2.4 GHz。IF（intermediate frequency，中频）是 RF 与 LO 经混频后的较低频率，便于滤波和放大；例如 100 MHz。基带（baseband）是进一步下变频后的信息信号，频谱围绕 0 Hz；I/Q 信号可写为正、负频率的复基带。
+
+RF (radio frequency) is the high-frequency carrier signal received at the antenna, e.g. 2.4 GHz. IF (intermediate frequency) is the lower-frequency signal after mixing RF with the LO, e.g. 100 MHz, which is easier to filter and amplify. Baseband is the information-bearing signal after further down-conversion; its spectrum is centred around 0 Hz.
+
+$$
+f_{IF}=|f_{RF}-f_{LO}|
+$$
+
+#### Q29. Why is image rejection necessary in a superheterodyne receiver?
+
+**答案 Answer：**
+
+对于固定 LO，位于 LO 两侧且满足相同 $|f_{RF}-f_{LO}|$ 的两个输入频率都会变到同一个 IF，因此不希望的 image signal 会与目标信号重叠，无法在 IF 端分开。
+
+For a fixed LO, two RF frequencies on opposite sides of the LO can produce the same IF. Therefore, an unwanted image signal overlaps with the desired signal and cannot be removed at the IF output.
+
+解决方法是使用 RF 预选滤波器、镜像抑制混频器或 I/Q image-reject 架构。
+
+Typical solutions are RF preselection filters, image-reject mixers, and I/Q image-reject architectures.
+
+#### Q30. Why is the first LNA stage important for receiver noise figure?
+
+**答案 Answer：**
+
+根据 Friis 公式：
+
+$$
+F_{tot}=F_1+\frac{F_2-1}{G_1}+\frac{F_3-1}{G_1G_2}+\cdots
+$$
+
+第一级的噪声因子 $F_1$ 直接进入总噪声因子，而后级噪声会被前级增益衰减。因此 LNA 必须具有低 NF 和足够增益，但同时不能牺牲过多线性度。
+
+The first-stage noise factor enters directly into the total noise factor, while later-stage noise is divided by the preceding gain. Therefore, the LNA needs a low NF and sufficient gain, without sacrificing too much linearity.
+
+#### Q31. What is the difference between return loss and insertion loss?
+
+**答案 Answer：**
+
+回波损耗（return loss, RL）衡量端口失配产生的反射：
+
+$$
+RL=-20\log_{10}|\Gamma|\ \mathrm{dB}
+$$
+
+RL 越大，匹配越好。插入损耗（insertion loss, IL）衡量器件插入后传输功率减少的程度，包含导体、介质和辐射损耗，通常希望越小越好。
+
+Return loss measures reflected power caused by mismatch; larger RL means better matching. Insertion loss measures the reduction in transmitted power after inserting a component, including conductor, dielectric, and radiation loss; smaller IL is preferred.
+
+#### Q32. How does a quarter-wave transmission line transform an impedance?
+
+**答案 Answer：**
+
+无损四分之一波长线的输入阻抗为：
+
+$$
+Z_{in}=\frac{Z_0^2}{Z_L}
+$$
+
+因此高阻抗会变为低阻抗，低阻抗会变为高阻抗；开路在 $\lambda/4$ 处变成短路，短路在 $\lambda/4$ 处变成开路。
+
+For a lossless quarter-wave line, high impedance transforms into low impedance and vice versa. An open circuit becomes a short circuit at a quarter wavelength, and a short circuit becomes an open circuit.
+
+#### Q33. Why is a shunt capacitor analysed on the admittance Smith chart?
+
+**答案 Answer：**
+
+并联元件的导纳直接相加：
+
+$$
+Y=G+jB,\qquad Y_C=j\omega C
+$$
+
+因此并联电容增加正电纳 $+jB$，并联电感增加负电纳 $-jB$。在导纳 Smith 图上，加入并联元件时沿恒电导圆移动。
+
+Shunt elements add directly in admittance. A shunt capacitor adds positive susceptance, while a shunt inductor adds negative susceptance. On an admittance Smith chart, adding a shunt element moves the point along a constant-conductance circle.
+
+#### Q34. What is the difference between $f_T$ and $f_{max}$?
+
+**答案 Answer：**
+
+$f_T$ 是短路电流增益降为 1 的频率，主要受载流子渡越时间和输入电容限制。$f_{max}$ 是最大单向功率增益降为 1 的频率，除 $f_T$ 外还强烈受基极/栅极电阻、反馈电容和输出损耗影响。
+
+$f_T$ is the frequency at which short-circuit current gain becomes unity; it is mainly limited by transit time and input capacitance. $f_{max}$ is the frequency at which maximum unilateral power gain becomes unity; it is additionally strongly limited by gate/base resistance, feedback capacitance, and output loss.
+
+通常：
+
+$$
+f_{max}\approx\sqrt{\frac{f_T}{8\pi R_gC_{gd}}}
+$$
+
+该式只表示 FET 的一阶趋势；HBT 中常对应 $R_{bb}$ 和 $C_{jc}$。
+
+#### Q35. What is the physical meaning of $g_{ds}$ and how is it related to channel-length modulation?
+
+**答案 Answer：**
+
+$g_{ds}$ 描述饱和区中 $V_{DS}$ 改变时 $I_D$ 仍然变化的程度：
+
+$$
+g_{ds}=\left.\frac{\partial I_D}{\partial V_{DS}}\right|_Q
+$$
+
+考虑沟道长度调制时：
+
+$$
+I_D\approx I_{D0}(1+\lambda V_{DS}),\qquad g_{ds}\approx\lambda I_D,qquad r_o\approx\frac{1}{\lambda I_D}
+$$
+
+Physically, a larger $g_{ds}$ means a less flat output characteristic and a smaller output resistance. Channel-length modulation increases $g_{ds}$ and reduces intrinsic gain.
+
+#### Q36. Why does a class-AB output stage reduce crossover distortion?
+
+**答案 Answer：**
+
+Class B 在零交越附近上下拉管都可能关断，出现死区和交越失真。Class AB 使两个管子在静态时略微导通，因此过零时存在平滑的电流交接。
+
+In Class B, both pull-up and pull-down devices can be off around the zero crossing, creating a dead zone and crossover distortion. Class AB biases both devices slightly on, enabling smooth current handover.
+
+代价是静态电流增加、效率低于理想 Class B；优点是线性度显著改善。
+
+The trade-off is increased quiescent current and lower efficiency than ideal Class B, while linearity improves substantially.
+
+#### Q37. How are IM3, IIP3, and OIP3 related?
+
+**答案 Answer：**
+
+双音输入 $f_1,f_2$ 的三阶互调产物位于：
+
+$$
+2f_1-f_2,\qquad2f_2-f_1
+$$
+
+基波功率随输入以 1 dB/dB 增长，IM3 以 3 dB/dB 增长。IIP3 和 OIP3 是两条直线外推的交点：
+
+$$
+OIP3=IIP3+G
+$$
+
+The IM3 products are the actual third-order distortion tones. IIP3 and OIP3 are extrapolated input- and output-referred intercept points; a higher IP3 indicates better third-order linearity.
+
+#### Q38. Why does frequency multiplication worsen phase noise by $20\log_{10}N$?
+
+**答案 Answer：**
+
+若输入相位误差为 $\phi(t)$，理想 $N$ 倍频后变成 $N\phi(t)$。相位噪声功率与相位扰动幅度的平方成正比，因此：
+
+$$
+\mathcal{L}_{out}(\Delta f)\approx\mathcal{L}_{in}(\Delta f)+20\log_{10}N
+$$
+
+If the input phase error is $\phi(t)$, ideal frequency multiplication produces $N\phi(t)$. Since noise power scales with the square of phase-error amplitude, phase noise worsens by $20\log_{10}N$ dB. Real multipliers add further noise and spurs.
+
+#### Q39. What is the difference between phase noise and RMS jitter?
+
+**答案 Answer：**
+
+相位噪声在频域描述载波附近的随机相位扰动，单位通常为 dBc/Hz；RMS jitter 在时域描述边沿时间误差，单位通常为 fs 或 ps。
+
+Phase noise describes random phase fluctuations in the frequency domain, usually in dBc/Hz. RMS jitter describes timing error of clock edges in the time domain, usually in fs or ps.
+
+在指定积分范围内，两者可以转换：
+
+$$
+\sigma_t\approx\frac{1}{2\pi f_0}\sqrt{2\int_{f_L}^{f_H}L(f)\,df}
+$$
+
+积分带宽必须明确；没有 $f_L$ 和 $f_H$，相位噪声不能唯一对应一个 RMS jitter 数值。
+
 ---
 
 <h1 id="summary">Formula Quick Reference and Pitfalls: 公式速查与易错点</h1>
