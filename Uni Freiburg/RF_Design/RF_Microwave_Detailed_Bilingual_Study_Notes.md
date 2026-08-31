@@ -377,10 +377,10 @@ $$
 \boxed{\sin \theta_c = \frac{n_2}{n_1}} \quad (n_1 > n_2)
 $$
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理含义** Physical Meaning | 当波从光密介质 ($n_1$) 进入光疏介质 ($n_2$)，入射角 $\theta_1 > \theta_c$ 时发生全内反射（TIR），能量全部反射回 $n_1$ 中。*When wave enters from optically dense ($n_1$) to rare ($n_2$) medium and $\theta_1 > \theta_c$, total internal reflection occurs — all energy reflected.* |
-| **在RF中的应用** RF Applications | 介质波导（dielectric waveguide）就是利用全内反射原理在无金属化的情况下导引电磁波——基片集成波导（SIW）是典型代表。*Dielectric waveguides use TIR to guide EM waves without metallization — Substrate Integrated Waveguide (SIW) is a prime example.* |
+| 项目 Item                     | 说明 Explanation                                                                                                                                                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **物理含义** Physical Meaning   | 当波从光密介质 ($n_1$) 进入光疏介质 ($n_2$)，入射角 $\theta_1 > \theta_c$ 时发生全内反射（TIR），能量全部反射回 $n_1$ 中。*When wave enters from optically dense ($n_1$) to rare ($n_2$) medium and $\theta_1 > \theta_c$, total internal reflection occurs — all energy reflected.* |
+| **在RF中的应用** RF Applications | 介质波导（dielectric waveguide）就是利用全内反射原理在无金属化的情况下导引电磁波——基片集成波导（SIW）是典型代表。*Dielectric waveguides use TIR to guide EM waves without metallization — Substrate Integrated Waveguide (SIW) is a prime example.*                                          |
 
 ### 2.1.2.2 介质损耗正切 (Loss Tangent)
 
@@ -615,14 +615,14 @@ $$
 史密斯圆图是 $\Gamma$ 复平面单位圆上的归一化阻抗/导纳网格图。
 *The Smith Chart is a normalized impedance/admittance grid on the unit circle of the $\Gamma$-plane.*
 
-| 关键操作 Key Operation | 史密斯圆图规则 Smith Chart Rule |
-|---|---|
-| **串联电感** Series Inductor | 沿等电阻圆顺时针移动 Move clockwise along constant-resistance circle |
-| **串联电容** Series Capacitor | 沿等电阻圆逆时针移动 Move counter-clockwise along constant-resistance circle |
-| **并联电感** Shunt Inductor | 转到导纳图，沿等电导圆逆时针移动 Convert to admittance, move counter-clockwise along constant-conductance circle |
-| **并联电容** Shunt Capacitor | 转到导纳图，沿等电导圆顺时针移动 Convert to admittance, move clockwise along constant-conductance circle |
-| **传输线段** Transmission Line Section | 沿 $|\Gamma|$ 常数圆向**信号源方向**（顺时针）旋转 Rotate clockwise along constant-$|\Gamma|$ circle toward generator |
-| **电阻匹配** Resistive Matching | 沿等电抗圆移动至实轴 Move along constant-reactance circle to real axis |
+| 关键操作 Key Operation                 | 史密斯圆图规则 Smith Chart Rule                                                                         |        |                                                          |        |                           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ------ | -------------------------------------------------------- | ------ | ------------------------- |
+| **串联电感** Series Inductor           | 沿等电阻圆顺时针移动 Move clockwise along constant-resistance circle                                       |        |                                                          |        |                           |
+| **串联电容** Series Capacitor          | 沿等电阻圆逆时针移动 Move counter-clockwise along constant-resistance circle                               |        |                                                          |        |                           |
+| **并联电感** Shunt Inductor            | 转到导纳图，沿等电导圆逆时针移动 Convert to admittance, move counter-clockwise along constant-conductance circle |        |                                                          |        |                           |
+| **并联电容** Shunt Capacitor           | 转到导纳图，沿等电导圆顺时针移动 Convert to admittance, move clockwise along constant-conductance circle         |        |                                                          |        |                           |
+| **传输线段** Transmission Line Section | 沿 $                                                                                              | \Gamma | $ 常数圆向**信号源方向**（顺时针）旋转 Rotate clockwise along constant-$ | \Gamma | $ circle toward generator |
+| **电阻匹配** Resistive Matching        | 沿等电抗圆移动至实轴 Move along constant-reactance circle to real axis                                     |        |                                                          |        |                           |
 
 **实用记忆 (Practical Memory):**
 - **顺时针 → 向信号源（长度增加）；逆时针 → 向负载。** *Clockwise → toward generator (longer line); Counter-clockwise → toward load.*
@@ -1042,10 +1042,10 @@ $$
 | $f$ | 频率 Frequency | — |
 | $\mu_r$ | 相对磁导率 Relative permeability | 非磁性金属: 1; 镍 Ni: ~100-600 |
 
-| 项目 Item | 说明 Explanation |
-|---|---|
-| **物理图像** Physical Picture | 交流电流集中在导体表面 $\delta_{skin}$ 的薄层中。频率越高，趋肤深度越浅，有效导电截面积越小，等效电阻越大。*AC current crowds into a thin surface layer $\delta_{skin}$. Higher f → shallower skin depth → smaller effective cross-section → higher resistance.* |
-| **推导** Derivation | 在导体中 Maxwell 方程化简为扩散方程 $\nabla^2\vec{E} = j\omega\mu\sigma\vec{E}$，解得 $\vec{E}(z) = \vec{E}_0 e^{-z/\delta} e^{-jz/\delta}$。$\delta$ 为场幅衰减到 $1/e$ 的深度。*Solve diffusion equation in conductor; $\delta$ is where field amplitude decays to $1/e$.* |
+| 项目 Item                   | 说明 Explanation                                                                                                                                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **物理图像** Physical Picture | 交流电流集中在导体表面 $\delta_{skin}$ 的薄层中。频率越高，趋肤深度越浅，有效导电截面积越小，等效电阻越大。*AC current crowds into a thin surface layer $\delta_{skin}$. Higher f → shallower skin depth → smaller effective cross-section → higher resistance.*                               |
+| **推导** Derivation         | 在导体中 Maxwell 方程化简为扩散方程 $\nabla^2\vec{E} = j\omega\mu\sigma\vec{E}$，解得 $\vec{E}(z) = \vec{E}_0 e^{-z/\delta} e^{-jz/\delta}$。$\delta$ 为场幅衰减到 $1/e$ 的深度。*Solve diffusion equation in conductor; $\delta$ is where field amplitude decays to $1/e$.* |
 
 **铜的趋肤深度速查表 (Skin Depth of Copper at Various Frequencies):**
 
